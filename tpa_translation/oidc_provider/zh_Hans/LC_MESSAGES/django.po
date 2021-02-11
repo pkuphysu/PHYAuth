@@ -1,0 +1,251 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-11 15:34+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Rainshaw <rxg@live.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+#: .\oidc_provider\admin.py:58
+msgid "Credentials"
+msgstr "凭据"
+
+#: .\oidc_provider\admin.py:61
+msgid "Information"
+msgstr "信息"
+
+#: .\oidc_provider\admin.py:64
+msgid "Session Management"
+msgstr "会话管理"
+
+#: .\oidc_provider\lib\claims.py:122
+msgid "Basic profile"
+msgstr "基本资料"
+
+#: .\oidc_provider\lib\claims.py:123
+msgid ""
+"Access to your basic information. Includes names, gender, birthdate and "
+"other information."
+msgstr "访问您的基本信息。包括姓名，性别，生日和其他信息。"
+
+#: .\oidc_provider\lib\claims.py:150
+msgid "Email"
+msgstr "电子邮件"
+
+#: .\oidc_provider\lib\claims.py:151
+msgid "Access to your email address."
+msgstr "访问您的电子邮件地址。"
+
+#: .\oidc_provider\lib\claims.py:163
+msgid "Phone number"
+msgstr "电话号码"
+
+#: .\oidc_provider\lib\claims.py:164
+msgid "Access to your phone number."
+msgstr "访问您的电话号码。"
+
+#: .\oidc_provider\lib\claims.py:176
+msgid "Address information"
+msgstr "地址信息"
+
+#: .\oidc_provider\lib\claims.py:177
+msgid ""
+"Access to your address. Includes country, locality, street and other "
+"information."
+msgstr "访问您的地址。 包括国家，地区，街道和其他信息。"
+
+#: .\oidc_provider\models.py:45
+msgid "Response Type Value"
+msgstr "响应类型值"
+
+#: .\oidc_provider\models.py:59
+msgid "Name"
+msgstr "名字"
+
+#: .\oidc_provider\models.py:61
+msgid "Owner"
+msgstr "所有者"
+
+#: .\oidc_provider\models.py:67
+msgid "Client Type"
+msgstr "应用类型"
+
+#: .\oidc_provider\models.py:68
+msgid ""
+"<b>Confidential</b> clients are capable of maintaining the confidentiality "
+"of their credentials. <b>Public</b> clients are incapable."
+msgstr "<b>机密</b>应用能够维护其凭据的机密性，<b>公共</b>应用则不能。"
+
+#: .\oidc_provider\models.py:70
+msgid "Client ID"
+msgstr "应用 ID"
+
+#: .\oidc_provider\models.py:71
+msgid "Client SECRET"
+msgstr "应用密钥"
+
+#: .\oidc_provider\models.py:77
+msgid "JWT Algorithm"
+msgstr "JWT 算法"
+
+#: .\oidc_provider\models.py:78
+msgid "Algorithm used to encode ID Tokens."
+msgstr "用于编码 ID 令牌的算法。"
+
+#: .\oidc_provider\models.py:79
+msgid "Date Created"
+msgstr "创建日期"
+
+#: .\oidc_provider\models.py:81
+msgid "Website URL"
+msgstr "网站 URL"
+
+#: .\oidc_provider\models.py:86
+msgid "Terms URL"
+msgstr "条款 URL"
+
+#: .\oidc_provider\models.py:87
+msgid "External reference to the privacy policy of the client."
+msgstr "客户端隐私政策的外部链接。"
+
+#: .\oidc_provider\models.py:89
+msgid "Contact Email"
+msgstr "联系方式"
+
+#: .\oidc_provider\models.py:91
+msgid "Logo Image"
+msgstr "形象标识"
+
+#: .\oidc_provider\models.py:94
+msgid "Reuse Consent?"
+msgstr "重用同意书？"
+
+#: .\oidc_provider\models.py:95
+msgid ""
+"If enabled, server will save the user consent given to a specific client, so "
+"that user won't be prompted for the same authorization multiple times."
+msgstr "如果启用，服务器将保存授予特定客户端的用户同意，这样就不会多次提示用户相同的授权。"
+
+#: .\oidc_provider\models.py:99
+msgid "Require Consent?"
+msgstr "需要同意？"
+
+#: .\oidc_provider\models.py:100
+msgid "If disabled, the Server will NEVER ask the user for consent."
+msgstr "如果禁用，则服务器不会征求用户的同意。"
+
+#: .\oidc_provider\models.py:102
+msgid "Redirect URIs"
+msgstr "重定向 URIs"
+
+#: .\oidc_provider\models.py:103 .\oidc_provider\models.py:108
+msgid "Enter each URI on a new line."
+msgstr "每行输入一个 URI。"
+
+#: .\oidc_provider\models.py:107
+msgid "Post Logout Redirect URIs"
+msgstr "发布注销重定向 URI"
+
+#: .\oidc_provider\models.py:112 .\oidc_provider\models.py:165
+msgid "Scopes"
+msgstr "范围"
+
+#: .\oidc_provider\models.py:113
+msgid "Specifies the authorized scope values for the client app."
+msgstr "指定客户端应用程序的授权范围值。"
+
+#: .\oidc_provider\models.py:116 .\oidc_provider\models.py:163
+msgid "Client"
+msgstr "应用"
+
+#: .\oidc_provider\models.py:117
+msgid "Clients"
+msgstr "应用"
+
+#: .\oidc_provider\models.py:164
+msgid "Expiration Date"
+msgstr "失效日期"
+
+#: .\oidc_provider\models.py:188 .\oidc_provider\models.py:207
+#: .\oidc_provider\models.py:243
+msgid "User"
+msgstr "用户"
+
+#: .\oidc_provider\models.py:189
+msgid "Code"
+msgstr "码"
+
+#: .\oidc_provider\models.py:190
+msgid "Nonce"
+msgstr "随机数"
+
+#: .\oidc_provider\models.py:191
+msgid "Is Authentication?"
+msgstr "是身份验证吗？"
+
+#: .\oidc_provider\models.py:192
+msgid "Code Challenge"
+msgstr "代码挑战"
+
+#: .\oidc_provider\models.py:194
+msgid "Code Challenge Method"
+msgstr "代码质询方法"
+
+#: .\oidc_provider\models.py:197
+msgid "Authorization Code"
+msgstr "授权码"
+
+#: .\oidc_provider\models.py:198
+msgid "Authorization Codes"
+msgstr "授权码"
+
+#: .\oidc_provider\models.py:208
+msgid "Access Token"
+msgstr "访问令牌"
+
+#: .\oidc_provider\models.py:209
+msgid "Refresh Token"
+msgstr "刷新令牌"
+
+#: .\oidc_provider\models.py:210
+msgid "ID Token"
+msgstr "ID 令牌"
+
+#: .\oidc_provider\models.py:213
+msgid "Token"
+msgstr "令牌"
+
+#: .\oidc_provider\models.py:214
+msgid "Tokens"
+msgstr "令牌"
+
+#: .\oidc_provider\models.py:244
+msgid "Date Given"
+msgstr "给出日期"
+
+#: .\oidc_provider\models.py:253
+msgid "Key"
+msgstr "密钥"
+
+#: .\oidc_provider\models.py:253
+msgid "Paste your private RSA Key here."
+msgstr "在此处粘贴您的私有 RSA 密钥。"
+
+#: .\oidc_provider\models.py:256
+msgid "RSA Key"
+msgstr "RSA 密钥"
+
+#: .\oidc_provider\models.py:257
+msgid "RSA Keys"
+msgstr "RSA 密钥"
