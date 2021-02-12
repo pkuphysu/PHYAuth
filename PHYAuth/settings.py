@@ -11,14 +11,19 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import environ
+import sys
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+env = environ.Env()
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
-if True:
+DEBUG = env("DEBUG", cast=bool, default=True)
+print(DEBUG)
+if DEBUG:
     from .dev import *
 else:
     from .prod import *
@@ -27,18 +32,25 @@ ALLOWED_HOSTS = ['*']
 
 # Application definition
 
-INSTALLED_APPS = [
+DJANGO_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'app.users.apps.UsersConfig',
-    'app.pku_iaaa.apps.PkuIaaaConfig',
+]
 
+THIRD_PARTY_APPS = [
     'oidc_provider'
 ]
+
+LOCAL_APPS = [
+    'app.users.apps.UsersConfig',
+    'app.pku_iaaa.apps.PkuIaaaConfig',
+]
+
+INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -116,3 +128,10 @@ LOCALE_PATHS = [
 ]
 
 AUTH_USER_MODEL = 'users.User'
+
+AUTHENTICATION_BACKENDS = [
+    "django.contrib.auth.backends.ModelBackend",
+    "app.pku_iaaa.auth_backends.AuthenticationBackend",
+]
+
+SESSION_COOKIE_AGE = 86400

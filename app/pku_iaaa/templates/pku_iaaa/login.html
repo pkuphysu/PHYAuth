@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>北京大学身份认证系统</title>
+</head>
+<body style="background-color: #DDDDDD;text-align: center">
+<div style="color:#BB0000;font-family:Microsoft Yahei,serif;font-size: 24px; font-weight: bold; margin: 20px 20px 20px 20px;">
+    <p>正在转向北京大学身份认证系统......</p>
+</div>
+<script>
+    document.write("<form action='https://iaaa.pku.edu.cn/iaaa/oauth.jsp' method=post name='formx1' style='display:none'>");
+    document.write("<input type=hidden name='appID' value='{{ app_id }}'>");
+    document.write("<input type=hidden name='redirectUrl' value='{{ redirect_url }}'>");
+    document.write("<input type=hidden name='redirectLogonUrl' value='{{ local_login_redirect_url }}'>");
+    document.write("</form>");
+    setTimeout("document.formx1.submit();", 1000);
+</script>
+</body>
+
+</html>

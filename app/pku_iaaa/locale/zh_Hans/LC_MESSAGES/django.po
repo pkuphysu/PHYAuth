@@ -1,0 +1,65 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-12 22:54+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: .\app\pku_iaaa\apps.py:7
+msgid "IAAA Config"
+msgstr "IAAA 配置"
+
+#: .\app\pku_iaaa\models.py:8
+msgid "APP ID"
+msgstr "应用 ID"
+
+#: .\app\pku_iaaa\models.py:11 .\app\pku_iaaa\models.py:17
+#: .\app\pku_iaaa\models.py:23
+msgid "Required. Please connect pkucc for help."
+msgstr "必须，如您不清楚如何配置，请联系计算中心。"
+
+#: .\app\pku_iaaa\models.py:15
+msgid "KEY"
+msgstr "密钥"
+
+#: .\app\pku_iaaa\models.py:21
+msgid "REDIRECT URL"
+msgstr "重定向 URL"
+
+#: .\app\pku_iaaa\models.py:27
+msgid "IAAA Info"
+msgstr "IAAA 信息"
+
+#: .\app\pku_iaaa\views.py:36
+msgid "No account is found."
+msgstr ""
+
+#: .\app\pku_iaaa\views.py:38
+msgid ""
+"Your account was banned by admin, please contact the Student Affairs Office "
+"of the School of Physics for help."
+msgstr "您的账号已被管理员封禁，请联系物理学院学工办获取支持。"
+
+#: .\app\pku_iaaa\views.py:41
+msgid ""
+"This application temporarily only serves the teachers and students of the "
+"School of Physics. Your personal relationship is not in the School of "
+"Physics. Therefore, temporarily mark your account as disabled. Please "
+"contact the Student Affairs Office of the School of Physics to activate your "
+"account."
+msgstr ""
+"本应用暂时仅服务物理学院师生，您的人员关系不在物理学院，故暂将您的账号标记为"
+"未启用，请联系物理学院学生工作办公室激活账号。"
