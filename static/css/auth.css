@@ -1,0 +1,46 @@
+.bg-pku {
+    background-color: #8B0016 !important;
+}
+
+.card-pku.card-outline {
+    border-top: 3px solid #8B0016 !important;
+}
+
+
+.btn-pku {
+    color: #fff;
+    background-color: #8B0016;
+    border-color: #900017;
+    box-shadow: none;
+}
+
+.btn-pku:hover {
+    color: #fff;
+    background-color: #860116;
+    border-color: #900017;
+}
+
+.btn-pku:focus, .btn-pku.focus {
+    color: #fff;
+    background-color: #860116;
+    border-color: #900017;
+    box-shadow: 0 0 0 0 rgba(134, 1, 22, 0.5);
+}
+
+.btn-pku.disabled, .btn-pku:disabled {
+    color: #fff;
+    background-color: #872627;
+    border-color: #872627;
+}
+
+.btn-pku:not(:disabled):not(.disabled):active, .btn-pku:not(:disabled):not(.disabled).active,
+.show > .btn-pku.dropdown-toggle {
+    color: #fff;
+    background-color: #872627;
+    border-color: #872627;
+}
+
+.btn-pku:not(:disabled):not(.disabled):active:focus, .btn-pku:not(:disabled):not(.disabled).active:focus,
+.show > .btn-pku.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0 rgba(38, 143, 255, 0.5);
+}
