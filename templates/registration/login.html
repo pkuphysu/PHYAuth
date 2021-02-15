@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load user_helper %}
+
+{% block title %}{% translate 'Sign In' %}{% endblock %}
+
+{% block body_class %} login-page {% endblock %}
+
+{% block body %}
+    <div class="login-box">
+        <!-- /.login-logo -->
+        <div class="card card-outline card-pku">
+            <div class="card-header text-center">
+                <a href="{% url 'users:index' %}" class="h1">
+                    <img src="{% static 'img/pku-phy-red.png' %}" class="card-img-top" alt="PKU PHY">
+                </a>
+            </div>
+            <div class="card-body">
+                <p class="login-box-msg">
+                    {% translate 'Sign in to start your session' %}
+                </p>
+
+                <form action="{% url 'login' %}" method="post">
+                    {% csrf_token %}
+                    <span class="error">{{ form.non_field_errors }}</span>
+                    <div class="form-group">
+                        <div class="input-group">
+                            {% form_mod form.username "form-control" "PKU ID" %}
+                            <div class="input-group-append">
+                                <div class="input-group-text">
+                                    <span class="fas fa-address-card"></span>
+                                </div>
+                            </div>
+                        </div>
+                        {% for error in form.username.errors %}
+                            <span class="error invalid-feedback" style="display: block">{{ error }}</span>
+                        {% endfor %}
+                        {% if form.username.help_text %}
+                            {{ form.username.help_text|safe }}
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            {% form_mod form.password "form-control" "Password" %}
+                            <div class="input-group-append">
+                                <div class="input-group-text">
+                                    <span class="fas fa-lock"></span>
+                                </div>
+                            </div>
+                        </div>
+                        {% for error in form.password.errors %}
+                            <span class="error invalid-feedback" style="display: block">{{ error }}</span>
+                        {% endfor %}
+                        {% if form.password.help_text %}
+                            {{ form.password.help_text|safe }}
+                        {% endif %}
+                    </div>
+                    <div class="row">
+                        <div class="col-8"></div>
+                        <div class="col-4">
+                            <button type="submit" class="btn btn-pku btn-block">
+                                {% translate 'Sign In' %}
+                            </button>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                </form>
+                {% translate 'or' %}
+                <div class="social-auth-links text-center mt-2 mb-3">
+                    <a href="{% url 'pku_iaaa:iaaa_login' %}" class="btn btn-block btn-pku">
+                        {% translate 'Sign in using PKU IAAA' %}
+                    </a>
+                </div>
+                <!-- /.social-auth-links -->
+
+                <p class="mb-1">
+                    <a href="{% url 'password_reset' %}">{% translate 'forgot password?' %}</a>
+                </p>
+                <p class="mb-0">
+                    <a href="" class="text-center">{% translate 'I have no account' %}</a>
+                </p>
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+    </div>
+    <!-- /.login-box -->
+{% endblock %}
+
+
+
+

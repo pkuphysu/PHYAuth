@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-12 22:54+0800\n"
+"POT-Creation-Date: 2021-02-15 17:27+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,38 +22,38 @@ msgstr ""
 msgid "IAAA Config"
 msgstr "IAAA 配置"
 
-#: .\app\pku_iaaa\models.py:8
+#: .\app\pku_iaaa\models.py:7
 msgid "APP ID"
 msgstr "应用 ID"
 
-#: .\app\pku_iaaa\models.py:11 .\app\pku_iaaa\models.py:17
-#: .\app\pku_iaaa\models.py:23
+#: .\app\pku_iaaa\models.py:10 .\app\pku_iaaa\models.py:16
+#: .\app\pku_iaaa\models.py:22
 msgid "Required. Please connect pkucc for help."
 msgstr "必须，如您不清楚如何配置，请联系计算中心。"
 
-#: .\app\pku_iaaa\models.py:15
+#: .\app\pku_iaaa\models.py:14
 msgid "KEY"
 msgstr "密钥"
 
-#: .\app\pku_iaaa\models.py:21
+#: .\app\pku_iaaa\models.py:20
 msgid "REDIRECT URL"
 msgstr "重定向 URL"
 
-#: .\app\pku_iaaa\models.py:27
+#: .\app\pku_iaaa\models.py:26
 msgid "IAAA Info"
 msgstr "IAAA 信息"
 
-#: .\app\pku_iaaa\views.py:36
+#: .\app\pku_iaaa\views.py:37
 msgid "No account is found."
 msgstr ""
 
-#: .\app\pku_iaaa\views.py:38
+#: .\app\pku_iaaa\views.py:39
 msgid ""
 "Your account was banned by admin, please contact the Student Affairs Office "
 "of the School of Physics for help."
 msgstr "您的账号已被管理员封禁，请联系物理学院学工办获取支持。"
 
-#: .\app\pku_iaaa\views.py:41
+#: .\app\pku_iaaa\views.py:42
 msgid ""
 "This application temporarily only serves the teachers and students of the "
 "School of Physics. Your personal relationship is not in the School of "

@@ -55,6 +55,7 @@ INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -75,6 +76,10 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+            ],
+            'builtins': [
+                'django.templatetags.static',
+                'django.templatetags.i18n'
             ],
         },
     },
@@ -113,10 +118,23 @@ USE_L10N = True
 
 USE_TZ = True
 
+SUB_PATH = '/'
+
+LOGIN_REDIRECT_URL = SUB_PATH
+LOGIN_URL = SUB_PATH + 'login'
+LOGOUT_REDIRECT_URL = SUB_PATH
+
+SESSION_COOKIE_PATH = LANGUAGE_COOKIE_PATH = CSRF_COOKIE_PATH = SUB_PATH
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'assets'
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+    './static/'
+]
 
 OIDC_USERINFO = 'users.oidc_provider_settings.userinfo'
 OIDC_EXTRA_SCOPE_CLAIMS = 'users.oidc_provider_settings.CustomScopeClaims'
@@ -125,6 +143,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 LOCALE_PATHS = [
     BASE_DIR / 'tpa_translation' / 'oidc_provider',
+    BASE_DIR / 'templates' / 'locale',
 ]
 
 AUTH_USER_MODEL = 'users.User'

@@ -1,0 +1,183 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-15 17:27+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Rainshaw <rxg@live.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: .\templates\base.html:12
+msgid "Uniform Identity Authentication of the School of Physics"
+msgstr "物理学院统一身份认证"
+
+#: .\templates\base.html:54
+msgid "Home"
+msgstr "主页"
+
+#: .\templates\base.html:93
+msgid "Change Password"
+msgstr "修改密码"
+
+#: .\templates\base.html:96
+msgid "Sign Out"
+msgstr "登出"
+
+#: .\templates\base.html:102 .\templates\registration\login.html:3
+#: .\templates\registration\login.html:55
+#: .\templates\registration\password_reset_form.html:55
+msgid "Sign In"
+msgstr "登入"
+
+#: .\templates\base.html:122
+msgid "Uniform Identity Auth"
+msgstr "统一认证"
+
+#: .\templates\base.html:261
+msgid "All rights reserved."
+msgstr "版权所有."
+
+#: .\templates\registration\login.html:23
+msgid "Sign in to start your session"
+msgstr "登录以开始您的会话"
+
+#: .\templates\registration\login.html:28
+msgid "PKU ID"
+msgstr "北大职工号、学号"
+
+#: .\templates\registration\login.html:36
+#, fuzzy
+#| msgid "Change Password"
+msgid "Password"
+msgstr "修改密码"
+
+#: .\templates\registration\login.html:48
+msgid "Remember Me"
+msgstr "记住我"
+
+#: .\templates\registration\login.html:61
+msgid "or"
+msgstr "或"
+
+#: .\templates\registration\login.html:64
+msgid "Sign in using PKU IAAA"
+msgstr "使用北京大学统一身份认证登入"
+
+#: .\templates\registration\login.html:70
+msgid "forgot password?"
+msgstr "忘记密码？"
+
+#: .\templates\registration\login.html:73
+msgid "I have no account"
+msgstr "我没有账户"
+
+#: .\templates\registration\password_reset_complete.html:11
+msgid "Your password has been set.  You may go ahead and log in now."
+msgstr "你的密码己经设置完成，现在你可以继续进行登录。"
+
+#: .\templates\registration\password_reset_complete.html:13
+#: .\templates\registration\password_reset_done.html:22
+msgid "Return to Sign In"
+msgstr "返回登入"
+
+#: .\templates\registration\password_reset_confirm.html:16
+msgid ""
+"Please enter your new password twice so we can verify you typed it in "
+"correctly."
+msgstr "请输入两遍新密码，以便我们校验你输入的是否正确。"
+
+#: .\templates\registration\password_reset_confirm.html:58
+#, fuzzy
+#| msgid "Change Password"
+msgid "Change password"
+msgstr "修改密码"
+
+#: .\templates\registration\password_reset_confirm.html:66
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used.  Please request a new password reset."
+msgstr "密码重置链接无效，可能是因为它已使用。可以请求一次新的密码重置。"
+
+#: .\templates\registration\password_reset_confirm.html:84
+#: .\templates\registration\password_reset_form.html:77
+msgid "Are you sure?"
+msgstr "你确定吗？"
+
+#: .\templates\registration\password_reset_confirm.html:89
+#: .\templates\registration\password_reset_form.html:83
+msgid "Yes"
+msgstr "是的"
+
+#: .\templates\registration\password_reset_confirm.html:90
+#: .\templates\registration\password_reset_form.html:84
+msgid "Cancel"
+msgstr "取消"
+
+#: .\templates\registration\password_reset_confirm.html:111
+#, fuzzy
+#| msgid "Change Password"
+msgid "Please enter password"
+msgstr "修改密码"
+
+#: .\templates\registration\password_reset_confirm.html:112
+#: .\templates\registration\password_reset_confirm.html:116
+msgid "Password length cannot be less than 8 characters"
+msgstr "密码长度不能少于8个字符"
+
+#: .\templates\registration\password_reset_confirm.html:115
+msgid "Please enter password again"
+msgstr "请再次输入密码"
+
+#: .\templates\registration\password_reset_confirm.html:117
+msgid "Two password entries are inconsistent"
+msgstr "两个密码不同"
+
+#: .\templates\registration\password_reset_done.html:18
+msgid ""
+"We’ve emailed you instructions for setting your password, if an account "
+"exists with the email you entered. You should receive them shortly."
+msgstr ""
+"如果你所输入的电子邮箱存在对应的用户，我们将通过电子邮件向你发送设置密码的操"
+"作步骤说明。你应该很快就会收到。"
+
+#: .\templates\registration\password_reset_done.html:20
+msgid ""
+"If you don’t receive an email, please make sure you’ve entered the address "
+"you registered with, and check your spam folder."
+msgstr ""
+"如果你没有收到电子邮件，请检查输入的是你注册的电子邮箱地址。另外，也请检查你"
+"的垃圾邮件文件夹。"
+
+#: .\templates\registration\password_reset_form.html:19
+msgid ""
+"You forgot your password? Here you can easily retrieve a new password with "
+"your email."
+msgstr "忘记了你的密码？这里你可以方便的通过你的邮箱设置一个新密码。"
+
+#: .\templates\registration\password_reset_form.html:48
+msgid "Request password reset"
+msgstr "请求重置密码"
+
+#: .\templates\registration\password_reset_form.html:78
+msgid "An email will be sent to "
+msgstr "一封电子邮件将被邮寄至 "
+
+#: .\templates\registration\password_reset_form.html:100
+msgid "Please enter a email address"
+msgstr "请输入一个电子邮件地址"
+
+#: .\templates\registration\password_reset_form.html:101
+msgid "Please enter a vaild email address"
+msgstr "请输入一个有效的邮件地址"
+

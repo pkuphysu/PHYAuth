@@ -5,6 +5,6 @@ from .views import *
 app_name = 'pku_iaaa'
 
 urlpatterns = [
-    path('iaaa/', IAAALoginView.as_view(), name='iaaa_login'),
-    path('iaaa/auth/', IAAALoginAuth.as_view(), name='iaaa_auth'),
+    path('login/', IAAALoginView.as_view(), name='iaaa_login'),
+    path('auth/', IAAALoginAuth.as_view(), name='iaaa_auth'),
 ]

@@ -1,0 +1,119 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-15 17:27+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: .\app\users\admin.py:11
+msgid "Personal Info"
+msgstr "个人信息"
+
+#: .\app\users\admin.py:15
+msgid "Permissions"
+msgstr "权限"
+
+#: .\app\users\admin.py:18
+msgid "Important Dates"
+msgstr "重要日期"
+
+#: .\app\users\admin.py:19
+msgid "Account Status"
+msgstr ""
+
+#: .\app\users\apps.py:7
+msgid "user management"
+msgstr "用户管理"
+
+#: .\app\users\models.py:11
+msgid "username"
+msgstr "职工号、学号"
+
+#: .\app\users\models.py:14
+msgid "Required. It's your pku id. 10 characters. Digits only."
+msgstr "必须。这是北大师生的学工号。由10个数字构成。"
+
+#: .\app\users\models.py:17
+msgid "A user with that username already exists."
+msgstr "具有该学工号的用户已经存在。"
+
+#: .\app\users\models.py:21
+msgid "email address"
+msgstr "电子邮件地址"
+
+#: .\app\users\models.py:26
+msgid "nickname"
+msgstr "昵称"
+
+#: .\app\users\models.py:31
+msgid "is teacher"
+msgstr "职工状态"
+
+#: .\app\users\models.py:35
+msgid "Designates whether the user is a teacher."
+msgstr "指明用户是否为老师。"
+
+#: .\app\users\models.py:39
+msgid "website"
+msgstr "主页"
+
+#: .\app\users\models.py:44
+msgid "gender"
+msgstr "性别"
+
+#: .\app\users\models.py:46
+msgid "unknown"
+msgstr "保密"
+
+#: .\app\users\models.py:47
+msgid "male"
+msgstr "男"
+
+#: .\app\users\models.py:48
+msgid "female"
+msgstr "女"
+
+#: .\app\users\models.py:53
+msgid "birthdate"
+msgstr "生日"
+
+#: .\app\users\models.py:58
+#, fuzzy
+#| msgid "phone_number"
+msgid "phone number"
+msgstr "电话号码"
+
+#: .\app\users\models.py:63
+msgid "address"
+msgstr "办公室"
+
+#: .\app\users\models.py:69
+msgid "is banned"
+msgstr ""
+
+#: .\app\users\models.py:71
+#, fuzzy
+#| msgid "Designates whether the user is a teacher."
+msgid "Designate whether the user is banned."
+msgstr "指明用户是否为老师。"
+
+#: .\app\users\oidc_provider_settings.py:29
+msgid "Extra"
+msgstr "更多"
+
+#: .\app\users\oidc_provider_settings.py:30
+msgid "Extra information."
+msgstr "更多信息"

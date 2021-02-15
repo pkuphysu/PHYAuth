@@ -1,0 +1,285 @@
+{% load user_helper %}
+<!DOCTYPE html>
+{% get_current_language as LANGUAGE_CODE %}
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+    {% block meta %}
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    {% endblock %}
+
+    <title>{% block title %}{% endblock %}
+        | {% translate 'Uniform Identity Authentication of the School of Physics' %}</title>
+
+    {% block stylesheets %}
+        <!-- Google Font: Source Sans Pro -->
+        <link rel="stylesheet"
+              href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+        <!-- Font Awesome Icons -->
+        <link rel="stylesheet" href="{% static 'adminlte/plugins/fontawesome-free/css/all.min.css' %}">
+        <!-- overlayScrollbars -->
+        <link rel="stylesheet"
+              href="{% static 'adminlte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css' %}">
+        <!-- Theme style -->
+        <link rel="stylesheet" href="{% static 'adminlte/dist/css/adminlte.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/auth.css' %}">
+
+        {% block extra_style %}{% endblock extra_style %}
+        {% block style %}{% endblock %}
+
+    {% endblock %}
+
+    {% block extra_head %}{% endblock %}
+</head>
+
+<body class="hold-transition {% block body_class %}sidebar-mini layout-navbar-fixed layout-fixed{% endblock body_class %}">
+
+{% block body %}
+
+    <div class="wrapper">
+
+        {% block nav_header %}
+
+            <!-- Navbar -->
+            <nav class="main-header navbar navbar-expand bg-pku navbar-dark">
+
+                {% block nav_header_left %}
+                    <!-- Left navbar links -->
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i
+                                    class="fas fa-bars"></i></a>
+                        </li>
+                        <li class="nav-item d-none d-sm-inline-block">
+                            <a href="/" class="nav-link">{% translate 'Home' %}</a>
+                        </li>
+                    </ul>
+                {% endblock nav_header_left %}
+
+                {% block nav_header_center %}{% endblock nav_header_center %}
+
+                {% block nav_header_right %}
+                    <!-- Right navbar links -->
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                                <i class="fas fa-expand-arrows-alt"></i>
+                            </a>
+                        </li>
+                        {% block nav_header_right_user_info %}
+                            {% if request.user.is_authenticated %}
+                                <li class="nav-item dropdown user-menu">
+                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"
+                                       aria-expanded="true">
+                                        <img src="{% avatar_url 128 %}" class="user-image img-circle elevation-2"
+                                             alt="User Image">
+                                        <span class="d-none d-md-inline">{% firstof request.user.get_full_name request.user.get_username %}</span>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-lg-right">
+                                        <!-- User image -->
+                                        <li class="user-header">
+                                            <img src="{% avatar_url size=160 %}" class="img-circle elevation-2"
+                                                 alt="User Image">
+
+                                            <p>
+                                                {% firstof request.user.get_short_name request.user.get_username %}
+                                                - {{ request.user.get_is_teacher_display }}
+                                                <small>Member since : {{ request.user.date_joined }}</small>
+                                            </p>
+                                        </li>
+                                        <!-- Menu Footer-->
+                                        <li class="user-footer">
+                                            <a href="{% url 'password_change' %}" class="btn btn-default btn-flat">
+                                                {% trans 'Change Password' %}
+                                            </a>
+                                            <a href="{% url 'logout' %}" class="btn btn-default btn-flat float-right">
+                                                {% trans 'Sign Out' %}</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            {% else %}
+                                <li class="nav-item d-none d-sm-inline-block">
+                                    <a href="{% url 'login' %}" class="nav-link">{% translate 'Sign In' %}</a>
+                                </li>
+                            {% endif %}
+                        {% endblock nav_header_right_user_info %}
+
+                    </ul>
+                {% endblock nav_header_right %}
+            </nav>
+            <!-- /.navbar -->
+
+        {% endblock nav_header %}
+
+        {% block nav_siderbar %}
+
+            <!-- Main Sidebar Container -->
+            <aside class="main-sidebar  main-sidebar-custom sidebar-light-red elevation-4">
+                {% block logo %}
+                    <!-- Brand Logo -->
+                    <a href="/" class="brand-link bg-pku">
+                        <img src="{% static 'img/Openid.svg' %}" alt="Auth Logo" class="brand-image elevation-3">
+                        <span class="brand-text font-weight-light text-white">{% translate 'Uniform Identity Auth' %}</span>
+                    </a>
+                {% endblock logo %}
+
+                <!-- Sidebar -->
+                <div class="sidebar">
+
+                    <!-- Sidebar user (optional) -->
+                    {% block user_panel %}
+                        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                            <div class="image">
+                                <img src="{% avatar_url size=90 %}" class="img-circle elevation-2"
+                                     alt="User Image">
+                            </div>
+                            <div class="info">
+                                <a href="#"
+                                   class="d-block">{% firstof request.user.get_full_name request.user.username %}</a>
+                            </div>
+                        </div>
+                    {% endblock user_panel %}
+
+                    <!-- Sidebar Menu -->
+                    <nav class="mt-2">
+                        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                            data-accordion="false">
+                            <!-- Add icons to the links using the .nav-icon class
+                                 with font-awesome or any other icon font library -->
+                            {% block nav_siderbar_links %}
+                                <li class="nav-header">Header</li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                                        <p>
+                                            Dashboard
+                                            <i class="right fas fa-angle-left"></i>
+                                        </p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                            <a href="../../index.html" class="nav-link">
+                                                <i class="far fa-circle nav-icon"></i>
+                                                <p>Dashboard v1</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="../../index2.html" class="nav-link">
+                                                <i class="far fa-circle nav-icon"></i>
+                                                <p>Dashboard v2</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="../../index3.html" class="nav-link">
+                                                <i class="far fa-circle nav-icon"></i>
+                                                <p>Dashboard v3</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            {% endblock nav_siderbar_links %}
+                        </ul>
+                    </nav>
+                    <!-- /.sidebar-menu -->
+                </div>
+                <!-- /.sidebar -->
+                {% block nav_siderbar_custom %}{% endblock nav_siderbar_custom %}
+            </aside>
+
+        {% endblock %}
+
+        {% block content_wrapper %}
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <div class="container-fluid">
+                        <div class="row mb-2">
+                            <div class="col-sm-6">
+                                <h1>Fixed Navbar Layout</h1>
+                            </div>
+                            <div class="col-sm-6">
+                                <ol class="breadcrumb float-sm-right">
+                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="#">Layout</a></li>
+                                    <li class="breadcrumb-item active">Fixed Navbar Layout</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div><!-- /.container-fluid -->
+                </section>
+
+                <!-- Main content -->
+                <section class="content">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                <!-- Default box -->
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Title</h3>
+
+                                        <div class="card-tools">
+                                            <button type="button" class="btn btn-tool" data-card-widget="collapse"
+                                                    title="Collapse">
+                                                <i class="fas fa-minus"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-tool" data-card-widget="remove"
+                                                    title="Remove">
+                                                <i class="fas fa-times"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        Start creating your amazing application!
+                                    </div>
+                                    <!-- /.card-body -->
+                                    <div class="card-footer">
+                                        Footer
+                                    </div>
+                                    <!-- /.card-footer-->
+                                </div>
+                                <!-- /.card -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- /.content -->
+            </div>
+            <!-- /.content-wrapper -->
+        {% endblock content_wrapper %}
+
+        {% block nav_footer %}
+            <footer class="main-footer">
+                <div class="float-right d-none d-sm-block">
+                    {% block nav_footer_right %}{% endblock %}
+                </div>
+                {% block nav_footer_left %}
+                    {% block nav_footer_left_legal %}
+                        <strong>Copyright &copy; {% now "Y" %}
+                            <a href="{{ request.scheme }}://{{ request.get_host }}">{{ request.get_host }}</a>.
+                        </strong> {% translate 'All rights reserved.' %}
+                    {% endblock nav_footer_left_legal %}
+                {% endblock nav_footer_left %}
+            </footer>
+        {% endblock nav_footer %}
+
+    </div>
+    <!-- ./wrapper -->
+{% endblock %}
+<!-- REQUIRED SCRIPTS -->
+{% block javascript %}
+    <!-- jQuery -->
+    <script src="{% static 'adminlte/plugins/jquery/jquery.min.js' %}"></script>
+    <!-- Bootstrap 4 -->
+    <script src="{% static 'adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <!-- overlayScrollbars -->
+    <script src="{% static 'adminlte/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js' %}"></script>
+    <!-- AdminLTE App -->
+    <script src="{% static 'adminlte/dist/js/adminlte.min.js' %}"></script>
+
+    {% block extra_javascript %}{% endblock extra_javascript %}
+    {% block js %}{% endblock js %}
+{% endblock javascript %}
+</body>
+</html>
