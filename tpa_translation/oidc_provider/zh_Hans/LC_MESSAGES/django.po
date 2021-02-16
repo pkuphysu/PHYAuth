@@ -37,11 +37,11 @@ msgstr "基本资料"
 msgid ""
 "Access to your basic information. Includes names, gender, birthdate and "
 "other information."
-msgstr "访问您的基本信息。包括姓名，性别，生日和其他信息。"
+msgstr "访问您的基本信息。包括姓名、性别、生日和其他信息。"
 
 #: .\oidc_provider\lib\claims.py:150
 msgid "Email"
-msgstr "电子邮件"
+msgstr "邮箱"
 
 #: .\oidc_provider\lib\claims.py:151
 msgid "Access to your email address."
@@ -63,7 +63,7 @@ msgstr "地址信息"
 msgid ""
 "Access to your address. Includes country, locality, street and other "
 "information."
-msgstr "访问您的地址。 包括国家，地区，街道和其他信息。"
+msgstr "访问您的地址。 包括国家、地区、街道和其他信息。"
 
 #: .\oidc_provider\models.py:45
 msgid "Response Type Value"
@@ -85,7 +85,7 @@ msgstr "应用类型"
 msgid ""
 "<b>Confidential</b> clients are capable of maintaining the confidentiality "
 "of their credentials. <b>Public</b> clients are incapable."
-msgstr "<b>机密</b>应用能够维护其凭据的机密性，<b>公共</b>应用则不能。"
+msgstr "<b>Confidential（机密）</b>应用能够维护其凭据的机密性，<b>Public（公共）</b>应用则不能。"
 
 #: .\oidc_provider\models.py:70
 msgid "Client ID"
@@ -101,7 +101,7 @@ msgstr "JWT 算法"
 
 #: .\oidc_provider\models.py:78
 msgid "Algorithm used to encode ID Tokens."
-msgstr "用于编码 ID 令牌的算法。"
+msgstr "用于对 ID 令牌进行编码的算法。"
 
 #: .\oidc_provider\models.py:79
 msgid "Date Created"
@@ -117,33 +117,33 @@ msgstr "条款 URL"
 
 #: .\oidc_provider\models.py:87
 msgid "External reference to the privacy policy of the client."
-msgstr "客户端隐私政策的外部链接。"
+msgstr "应用隐私政策的外部链接。"
 
 #: .\oidc_provider\models.py:89
 msgid "Contact Email"
-msgstr "联系方式"
+msgstr "联系邮箱"
 
 #: .\oidc_provider\models.py:91
 msgid "Logo Image"
-msgstr "形象标识"
+msgstr "Logo 图片"
 
 #: .\oidc_provider\models.py:94
 msgid "Reuse Consent?"
-msgstr "重用同意书？"
+msgstr "重复使用用户对应用的授权？"
 
 #: .\oidc_provider\models.py:95
 msgid ""
 "If enabled, server will save the user consent given to a specific client, so "
 "that user won't be prompted for the same authorization multiple times."
-msgstr "如果启用，服务器将保存授予特定客户端的用户同意，这样就不会多次提示用户相同的授权。"
+msgstr "如果启用，服务器将保存授予特定应用的用户授权，这样就不会多次提示用户进行相同的授权。"
 
 #: .\oidc_provider\models.py:99
 msgid "Require Consent?"
-msgstr "需要同意？"
+msgstr "需要用户对应用进行授权？"
 
 #: .\oidc_provider\models.py:100
 msgid "If disabled, the Server will NEVER ask the user for consent."
-msgstr "如果禁用，则服务器不会征求用户的同意。"
+msgstr "如果禁用，则服务器将不会征求用户的授权。"
 
 #: .\oidc_provider\models.py:102
 msgid "Redirect URIs"
@@ -151,19 +151,19 @@ msgstr "重定向 URIs"
 
 #: .\oidc_provider\models.py:103 .\oidc_provider\models.py:108
 msgid "Enter each URI on a new line."
-msgstr "每行输入一个 URI。"
+msgstr "每一行输入一个 URI。"
 
 #: .\oidc_provider\models.py:107
 msgid "Post Logout Redirect URIs"
-msgstr "发布注销重定向 URI"
+msgstr "注销后重定向 URI"
 
 #: .\oidc_provider\models.py:112 .\oidc_provider\models.py:165
 msgid "Scopes"
-msgstr "范围"
+msgstr "范围（Scopes）"
 
 #: .\oidc_provider\models.py:113
 msgid "Specifies the authorized scope values for the client app."
-msgstr "指定客户端应用程序的授权范围值。"
+msgstr "指定应用程序的授权范围（Scope）的值。"
 
 #: .\oidc_provider\models.py:116 .\oidc_provider\models.py:163
 msgid "Client"
@@ -184,19 +184,19 @@ msgstr "用户"
 
 #: .\oidc_provider\models.py:189
 msgid "Code"
-msgstr "码"
+msgstr "代码（Code）"
 
 #: .\oidc_provider\models.py:190
 msgid "Nonce"
-msgstr "随机数"
+msgstr "随机数（Nonce）"
 
 #: .\oidc_provider\models.py:191
 msgid "Is Authentication?"
-msgstr "是身份验证吗？"
+msgstr "用于身份验证？"
 
 #: .\oidc_provider\models.py:192
 msgid "Code Challenge"
-msgstr "代码挑战"
+msgstr "代码质询"
 
 #: .\oidc_provider\models.py:194
 msgid "Code Challenge Method"
@@ -204,11 +204,11 @@ msgstr "代码质询方法"
 
 #: .\oidc_provider\models.py:197
 msgid "Authorization Code"
-msgstr "授权码"
+msgstr "授权代码"
 
 #: .\oidc_provider\models.py:198
 msgid "Authorization Codes"
-msgstr "授权码"
+msgstr "授权代码"
 
 #: .\oidc_provider\models.py:208
 msgid "Access Token"
@@ -216,7 +216,7 @@ msgstr "访问令牌"
 
 #: .\oidc_provider\models.py:209
 msgid "Refresh Token"
-msgstr "刷新令牌"
+msgstr "更新令牌"
 
 #: .\oidc_provider\models.py:210
 msgid "ID Token"
@@ -232,7 +232,7 @@ msgstr "令牌"
 
 #: .\oidc_provider\models.py:244
 msgid "Date Given"
-msgstr "给出日期"
+msgstr "授权日期"
 
 #: .\oidc_provider\models.py:253
 msgid "Key"
@@ -240,7 +240,7 @@ msgstr "密钥"
 
 #: .\oidc_provider\models.py:253
 msgid "Paste your private RSA Key here."
-msgstr "在此处粘贴您的私有 RSA 密钥。"
+msgstr "在此处粘贴您的 RSA 私有密钥。"
 
 #: .\oidc_provider\models.py:256
 msgid "RSA Key"
