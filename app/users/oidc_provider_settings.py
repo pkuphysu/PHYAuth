@@ -7,7 +7,7 @@ User = get_user_model()
 
 def userinfo(claims, user: User):
     # Populate claims dict.
-    claims['name'] = '{0} {1}'.format(user.first_name, user.last_name)
+    claims['name'] = '{}{}'.format(user.last_name, user.first_name)
     claims['given_name'] = user.first_name
     claims['family_name'] = user.last_name
     claims['nickname'] = user.nickname
@@ -37,9 +37,11 @@ class CustomScopeClaims(ScopeClaims):
         # self.scopes - List of scopes requested.
         # self.client - Client requesting this claims.
         dic = {
+            'id': self.user.username,
+            'preferred_email': self.user.get_preferred_email(),
             'is_teacher': self.user.is_teacher,
+            'in_school': self.user.in_school,
             'is_banned': self.user.is_banned,
-            'preferred_email': self.user.get_preferred_email()
         }
 
         return dic

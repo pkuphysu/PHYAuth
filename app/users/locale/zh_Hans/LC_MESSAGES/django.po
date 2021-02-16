@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-16 16:15+0800\n"
+"POT-Creation-Date: 2021-02-16 22:25+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,7 +34,7 @@ msgstr "重要日期"
 msgid "Account Status"
 msgstr ""
 
-#: .\app\users\admin.py:31
+#: .\app\users\admin.py:32
 msgid "Full Name"
 msgstr "姓名"
 

@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+
+{% block title %}{% translate 'Request for Permission' as title %}{{ title }}{% endblock %}
+
+{% block body_class %} login-page {% endblock %}
+
+{% block body %}
+    <div class="login-box">
+        <div class="card card-widget widget-user-2 shadow">
+            <!-- Add the bg color to the header using any of the bg-* classes -->
+            <div class="widget-user-header bg-pku">
+                <div class="widget-user-image">
+                    {% if client.logo.seekable %}
+                        <img class="img-circle elevation-2" src="{{ client.logo.url }}" alt="User Avatar">
+                    {% else %}
+                        <img class="img-circle elevation-2" src="{% static 'img/pku.png' %}" alt="User Avatar">
+                    {% endif %}
+                </div>
+                <!-- /.widget-user-image -->
+                <h3 class="widget-user-username text-white"><b>
+                    {% translate 'Client Name: ' %}
+                    {{ client.name }}</b></h3>
+                <h5 class="widget-user-desc text-white">
+                    {% translate 'Client Ownner: ' %}
+                    {% if clent.owner is not None %}
+                        {{ client.owner }}
+                    {% else %}
+                        {% translate 'Unknown' %}
+                    {% endif %}
+                </h5>
+            </div>
+            <div class="card-body">
+                <p>
+                    {% blocktranslate with name=client.name trimmed %}
+                        Client <strong>{{ name }}</strong> would like to access this information of you ...
+                    {% endblocktranslate %}
+                </p>
+
+                <dl class="row">
+                    {% for scope in scopes %}
+                        <dt class="col-sm-4">{{ scope.name }}</dt>
+                        <dd class="col-sm-8"><i>{{ scope.description }}</i></dd>
+                    {% endfor %}
+                </dl>
+            </div>
+            <div class="card-footer">
+                <form method="post" action="{% url 'oidc_provider:authorize' %}">
+                    {% csrf_token %}
+                    {{ hidden_inputs }}
+                    <button type="submit" value="Decline" class="btn btn-default">
+                        {% translate 'Decline' %}
+                    </button>
+                    <button name="allow" type="submit" value="Authorize" class="btn btn-success float-right">
+                        {% translate 'Authorize' %}
+                    </button>
+                </form>
+                <p class="text-center">
+                    {% translate 'Authorizing will redirect to' %}<br>
+                    {% for uri in client.redirect_uris %}
+                        {{ uri }}
+                    {% endfor %}
+                </p>
+            </div>
+            <div class="card-footer">
+                <div class="row">
+                    <div class="col-sm-3 border-right">
+                        <div class="description-block">
+                            <span class="description-text">
+                                {% if client.terms_url %}
+                                    <a href="{{ client.website_url }}">
+                                        {% translate 'Client Website' %}
+                                    </a>
+                                {% else %}
+                                    <a href="#" disabled title="{% translate 'Unknown' %}">
+                                        {% translate 'Client Website' %}
+                                    </a>
+                                {% endif %}
+
+                            </span>
+                        </div>
+                        <!-- /.description-block -->
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-sm-3 border-right">
+                        <div class="description-block">
+                            <span class="description-text">
+                                {% if client.terms_url %}
+                                    <a href="{{ client.terms_url }}">
+                                        {% translate 'Privacy Policy' %}
+                                    </a>
+                                {% else %}
+                                    <a href="#" disabled title="{% translate 'Unknown' %}">
+                                        {% translate 'Privacy Policy' %}
+                                    </a>
+                                {% endif %}
+
+                            </span>
+                        </div>
+                        <!-- /.description-block -->
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-sm-6">
+                        <div class="description-block">
+                            <span class="description-text">
+                                {% translate 'Date Created' %}<br>
+                                {{ client.date_created }}
+                            </span>
+                        </div>
+                        <!-- /.description-block -->
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <!-- /.row -->
+            </div>
+        </div>
+    </div>
+    <!-- /.login-box -->
+{% endblock %}
