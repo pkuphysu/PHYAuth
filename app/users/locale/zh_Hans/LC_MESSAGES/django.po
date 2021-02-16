@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-15 17:27+0800\n"
+"POT-Creation-Date: 2021-02-16 16:15+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,6 +34,10 @@ msgstr "重要日期"
 msgid "Account Status"
 msgstr ""
 
+#: .\app\users\admin.py:31
+msgid "Full Name"
+msgstr "姓名"
+
 #: .\app\users\apps.py:7
 msgid "user management"
 msgstr "用户管理"
@@ -50,70 +54,107 @@ msgstr "必须。这是北大师生的学工号。由10个数字构成。"
 msgid "A user with that username already exists."
 msgstr "具有该学工号的用户已经存在。"
 
-#: .\app\users\models.py:21
-msgid "email address"
-msgstr "电子邮件地址"
+#: .\app\users\models.py:22
+msgid "pku email address"
+msgstr "北京大学邮箱"
 
-#: .\app\users\models.py:26
+#: .\app\users\models.py:24
+msgid ""
+"This is your pku email address, because some clients only require email "
+"address."
+msgstr "这是你的北大邮箱地址，因为一些应用只需要邮箱地址，这可以标识你的身份。"
+
+#: .\app\users\models.py:28
 msgid "nickname"
 msgstr "昵称"
 
-#: .\app\users\models.py:31
-msgid "is teacher"
-msgstr "职工状态"
-
-#: .\app\users\models.py:35
-msgid "Designates whether the user is a teacher."
-msgstr "指明用户是否为老师。"
-
-#: .\app\users\models.py:39
+#: .\app\users\models.py:34
 msgid "website"
 msgstr "主页"
 
-#: .\app\users\models.py:44
+#: .\app\users\models.py:40
 msgid "gender"
 msgstr "性别"
 
-#: .\app\users\models.py:46
+#: .\app\users\models.py:42
 msgid "unknown"
 msgstr "保密"
 
-#: .\app\users\models.py:47
+#: .\app\users\models.py:43
 msgid "male"
 msgstr "男"
 
-#: .\app\users\models.py:48
+#: .\app\users\models.py:44
 msgid "female"
 msgstr "女"
 
-#: .\app\users\models.py:53
+#: .\app\users\models.py:50
 msgid "birthdate"
 msgstr "生日"
 
-#: .\app\users\models.py:58
+#: .\app\users\models.py:56
 #, fuzzy
 #| msgid "phone_number"
 msgid "phone number"
 msgstr "电话号码"
 
-#: .\app\users\models.py:63
+#: .\app\users\models.py:62
 msgid "address"
 msgstr "办公室"
 
-#: .\app\users\models.py:69
-msgid "is banned"
-msgstr ""
+#: .\app\users\models.py:68
+msgid "preferred email address"
+msgstr "常用邮件地址"
 
-#: .\app\users\models.py:71
-#, fuzzy
-#| msgid "Designates whether the user is a teacher."
-msgid "Designate whether the user is banned."
+#: .\app\users\models.py:70
+msgid ""
+"This is your usual email address which we will use to get in touch with you."
+msgstr "这是你的常用邮箱，我们用它来最终与你取得联系。"
+
+#: .\app\users\models.py:74
+msgid "is teacher"
+msgstr "职工状态"
+
+#: .\app\users\models.py:78
+msgid "Designates whether the user is a teacher."
 msgstr "指明用户是否为老师。"
 
-#: .\app\users\oidc_provider_settings.py:29
+#: .\app\users\models.py:83
+msgid "is banned"
+msgstr "被封禁"
+
+#: .\app\users\models.py:89
+msgid "Designate whether the user is banned."
+msgstr "指明用户是否被封禁。"
+
+#: .\app\users\models.py:93
+msgid "is in school"
+msgstr "是否在校"
+
+#: .\app\users\models.py:99
+#, fuzzy
+#| msgid "Designates whether the user is a teacher."
+msgid "Designate whether the user is in school."
+msgstr "指明用户是否为老师。"
+
+#: .\app\users\oidc_provider_settings.py:30
 msgid "Extra"
 msgstr "更多"
 
-#: .\app\users\oidc_provider_settings.py:30
+#: .\app\users\oidc_provider_settings.py:31
 msgid "Extra information."
 msgstr "更多信息"
+
+#: .\app\users\validators.py:9
+msgid ""
+"Enter a valid username. It's your pku id. This value may contain only "
+"numbers."
+msgstr "请输入一个有效职工号或学号，应仅包含数字。"
+
+#: .\app\users\validators.py:16
+msgid ""
+"Enter your ID email address, it should be in 2000000000@(stu.|alumni.)pku."
+"edu.cn format."
+msgstr ""
+"输入你的 职工号或学号开头的北大邮箱地址，它应是如下形式：1234567898@(stu.|"
+"alumni.)pku.edu.cn"

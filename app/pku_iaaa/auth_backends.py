@@ -55,13 +55,8 @@ class AuthenticationBackend(ModelBackend):
             user.is_active = False
 
         user.is_teacher = False if user_info['identityType'] == '学生' else True
-        if user.is_teacher:
-            user.email = user.username + '@pku.edu.cn'
-        else:
-            if int(user.username[0]) < 2:
-                user.email = user.username + '@pku.edu.cn'
-            else:
-                user.email = user.username + '@stu.pku.edu.cn'
+        user.in_school = True if user_info['identityStatus'] == '在校' else False
+        user.email = user.get_email()
         user.last_name = user_info['name'][0]
         user.first_name = user_info['name'][1:]
         user.nickname = user_info['name']

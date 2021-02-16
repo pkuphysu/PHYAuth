@@ -1,0 +1,45 @@
+from django.utils.translation import ugettext as _
+from oidc_provider.lib.claims import ScopeClaims
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
+
+
+def userinfo(claims, user: User):
+    # Populate claims dict.
+    claims['name'] = '{0} {1}'.format(user.first_name, user.last_name)
+    claims['given_name'] = user.first_name
+    claims['family_name'] = user.last_name
+    claims['nickname'] = user.nickname
+
+    claims['website'] = user.website
+    claims['gender'] = user.gender
+    claims['birthdate'] = user.birthdate
+
+    claims['email'] = user.email
+
+    claims['phone_number'] = user.phone_number
+
+    claims['address']['formatted'] = user.address
+
+    return claims
+
+
+class CustomScopeClaims(ScopeClaims):
+    info_extra = (
+        _(u'Extra'),
+        _(u'Extra information.'),
+    )
+
+    def scope_extra(self):
+        # self.user - Django user instance.
+        # self.userinfo - Dict returned by OIDC_USERINFO function.
+        # self.scopes - List of scopes requested.
+        # self.client - Client requesting this claims.
+        dic = {
+            'is_teacher': self.user.is_teacher,
+            'is_banned': self.user.is_banned,
+            'preferred_email': self.user.get_preferred_email()
+        }
+
+        return dic

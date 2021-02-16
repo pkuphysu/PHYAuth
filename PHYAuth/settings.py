@@ -61,6 +61,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'oidc_provider.middleware.SessionManagementMiddleware',
 ]
 
 ROOT_URLCONF = 'PHYAuth.urls'
@@ -138,6 +139,7 @@ STATICFILES_DIRS = [
 
 OIDC_USERINFO = 'users.oidc_provider_settings.userinfo'
 OIDC_EXTRA_SCOPE_CLAIMS = 'users.oidc_provider_settings.CustomScopeClaims'
+OIDC_SESSION_MANAGEMENT_ENABLE = True
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 

@@ -9,14 +9,14 @@ class UserAdmin(AbstractUserAdmin):
     fieldsets = (
         (None, {'fields': ('username', 'password')}),
         (_('Personal Info'), {'fields': (
-            'first_name', 'last_name', 'nickname', 'email', 'gender',
+            'first_name', 'last_name', 'nickname', 'email', 'preferred_email', 'gender',
             'birthdate', 'phone_number', 'address', 'website'
         )}),
         (_('Permissions'), {
-            'fields': ('is_staff', 'is_teacher', 'is_superuser', 'groups', 'user_permissions'),
+            'fields': ('is_staff', 'is_superuser', 'groups', 'user_permissions'),
         }),
         (_('Important Dates'), {'fields': ('last_login', 'date_joined')}),
-        (_('Account Status'), {'fields': ('is_active', 'is_banned')})
+        (_('Account Status'), {'fields': ('is_active', 'is_teacher', 'in_school', 'is_banned')})
     )
 
     add_fieldsets = (
@@ -26,9 +26,16 @@ class UserAdmin(AbstractUserAdmin):
         }),
     )
 
-    list_display = ('username', 'first_name', 'last_name', 'nickname', 'email', 'is_teacher', 'is_staff')
+    def get_name(self, obj):
+        return '{}{}'.format(obj.last_name, obj.first_name)
+
+    get_name.short_description = _('Full Name')
+
+    list_display = ('username', 'get_name', 'nickname', 'email', 'is_teacher', 'in_school')
     list_filter = ('is_teacher', 'is_staff', 'is_superuser', 'is_active', 'groups', 'is_banned')
     search_fields = ('username', 'first_name', 'last_name', 'email', 'nickname')
+
+
 
 
 admin.site.register(User, UserAdmin)
