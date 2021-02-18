@@ -212,6 +212,7 @@ if DEBUG:
 LOCALE_PATHS = [
     BASE_DIR / 'tpa_translation' / 'oidc_provider',
     BASE_DIR / 'tpa_translation' / 'django_celery_beat',
+    BASE_DIR / 'tpa_translation' / 'django_celery_results',
     BASE_DIR / 'templates' / 'locale',
 ]
 

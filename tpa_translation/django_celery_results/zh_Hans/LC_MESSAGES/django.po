@@ -1,0 +1,162 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-19 01:05+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+#: .\django_celery_results\admin.py:40
+msgid "Parameters"
+msgstr "参数"
+
+#: .\django_celery_results\admin.py:47
+msgid "Result"
+msgstr "结果"
+
+#: .\django_celery_results\apps.py:15
+msgid "Celery Results"
+msgstr "Celery结果"
+
+#: .\django_celery_results\models.py:29
+msgid "Task ID"
+msgstr "任务ID"
+
+#: .\django_celery_results\models.py:30
+msgid "Celery ID for the Task that was run"
+msgstr "运行任务的Celery ID"
+
+#: .\django_celery_results\models.py:33
+msgid "Task Name"
+msgstr "任务名"
+
+#: .\django_celery_results\models.py:34
+msgid "Name of the Task which was run"
+msgstr "运行的任务名称"
+
+#: .\django_celery_results\models.py:37
+msgid "Task Positional Arguments"
+msgstr "任务位置参数"
+
+#: .\django_celery_results\models.py:38
+msgid "JSON representation of the positional arguments used with the task"
+msgstr "任务使用的位置参数的JSON表示形式"
+
+#: .\django_celery_results\models.py:42
+msgid "Task Named Arguments"
+msgstr "任务命名参数"
+
+#: .\django_celery_results\models.py:43
+msgid "JSON representation of the named arguments used with the task"
+msgstr "任务使用的命名参数的JSON表示形式"
+
+#: .\django_celery_results\models.py:48
+msgid "Task State"
+msgstr "任务状态"
+
+#: .\django_celery_results\models.py:49
+msgid "Current state of the task being run"
+msgstr "正在运行的任务的当前状态"
+
+#: .\django_celery_results\models.py:52
+msgid "Worker"
+msgstr ""
+
+#: .\django_celery_results\models.py:52
+msgid "Worker that executes the task"
+msgstr "执行任务的 worker"
+
+#: .\django_celery_results\models.py:56
+msgid "Result Content Type"
+msgstr "结果内容类型"
+
+#: .\django_celery_results\models.py:57
+msgid "Content type of the result data"
+msgstr "结果数据的内容类型"
+
+#: .\django_celery_results\models.py:60
+msgid "Result Encoding"
+msgstr "结果编码"
+
+#: .\django_celery_results\models.py:61
+msgid "The encoding used to save the task result data"
+msgstr "用于保存任务结果数据的编码"
+
+#: .\django_celery_results\models.py:64
+msgid "Result Data"
+msgstr "结果数据"
+
+#: .\django_celery_results\models.py:65
+msgid ""
+"The data returned by the task.  Use content_encoding and content_type fields "
+"to read."
+msgstr "任务返回的数据。使用content_encoding和content_type字段进行读取。"
+
+#: .\django_celery_results\models.py:69
+msgid "Created DateTime"
+msgstr "创建日期时间"
+
+#: .\django_celery_results\models.py:70
+msgid "Datetime field when the task result was created in UTC"
+msgstr "创建任务结果的UTC日期时间字段"
+
+#: .\django_celery_results\models.py:73
+msgid "Completed DateTime"
+msgstr "完成的日期时间"
+
+#: .\django_celery_results\models.py:74
+msgid "Datetime field when the task was completed in UTC"
+msgstr "完成任务的UTC日期时间字段"
+
+#: .\django_celery_results\models.py:77
+msgid "Traceback"
+msgstr ""
+
+#: .\django_celery_results\models.py:78
+msgid "Text of the traceback if the task generated one"
+msgstr "traceback文本（如果任务生成了一个）"
+
+#: .\django_celery_results\models.py:81
+msgid "Task Meta Information"
+msgstr "任务元信息"
+
+#: .\django_celery_results\models.py:82
+msgid ""
+"JSON meta information about the task, such as information on child tasks"
+msgstr "有关任务的JSON元信息，例如有关子任务的信息"
+
+#: .\django_celery_results\models.py:92
+msgid "task result"
+msgstr "任务结果"
+
+#: .\django_celery_results\models.py:93
+msgid "task results"
+msgstr "任务结果"
+
+#: .\django_celery_results\models.py:123
+msgid "Group ID"
+msgstr "组ID"
+
+#: .\django_celery_results\models.py:124
+msgid "Celery ID for the Chord header group"
+msgstr ""
+
+#: .\django_celery_results\models.py:128
+msgid ""
+"JSON serialized list of task result tuples. use .group_result() to decode"
+msgstr "任务结果元组的JSON序列化列表。使用.group_result()进行解码"
+
+#: .\django_celery_results\models.py:134
+msgid "Starts at len(chord header) and decrements after each task is finished"
+msgstr "从len(chord header)开始，在每个任务完成后递减"
