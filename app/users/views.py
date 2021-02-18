@@ -42,4 +42,4 @@ def index(request):
     # print(type(request.GET))
     # print(request.GET.get('www', ''))
     # raise IAAAError(4,'22')
-    return render(request, 'base.html')
+    return render(request, 'index.html')

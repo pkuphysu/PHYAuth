@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block body_class %} login-page {% endblock %}
+
+{% block body %}
+    <div class="login-box">
+
+        {% block body_login_box %}{% endblock %}
+
+    </div>
+    <!-- /.login-box -->
+{% endblock %}
