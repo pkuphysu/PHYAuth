@@ -5,3 +5,6 @@ from django.utils.translation import gettext_lazy as _
 class UsersConfig(AppConfig):
     name = 'app.users'
     verbose_name = _('user management')
+
+    def ready(self):
+        import app.users.signals

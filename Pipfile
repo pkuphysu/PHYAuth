@@ -6,8 +6,13 @@ name = "pypi"
 [packages]
 django = "*"
 django-oidc-provider = "*"
-django-environ = "*"
 requests = "*"
+celery = "*"
+django-celery-results = "*"
+django-celery-beat = "*"
+mysqlclient = "*"
+configparser = "*"
+django-redis = "*"
 
 [dev-packages]
 

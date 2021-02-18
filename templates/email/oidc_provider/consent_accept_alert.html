@@ -1,0 +1,18 @@
+{% extends 'email/base.html' %}
+
+{% block content %}
+    <h2 style="border-bottom:1px solid #DDD;font-size:14px;font-weight:normal;padding:13px 0 10px 8px;">
+        <span style="color: #12ADDB;font-weight: bold;">&gt; </span>
+        您授权了应用 {{ client.name }} 访问您的信息
+    </h2>
+    <div style="padding:0 12px 0 12px;margin-top:18px">
+        <p>现在时间：<span style="border-bottom:1px dashed #ccc;">{% now "Y-m-d H:i" %}</span></p>
+        <p>{{ client.name }}申请访问{{ name }}的以下信息：</p>
+        <p style="background-color: #f5f5f5;border: 0 solid #DDD;padding: 10px 15px;margin:18px 0">
+            {% for scope in scopes %}
+                <b>{{ scope.name }}</b>:<i>{{ scope.description }}</i>
+            {% endfor %}
+        </p>
+        <p>如这不是您执行的操作，请尽快前往网站更改密码并撤销授权。</p>
+    </div>
+{% endblock %}

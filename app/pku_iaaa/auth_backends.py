@@ -6,6 +6,7 @@ from django.contrib.auth.backends import ModelBackend
 from django.core.exceptions import SuspiciousOperation
 
 from .models import Iaaa
+from .tasks import user_register_email
 
 UserModel = get_user_model()
 
@@ -37,6 +38,7 @@ class AuthenticationBackend(ModelBackend):
             })
             if created:
                 user = self.configure_user(user_info, user)
+                user_register_email.delay(user_id=user.id)
         else:
             try:
                 user = UserModel._default_manager.get_by_natural_key(identity_id)

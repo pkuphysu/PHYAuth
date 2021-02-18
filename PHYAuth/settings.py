@@ -11,22 +11,22 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
-import environ
+from configparser import RawConfigParser
 import sys
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-env = environ.Env()
+
+CONFIG_DIR = BASE_DIR / 'config'
+CONFIG = RawConfigParser()
+CONFIG.read(CONFIG_DIR / 'config.ini', encoding='utf-8')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
-DEBUG = env("DEBUG", cast=bool, default=True)
-print(DEBUG)
-if DEBUG:
-    from .dev import *
-else:
-    from .prod import *
+DEBUG = CONFIG.getboolean('DJANGO', 'DEBUG')
+
+SECRET_KEY = CONFIG.get('DJANGO', 'SECRET_KEY')
 
 ALLOWED_HOSTS = ['*']
 
@@ -42,7 +42,9 @@ DJANGO_APPS = [
 ]
 
 THIRD_PARTY_APPS = [
-    'oidc_provider'
+    'oidc_provider',
+    'django_celery_results',
+    'django_celery_beat',
 ]
 
 LOCAL_APPS = [
@@ -61,7 +63,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'oidc_provider.middleware.SessionManagementMiddleware',
 ]
 
 ROOT_URLCONF = 'PHYAuth.urls'
@@ -119,13 +120,14 @@ USE_L10N = True
 
 USE_TZ = True
 
-SUB_PATH = '/'
+DOMAIN = CONFIG.get("DJANGO", "DOMAIN")
+SUBPATH = CONFIG.get("DJANGO", "SUBPATH")
 
-LOGIN_REDIRECT_URL = SUB_PATH
-LOGIN_URL = SUB_PATH + 'login'
-LOGOUT_REDIRECT_URL = SUB_PATH
+LOGIN_REDIRECT_URL = SUBPATH
+LOGIN_URL = SUBPATH + 'login'
+LOGOUT_REDIRECT_URL = SUBPATH
 
-SESSION_COOKIE_PATH = LANGUAGE_COOKIE_PATH = CSRF_COOKIE_PATH = SUB_PATH
+SESSION_COOKIE_PATH = LANGUAGE_COOKIE_PATH = CSRF_COOKIE_PATH = SUBPATH
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
@@ -137,11 +139,73 @@ STATICFILES_DIRS = [
     './static/'
 ]
 
-OIDC_USERINFO = 'users.oidc_provider_settings.userinfo'
-OIDC_EXTRA_SCOPE_CLAIMS = 'users.oidc_provider_settings.CustomScopeClaims'
-OIDC_SESSION_MANAGEMENT_ENABLE = True
+# Database
+# https://docs.djangoproject.com/en/3.1/ref/settings/#databases
+DATABASE_MAP = {
+    'sqlite': 'django.db.backends.sqlite3',
+    'mysql': 'django.db.backends.mysql',
+    'postgresql': 'django.db.backends.postgresql_psycopg2',
+    'oracle': 'django.db.backends.oracle',
+}
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+if CONFIG['DATABASE']['engine'] == 'sqlite':
+    DATABASES = {
+        'default': {
+            'ENGINE': DATABASE_MAP[CONFIG['DATABASE']['ENGINE']],
+            'NAME': BASE_DIR / 'db.sqlite3',
+            'OPTIONS': {
+                'timeout': 20,
+            }
+        }
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': DATABASE_MAP[CONFIG['DATABASE']['ENGINE']],
+            'NAME': CONFIG['DATABASE']['NAME'],
+            'USER': CONFIG['DATABASE']['USER'],
+            'PASSWORD': CONFIG['DATABASE']['PASSWORD'],
+            'HOST': CONFIG['DATABASE']['HOST'],
+            'PORT': CONFIG['DATABASE']['PORT'],
+        }
+    }
+
+if CONFIG.get('REDIS', 'PWD') != '':
+    REDIS_ADDRESS = ':{}@{}:{}'.format(CONFIG.get('REDIS', 'PWD'),
+                                       CONFIG.get('REDIS', 'HOST'),
+                                       CONFIG.get('REDIS', 'PORT'))
+else:
+    REDIS_ADDRESS = '{}:{}'.format(CONFIG.get('REDIS', 'HOST'),
+                                   CONFIG.get('REDIS', 'PORT'))
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://{}/{}".format(REDIS_ADDRESS, CONFIG.get('REDIS', 'NUM')),
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        }
+    }
+}
+
+# Redis Cache 过期设置
+REDIS_TIMEOUT = 7 * 24 * 60 * 60
+CUBES_REDIS_TIMEOUT = 60 * 60
+NEVER_REDIS_TIMEOUT = 365 * 24 * 60 * 60
+
+SESSION_COOKIE_AGE = 86400
+SESSION_ENGINE = "django.contrib.sessions.backends.cache"
+SESSION_CACHE_ALIAS = "default"
+
+OIDC_USERINFO = 'app.users.oidc_scope_claims.userinfo'
+OIDC_EXTRA_SCOPE_CLAIMS = 'app.users.oidc_scope_claims.CustomScopeClaims'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_SSL = CONFIG.getboolean('EMAIL', 'USE_SSL')
+EMAIL_HOST = CONFIG.get('EMAIL', 'HOST')
+EMAIL_PORT = CONFIG.getint('EMAIL', 'PORT')
+EMAIL_HOST_USER = CONFIG.get('EMAIL', 'USER')
+EMAIL_HOST_PASSWORD = CONFIG.get('EMAIL', 'PASSWORD')
+EMAIL_FROM = CONFIG.get('EMAIL', 'FROM')
 
 LOCALE_PATHS = [
     BASE_DIR / 'tpa_translation' / 'oidc_provider',
@@ -155,4 +219,20 @@ AUTHENTICATION_BACKENDS = [
     "app.pku_iaaa.auth_backends.AuthenticationBackend",
 ]
 
-SESSION_COOKIE_AGE = 86400
+# Broker配置，使用Redis作为消息中间件
+CELERY_BROKER_URL = 'amqp://{}:{}@{}:{}/{}'.format(
+    CONFIG.get('RABBIT_MQ', 'USER'),
+    CONFIG.get('RABBIT_MQ', 'PASSWORD'),
+    CONFIG.get('RABBIT_MQ', 'HOST'),
+    CONFIG.get('RABBIT_MQ', 'PORT'),
+    CONFIG.get('RABBIT_MQ', 'NAME'),
+)
+# Celery 配置
+if USE_TZ:
+    CELERY_TIMEZONE = TIME_ZONE
+CELERY_RESULT_BACKEND = 'django-db'
+CELERY_ACCEPT_CONTENT = ["json"]
+CELERY_TASK_SERIALIZER = "json"
+CELERY_RESULT_SERIALIZER = "json"
+CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
+CELERY_WORKER_MAX_TASKS_PER_CHILD = 100000  # 每个worker执行10w个任务就会被销毁，可防止内存泄露
