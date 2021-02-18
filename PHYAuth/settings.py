@@ -206,9 +206,12 @@ EMAIL_PORT = CONFIG.getint('EMAIL', 'PORT')
 EMAIL_HOST_USER = CONFIG.get('EMAIL', 'USER')
 EMAIL_HOST_PASSWORD = CONFIG.get('EMAIL', 'PASSWORD')
 EMAIL_FROM = CONFIG.get('EMAIL', 'FROM')
+if DEBUG:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 LOCALE_PATHS = [
     BASE_DIR / 'tpa_translation' / 'oidc_provider',
+    BASE_DIR / 'tpa_translation' / 'django_celery_beat',
     BASE_DIR / 'templates' / 'locale',
 ]
 
