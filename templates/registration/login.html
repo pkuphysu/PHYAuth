@@ -51,6 +51,7 @@
                         {{ form.password.help_text|safe }}
                     {% endif %}
                 </div>
+                <input type="hidden" name="next" value="{{ next }}"/>
                 <div class="row">
                     <div class="col-8"></div>
                     <div class="col-4">
@@ -63,7 +64,7 @@
             </form>
             {% translate 'or' %}
             <div class="social-auth-links text-center mt-2 mb-3">
-                <a href="{% url 'pku_iaaa:iaaa_login' %}" class="btn btn-block btn-pku">
+                <a href="{% url 'pku_iaaa:iaaa_login' %}?next={{ next|urlencode }}" class="btn btn-block btn-pku">
                     {% translate 'Sign in using PKU IAAA' %}
                 </a>
             </div>
