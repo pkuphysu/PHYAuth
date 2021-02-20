@@ -10,155 +10,157 @@
 {% endblock %}
 
 {% block content_wrapper_body %}
-    <div class="row">
-        <div class="col-md-4">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
 
-            <!-- Profile Image -->
-            <div class="card card-primary card-outline">
-                <div class="card-body box-profile">
-                    <div class="text-center">
-                        <img class="profile-user-img img-fluid img-circle"
-                             src="{% avatar_url size=128 %}"
-                             alt="User profile picture">
-                    </div>
-
-                    <h3 class="profile-username text-center">{{ user.get_full_name }}</h3>
-
-                    <p class="text-muted text-center">{{ user.get_is_teacher_display }}</p>
-
-                    <ul class="list-group list-group-unbordered mb-3">
-                        <li class="list-group-item">
-                            <b>{% field_name user 'username' %}</b> <a class="float-right">{{ user.username }}</a>
-                        </li>
-                        <li class="list-group-item">
-                            <b>{% field_name user 'email' %}</b> <a class="float-right">{{ user.email }}</a>
-                        </li>
-                        <li class="list-group-item">
-                            <b>{% field_name user 'preferred_email' %}</b> <a
-                                class="float-right">{{ user.preferred_email }}</a>
-                        </li>
-                        <li class="list-group-item">
-                            <b>{% field_name user 'nickname' %}</b> <a class="float-right">{{ user.nickname }}</a>
-                        </li>
-                        <li class="list-group-item">
-                            <b>{% field_name user 'website' %}</b> <a class="float-right">{{ user.website }}</a>
-                        </li>
-                        <li class="list-group-item">
-                            <b>{% field_name user 'gender' %}</b> <a
-                                class="float-right">{{ user.get_gender_display }}</a>
-                        </li>
-                        <li class="list-group-item">
-                            <b>{% field_name user 'birthdate' %}</b> <a class="float-right">{{ user.birthdate }}</a>
-                        </li>
-                        <li class="list-group-item">
-                            <b>{% field_name user 'phone_number' %}</b> <a
-                                class="float-right">{{ user.phone_number }}</a>
-                        </li>
-                        <li class="list-group-item">
-                            <b>{% field_name user 'address' %}</b> <a class="float-right">{{ user.address }}</a>
-                        </li>
-                        <li class="list-group-item">
-                            <b>{% field_name user 'in_school' %}</b> <a
-                                class="float-right">{{ user.get_in_school_display }}</a>
-                        </li>
-                        <li class="list-group-item">
-                            <b>{% field_name user 'is_banned' %}</b> <a
-                                class="float-right">{{ user.get_is_banned_display }}</a>
-                        </li>
-                    </ul>
-
-                    <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
-                </div>
-                <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
-        </div>
-        <!-- /.col -->
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header p-2">
-                    <ul class="nav nav-pills">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#settings" data-toggle="tab">
-                                {% translate 'Settings' context 'user profile' %}
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#timeline" data-toggle="tab">
-                                {% translate 'Recent activity' %}
-                            </a>
-                        </li>
-                    </ul>
-                </div><!-- /.card-header -->
-                <div class="card-body">
-                    <div class="tab-content">
-                        <div class="tab-pane active" id="settings">
-                            <form class="form-horizontal" method="post" action="{% url 'users:user-profile' %}">
-                                {% include 'adminlte/_form.html' %}
-                            </form>
+                <!-- Profile Image -->
+                <div class="card card-primary card-outline">
+                    <div class="card-body box-profile">
+                        <div class="text-center">
+                            <img class="profile-user-img img-fluid img-circle"
+                                 src="{% avatar_url size=128 %}"
+                                 alt="User profile picture">
                         </div>
-                        <!-- /.tab-pane -->
 
-                        <div class="tab-pane" id="timeline">
-                            <!-- The timeline -->
-                            <div class="timeline timeline-inverse">
-                                {% for consent in consents %}
-                                    <!-- timeline time label -->
-                                    <div class="time-label"><span
-                                            class="bg-primary">{{ consent.date_given|date }}</span>
-                                    </div>
-                                    <!-- /.timeline-label -->
-                                    <!-- timeline item -->
-                                    <div>
-                                        <i class="fas fa-user bg-info"></i>
+                        <h3 class="profile-username text-center">{{ user.get_full_name }}</h3>
 
-                                        <div class="timeline-item">
-                                            <span class="time"><i class="far fa-clock"></i>{{ consent.date_given|time }}</span>
+                        <p class="text-muted text-center">{{ user.get_is_teacher_display }}</p>
 
-                                            <h3 class="timeline-header">
-                                                {% translate 'Authorize' %}
-                                                <a href="{{ consent.client.website_url }}">
-                                                    {{ consent.client.name }}
-                                                </a> {% translate 'to access your information' %}
-                                            </h3>
+                        <ul class="list-group list-group-unbordered mb-3">
+                            <li class="list-group-item">
+                                <b>{% field_name user 'username' %}</b> <a class="float-right">{{ user.username }}</a>
+                            </li>
+                            <li class="list-group-item">
+                                <b>{% field_name user 'email' %}</b> <a class="float-right">{{ user.email }}</a>
+                            </li>
+                            <li class="list-group-item">
+                                <b>{% field_name user 'preferred_email' %}</b> <a
+                                    class="float-right">{{ user.preferred_email }}</a>
+                            </li>
+                            <li class="list-group-item">
+                                <b>{% field_name user 'nickname' %}</b> <a class="float-right">{{ user.nickname }}</a>
+                            </li>
+                            <li class="list-group-item">
+                                <b>{% field_name user 'website' %}</b> <a class="float-right">{{ user.website }}</a>
+                            </li>
+                            <li class="list-group-item">
+                                <b>{% field_name user 'gender' %}</b> <a
+                                    class="float-right">{{ user.get_gender_display }}</a>
+                            </li>
+                            <li class="list-group-item">
+                                <b>{% field_name user 'birthdate' %}</b> <a class="float-right">{{ user.birthdate }}</a>
+                            </li>
+                            <li class="list-group-item">
+                                <b>{% field_name user 'phone_number' %}</b> <a
+                                    class="float-right">{{ user.phone_number }}</a>
+                            </li>
+                            <li class="list-group-item">
+                                <b>{% field_name user 'address' %}</b> <a class="float-right">{{ user.address }}</a>
+                            </li>
+                            <li class="list-group-item">
+                                <b>{% field_name user 'in_school' %}</b> <a
+                                    class="float-right">{{ user.get_in_school_display }}</a>
+                            </li>
+                            <li class="list-group-item">
+                                <b>{% field_name user 'is_banned' %}</b> <a
+                                    class="float-right">{{ user.get_is_banned_display }}</a>
+                            </li>
+                        </ul>
 
-                                            <div class="timeline-body">
-                                                {% with consent.scope|scopes_information as scopes %}
-                                                    {% for scope in scopes %}
-                                                        <dt class="col-sm-4">{{ scope.name }}</dt>
-                                                        <dd class="col-sm-8"><i>{{ scope.description }}</i></dd>
-                                                    {% endfor %}
-                                                {% endwith %}
-                                            </div>
-                                            <div class="timeline-footer">
-                                                {% if not consent.has_expired %}
-                                                    {% blocktranslate with etime=consent.expires_at|date trimmed %}
-                                                        This consent will expire at {{ etime }}.
-                                                    {% endblocktranslate %}
-                                                {% else %}
-                                                    {% blocktranslate with etime=consent.expires_at|date trimmed %}
-                                                        This consent has been expired at {{ etime }}.
-                                                    {% endblocktranslate %}
-                                                {% endif %}
+                        <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header p-2">
+                        <ul class="nav nav-pills">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#settings" data-toggle="tab">
+                                    {% translate 'Settings' context 'user profile' %}
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#timeline" data-toggle="tab">
+                                    {% translate 'Recent activity' %}
+                                </a>
+                            </li>
+                        </ul>
+                    </div><!-- /.card-header -->
+                    <div class="card-body">
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="settings">
+                                <form class="form-horizontal" method="post" action="{% url 'users:user-profile' %}">
+                                    {% include 'adminlte/_form.html' %}
+                                </form>
+                            </div>
+                            <!-- /.tab-pane -->
+
+                            <div class="tab-pane" id="timeline">
+                                <!-- The timeline -->
+                                <div class="timeline timeline-inverse">
+                                    {% for consent in consents %}
+                                        <!-- timeline time label -->
+                                        <div class="time-label"><span
+                                                class="bg-primary">{{ consent.date_given|date }}</span>
+                                        </div>
+                                        <!-- /.timeline-label -->
+                                        <!-- timeline item -->
+                                        <div>
+                                            <i class="fas fa-user bg-info"></i>
+
+                                            <div class="timeline-item">
+                                                <span class="time"><i
+                                                        class="far fa-clock"></i>{{ consent.date_given|time }}</span>
+
+                                                <h3 class="timeline-header">
+                                                    {% translate 'Authorize' %}
+                                                    <a href="{{ consent.client.website_url }}">
+                                                        {{ consent.client.name }}
+                                                    </a> {% translate 'to access your information' %}
+                                                </h3>
+
+                                                <div class="timeline-body">
+                                                    {% with consent.scope|scopes_information as scopes %}
+                                                        {% for scope in scopes %}
+                                                            <dt class="col-sm-4">{{ scope.name }}</dt>
+                                                            <dd class="col-sm-8"><i>{{ scope.description }}</i></dd>
+                                                        {% endfor %}
+                                                    {% endwith %}
+                                                </div>
+                                                <div class="timeline-footer">
+                                                    {% if not consent.has_expired %}
+                                                        {% blocktranslate with etime=consent.expires_at|date trimmed %}
+                                                            This consent will expire at {{ etime }}.
+                                                        {% endblocktranslate %}
+                                                    {% else %}
+                                                        {% blocktranslate with etime=consent.expires_at|date trimmed %}
+                                                            This consent has been expired at {{ etime }}.
+                                                        {% endblocktranslate %}
+                                                    {% endif %}
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                        <!-- END timeline item -->
+                                    {% endfor %}
                                     <!-- END timeline item -->
-                                {% endfor %}
-                                <!-- END timeline item -->
-                                <div>
-                                    <i class="far fa-clock bg-gray"></i>
+                                    <div>
+                                        <i class="far fa-clock bg-gray"></i>
+                                    </div>
                                 </div>
                             </div>
+                            <!-- /.tab-pane -->
                         </div>
-                        <!-- /.tab-pane -->
-                    </div>
-                    <!-- /.tab-content -->
-                </div><!-- /.card-body -->
+                        <!-- /.tab-content -->
+                    </div><!-- /.card-body -->
+                </div>
+                <!-- /.card -->
             </div>
-            <!-- /.card -->
+            <!-- /.col -->
         </div>
-        <!-- /.col -->
-
     </div>
 {% endblock %}

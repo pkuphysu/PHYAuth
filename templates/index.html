@@ -167,8 +167,8 @@
 
                 <!-- Main content -->
                 <section class="content">
-                    <div class="container-fluid">
-                        {% block content_wrapper_body %}
+                    {% block content_wrapper_body %}
+                        <div class="container-fluid">
                             <div class="row">
                                 <div class="col-12">
                                     <!-- Default box -->
@@ -199,8 +199,8 @@
                                     <!-- /.card -->
                                 </div>
                             </div>
-                        {% endblock content_wrapper_body %}
-                    </div>
+                        </div>
+                    {% endblock content_wrapper_body %}
                 </section>
                 <!-- /.content -->
             </div>
