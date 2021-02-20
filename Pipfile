@@ -13,6 +13,7 @@ django-celery-beat = "*"
 mysqlclient = "*"
 configparser = "*"
 django-redis = "*"
+django-bootstrap-breadcrumbs = "*"
 
 [dev-packages]
 

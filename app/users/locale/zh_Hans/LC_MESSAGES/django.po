@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-16 22:25+0800\n"
+"POT-Creation-Date: 2021-02-20 17:20+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,7 +32,7 @@ msgstr "重要日期"
 
 #: .\app\users\admin.py:19
 msgid "Account Status"
-msgstr ""
+msgstr "账户状态"
 
 #: .\app\users\admin.py:32
 msgid "Full Name"
@@ -93,8 +93,6 @@ msgid "birthdate"
 msgstr "生日"
 
 #: .\app\users\models.py:56
-#, fuzzy
-#| msgid "phone_number"
 msgid "phone number"
 msgstr "电话号码"
 
@@ -137,13 +135,45 @@ msgstr "是否在校"
 msgid "Designate whether the user is in school."
 msgstr "指明用户是否为老师。"
 
-#: .\app\users\oidc_provider_settings.py:30
+#: .\app\users\oidc_scope_claims.py:30
 msgid "Extra"
 msgstr "更多"
 
-#: .\app\users\oidc_provider_settings.py:31
+#: .\app\users\oidc_scope_claims.py:31
 msgid "Extra information."
 msgstr "更多信息"
+
+#: .\app\users\templates\users\user_detail.html:5
+#: .\app\users\templates\users\user_detail.html:9
+msgid "User Profile"
+msgstr "个人资料"
+
+#: .\app\users\templates\users\user_detail.html:83
+msgctxt "user profile"
+msgid "Settings"
+msgstr "设置"
+
+#: .\app\users\templates\users\user_detail.html:88
+msgid "Recent activity"
+msgstr "最近活动"
+
+#: .\app\users\templates\users\user_detail.html:119
+msgid "Authorize"
+msgstr "授权"
+
+#: .\app\users\templates\users\user_detail.html:122
+msgid "to access your information"
+msgstr "访问你的信息"
+
+#: .\app\users\templates\users\user_detail.html:135
+#, python-format
+msgid "This consent will expire at %(etime)s."
+msgstr "这个授权将在 %(etime)s 过期。"
+
+#: .\app\users\templates\users\user_detail.html:139
+#, python-format
+msgid "This consent has been expired at %(etime)s."
+msgstr "这个授权已在 %(etime)s 过期。"
 
 #: .\app\users\validators.py:9
 msgid ""

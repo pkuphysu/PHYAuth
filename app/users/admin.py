@@ -36,6 +36,4 @@ class UserAdmin(AbstractUserAdmin):
     search_fields = ('username', 'first_name', 'last_name', 'email', 'nickname')
 
 
-
-
 admin.site.register(User, UserAdmin)

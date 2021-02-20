@@ -45,6 +45,7 @@ THIRD_PARTY_APPS = [
     'oidc_provider',
     'django_celery_results',
     'django_celery_beat',
+    'django_bootstrap_breadcrumbs',
 ]
 
 LOCAL_APPS = [

@@ -2,6 +2,8 @@ from hashlib import md5
 
 from django import template
 
+from ..tasks import get_scopes_information
+
 register = template.Library()
 
 
@@ -24,11 +26,45 @@ def form_mod(field, classes=None, placeholder=None):
         attr.update({'placeholder': placeholder})
     return field.as_widget(attrs=attr)
 
-# @register.filter(name='add_class')
-# def add_class(value, arg="form-control"):
-#     return value.as_widget(attrs={'class': arg})
-#
-#
+
+@register.simple_tag
+def model_name(value):
+    '''
+    Django template filter which returns the verbose name of a model.
+    '''
+    if hasattr(value, 'model'):
+        value = value.model
+
+    return value._meta.verbose_name.title()
+
+
+@register.simple_tag
+def model_name_plural(value):
+    '''
+    Django template filter which returns the plural verbose name of a model.
+    '''
+    if hasattr(value, 'model'):
+        value = value.model
+
+    return value._meta.verbose_name_plural.title()
+
+
+@register.simple_tag
+def field_name(value, field):
+    '''
+    Django template filter which returns the verbose name of an object's,
+    model's or related manager's field.
+    '''
+    if hasattr(value, 'model'):
+        value = value.model
+
+    return value._meta.get_field(field).verbose_name.title()
+
+
+@register.filter
+def scopes_information(scopes):
+    return get_scopes_information(scopes)
+
 # @register.filter(name='add_placeholder')
 # def add_placeholder(value, arg, arg2=None):
 #     if arg2 is None:
