@@ -1,0 +1,40 @@
+{% extends 'users/client_list.html' %}
+{% load django_bootstrap_breadcrumbs %}
+
+{% block title %}{% translate 'Create Client' %}{% endblock %}
+
+{% block content_wrapper_breadcrumb %}
+    {{ block.super }}
+    {% breadcrumb_for 'users:client-create' %}{% trans "Create Client" %}{% endbreadcrumb_for %}
+{% endblock %}
+
+{% block content_wrapper_header %}{% translate 'Create Client' %}{% endblock %}
+
+{% block content_wrapper_body %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card-info">
+                    <div class="card-header">
+                        <h3 class="card-title">Horizontal Form</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <!-- form start -->
+                    <form class="" method="post" action="{% url 'users:client-create' %}">
+                        <div class="card-body">
+                            {% include 'adminlte/_form.html' %}
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-info">Sign in</button>
+                            <button type="submit" class="btn btn-default float-right">Cancel</button>
+                        </div>
+                        <!-- /.card-footer -->
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

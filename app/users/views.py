@@ -1,11 +1,11 @@
+from django.contrib.auth import get_user_model
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.shortcuts import render
 from django.urls import reverse
-from django.views.generic import UpdateView, CreateView
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.auth import get_user_model
+from django.views.generic import UpdateView, CreateView, ListView
+from oidc_provider.models import UserConsent, Client
 
-from .forms import UserForm
-from oidc_provider.models import UserConsent
+from .forms import UserForm, ClientForm
 
 UserModel = get_user_model()
 
@@ -65,5 +65,44 @@ class UserProfileView(LoginRequiredMixin, UpdateView):
         return reverse('users:user-profile')
 
 
-class ClientView(LoginRequiredMixin, CreateView):
-    pass
+class ClientListView(PermissionRequiredMixin, ListView):
+    template_name = 'users/client_list.html'
+    permission_required = 'oidc_provider.view_client'
+    permission_denied_message = '您不是开发者，无权查看应用，请联系管理员！'
+
+    def get_queryset(self):
+        return Client.objects.filter(owner=self.request.user)
+
+
+class ClientCreateView(PermissionRequiredMixin, CreateView):
+    model = Client
+    form_class = ClientForm
+    template_name = 'users/client_create.html'
+    permission_required = 'oidc_provider.add_client'
+    permission_denied_message = '您不是开发者，无权申请应用，请联系管理员！'
+
+    def get_form_kwargs(self):
+        """Return the keyword arguments for instantiating the form."""
+        kwargs = super().get_form_kwargs()
+        kwargs.update({'user': self.request.user})
+        return kwargs
+
+    def get_success_url(self):
+        return reverse('users:index')
+
+
+class ClientUpdateView(PermissionRequiredMixin, UpdateView):
+    model = Client
+    form_class = ClientForm
+    template_name = 'users/client_update.html'
+    permission_required = 'oidc_provider.change_client'
+    permission_denied_message = '您不是开发者，无权申请应用，请联系管理员！'
+
+    def get_form_kwargs(self):
+        """Return the keyword arguments for instantiating the form."""
+        kwargs = super().get_form_kwargs()
+        kwargs.update({'user': self.request.user})
+        return kwargs
+
+    def get_success_url(self):
+        return reverse('users:index')

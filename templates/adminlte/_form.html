@@ -1,34 +1,33 @@
 {% load user_helper %}
 {% csrf_token %}
 {% for field in form %}
-    <div class="form-group row">
-        <label for="{{ field.id_for_label }}" class="col-sm-2 col-form-label">
+    <div class="form-group">
+        <label for="{{ field.id_for_label }}">
             {{ field.label }}
             {% if field.field.required %}
                 <span class="text-red">*</span>
             {% endif %}
         </label>
-        <div class="col-sm-7">
-            {% if field.is_readonly %}
-                <div class="readonly"
-                     style="margin-top: 7px;">{{ field.contents }}</div>
+        {% if field.is_readonly %}
+            <div class="readonly"
+                 style="margin-top: 7px;">{{ field.contents }}</div>
+        {% else %}
+            {% if field.widget_type == "checkbox" %}
+                {{ field }}
+            {% elif field.widget_type == '' %}
             {% else %}
                 {% form_mod field 'form-control' %}
             {% endif %}
-            {% if field.field.help_text %}
-                <div class="help-block">{{ field.field.help_text|safe }}</div>
-            {% endif %}
-        </div>
-        <div class="col-sm-3">
-            <div class="help-block text-red">
-                {% if not field.fields|length_is:'1' and not field.is_readonly %}
-                    {{ field.errors }}{% endif %}
-            </div>
+
+        {% endif %}
+        {% if field.field.help_text %}
+            <div class="help-block">{{ field.field.help_text|safe }}</div>
+        {% endif %}
+
+        <div class="help-block text-red">
+            {% if not field.fields|length_is:'1' and not field.is_readonly %}
+                {{ field.errors }}{% endif %}
+
         </div>
     </div>
 {% endfor %}
-<div class="form-group row">
-    <div class="offset-sm-2 col-sm-10">
-        <button type="submit" class="btn btn-danger">{% translate 'Submit' %}</button>
-    </div>
-</div>

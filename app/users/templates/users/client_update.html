@@ -1,0 +1,24 @@
+{% extends 'users/client_list.html' %}
+{% load django_bootstrap_breadcrumbs %}
+
+{% block title %}{% translate 'Update Client' %}{% endblock %}
+
+{% block content_wrapper_breadcrumb %}
+    {{ block.super }}
+    {% breadcrumb_for 'users:client-create' %}{% trans "Update Client" %}{% endbreadcrumb_for %}
+{% endblock %}
+
+{% block content_wrapper_header %}{% translate 'Update Client' %}{% endblock %}
+
+{% block content_wrapper_body %}
+    <div class="container-fluid">
+        <div class="row text-center">
+            <div class="col-md-6">
+                <form action="{% url 'users:client-create' %}" method="post">
+                    {% include 'adminlte/_form.html' %}
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

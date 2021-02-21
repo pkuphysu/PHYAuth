@@ -131,6 +131,14 @@
                                         </p>
                                     </a>
                                 </li>
+                                <li class="nav-item">
+                                    <a href="{% url 'users:client-create' %}" class="nav-link">
+                                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                                        <p>
+                                            {% translate 'Create Client' %}
+                                        </p>
+                                    </a>
+                                </li>
                             {% endblock nav_siderbar_links %}
 
                         </ul>

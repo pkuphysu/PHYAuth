@@ -88,6 +88,8 @@ TEMPLATES = [
     },
 ]
 
+FORM_RENDERER = 'django.forms.renderers.TemplatesSetting'
+
 WSGI_APPLICATION = 'PHYAuth.wsgi.application'
 
 # Password validation

@@ -1,5 +1,10 @@
-from django.contrib.auth.forms import UserCreationForm
+import uuid
+
 from django import forms
+from django.contrib.auth.forms import UserCreationForm
+from oidc_provider.admin import ClientForm as OIDC_ClientForm
+from oidc_provider.models import Client
+
 from .models import User
 
 
@@ -30,14 +35,6 @@ class UserForm(forms.ModelForm):
             'last_login',
         ]
 
-        # widgets = {
-        #     # 'username': forms.TextInput(attrs={'disabled': True}),
-        #     'is_teacher': forms.Select(attrs={'disabled': True}),
-        #     'in_school': forms.Select(attrs={'disabled': True}),
-        #     'is_banned': forms.Select(attrs={'disabled': True}),
-        #     'last_login': forms.TextInput(attrs={'disabled': True}),
-        # }
-
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['username'].disabled = True
@@ -45,3 +42,24 @@ class UserForm(forms.ModelForm):
         self.fields['is_teacher'].disabled = True
         self.fields['is_banned'].disabled = True
         self.fields['last_login'].disabled = True
+
+
+class ClientForm(OIDC_ClientForm):
+    class Meta(OIDC_ClientForm.Meta):
+        model = Client
+        exclude = []
+
+    def __init__(self, *args, **kwargs):
+        self.user = kwargs.pop('user', None)
+        print(self.user)
+        super().__init__(*args, **kwargs)
+        self.fields['owner'].required = False
+        self.fields['owner'].initial = self.user
+        self.fields['owner'].widget.attrs['disabled'] = 'true'
+        self.fields['owner'].queryset = User.objects.filter(username=self.user.username)
+
+    def clean_client_id(self):
+        return str(uuid.uuid1())
+
+    def clean_owner(self):
+        return self.user
