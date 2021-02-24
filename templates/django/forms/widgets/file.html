@@ -1,0 +1,5 @@
+<div class="input-group">
+    <div class="custom-file"><input type="{{ widget.type }}" name="{{ widget.name }}" {% if widget.value != None %}
+                                    value="{{ widget.value|stringformat:'s' }}"{% endif %} {% include "django/forms/widgets/attrs.html" %}><label
+            class="custom-file-label">{% translate 'Choose file' %}</label></div>
+</div>

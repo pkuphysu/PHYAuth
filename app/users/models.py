@@ -30,7 +30,7 @@ class User(AbstractUser):
         blank=True
     )
 
-    website = models.CharField(
+    website = models.URLField(
         _('website'),
         max_length=100,
         blank=True

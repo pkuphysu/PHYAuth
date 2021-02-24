@@ -132,12 +132,21 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{% url 'users:client-create' %}" class="nav-link">
-                                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                                    <a href="#" class="nav-link">
+                                        <i class="nav-icon fab fa-app-store-ios"></i>
                                         <p>
-                                            {% translate 'Create Client' %}
+                                            {% translate 'My Client' %}
+                                            <i class="right fas fa-angle-left"></i>
                                         </p>
                                     </a>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                            <a href="{% url 'users:client-create' %}" class="nav-link">
+                                                <i class="far fa-circle nav-icon"></i>
+                                                <p>{% translate 'Create Client' %}</p>
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </li>
                             {% endblock nav_siderbar_links %}
 
