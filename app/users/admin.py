@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as AbstractUserAdmin
 from django.utils.translation import gettext_lazy as _
 
-from .models import User
+from .models import User, TopLink, Announcement
 
 
 class UserAdmin(AbstractUserAdmin):
@@ -37,3 +37,22 @@ class UserAdmin(AbstractUserAdmin):
 
 
 admin.site.register(User, UserAdmin)
+
+
+@admin.register(TopLink)
+class TopLinkAdmin(admin.ModelAdmin):
+    list_display = [
+        "name",
+        "url",
+        "rank"
+    ]
+
+
+@admin.register(Announcement)
+class AnnouncementAdmin(admin.ModelAdmin):
+    list_display = [
+        "type",
+        "title",
+        "content",
+        "rank"
+    ]

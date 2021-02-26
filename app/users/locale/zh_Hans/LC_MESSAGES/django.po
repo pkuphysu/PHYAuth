@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-26 23:09+0800\n"
+"POT-Creation-Date: 2021-02-27 02:09+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -50,7 +50,8 @@ msgstr "应用ID将随机生成。"
 msgid ""
 "Client Secret will be generated randomly. If you want to get a new secret, "
 "please switch the client to Public and save, then switch back and save."
-msgstr "应用密钥将随机生成。如果你需要修改密钥，请先修改应用类型保存后再修改回来。"
+msgstr ""
+"应用密钥将随机生成。如果你需要修改密钥，请先修改应用类型保存后再修改回来。"
 
 #: .\app\users\models.py:11
 msgid "username"
@@ -140,10 +141,90 @@ msgid "is in school"
 msgstr "是否在校"
 
 #: .\app\users\models.py:99
-#, fuzzy
-#| msgid "Designates whether the user is a teacher."
 msgid "Designate whether the user is in school."
-msgstr "指明用户是否为老师。"
+msgstr "指明用户是否为在校。"
+
+#: .\app\users\models.py:124
+#, fuzzy
+#| msgid "Client Name"
+msgid "Link Name"
+msgstr "应用名"
+
+#: .\app\users\models.py:128
+msgid "Link URL"
+msgstr "链接 URL"
+
+#: .\app\users\models.py:132
+msgid "Link Rank"
+msgstr "链接排序"
+
+#: .\app\users\models.py:133
+msgid ""
+"It is the default order of the links, they should not be same!\n"
+"The smaller it is, the more front it will be.\n"
+"If some are the same, the earlier create one will appear firstly."
+msgstr ""
+"这是默认的链接的排序，不应该相同！数字越小越靠前，如果某几个相同，则按照创建"
+"先后排序。"
+
+#: .\app\users\models.py:139
+msgid "Top Link"
+msgstr "顶部链接"
+
+#: .\app\users\models.py:140
+msgid "Top Links"
+msgstr "顶部链接"
+
+#: .\app\users\models.py:145
+msgid "Announcement Type"
+msgstr "公告类型"
+
+#: .\app\users\models.py:148
+msgid "success"
+msgstr "成功"
+
+#: .\app\users\models.py:149
+msgid "warning"
+msgstr "警告"
+
+#: .\app\users\models.py:150
+msgid "info"
+msgstr "信息"
+
+#: .\app\users\models.py:151
+msgid "danger"
+msgstr "危险"
+
+#: .\app\users\models.py:153
+msgid "success-green, warning-yellow, info-blue, danger-red"
+msgstr "成功-绿色，警告-黄色，信息-蓝色，危险-红色"
+
+#: .\app\users\models.py:157
+msgid "Announcement Title"
+msgstr "公告标题"
+
+#: .\app\users\models.py:162
+msgid "Announcement Content"
+msgstr "公告内容"
+
+#: .\app\users\models.py:166
+msgid "Announcement Rank"
+msgstr "公告排序"
+
+#: .\app\users\models.py:167
+msgid ""
+"It is the default order of the announcement!\n"
+"The smaller it is, the more front it will be.\n"
+"If some are the same, the later create one will appear firstly."
+msgstr "这是公告的默认排序，越小越靠前。如果一些相同，则越晚发布的公告越靠前。"
+
+#: .\app\users\models.py:173
+msgid "Announcement"
+msgstr "公告"
+
+#: .\app\users\models.py:174
+msgid "Announcements"
+msgstr "公告"
 
 #: .\app\users\oidc_scope_claims.py:30
 msgid "Extra"

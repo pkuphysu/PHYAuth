@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-26 23:09+0800\n"
+"POT-Creation-Date: 2021-02-27 02:09+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Rainshaw <rxg@live.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -77,45 +77,49 @@ msgid "Choose file"
 msgstr "选择文件"
 
 #: .\templates\index.html:5 .\templates\index.html:26
-#: .\templates\index.html:177 .\templates\index.html:182
+#: .\templates\index.html:183 .\templates\index.html:188
 msgid "Home"
 msgstr "主页"
 
-#: .\templates\index.html:65
+#: .\templates\index.html:71
 msgid "Change Password"
 msgstr "修改密码"
 
-#: .\templates\index.html:69
+#: .\templates\index.html:75
 msgid "Sign Out"
 msgstr "登出"
 
-#: .\templates\index.html:76 .\templates\registration\login.html:4
+#: .\templates\index.html:82 .\templates\registration\login.html:4
 #: .\templates\registration\login.html:59
 #: .\templates\registration\password_reset_form.html:51
 msgid "Sign In"
 msgstr "登入"
 
-#: .\templates\index.html:97
+#: .\templates\index.html:103
 msgid "Uniform Identity Auth"
 msgstr "统一认证"
 
-#: .\templates\index.html:130
+#: .\templates\index.html:136
 msgid "User Profile"
 msgstr "用户资料"
 
-#: .\templates\index.html:138
+#: .\templates\index.html:144
 msgid "My Client"
 msgstr "我的应用"
 
-#: .\templates\index.html:146
+#: .\templates\index.html:152
 msgid "Client List"
 msgstr "应用列表"
 
-#: .\templates\index.html:152
+#: .\templates\index.html:158
 msgid "Create Client"
 msgstr "创建应用"
 
-#: .\templates\index.html:242
+#: .\templates\index.html:206
+msgid "Announcement"
+msgstr "公告"
+
+#: .\templates\index.html:249
 msgid "All rights reserved."
 msgstr "版权所有."
 

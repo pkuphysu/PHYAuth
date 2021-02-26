@@ -25,6 +25,12 @@
                         <li class="nav-item d-none d-sm-inline-block">
                             <a href="{% url 'users:index' %}" class="nav-link">{% translate 'Home' %}</a>
                         </li>
+                        {% for top_link in top_links %}
+                            <li class="nav-item d-none d-sm-inline-block">
+                                <a href="{{ top_link.url }}" class="nav-link">{{ top_link.name }}</a>
+                            </li>
+                        {% endfor %}
+
                     </ul>
                 {% endblock nav_header_left %}
 
@@ -197,27 +203,28 @@
                                     <!-- Default box -->
                                     <div class="card">
                                         <div class="card-header">
-                                            <h3 class="card-title">Title</h3>
-
-                                            <div class="card-tools">
-                                                <button type="button" class="btn btn-tool" data-card-widget="collapse"
-                                                        title="Collapse">
-                                                    <i class="fas fa-minus"></i>
-                                                </button>
-                                                <button type="button" class="btn btn-tool" data-card-widget="remove"
-                                                        title="Remove">
-                                                    <i class="fas fa-times"></i>
-                                                </button>
-                                            </div>
+                                            <h3 class="card-title">{% translate 'Announcement' %}</h3>
                                         </div>
                                         <div class="card-body">
-                                            Start creating your amazing application!
+                                            {% for announcement in announcements %}
+                                                <div class="alert alert-{{ announcement.type }}">
+                                                    <h5>
+                                                        {% if announcement.type == 'danger' %}
+                                                            <i class="icon fas fa-ban"></i>
+                                                        {% elif announcement.type == 'info' %}
+                                                            <i class="icon fas fa-info"></i>
+                                                        {% elif announcement.type == 'warning' %}
+                                                            <i class="icon fas fa-exclamation-triangle"></i>
+                                                        {% else %}
+                                                            <i class="icon fas fa-check"></i>
+                                                        {% endif %}
+                                                        {{ announcement.title|safe }}
+                                                    </h5>
+                                                    {{ announcement.content|safe }}
+                                                </div>
+                                            {% endfor %}
                                         </div>
                                         <!-- /.card-body -->
-                                        <div class="card-footer">
-                                            Footer
-                                        </div>
-                                        <!-- /.card-footer-->
                                     </div>
                                     <!-- /.card -->
                                 </div>
