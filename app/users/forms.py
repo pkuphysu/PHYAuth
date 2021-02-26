@@ -97,10 +97,11 @@ class ClientForm(OIDC_ClientForm):
     def __init__(self, *args, **kwargs):
         self.user = kwargs.pop('user', None)
         super().__init__(*args, **kwargs)
-        self.fields['owner'].required = False
-        self.fields['owner'].initial = self.user
+        if self.user:
+            self.fields['owner'].required = False
+            self.fields['owner'].initial = self.user
+            self.fields['owner'].queryset = User.objects.filter(username=self.user.username)
         self.fields['owner'].disabled = True
-        self.fields['owner'].queryset = User.objects.filter(username=self.user.username)
 
         self.fields['website_url'].required = True
         self.fields['require_consent'].disabled = True

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-20 17:20+0800\n"
+"POT-Creation-Date: 2021-02-26 23:09+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Rainshaw <rxg@live.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,69 +18,68 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: .\templates\400.html:3 .\templates\400.html:13 .\templates\400.html:19
+#: .\templates\400.html:4 .\templates\400.html:6 .\templates\400.html:10
 msgid "400 Bad Request"
 msgstr ""
 
-#: .\templates\400.html:17 .\templates\403.html:17 .\templates\404.html:17
-#: .\templates\500.html:17 .\templates\index.html:5 .\templates\index.html:26
-#: .\templates\index.html:154 .\templates\index.html:159
-msgid "Home"
-msgstr "主页"
-
-#: .\templates\400.html:33
+#: .\templates\400.html:19
 msgid "Oops! Your request is illegal."
 msgstr "哎呀！你发送了一个非法请求。"
 
-#: .\templates\400.html:36 .\templates\403.html:38 .\templates\404.html:38
-#: .\templates\500.html:36
+#: .\templates\400.html:22 .\templates\403.html:25 .\templates\404.html:26
+#: .\templates\500.html:22
 msgid "If you have any question, please contact us!"
 msgstr "如果你有任何疑问，请联系我们。"
 
-#: .\templates\400.html:37 .\templates\403.html:39 .\templates\404.html:39
-#: .\templates\500.html:37
+#: .\templates\400.html:23 .\templates\403.html:26 .\templates\404.html:27
+#: .\templates\500.html:23
 msgid "Return to home"
 msgstr "返回主页"
 
-#: .\templates\403.html:3 .\templates\403.html:13 .\templates\403.html:19
+#: .\templates\403.html:4 .\templates\403.html:6 .\templates\403.html:10
 msgid "403 Forbidden"
 msgstr ""
 
-#: .\templates\403.html:33
+#: .\templates\403.html:19
 msgid "Oops! Your are not allowed to view this page."
 msgstr "哎呀！你不能访问此页面。"
 
-#: .\templates\403.html:36 .\templates\404.html:36
+#: .\templates\403.html:22 .\templates\404.html:23
 msgid "This is the exception info:"
 msgstr "这是错误信息："
 
-#: .\templates\404.html:3 .\templates\404.html:13 .\templates\404.html:19
+#: .\templates\404.html:5 .\templates\404.html:7 .\templates\404.html:11
 msgid "404 Not Found"
 msgstr ""
 
-#: .\templates\404.html:33
+#: .\templates\404.html:20
 msgid "Oops! Page not found."
 msgstr "哎呀！页面没有找到"
 
-#: .\templates\500.html:3 .\templates\500.html:13 .\templates\500.html:19
+#: .\templates\500.html:4 .\templates\500.html:6 .\templates\500.html:10
 msgid "500 Server Error"
 msgstr ""
 
-#: .\templates\500.html:33
+#: .\templates\500.html:19
 msgid "Oops! Something went wrong."
 msgstr "哎呀！服务器出错了。"
 
-#: .\templates\500.html:35
+#: .\templates\500.html:21
 msgid "We will work on fixing that right away."
 msgstr "我们很快会修复此问题。"
-
-#: .\templates\adminlte\_form.html:32
-msgid "Submit"
-msgstr ""
 
 #: .\templates\base.html:11
 msgid "Uniform Identity Authentication of the School of Physics"
 msgstr "物理学院统一身份认证"
+
+#: .\templates\django\forms\widgets\file.html:4
+msgid "Choose file"
+msgstr "选择文件"
+
+#: .\templates\index.html:5 .\templates\index.html:26
+#: .\templates\index.html:177 .\templates\index.html:182
+msgid "Home"
+msgstr "主页"
 
 #: .\templates\index.html:65
 msgid "Change Password"
@@ -104,7 +103,19 @@ msgstr "统一认证"
 msgid "User Profile"
 msgstr "用户资料"
 
-#: .\templates\index.html:219
+#: .\templates\index.html:138
+msgid "My Client"
+msgstr "我的应用"
+
+#: .\templates\index.html:146
+msgid "Client List"
+msgstr "应用列表"
+
+#: .\templates\index.html:152
+msgid "Create Client"
+msgstr "创建应用"
+
+#: .\templates\index.html:242
 msgid "All rights reserved."
 msgstr "版权所有."
 

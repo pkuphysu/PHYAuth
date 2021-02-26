@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-20 17:20+0800\n"
+"POT-Creation-Date: 2021-02-26 23:09+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -41,6 +41,16 @@ msgstr "姓名"
 #: .\app\users\apps.py:7
 msgid "user management"
 msgstr "用户管理"
+
+#: .\app\users\forms.py:91
+msgid "Client ID will be generated randomly."
+msgstr "应用ID将随机生成。"
+
+#: .\app\users\forms.py:92
+msgid ""
+"Client Secret will be generated randomly. If you want to get a new secret, "
+"please switch the client to Public and save, then switch back and save."
+msgstr "应用密钥将随机生成。如果你需要修改密钥，请先修改应用类型保存后再修改回来。"
 
 #: .\app\users\models.py:11
 msgid "username"
@@ -143,34 +153,91 @@ msgstr "更多"
 msgid "Extra information."
 msgstr "更多信息"
 
+#: .\app\users\templates\users\client_create.html:4
+#: .\app\users\templates\users\client_create.html:8
+#: .\app\users\templates\users\client_create.html:11
+msgid "Create Client"
+msgstr "创建应用"
+
+#: .\app\users\templates\users\client_create.html:25
+#: .\app\users\templates\users\client_update.html:25
+#: .\app\users\templates\users\user_detail.html:102
+msgid "Submit"
+msgstr "提交"
+
+#: .\app\users\templates\users\client_list.html:4
+#: .\app\users\templates\users\client_list.html:8
+#: .\app\users\templates\users\client_list.html:11
+msgid "Client List"
+msgstr "应用列表"
+
+#: .\app\users\templates\users\client_list.html:23
+msgid "Client Name"
+msgstr "应用名"
+
+#: .\app\users\templates\users\client_list.html:24
+msgid "Client ID"
+msgstr "应用 ID"
+
+#: .\app\users\templates\users\client_list.html:25
+msgid "Client Secret"
+msgstr "应用密钥"
+
+#: .\app\users\templates\users\client_list.html:26
+msgid "Client Type"
+msgstr "应用类型"
+
+#: .\app\users\templates\users\client_list.html:27
+msgid "Reuse Consent?"
+msgstr "重用用户授权？"
+
+#: .\app\users\templates\users\client_list.html:28
+msgid "Operate"
+msgstr "操作"
+
+#: .\app\users\templates\users\client_list.html:42
+msgid "Edit"
+msgstr "编辑"
+
+#: .\app\users\templates\users\client_list.html:44
+msgid "Delete"
+msgstr "删除"
+
+#: .\app\users\templates\users\client_update.html:4
+#: .\app\users\templates\users\client_update.html:8
+#: .\app\users\templates\users\client_update.html:11
+msgid "Update Client"
+msgstr "更新应用"
+
 #: .\app\users\templates\users\user_detail.html:5
-#: .\app\users\templates\users\user_detail.html:9
+#: .\app\users\templates\users\user_detail.html:7
+#: .\app\users\templates\users\user_detail.html:11
 msgid "User Profile"
 msgstr "个人资料"
 
-#: .\app\users\templates\users\user_detail.html:83
+#: .\app\users\templates\users\user_detail.html:86
 msgctxt "user profile"
 msgid "Settings"
 msgstr "设置"
 
-#: .\app\users\templates\users\user_detail.html:88
+#: .\app\users\templates\users\user_detail.html:91
 msgid "Recent activity"
 msgstr "最近活动"
 
-#: .\app\users\templates\users\user_detail.html:119
+#: .\app\users\templates\users\user_detail.html:125
 msgid "Authorize"
 msgstr "授权"
 
-#: .\app\users\templates\users\user_detail.html:122
+#: .\app\users\templates\users\user_detail.html:128
 msgid "to access your information"
 msgstr "访问你的信息"
 
-#: .\app\users\templates\users\user_detail.html:135
+#: .\app\users\templates\users\user_detail.html:141
 #, python-format
 msgid "This consent will expire at %(etime)s."
 msgstr "这个授权将在 %(etime)s 过期。"
 
-#: .\app\users\templates\users\user_detail.html:139
+#: .\app\users\templates\users\user_detail.html:145
 #, python-format
 msgid "This consent has been expired at %(etime)s."
 msgstr "这个授权已在 %(etime)s 过期。"
