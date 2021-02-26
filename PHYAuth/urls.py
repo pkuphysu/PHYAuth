@@ -17,9 +17,29 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('', include('app.users.urls', namespace='users')),
+    # login/
+    # logout/
+    # password_change/
+    # password_reset/
+    # reset/
     path('', include('django.contrib.auth.urls')),
+    # authorize/
+    # token/
+    # userinfo/
+    # end-session/
+    # .well-known/openid-configuration/
+    # introspect/
+    # jwks/
+    path('', include('oidc_provider.urls', namespace='oidc_provider')),
+    # /
+    # profile/
+    # client-create/
+    # client-update/
+    # client-list/
+    path('', include('app.users.urls', namespace='users')),
+    # iaaa/login
+    # iaaa/auth
     path('iaaa/', include('app.pku_iaaa.urls', namespace='pku_iaaa')),
-    path('oidc/', include('oidc_provider.urls', namespace='oidc_provider')),
+    # admin/
     path('admin/', admin.site.urls),
 ]
