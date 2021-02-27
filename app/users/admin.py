@@ -32,7 +32,7 @@ class UserAdmin(AbstractUserAdmin):
     get_name.short_description = _('Full Name')
 
     list_display = ('username', 'get_name', 'nickname', 'email', 'is_teacher', 'in_school')
-    list_filter = ('is_teacher', 'is_staff', 'is_superuser', 'is_active', 'groups', 'is_banned')
+    list_filter = ('is_teacher', 'is_staff', 'is_superuser', 'is_active', 'groups')
     search_fields = ('username', 'first_name', 'last_name', 'email', 'nickname')
 
 
