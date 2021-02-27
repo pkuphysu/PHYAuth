@@ -1,10 +1,10 @@
 from django.contrib.auth import authenticate, login
 from django.contrib.auth import get_user_model
-from django.core.exceptions import ValidationError
-from django.http import HttpResponseRedirect
+from django.core.exceptions import PermissionDenied
+from django.http import HttpResponseRedirect, Http404
 from django.template.response import TemplateResponse
 from django.urls import reverse
-from django.utils.translation import gettext_lazy as _
+from django.utils.translation import gettext, gettext_lazy as _
 from django.views.generic.base import View
 
 from .models import Iaaa
@@ -31,18 +31,25 @@ class IAAALoginView(View):
 
 class IAAALoginAuth(View):
     def get(self, request):
-        user = authenticate(request)
-
+        try:
+            user = authenticate(request)
+        except Exception as e:
+            msg = e.__class__.__name__
+            try:
+                message = e.args[0]
+            except (AttributeError, IndexError):
+                pass
+            else:
+                if isinstance(message, str):
+                    msg = message
+            raise Http404(msg)
         if user is None:
-            raise ValidationError(_("No account is found."))
-        elif user.is_banned is True:
-            raise ValidationError(_("Your account was banned by admin, please contact the Student "
-                                    "Affairs Office of the School of Physics for help."))
+            raise Http404(gettext("No account is found."))
         elif user.is_active is False:
-            raise ValidationError(_("This application temporarily only serves the teachers and students of the School "
-                                    "of Physics. Your personal relationship is not in the School of Physics. "
-                                    "Therefore, temporarily mark your account as disabled. Please contact the Student "
-                                    "Affairs Office of the School of Physics to activate your account."))
+            raise PermissionDenied(_("This application temporarily only serves the teachers and students of the School "
+                                     "of Physics. Now your personal relationship is not in the School of Physics "
+                                     "or your account is disabled. Please contact the Student "
+                                     "Affairs Office of the School of Physics to activate your account."))
         else:
             login(request, user)
 
