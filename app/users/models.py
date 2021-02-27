@@ -79,16 +79,6 @@ class User(AbstractUser):
         )
     )
 
-    is_banned = models.BooleanField(
-        _('is banned'),
-        choices=(
-            (False, '正常'),
-            (True, '封禁')
-        ),
-        default=False,
-        help_text=_('Designate whether the user is banned.')
-    )
-
     in_school = models.BooleanField(
         _('is in school'),
         default=True,

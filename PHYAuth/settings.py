@@ -47,6 +47,7 @@ THIRD_PARTY_APPS = [
     'django_celery_results',
     'django_celery_beat',
     'django_bootstrap_breadcrumbs',
+    'guardian',
 ]
 
 LOCAL_APPS = [
@@ -226,6 +227,7 @@ AUTH_USER_MODEL = 'users.User'
 AUTHENTICATION_BACKENDS = [
     "django.contrib.auth.backends.ModelBackend",
     "app.pku_iaaa.auth_backends.AuthenticationBackend",
+    "guardian.backends.ObjectPermissionBackend",
 ]
 
 # Broker配置，使用Redis作为消息中间件

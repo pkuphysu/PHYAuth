@@ -14,6 +14,7 @@ mysqlclient = "*"
 configparser = "*"
 django-redis = "*"
 django-bootstrap-breadcrumbs = "*"
+django-guardian = "*"
 
 [dev-packages]
 
