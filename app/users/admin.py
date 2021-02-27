@@ -16,7 +16,7 @@ class UserAdmin(AbstractUserAdmin):
             'fields': ('is_staff', 'is_superuser', 'groups', 'user_permissions'),
         }),
         (_('Important Dates'), {'fields': ('last_login', 'date_joined')}),
-        (_('Account Status'), {'fields': ('is_active', 'is_teacher', 'in_school', 'is_banned')})
+        (_('Account Status'), {'fields': ('is_active', 'is_teacher', 'in_school')})
     )
 
     add_fieldsets = (

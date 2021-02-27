@@ -41,7 +41,6 @@ class CustomScopeClaims(ScopeClaims):
             'preferred_email': self.user.get_preferred_email(),
             'is_teacher': self.user.is_teacher,
             'in_school': self.user.in_school,
-            'is_banned': self.user.is_banned,
         }
 
         return dic
