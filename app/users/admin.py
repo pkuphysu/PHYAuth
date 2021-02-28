@@ -5,7 +5,7 @@ from guardian.admin import GuardedModelAdmin
 from oidc_provider.admin import ClientForm
 from oidc_provider.models import Client
 
-from .models import User, TopLink, Announcement
+from .models import User
 
 
 class UserAdmin(AbstractUserAdmin):
@@ -36,27 +36,6 @@ class UserAdmin(AbstractUserAdmin):
 
 
 admin.site.register(User, UserAdmin)
-
-
-@admin.register(TopLink)
-class TopLinkAdmin(admin.ModelAdmin):
-    list_display = [
-        "name",
-        "url",
-        "rank"
-    ]
-
-
-@admin.register(Announcement)
-class AnnouncementAdmin(admin.ModelAdmin):
-    list_display = [
-        "type",
-        "title",
-        "content",
-        "rank"
-    ]
-
-
 admin.site.unregister(Client)
 
 

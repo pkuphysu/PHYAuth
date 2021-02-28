@@ -9,16 +9,8 @@ from guardian.mixins import PermissionRequiredMixin as ObjectPermissionRequiredM
 from oidc_provider.models import UserConsent, Client
 
 from .forms import UserForm, ClientForm
-from .models import Announcement
 
 UserModel = get_user_model()
-
-
-def index(request):
-    ctx = {
-        'announcements': Announcement.objects.all().order_by('rank', '-id')
-    }
-    return render(request, 'index.html', context=ctx)
 
 
 class UserProfileView(ObjectPermissionRequiredMixin, SuccessMessageMixin, UpdateView):

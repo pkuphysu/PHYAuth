@@ -54,6 +54,7 @@ THIRD_PARTY_APPS = [
 LOCAL_APPS = [
     'app.users.apps.UsersConfig',
     'app.pku_iaaa.apps.PkuIaaaConfig',
+    'app.portal.apps.PortalConfig',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -82,7 +83,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'app.users.context_processors.top_link',
+                'app.portal.context_processors.top_link',
             ],
             'builtins': [
                 'django.templatetags.static',

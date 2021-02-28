@@ -59,4 +59,4 @@ class IAAALoginAuth(View):
             sub_path = request.META.get("SCRIPT_NAME") if request.META.get("SCRIPT_NAME") != '' else '/'
             response.delete_cookie('next', path=sub_path)
             return response
-        return HttpResponseRedirect(reverse('users:index'))
+        return HttpResponseRedirect(reverse('index'))

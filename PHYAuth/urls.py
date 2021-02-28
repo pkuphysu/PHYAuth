@@ -31,12 +31,13 @@ urlpatterns = [
     # introspect/
     # jwks/
     path('', include('oidc_provider.urls', namespace='oidc_provider')),
-    # /
     # profile/
     # client-create/
     # client-update/
     # client-list/
     path('', include('app.users.urls', namespace='users')),
+    # /
+    path('', include('app.portal.urls')),
     # iaaa/login
     # iaaa/auth
     path('iaaa/', include('app.pku_iaaa.urls', namespace='pku_iaaa')),
