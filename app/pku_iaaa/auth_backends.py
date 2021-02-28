@@ -6,7 +6,7 @@ from django.contrib.auth.backends import BaseBackend
 from django.core.exceptions import SuspiciousOperation
 
 from .models import Iaaa
-from .signals import user_create
+from .signals import iaaa_user_create
 
 UserModel = get_user_model()
 
@@ -38,7 +38,7 @@ class AuthenticationBackend(BaseBackend):
             })
             if created:
                 user = self.configure_user(user_info, user)
-                user_create.send(sender=self.__class__, user_id=user.id)
+                iaaa_user_create.send(sender=self.__class__, user_id=user.id)
         else:
             try:
                 user = UserModel._default_manager.get_by_natural_key(identity_id)

@@ -1,9 +1,10 @@
 from django.contrib.auth import get_user_model
-from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
+# from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.shortcuts import render
 from django.urls import reverse
 from django.views.generic import UpdateView, CreateView, ListView
 from oidc_provider.models import UserConsent, Client
+from guardian.mixins import LoginRequiredMixin, PermissionRequiredMixin
 
 from .forms import UserForm, ClientForm
 from .models import Announcement
@@ -18,9 +19,11 @@ def index(request):
     return render(request, 'index.html', context=ctx)
 
 
-class UserProfileView(LoginRequiredMixin, UpdateView):
+class UserProfileView(PermissionRequiredMixin, UpdateView):
     template_name = 'users/user_detail.html'
     form_class = UserForm
+    permission_required = 'users.change_user'
+    return_403 = True
 
     def get_context_data(self, **kwargs):
         ctx = super(UserProfileView, self).get_context_data(**kwargs)
