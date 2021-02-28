@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-28 03:40+0800\n"
+"POT-Creation-Date: 2021-02-28 16:59+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -232,7 +232,7 @@ msgstr "创建应用"
 
 #: .\app\users\templates\users\client_create.html:25
 #: .\app\users\templates\users\client_update.html:25
-#: .\app\users\templates\users\user_detail.html:102
+#: .\app\users\templates\users\user_detail.html:99
 msgid "Submit"
 msgstr "提交"
 
@@ -266,6 +266,10 @@ msgstr "重用用户授权？"
 msgid "Operate"
 msgstr "操作"
 
+#: .\app\users\templates\users\client_list.html:39
+msgid "yes,no"
+msgstr "是,否"
+
 #: .\app\users\templates\users\client_list.html:42
 msgid "Edit"
 msgstr "编辑"
@@ -280,35 +284,35 @@ msgstr "删除"
 msgid "Update Client"
 msgstr "更新应用"
 
-#: .\app\users\templates\users\user_detail.html:5
-#: .\app\users\templates\users\user_detail.html:7
-#: .\app\users\templates\users\user_detail.html:11
+#: .\app\users\templates\users\user_detail.html:6
+#: .\app\users\templates\users\user_detail.html:8
+#: .\app\users\templates\users\user_detail.html:12
 msgid "User Profile"
 msgstr "个人资料"
 
-#: .\app\users\templates\users\user_detail.html:86
+#: .\app\users\templates\users\user_detail.html:83
 msgctxt "user profile"
 msgid "Settings"
 msgstr "设置"
 
-#: .\app\users\templates\users\user_detail.html:91
+#: .\app\users\templates\users\user_detail.html:88
 msgid "Recent activity"
 msgstr "最近活动"
 
-#: .\app\users\templates\users\user_detail.html:125
+#: .\app\users\templates\users\user_detail.html:122
 msgid "Authorize"
 msgstr "授权"
 
-#: .\app\users\templates\users\user_detail.html:128
+#: .\app\users\templates\users\user_detail.html:125
 msgid "to access your information"
 msgstr "访问你的信息"
 
-#: .\app\users\templates\users\user_detail.html:141
+#: .\app\users\templates\users\user_detail.html:138
 #, python-format
 msgid "This consent will expire at %(etime)s."
 msgstr "这个授权将在 %(etime)s 过期。"
 
-#: .\app\users\templates\users\user_detail.html:145
+#: .\app\users\templates\users\user_detail.html:142
 #, python-format
 msgid "This consent has been expired at %(etime)s."
 msgstr "这个授权已在 %(etime)s 过期。"

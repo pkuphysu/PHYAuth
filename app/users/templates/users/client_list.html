@@ -13,7 +13,7 @@
 {% block content_wrapper_body %}
     <div class="container-fluid">
         <div class="row">
-            <div class="col-12">
+            <div class="col-md-12">
                 <div class="card">
                     <div class="card-body table-responsive p-0">
                         <table class="table table-hover text-nowrap">
@@ -36,7 +36,7 @@
                                     <td>{{ client.client_id }}</td>
                                     <td>{{ client.client_secret }}</td>
                                     <td>{{ client.client_type }}</td>
-                                    <td>{{ client.reuse_consent }}</td>
+                                    <td>{{ client.reuse_consent|yesno:_("yes,no") }}</td>
                                     <td>
                                         <a href="{% url 'users:client-update' client.pk %}">
                                             <button class="btn btn-info">{% translate 'Edit' %}</button>
