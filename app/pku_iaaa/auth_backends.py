@@ -2,7 +2,7 @@ import hashlib
 
 import requests
 from django.contrib.auth import get_user_model
-from django.contrib.auth.backends import ModelBackend
+from django.contrib.auth.backends import BaseBackend
 from django.core.exceptions import SuspiciousOperation
 
 from .models import Iaaa
@@ -23,7 +23,7 @@ class IAAAError(Exception):
         super(IAAAError, self).__init__(msg)
 
 
-class AuthenticationBackend(ModelBackend):
+class AuthenticationBackend(BaseBackend):
     # Create a User object if not already in the database?
     create_unknown_user = True
 
@@ -103,3 +103,10 @@ class AuthenticationBackend(ModelBackend):
             return user_info
         else:
             raise IAAAError(response["errCode"], response["errMsg"])
+
+    def get_user(self, user_id):
+        try:
+            user = UserModel._default_manager.get(pk=user_id)
+        except UserModel.DoesNotExist:
+            return None
+        return user
