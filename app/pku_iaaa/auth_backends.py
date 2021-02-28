@@ -59,8 +59,7 @@ class AuthenticationBackend(BaseBackend):
         user.is_teacher = False if user_info['identityType'] == '学生' else True
         user.in_school = True if user_info['identityStatus'] == '在校' else False
         user.email = user.get_email()
-        user.last_name = user_info['name'][0]
-        user.first_name = user_info['name'][1:]
+        user.name = user_info['name']
         user.nickname = user_info['name']
         user.save()
         return user

@@ -7,7 +7,7 @@ User = get_user_model()
 
 def userinfo(claims, user: User):
     # Populate claims dict.
-    claims['name'] = '{}{}'.format(user.last_name, user.first_name)
+    claims['name'] = user.get_full_name()
     claims['given_name'] = user.first_name
     claims['family_name'] = user.last_name
     claims['nickname'] = user.nickname

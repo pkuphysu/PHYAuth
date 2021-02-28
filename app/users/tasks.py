@@ -42,7 +42,7 @@ def consent_accept_email(user_id, client_id, scope):
         'email/oidc_provider/consent_accept_alert.html',
         {
             'domain': domain,
-            'name': user.last_name + user.first_name,
+            'name': user.get_full_name(),
 
             'client': client,
             'scopes': get_scopes_information(scope)
@@ -63,7 +63,7 @@ def user_register_email(user_id):
         'email/users/register.html',
         {
             'domain': domain,
-            'name': user.last_name + user.first_name,
+            'name': user.get_full_name(),
         }
     )
     my_send_mail.delay(subject, tea_html, from_email, [user.get_preferred_email()])

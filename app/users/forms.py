@@ -20,6 +20,7 @@ class UserForm(forms.ModelForm):
         model = User
         fields = [
             'username',
+            'name',
             'first_name',
             'last_name',
             'email',
@@ -36,6 +37,7 @@ class UserForm(forms.ModelForm):
         ]
         widgets = {
             'username': forms.TextInput(attrs={'class': 'form-control'}),
+            'name': forms.TextInput(attrs={'class': 'form-control'}),
             'first_name': forms.TextInput(attrs={'class': 'form-control'}),
             'last_name': forms.TextInput(attrs={'class': 'form-control'}),
             'email': forms.EmailInput(attrs={'class': 'form-control'}),

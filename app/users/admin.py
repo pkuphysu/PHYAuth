@@ -9,6 +9,7 @@ class UserAdmin(AbstractUserAdmin):
     fieldsets = (
         (None, {'fields': ('username', 'password')}),
         (_('Personal Info'), {'fields': (
+            'name',
             'first_name', 'last_name', 'nickname', 'email', 'preferred_email', 'gender',
             'birthdate', 'phone_number', 'address', 'website'
         )}),
@@ -26,14 +27,9 @@ class UserAdmin(AbstractUserAdmin):
         }),
     )
 
-    def get_name(self, obj):
-        return '{}{}'.format(obj.last_name, obj.first_name)
-
-    get_name.short_description = _('Full Name')
-
-    list_display = ('username', 'get_name', 'nickname', 'email', 'is_teacher', 'in_school')
+    list_display = ('username', 'name', 'nickname', 'email', 'is_teacher', 'in_school')
     list_filter = ('is_teacher', 'is_staff', 'is_superuser', 'is_active', 'groups')
-    search_fields = ('username', 'first_name', 'last_name', 'email', 'nickname')
+    search_fields = ('username', 'name', 'email', 'nickname')
 
 
 admin.site.register(User, UserAdmin)

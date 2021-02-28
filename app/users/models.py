@@ -19,6 +19,12 @@ class User(AbstractUser, GuardianUserMixin):
         },
     )
 
+    name = models.CharField(
+        _('name'),
+        max_length=40,
+        blank=True
+    )
+
     email = models.EmailField(
         _('pku email address'),
         validators=[PKUEmailValidator()],
@@ -108,6 +114,12 @@ class User(AbstractUser, GuardianUserMixin):
             return self.preferred_email
         else:
             return self.email
+
+    def get_full_name(self):
+        if self.name:
+            return self.name
+        else:
+            return super().get_full_name()
 
 
 class TopLink(models.Model):
