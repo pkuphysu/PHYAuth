@@ -231,6 +231,9 @@ AUTHENTICATION_BACKENDS = [
     "guardian.backends.ObjectPermissionBackend",
 ]
 
+GUARDIAN_MONKEY_PATCH = False
+GUARDIAN_RAISE_403 = True
+
 # Broker配置，使用Redis作为消息中间件
 CELERY_BROKER_URL = 'amqp://{}:{}@{}:{}/{}'.format(
     CONFIG.get('RABBIT_MQ', 'USER'),

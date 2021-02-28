@@ -1,11 +1,12 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+from guardian.mixins import GuardianUserMixin
 
 from .validators import UsernameValidator, PKUEmailValidator
 
 
-class User(AbstractUser):
+class User(AbstractUser, GuardianUserMixin):
     username_validator = UsernameValidator()
     username = models.CharField(
         _('username'),
