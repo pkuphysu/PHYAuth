@@ -63,7 +63,7 @@ admin.site.unregister(Client)
 @admin.register(Client)
 class ClientAdmin(GuardedModelAdmin):
     fieldsets = [
-        [_(u''), {
+        [_(u'Base'), {
             'fields': (
                 'name', 'owner', 'client_type', 'response_types', '_redirect_uris', 'jwt_alg',
                 'require_consent', 'reuse_consent'),

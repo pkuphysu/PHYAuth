@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-28 16:59+0800\n"
+"POT-Creation-Date: 2021-03-01 04:00+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,137 +18,153 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: .\app\users\admin.py:11
+#: .\app\users\admin.py:14
 msgid "Personal Info"
 msgstr "个人信息"
 
-#: .\app\users\admin.py:15
+#: .\app\users\admin.py:19
 msgid "Permissions"
 msgstr "权限"
 
-#: .\app\users\admin.py:18
+#: .\app\users\admin.py:22
 msgid "Important Dates"
 msgstr "重要日期"
 
-#: .\app\users\admin.py:19
+#: .\app\users\admin.py:23
 msgid "Account Status"
 msgstr "账户状态"
 
-#: .\app\users\admin.py:32
-msgid "Full Name"
-msgstr "姓名"
+#: .\app\users\admin.py:66
+msgid "Base"
+msgstr "基础"
+
+#: .\app\users\admin.py:71
+msgid "Credentials"
+msgstr "凭据"
+
+#: .\app\users\admin.py:74
+msgid "Information"
+msgstr "信息"
+
+#: .\app\users\admin.py:77
+msgid "Session Management"
+msgstr "会话管理"
 
 #: .\app\users\apps.py:7
 msgid "user management"
 msgstr "用户管理"
 
-#: .\app\users\forms.py:88
+#: .\app\users\forms.py:90
 msgid "Client ID will be generated randomly."
 msgstr "应用ID将随机生成。"
 
-#: .\app\users\forms.py:89
+#: .\app\users\forms.py:91
 msgid ""
 "Client Secret will be generated randomly. If you want to get a new secret, "
 "please switch the client to Public and save, then switch back and save."
 msgstr ""
 "应用密钥将随机生成。如果你需要修改密钥，请先修改应用类型保存后再修改回来。"
 
-#: .\app\users\models.py:11
+#: .\app\users\models.py:12
 msgid "username"
 msgstr "职工号、学号"
 
-#: .\app\users\models.py:14
+#: .\app\users\models.py:15
 msgid "Required. It's your pku id. 10 characters. Digits only."
 msgstr "必须。这是北大师生的学工号。由10个数字构成。"
 
-#: .\app\users\models.py:17
+#: .\app\users\models.py:18
 msgid "A user with that username already exists."
 msgstr "具有该学工号的用户已经存在。"
 
-#: .\app\users\models.py:22
+#: .\app\users\models.py:23
+msgid "name"
+msgstr "姓名"
+
+#: .\app\users\models.py:29
 msgid "pku email address"
 msgstr "北京大学邮箱"
 
-#: .\app\users\models.py:24
+#: .\app\users\models.py:31
 msgid ""
 "This is your pku email address, because some clients only require email "
 "address."
 msgstr "这是你的北大邮箱地址，因为一些应用只需要邮箱地址，这可以标识你的身份。"
 
-#: .\app\users\models.py:28
+#: .\app\users\models.py:35
 msgid "nickname"
 msgstr "昵称"
 
-#: .\app\users\models.py:34
+#: .\app\users\models.py:41
 msgid "website"
 msgstr "主页"
 
-#: .\app\users\models.py:40
+#: .\app\users\models.py:47
 msgid "gender"
 msgstr "性别"
 
-#: .\app\users\models.py:42
+#: .\app\users\models.py:49
 msgid "unknown"
 msgstr "保密"
 
-#: .\app\users\models.py:43
+#: .\app\users\models.py:50
 msgid "male"
 msgstr "男"
 
-#: .\app\users\models.py:44
+#: .\app\users\models.py:51
 msgid "female"
 msgstr "女"
 
-#: .\app\users\models.py:50
+#: .\app\users\models.py:57
 msgid "birthdate"
 msgstr "生日"
 
-#: .\app\users\models.py:56
+#: .\app\users\models.py:63
 msgid "phone number"
 msgstr "电话号码"
 
-#: .\app\users\models.py:62
+#: .\app\users\models.py:69
 msgid "address"
 msgstr "办公室"
 
-#: .\app\users\models.py:68
+#: .\app\users\models.py:75
 msgid "preferred email address"
 msgstr "常用邮件地址"
 
-#: .\app\users\models.py:70
+#: .\app\users\models.py:77
 msgid ""
 "This is your usual email address which we will use to get in touch with you."
 msgstr "这是你的常用邮箱，我们用它来最终与你取得联系。"
 
-#: .\app\users\models.py:74
+#: .\app\users\models.py:81
 msgid "is teacher"
 msgstr "职工状态"
 
-#: .\app\users\models.py:78
+#: .\app\users\models.py:85
 msgid "Designates whether the user is a teacher."
 msgstr "指明用户是否为老师。"
 
-#: .\app\users\models.py:83
+#: .\app\users\models.py:90
 msgid "is in school"
 msgstr "是否在校"
 
-#: .\app\users\models.py:89
+#: .\app\users\models.py:96
 msgid "Designate whether the user is in school."
 msgstr "指明用户是否为在校。"
 
-#: .\app\users\models.py:114
+#: .\app\users\models.py:127
 msgid "Link Name"
 msgstr "链接名"
 
-#: .\app\users\models.py:118
+#: .\app\users\models.py:131
 msgid "Link URL"
 msgstr "链接 URL"
 
-#: .\app\users\models.py:122
+#: .\app\users\models.py:135
 msgid "Link Rank"
 msgstr "链接排序"
 
-#: .\app\users\models.py:123
+#: .\app\users\models.py:136
 msgid ""
 "It is the default order of the links, they should not be same!\n"
 "The smaller it is, the more front it will be.\n"
@@ -157,62 +173,62 @@ msgstr ""
 "这是默认的链接的排序，不应该相同！数字越小越靠前，如果某几个相同，则按照创建"
 "先后排序。"
 
-#: .\app\users\models.py:129
+#: .\app\users\models.py:142
 msgid "Top Link"
 msgstr "顶部链接"
 
-#: .\app\users\models.py:130
+#: .\app\users\models.py:143
 msgid "Top Links"
 msgstr "顶部链接"
 
-#: .\app\users\models.py:135
+#: .\app\users\models.py:148
 msgid "Announcement Type"
 msgstr "公告类型"
 
-#: .\app\users\models.py:138
+#: .\app\users\models.py:151
 msgid "success"
 msgstr "成功"
 
-#: .\app\users\models.py:139
+#: .\app\users\models.py:152
 msgid "warning"
 msgstr "警告"
 
-#: .\app\users\models.py:140
+#: .\app\users\models.py:153
 msgid "info"
 msgstr "信息"
 
-#: .\app\users\models.py:141
+#: .\app\users\models.py:154
 msgid "danger"
 msgstr "危险"
 
-#: .\app\users\models.py:143
+#: .\app\users\models.py:156
 msgid "success-green, warning-yellow, info-blue, danger-red"
 msgstr "成功-绿色，警告-黄色，信息-蓝色，危险-红色"
 
-#: .\app\users\models.py:147
+#: .\app\users\models.py:160
 msgid "Announcement Title"
 msgstr "公告标题"
 
-#: .\app\users\models.py:152
+#: .\app\users\models.py:165
 msgid "Announcement Content"
 msgstr "公告内容"
 
-#: .\app\users\models.py:156
+#: .\app\users\models.py:169
 msgid "Announcement Rank"
 msgstr "公告排序"
 
-#: .\app\users\models.py:157
+#: .\app\users\models.py:170
 msgid ""
 "It is the default order of the announcement!\n"
 "The smaller it is, the more front it will be.\n"
 "If some are the same, the later create one will appear firstly."
 msgstr "这是公告的默认排序，越小越靠前。如果一些相同，则越晚发布的公告越靠前。"
 
-#: .\app\users\models.py:163
+#: .\app\users\models.py:176
 msgid "Announcement"
 msgstr "公告"
 
-#: .\app\users\models.py:164
+#: .\app\users\models.py:177
 msgid "Announcements"
 msgstr "公告"
 
@@ -242,39 +258,43 @@ msgstr "提交"
 msgid "Client List"
 msgstr "应用列表"
 
-#: .\app\users\templates\users\client_list.html:23
+#: .\app\users\templates\users\client_list.html:21
+msgid "Create"
+msgstr "新建"
+
+#: .\app\users\templates\users\client_list.html:30
 msgid "Client Name"
 msgstr "应用名"
 
-#: .\app\users\templates\users\client_list.html:24
+#: .\app\users\templates\users\client_list.html:31
 msgid "Client ID"
 msgstr "应用 ID"
 
-#: .\app\users\templates\users\client_list.html:25
+#: .\app\users\templates\users\client_list.html:32
 msgid "Client Secret"
 msgstr "应用密钥"
 
-#: .\app\users\templates\users\client_list.html:26
+#: .\app\users\templates\users\client_list.html:33
 msgid "Client Type"
 msgstr "应用类型"
 
-#: .\app\users\templates\users\client_list.html:27
+#: .\app\users\templates\users\client_list.html:34
 msgid "Reuse Consent?"
 msgstr "重用用户授权？"
 
-#: .\app\users\templates\users\client_list.html:28
+#: .\app\users\templates\users\client_list.html:35
 msgid "Operate"
 msgstr "操作"
 
-#: .\app\users\templates\users\client_list.html:39
+#: .\app\users\templates\users\client_list.html:46
 msgid "yes,no"
 msgstr "是,否"
 
-#: .\app\users\templates\users\client_list.html:42
+#: .\app\users\templates\users\client_list.html:49
 msgid "Edit"
 msgstr "编辑"
 
-#: .\app\users\templates\users\client_list.html:44
+#: .\app\users\templates\users\client_list.html:51
 msgid "Delete"
 msgstr "删除"
 
@@ -330,3 +350,29 @@ msgid ""
 msgstr ""
 "输入你的 职工号或学号开头的北大邮箱地址，它应是如下形式：1234567898@(stu.|"
 "alumni.)pku.edu.cn"
+
+#: .\app\users\views.py:29
+msgid "Your profile has been updated successfully!"
+msgstr "您的个人信息修改成功！"
+
+#: .\app\users\views.py:50 .\app\users\views.py:63
+msgid ""
+"You are not a developer and do not have permission to view the application, "
+"please contact the administrator!"
+msgstr "您不是开发者，无权查看应用，请联系管理员！"
+
+#: .\app\users\views.py:65
+#, python-format
+msgid "Client %(name)s has been created successfully!"
+msgstr "应用 %(name)s 创建成功！"
+
+#: .\app\users\views.py:82
+msgid ""
+"You are not the creator of this application, so you do not have the right to "
+"modify this application!"
+msgstr "您不是此应用的创建者，无权修改此应用！"
+
+#: .\app\users\views.py:85
+#, python-format
+msgid "Client %(name)s has been updated successfully!"
+msgstr "应用 %(name)s 更新成功！"
