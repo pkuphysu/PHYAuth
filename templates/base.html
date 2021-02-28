@@ -68,6 +68,38 @@
                 .addClass('active');
         });
     </script>
+    {% if messages %}
+        <script>
+            {% for message in messages %}
+                $(document).Toasts('create', {
+                    {% if message.level == DEFAULT_MESSAGE_LEVELS.DEBUG %}
+                        class: 'bg-maroon',
+                        title: 'Debug',
+                        icon: 'fas fa-bug',
+                    {% elif  message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+                        class: 'bg-info',
+                        title: 'Info',
+                        icon: 'fas fa-info',
+                    {% elif message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+                        class: 'bg-success',
+                        title: 'Success',
+                        icon: 'fas fa-check',
+                    {% elif message.level == DEFAULT_MESSAGE_LEVELS.WARNING %}
+                        class: 'bg-warning',
+                        title: 'Warning',
+                        icon: 'fas fa-exclamation-triangle',
+                    {% elif message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                        class: 'bg-danger',
+                        title: 'Error',
+                        icon: 'fas fa-ban',
+                    {% endif %}
+                    autohide: true,
+                    delay: 1500,
+                    body: '{{ message }}'
+                })
+            {% endfor %}
+        </script>
+    {% endif %}
 {% endblock javascript %}
 </body>
 </html>
