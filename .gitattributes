@@ -1,2 +1,3 @@
 static/adminlte/* linguist-vendored
-templates linguist-language=python
+templates/* linguist-language=python
+app/*/templates/* linguist-language=python
