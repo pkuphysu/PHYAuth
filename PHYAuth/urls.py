@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from app.portal import views as portal_views
 
 urlpatterns = [
     # login/
@@ -37,7 +38,8 @@ urlpatterns = [
     # client-list/
     path('', include('app.users.urls', namespace='users')),
     # /
-    path('', include('app.portal.urls')),
+    path('', portal_views.index, name='index'),
+    path('', include('app.portal.urls', namespace='portal')),
     # iaaa/login
     # iaaa/auth
     path('iaaa/', include('app.pku_iaaa.urls', namespace='pku_iaaa')),

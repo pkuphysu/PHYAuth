@@ -110,16 +110,16 @@
                     <!-- Sidebar user (optional) -->
                     {% block user_panel %}
                         {% if request.user.is_authenticated %}
-                        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                            <div class="image">
-                                <img src="{% avatar_url size=90 %}" class="img-circle elevation-2"
-                                     alt="User Image">
+                            <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                                <div class="image">
+                                    <img src="{% avatar_url size=90 %}" class="img-circle elevation-2"
+                                         alt="User Image">
+                                </div>
+                                <div class="info">
+                                    <a href="#"
+                                       class="d-block">{% firstof request.user.get_full_name request.user.username %}</a>
+                                </div>
                             </div>
-                            <div class="info">
-                                <a href="#"
-                                   class="d-block">{% firstof request.user.get_full_name request.user.username %}</a>
-                            </div>
-                        </div>
                         {% endif %}
                     {% endblock user_panel %}
 
@@ -134,9 +134,7 @@
                                 <li class="nav-item">
                                     <a href="{% url 'users:user-profile' %}" class="nav-link">
                                         <i class="nav-icon fas fa-tachometer-alt"></i>
-                                        <p>
-                                            {% translate 'User Profile' %}
-                                        </p>
+                                        <p>{% translate 'User Profile' %}</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
@@ -161,6 +159,12 @@
                                             </a>
                                         </li>
                                     </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{% url 'portal:admins' %}" class="nav-link">
+                                        <i class="nav-icon fas fa-users-cog"></i>
+                                        <p>{% translate 'Admins' %}</p>
+                                    </a>
                                 </li>
                             {% endblock nav_siderbar_links %}
 

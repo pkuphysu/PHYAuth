@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-28 03:40+0800\n"
+"POT-Creation-Date: 2021-03-03 00:45+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Rainshaw <rxg@live.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -77,7 +77,7 @@ msgid "Choose file"
 msgstr "选择文件"
 
 #: .\templates\index.html:5 .\templates\index.html:26
-#: .\templates\index.html:185 .\templates\index.html:190
+#: .\templates\index.html:189 .\templates\index.html:194
 msgid "Home"
 msgstr "主页"
 
@@ -99,27 +99,31 @@ msgstr "登入"
 msgid "Uniform Identity Auth"
 msgstr "统一认证"
 
-#: .\templates\index.html:138
+#: .\templates\index.html:137
 msgid "User Profile"
 msgstr "用户资料"
 
-#: .\templates\index.html:146
+#: .\templates\index.html:144
 msgid "My Client"
 msgstr "我的应用"
 
-#: .\templates\index.html:154
+#: .\templates\index.html:152
 msgid "Client List"
 msgstr "应用列表"
 
-#: .\templates\index.html:160
+#: .\templates\index.html:158
 msgid "Create Client"
 msgstr "创建应用"
 
-#: .\templates\index.html:208
+#: .\templates\index.html:166
+msgid "Admins"
+msgstr "管理员列表"
+
+#: .\templates\index.html:212
 msgid "Announcement"
 msgstr "公告"
 
-#: .\templates\index.html:251
+#: .\templates\index.html:255
 msgid "All rights reserved."
 msgstr "版权所有."
 

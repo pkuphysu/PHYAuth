@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-01 04:30+0800\n"
+"POT-Creation-Date: 2021-03-03 00:45+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -101,3 +101,31 @@ msgstr "公告"
 #: .\app\portal\models.py:57
 msgid "Announcements"
 msgstr "公告"
+
+#: .\app\portal\templates\portal\admins.html:5
+#: .\app\portal\templates\portal\admins.html:7
+#: .\app\portal\templates\portal\admins.html:11
+msgid "Admins"
+msgstr "管理员"
+
+#: .\app\portal\templates\portal\admins.html:29
+msgid "Identity"
+msgstr "身份"
+
+#: .\app\portal\templates\portal\admins.html:33
+msgid "Address"
+msgstr "地址"
+
+#: .\app\portal\templates\portal\admins.html:33
+#: .\app\portal\templates\portal\admins.html:37
+#: .\app\portal\templates\portal\admins.html:41
+msgid "not provided"
+msgstr "未提供"
+
+#: .\app\portal\templates\portal\admins.html:37
+msgid "Phone"
+msgstr "电话"
+
+#: .\app\portal\templates\portal\admins.html:41
+msgid "Website"
+msgstr "主页"
