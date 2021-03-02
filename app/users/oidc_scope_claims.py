@@ -13,7 +13,7 @@ def userinfo(claims, user: User):
     claims['nickname'] = user.nickname
 
     claims['website'] = user.website
-    claims['gender'] = user.gender
+    claims['gender'] = user.get_gender_display()
     claims['birthdate'] = user.birthdate
 
     claims['email'] = user.email
@@ -37,7 +37,7 @@ class CustomScopeClaims(ScopeClaims):
         # self.scopes - List of scopes requested.
         # self.client - Client requesting this claims.
         dic = {
-            'id': self.user.username,
+            'pku_id': self.user.username,
             'preferred_email': self.user.get_preferred_email(),
             'is_teacher': self.user.is_teacher,
             'in_school': self.user.in_school,
