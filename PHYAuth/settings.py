@@ -147,6 +147,9 @@ STATICFILES_DIRS = [
     './static/'
 ]
 
+MEDIA_URL = 'media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 DATABASE_MAP = {

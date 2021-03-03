@@ -1,6 +1,6 @@
+from django.contrib.auth import get_user_model
 from django.utils.translation import ugettext as _
 from oidc_provider.lib.claims import ScopeClaims
-from django.contrib.auth import get_user_model
 
 User = get_user_model()
 

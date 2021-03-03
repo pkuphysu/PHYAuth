@@ -1,10 +1,11 @@
 from django.contrib import admin
+from guardian.admin import GuardedModelAdmin
 
 from .models import TopLink, Announcement
 
 
 @admin.register(TopLink)
-class TopLinkAdmin(admin.ModelAdmin):
+class TopLinkAdmin(GuardedModelAdmin):
     list_display = [
         "name",
         "url",
@@ -13,7 +14,7 @@ class TopLinkAdmin(admin.ModelAdmin):
 
 
 @admin.register(Announcement)
-class AnnouncementAdmin(admin.ModelAdmin):
+class AnnouncementAdmin(GuardedModelAdmin):
     list_display = [
         "type",
         "title",

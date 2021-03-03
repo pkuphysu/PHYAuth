@@ -131,6 +131,44 @@
                                  with font-awesome or any other icon font library -->
 
                             {% block nav_siderbar_links %}
+                                {% if user.is_staff %}
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link">
+                                            <i class="nav-icon  fas fa-users-cog"></i>
+                                            <p>{% translate 'Manage Site' %}<i class="right fas fa-angle-left"></i></p>
+                                        </a>
+                                        <ul class="nav nav-treeview">
+                                            <li class="nav-item">
+                                                <a href="{% url 'admin:index' %}" class="nav-link">
+                                                    <i class="nav-icon far fa-circle"></i>
+                                                    <p>{% translate 'Admin Site' %}</p>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#" class="nav-link">
+                                                    <i class="nav-icon  far fa-circle"></i>
+                                                    <p>{% translate 'Manage Announcement' %}<i
+                                                            class="right fas fa-angle-left"></i></p>
+                                                </a>
+                                                <ul class="nav nav-treeview">
+                                                    <li class="nav-item">
+                                                        <a href="{% url 'portal:announcement-list' %}" class="nav-link">
+                                                            <i class="nav-icon far fa-dot-circle"></i>
+                                                            <p>{% translate 'Announcement List' %}</p>
+                                                        </a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a href="{% url 'portal:announcement-create' %}"
+                                                           class="nav-link">
+                                                            <i class="nav-icon far fa-dot-circle"></i>
+                                                            <p>{% translate 'Create Announcement' %}</p>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                {% endif %}
                                 <li class="nav-item">
                                     <a href="{% url 'users:user-profile' %}" class="nav-link">
                                         <i class="nav-icon fas fa-tachometer-alt"></i>

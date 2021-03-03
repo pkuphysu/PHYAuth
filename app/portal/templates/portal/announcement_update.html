@@ -1,0 +1,35 @@
+{% extends 'portal/announcement_list.html' %}
+{% load django_bootstrap_breadcrumbs %}
+
+{% block title %}{% translate 'Update Announcement' %}{% endblock %}
+
+{% block content_wrapper_breadcrumb %}
+    {{ block.super }}
+    {% breadcrumb_for 'portal:announcement-update' %}{% trans "Update Announcement" %}{% endbreadcrumb_for %}
+{% endblock %}
+
+{% block content_wrapper_header %}{% translate 'Update Announcement' %}{% endblock %}
+
+{% block content_wrapper_body %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <div class="card card-info">
+                    <!-- form start -->
+                    <form method="post" action="{% url 'portal:announcement-update' object.pk %}">
+                        <div class="card-body">
+                            {% include 'adminlte/_form.html' %}
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-info float-right">{% translate 'Submit' %}</button>
+                        </div>
+                        <!-- /.card-footer -->
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
