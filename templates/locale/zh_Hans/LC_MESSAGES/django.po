@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-03 16:33+0800\n"
+"POT-Creation-Date: 2021-03-03 19:43+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Rainshaw <rxg@live.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -77,7 +77,7 @@ msgid "Choose file"
 msgstr "选择文件"
 
 #: .\templates\index.html:5 .\templates\index.html:26
-#: .\templates\index.html:225 .\templates\index.html:230
+#: .\templates\index.html:249 .\templates\index.html:254
 msgid "Home"
 msgstr "主页"
 
@@ -111,39 +111,51 @@ msgstr "后台管理"
 msgid "Manage Announcement"
 msgstr "管理公告"
 
-#: .\templates\index.html:156
+#: .\templates\index.html:157
 msgid "Announcement List"
 msgstr "公告列表"
 
-#: .\templates\index.html:162
+#: .\templates\index.html:164
 msgid "Create Announcement"
 msgstr "新建公告"
 
-#: .\templates\index.html:173
+#: .\templates\index.html:172
+msgid "Manage TopLink"
+msgstr "管理顶部导航链接"
+
+#: .\templates\index.html:179
+msgid "TopLink List"
+msgstr "链接列表"
+
+#: .\templates\index.html:186
+msgid "Create TopLink"
+msgstr "新建导航链接"
+
+#: .\templates\index.html:197
 msgid "User Profile"
 msgstr "用户资料"
 
-#: .\templates\index.html:180
+#: .\templates\index.html:204
 msgid "My Client"
 msgstr "我的应用"
 
-#: .\templates\index.html:188
+#: .\templates\index.html:212
 msgid "Client List"
 msgstr "应用列表"
 
-#: .\templates\index.html:194
+#: .\templates\index.html:218
 msgid "Create Client"
 msgstr "创建应用"
 
-#: .\templates\index.html:202
+#: .\templates\index.html:226
 msgid "Admins"
 msgstr "管理员列表"
 
-#: .\templates\index.html:248
+#: .\templates\index.html:272
 msgid "Announcement"
 msgstr "公告"
 
-#: .\templates\index.html:291
+#: .\templates\index.html:315
 msgid "All rights reserved."
 msgstr "版权所有."
 

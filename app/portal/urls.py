@@ -13,8 +13,8 @@ urlpatterns = [
     path('announcement-update/<int:pk>/', views.AnnouncementUpdateView.as_view(), name='announcement-update'),
     path('announcement-delete/', views.AnnouncementDeleteView.as_view(), name='announcement-delete'),
 
-    path('toplink-list/', views.AnnouncementListView.as_view(), name='toplink-list'),
-    path('toplink-create/', views.AnnouncementListView.as_view(), name='toplink-create'),
-    path('toplink-update/<int:pk>/', views.AnnouncementListView.as_view(), name='toplink-update'),
-    path('toplink-delete/', views.AnnouncementListView.as_view(), name='toplink-delete'),
+    path('toplink-list/', views.TopLinkListView.as_view(), name='toplink-list'),
+    path('toplink-create/', views.TopLinkCreateView.as_view(), name='toplink-create'),
+    path('toplink-update/<int:pk>/', views.TopLinkUpdateView.as_view(), name='toplink-update'),
+    path('toplink-delete/', views.TopLinkDeleteView.as_view(), name='toplink-delete'),
 ]

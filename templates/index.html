@@ -126,7 +126,7 @@
                     <!-- Sidebar Menu -->
                     <nav class="mt-2">
                         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
-                            data-accordion="false">
+                            data-accordion="true">
                             <!-- Add icons to the links using the .nav-icon class
                                  with font-awesome or any other icon font library -->
 
@@ -162,6 +162,28 @@
                                                            class="nav-link">
                                                             <i class="nav-icon far fa-dot-circle"></i>
                                                             <p>{% translate 'Create Announcement' %}</p>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#" class="nav-link">
+                                                    <i class="nav-icon  far fa-circle"></i>
+                                                    <p>{% translate 'Manage TopLink' %}<i
+                                                            class="right fas fa-angle-left"></i></p>
+                                                </a>
+                                                <ul class="nav nav-treeview">
+                                                    <li class="nav-item">
+                                                        <a href="{% url 'portal:toplink-list' %}" class="nav-link">
+                                                            <i class="nav-icon far fa-dot-circle"></i>
+                                                            <p>{% translate 'TopLink List' %}</p>
+                                                        </a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a href="{% url 'portal:toplink-create' %}"
+                                                           class="nav-link">
+                                                            <i class="nav-icon far fa-dot-circle"></i>
+                                                            <p>{% translate 'Create TopLink' %}</p>
                                                         </a>
                                                     </li>
                                                 </ul>

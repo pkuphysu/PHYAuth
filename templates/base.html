@@ -52,22 +52,6 @@
 
     {% block extra_javascript %}{% endblock extra_javascript %}
     {% block js %}{% endblock js %}
-    <script>
-        $(function () {
-            var url = window.location.href;
-            // for single sidebar menu
-            $('ul.nav-sidebar a').filter(function () {
-                return this.href === url;
-            }).addClass('active');
-
-            // for sidebar menu and treeview
-            $('ul.nav-treeview a').filter(function () {
-                return this.href === url;
-            }).parentsUntil(".nav-sidebar > .nav-treeview")
-                .addClass('menu-open').prev('a')
-                .addClass('active');
-        });
-    </script>
     {% if messages %}
         <script>
             {% for message in messages %}
@@ -98,6 +82,22 @@
             {% endfor %}
         </script>
     {% endif %}
+    <script>
+        window.onload = function () {
+            /** add active class and stay opened when selected */
+            var url = window.location.href;
+
+            // for sidebar menu entirely but not cover treeview
+            $('ul.nav-sidebar a').filter(function () {
+                return this.href === url;
+            }).addClass('active');
+
+            // for treeview
+            $('ul.nav-treeview a').filter(function () {
+                return this.href === url;
+            }).parentsUntil(".nav-sidebar > .nav-treeview").addClass('menu-open').prev('a').addClass('active');
+        }
+    </script>
 {% endblock javascript %}
 </body>
 </html>
