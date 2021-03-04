@@ -60,7 +60,7 @@ LOCAL_APPS = [
     'app.portal.apps.PortalConfig',
 ]
 
-INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
+INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS + THIRD_PARTY_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -263,6 +263,7 @@ AUTHENTICATION_BACKENDS = [
 
 GUARDIAN_MONKEY_PATCH = False
 GUARDIAN_RAISE_403 = True
+ANONYMOUS_USER_NAME = '0000000000'
 
 # Broker配置，使用Redis作为消息中间件
 CELERY_BROKER_URL = 'amqp://{}:{}@{}:{}/{}'.format(
