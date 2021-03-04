@@ -103,3 +103,10 @@ class IaaaAuthenticationBackend:
             return user_info
         else:
             raise IaaaError(response["errCode"], response["errMsg"])
+
+    def get_user(self, user_id):
+        try:
+            user = UserModel._default_manager.get(pk=user_id)
+        except UserModel.DoesNotExist:
+            return None
+        return user
