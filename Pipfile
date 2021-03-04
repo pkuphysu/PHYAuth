@@ -1,5 +1,5 @@
 [[source]]
-url = "https://pypi.org/simple"
+url = "https://pypi.tuna.tsinghua.edu.cn/simple"
 verify_ssl = true
 name = "pypi"
 
@@ -15,8 +15,10 @@ configparser = "*"
 django-redis = "*"
 django-bootstrap-breadcrumbs = "*"
 django-guardian = "*"
+daphne = "*"
 
 [dev-packages]
+django-debug-toolbar = "*"
 
 [requires]
 python_version = "3.8"
