@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-03 16:33+0800\n"
+"POT-Creation-Date: 2021-03-05 00:47+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -271,28 +271,28 @@ msgstr ""
 "输入你的 职工号或学号开头的北大邮箱地址，它应是如下形式：1234567898@(stu.|"
 "alumni.)pku.edu.cn"
 
-#: .\app\users\views.py:20
+#: .\app\users\views.py:19
 msgid "Your profile has been updated successfully!"
 msgstr "您的个人信息修改成功！"
 
-#: .\app\users\views.py:41 .\app\users\views.py:54
+#: .\app\users\views.py:39 .\app\users\views.py:51
 msgid ""
 "You are not a developer and do not have permission to view the application, "
 "please contact the administrator!"
 msgstr "您不是开发者，无权查看应用，请联系管理员！"
 
-#: .\app\users\views.py:56
+#: .\app\users\views.py:53
 #, python-format
 msgid "Client %(name)s has been created successfully!"
 msgstr "应用 %(name)s 创建成功！"
 
-#: .\app\users\views.py:73
+#: .\app\users\views.py:70
 msgid ""
 "You are not the creator of this application, so you do not have the right to "
 "modify this application!"
 msgstr "您不是此应用的创建者，无权修改此应用！"
 
-#: .\app\users\views.py:76
+#: .\app\users\views.py:72
 #, python-format
 msgid "Client %(name)s has been updated successfully!"
 msgstr "应用 %(name)s 更新成功！"
