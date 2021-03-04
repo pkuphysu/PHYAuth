@@ -46,7 +46,7 @@ urlpatterns = [
     # iaaa/auth
     path('iaaa/', include('app.pku_iaaa.urls', namespace='pku_iaaa')),
     # admin/
-    path('admin/', admin.site.urls),
+    path(f'{settings.ADMIN_URL}', admin.site.urls),
 ]
 
 if settings.DEBUG:

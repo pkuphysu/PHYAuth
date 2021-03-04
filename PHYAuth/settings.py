@@ -162,6 +162,10 @@ else:
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
+ADMIN_URL = CONFIG.get("DJANGO", "ADMIN_URL")
+if not ADMIN_URL.endswith('/'):
+    ADMIN_URL += '/'
+
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 DATABASE_MAP = {
@@ -281,10 +285,6 @@ CELERY_WORKER_MAX_TASKS_PER_CHILD = 100000  # 每个worker执行10w个任务就�
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
-    'root': {
-        'level': 'INFO',
-        'handlers': ['console'],
-    },
     'formatters': {
         'verbose': {
             'format': '{levelname} {asctime} {module} {process:d} {thread:d} {message}',
@@ -304,9 +304,16 @@ LOGGING = {
         },
     },
     'handlers': {
-        'console': {
+        'console_out': {
             'level': 'INFO',
             'class': 'logging.StreamHandler',
+            'stream': sys.stdout,
+            'formatter': 'verbose'
+        },
+        'console_err': {
+            'level': 'INFO',
+            'class': 'logging.StreamHandler',
+            'stream': sys.stderr,
             'formatter': 'verbose'
         },
         'mail_admins': {
@@ -318,18 +325,22 @@ LOGGING = {
             'class': 'logging.NullHandler',
         },
     },
+    'root': {
+        'level': 'INFO',
+        'handlers': ['console_out'],
+    },
     'loggers': {
         'django': {
-            'handlers': ['console'],
+            'handlers': ['console_out'],
             'propagate': True,
         },
         'django.request': {
-            'handlers': ['mail_admins'],
+            'handlers': ['mail_admins', 'console_err'],
             'level': 'ERROR',
             'propagate': False,
         },
         'django.server': {
-            'handlers': ['console'],
+            'handlers': ['console_out'],
             'level': 'INFO',
             'propagate': False,
         },

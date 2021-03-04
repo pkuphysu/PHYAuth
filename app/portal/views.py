@@ -18,7 +18,6 @@ User = get_user_model()
 logger = logging.getLogger(__name__)
 
 
-@cache_page(60 * 5)
 def index(request):
     ctx = {
         'announcements': Announcement.objects.all().order_by('rank', '-id')
@@ -26,7 +25,6 @@ def index(request):
     return render(request, 'index.html', context=ctx)
 
 
-@cache_page(60 * 5)
 def admins(request):
     ctx = {
         'admins': User.objects.filter(is_staff=True)
