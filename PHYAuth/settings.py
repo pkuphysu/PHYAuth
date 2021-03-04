@@ -252,6 +252,7 @@ AUTH_USER_MODEL = 'users.User'
 
 AUTHENTICATION_BACKENDS = [
     "django.contrib.auth.backends.ModelBackend",
+    "app.pku_iaaa.auth_backends.IaaaAuthenticationBackend",
     "guardian.backends.ObjectPermissionBackend",
 ]
 

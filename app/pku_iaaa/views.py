@@ -9,11 +9,12 @@ from django.urls import reverse
 from django.utils.translation import gettext, gettext_lazy as _
 from django.views.generic.base import View
 
-from .auth_backends import AuthenticationBackend
+from .auth_backends import IaaaAuthenticationBackend
 from .models import Iaaa
+from .signals import iaaa_user_login_success
 
 UserModel = get_user_model()
-backend = AuthenticationBackend()
+backend = IaaaAuthenticationBackend()
 logger = logging.getLogger(__name__)
 
 
@@ -63,8 +64,11 @@ class IAAALoginAuth(View):
                                      "or your account is disabled. Please contact the Student "
                                      "Affairs Office of the School of Physics to activate your account."))
         else:
-            user.backend = backend.__module__ + backend.__class__.__name__
+            backend_path = backend.__module__ + '.' + backend.__class__.__name__
+            user.backend = backend_path
             login(request, user)
+            logger.info(f'user {user.username} login by iaaa auth')
+            iaaa_user_login_success.send(sender=self.__class__, user_id=user.id)
 
         if request.COOKIES.get('next'):
             redirect_to = request.COOKIES.get('next')

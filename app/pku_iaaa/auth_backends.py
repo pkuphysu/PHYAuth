@@ -1,17 +1,18 @@
 import hashlib
+import logging
 
 import requests
 from django.contrib.auth import get_user_model
-from django.contrib.auth.backends import BaseBackend
 from django.core.exceptions import SuspiciousOperation
 
 from .models import Iaaa
 from .signals import iaaa_user_create
 
 UserModel = get_user_model()
+logger = logging.getLogger(__name__)
 
 
-class IAAAError(Exception):
+class IaaaError(Exception):
     """Error returned by PKU IAAA Server"""
 
     def __init__(self, code, msg, *args, **kwargs):
@@ -20,10 +21,10 @@ class IAAAError(Exception):
         msg = "[%s] %s" % (
             code, msg
         )
-        super(IAAAError, self).__init__(msg)
+        super(IaaaError, self).__init__(msg)
 
 
-class AuthenticationBackend(BaseBackend):
+class IaaaAuthenticationBackend:
     # Create a User object if not already in the database?
     create_unknown_user = True
 
@@ -37,6 +38,7 @@ class AuthenticationBackend(BaseBackend):
             remote_ip = request.META.get('REMOTE_ADDR')
 
         user_info = self.iaaa_auth(rand=_rand, token=token, remote_ip=remote_ip)
+        logger.debug(user_info)
         identity_id = user_info["identityId"]
 
         user = None
@@ -46,6 +48,7 @@ class AuthenticationBackend(BaseBackend):
             })
             if created:
                 user = self.configure_user(user_info, user)
+                logger.info(self.__class__.__name__ + f' create a user {user.id}')
                 iaaa_user_create.send(sender=self.__class__, user_id=user.id)
         else:
             try:
@@ -99,11 +102,4 @@ class AuthenticationBackend(BaseBackend):
             user_info = response['userInfo']
             return user_info
         else:
-            raise IAAAError(response["errCode"], response["errMsg"])
-
-    def get_user(self, user_id):
-        try:
-            user = UserModel._default_manager.get(pk=user_id)
-        except UserModel.DoesNotExist:
-            return None
-        return user
+            raise IaaaError(response["errCode"], response["errMsg"])
