@@ -27,8 +27,16 @@ class AuthenticationBackend(BaseBackend):
     # Create a User object if not already in the database?
     create_unknown_user = True
 
-    def authenticate(self, request, **kwargs):
-        user_info = self.iaaa_auth(request)
+    def authenticate(self, request, _rand=None, token=None):
+        if token is None:
+            raise SuspiciousOperation
+
+        if request.META.get('HTTP_X_FORWARDED_FOR'):
+            remote_ip = request.META.get('HTTP_X_FORWARDED_FOR')
+        else:
+            remote_ip = request.META.get('REMOTE_ADDR')
+
+        user_info = self.iaaa_auth(rand=_rand, token=token, remote_ip=remote_ip)
         identity_id = user_info["identityId"]
 
         user = None
@@ -65,17 +73,7 @@ class AuthenticationBackend(BaseBackend):
         return user
 
     @classmethod
-    def iaaa_auth(cls, request):
-        rand = request.GET.get('_rand')
-        token = request.GET.get('token')
-
-        if request.META.get('HTTP_X_FORWARDED_FOR'):
-            remote_ip = request.META.get('HTTP_X_FORWARDED_FOR')
-        else:
-            remote_ip = request.META.get('REMOTE_ADDR')
-
-        if token is None:
-            raise SuspiciousOperation
+    def iaaa_auth(cls, rand, token, remote_ip):
 
         app = Iaaa.objects.last()
         app_id = app.app_id

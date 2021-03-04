@@ -1,15 +1,20 @@
-from django.contrib.auth import authenticate, login
+import logging
+
 from django.contrib.auth import get_user_model
-from django.core.exceptions import PermissionDenied
+from django.contrib.auth import login
+from django.core.exceptions import PermissionDenied, SuspiciousOperation
 from django.http import HttpResponseRedirect, Http404
 from django.template.response import TemplateResponse
 from django.urls import reverse
 from django.utils.translation import gettext, gettext_lazy as _
 from django.views.generic.base import View
 
+from .auth_backends import AuthenticationBackend
 from .models import Iaaa
 
 UserModel = get_user_model()
+backend = AuthenticationBackend()
+logger = logging.getLogger(__name__)
 
 
 class IAAALoginView(View):
@@ -31,8 +36,14 @@ class IAAALoginView(View):
 
 class IAAALoginAuth(View):
     def get(self, request):
+        _rand = request.GET.get('_rand')
+        token = request.GET.get('token')
+        if token is None:
+            logger.error('Token argument not provided.')
+            raise SuspiciousOperation
+
         try:
-            user = authenticate(request)
+            user = backend.authenticate(request, _rand=_rand, token=token)
         except Exception as e:
             msg = e.__class__.__name__
             try:
@@ -42,6 +53,7 @@ class IAAALoginAuth(View):
             else:
                 if isinstance(message, str):
                     msg = message
+            logger.exception(msg)
             raise Http404(msg)
         if user is None:
             raise Http404(gettext("No account is found."))
@@ -51,6 +63,7 @@ class IAAALoginAuth(View):
                                      "or your account is disabled. Please contact the Student "
                                      "Affairs Office of the School of Physics to activate your account."))
         else:
+            user.backend = backend.__module__ + backend.__class__.__name__
             login(request, user)
 
         if request.COOKIES.get('next'):
