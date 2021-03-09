@@ -101,13 +101,15 @@ class User(AbstractUser, GuardianUserMixin):
     class Meta(AbstractUser.Meta):
         pass
 
-    def get_email(self):
+    def get_pku_email(self):
         if self.is_teacher:
             return self.username + '@pku.edu.cn'
         elif int(self.username[0]) < 2:
             return self.username + '@pku.edu.cn'
-        else:
+        elif int(self.username[0:1]) >= 20:  # TODO: 每年更新毕业生邮箱
             return self.username + '@stu.pku.edu.cn'
+        else:
+            return self.username + '@alumni.pku.edu.cn'
 
     def get_preferred_email(self):
         if self.preferred_email:

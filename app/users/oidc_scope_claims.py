@@ -16,7 +16,8 @@ def userinfo(claims, user: User):
     claims['gender'] = user.get_gender_display()
     claims['birthdate'] = user.birthdate
 
-    claims['email'] = user.email
+    claims['email'] = user.get_preferred_email()
+    claims['email_verified'] = user.get_pku_email()
 
     claims['phone_number'] = user.phone_number
 
@@ -26,21 +27,22 @@ def userinfo(claims, user: User):
 
 
 class CustomScopeClaims(ScopeClaims):
-    info_extra = (
-        _(u'Extra'),
-        _(u'Extra information.'),
+    info_pku = (
+        _(u'PKU Info'),
+        _(u'Access to your pku information. Includes identity ID, '
+          u'identity type, identity status.'),
     )
 
-    def scope_extra(self):
+    def scope_pku(self):
         # self.user - Django user instance.
         # self.userinfo - Dict returned by OIDC_USERINFO function.
         # self.scopes - List of scopes requested.
         # self.client - Client requesting this claims.
         dic = {
             'pku_id': self.user.username,
-            'preferred_email': self.user.get_preferred_email(),
             'is_teacher': self.user.is_teacher,
             'in_school': self.user.in_school,
+            'department': self.user.department
         }
 
         return dic

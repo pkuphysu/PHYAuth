@@ -69,7 +69,7 @@ class IaaaAuthenticationBackend:
 
         user.is_teacher = False if user_info['identityType'] == '学生' else True
         user.in_school = True if user_info['identityStatus'] == '在校' else False
-        user.email = user.get_email()
+        user.email = user.get_pku_email()
         user.name = user_info['name']
         user.nickname = user_info['name']
         user.save()
