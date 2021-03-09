@@ -6,6 +6,21 @@ from guardian.mixins import GuardianUserMixin
 from .validators import UsernameValidator, PKUEmailValidator
 
 
+class Department(models.Model):
+    department = models.CharField(
+        _('Department'),
+        unique=True,
+        max_length=100
+    )
+
+    class Meta:
+        verbose_name = _('Department')
+        verbose_name_plural = _('Departments')
+
+    def __str__(self):
+        return self.department
+
+
 class User(AbstractUser, GuardianUserMixin):
     username_validator = UsernameValidator()
     username = models.CharField(
@@ -94,6 +109,13 @@ class User(AbstractUser, GuardianUserMixin):
             (True, '在校、在职')
         ),
         help_text=_('Designate whether the user is in school.')
+    )
+
+    department = models.ForeignKey(
+        to=Department,
+        on_delete=models.DO_NOTHING,
+        verbose_name=_('Department'),
+        null=True
     )
 
     REQUIRED_FIELDS = ['email']

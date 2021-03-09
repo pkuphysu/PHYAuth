@@ -5,7 +5,12 @@ from guardian.admin import GuardedModelAdmin
 from oidc_provider.admin import ClientForm
 from oidc_provider.models import Client
 
-from .models import User
+from .models import User, Department
+
+
+@admin.register(Department)
+class DepartmentAdmin(GuardedModelAdmin):
+    list_display = ['department']
 
 
 class UserAdmin(AbstractUserAdmin):
@@ -13,8 +18,8 @@ class UserAdmin(AbstractUserAdmin):
         (None, {'fields': ('username', 'password')}),
         (_('Personal Info'), {'fields': (
             'name',
-            'first_name', 'last_name', 'nickname', 'email', 'preferred_email', 'gender',
-            'birthdate', 'phone_number', 'address', 'website'
+            'first_name', 'last_name', 'nickname', 'email', 'preferred_email', 'department',
+            'gender', 'birthdate', 'phone_number', 'address', 'website'
         )}),
         (_('Permissions'), {
             'fields': ('is_staff', 'is_superuser', 'groups', 'user_permissions'),
@@ -31,7 +36,7 @@ class UserAdmin(AbstractUserAdmin):
     )
 
     list_display = ('username', 'name', 'nickname', 'email', 'is_teacher', 'in_school')
-    list_filter = ('is_teacher', 'is_staff', 'is_superuser', 'is_active', 'groups')
+    list_filter = ('is_teacher', 'is_staff', 'is_superuser', 'is_active', 'groups', 'department')
     search_fields = ('username', 'name', 'email', 'nickname')
 
 
