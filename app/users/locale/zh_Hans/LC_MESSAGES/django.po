@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-09 23:25+0800\n"
+"POT-Creation-Date: 2021-03-10 00:21+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,35 +18,35 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: .\app\users\admin.py:14
+#: .\app\users\admin.py:19
 msgid "Personal Info"
 msgstr "个人信息"
 
-#: .\app\users\admin.py:19
+#: .\app\users\admin.py:24
 msgid "Permissions"
 msgstr "权限"
 
-#: .\app\users\admin.py:22
+#: .\app\users\admin.py:27
 msgid "Important Dates"
 msgstr "重要日期"
 
-#: .\app\users\admin.py:23
+#: .\app\users\admin.py:28
 msgid "Account Status"
 msgstr "账户状态"
 
-#: .\app\users\admin.py:45
+#: .\app\users\admin.py:50
 msgid "Base"
 msgstr "基础"
 
-#: .\app\users\admin.py:50
+#: .\app\users\admin.py:55
 msgid "Credentials"
 msgstr "凭据"
 
-#: .\app\users\admin.py:53
+#: .\app\users\admin.py:58
 msgid "Information"
 msgstr "信息"
 
-#: .\app\users\admin.py:56
+#: .\app\users\admin.py:61
 msgid "Session Management"
 msgstr "会话管理"
 
@@ -54,103 +54,123 @@ msgstr "会话管理"
 msgid "user management"
 msgstr "用户管理"
 
-#: .\app\users\forms.py:90
+#: .\app\users\forms.py:95
 msgid "Client ID will be generated randomly."
 msgstr "应用ID将随机生成。"
 
-#: .\app\users\forms.py:91
+#: .\app\users\forms.py:96
 msgid ""
 "Client Secret will be generated randomly. If you want to get a new secret, "
 "please switch the client to Public and save, then switch back and save."
 msgstr ""
 "应用密钥将随机生成。如果你需要修改密钥，请先修改应用类型保存后再修改回来。"
 
-#: .\app\users\models.py:12
+#: .\app\users\models.py:11 .\app\users\models.py:117
+msgid "department"
+msgstr "系所"
+
+#: .\app\users\models.py:17
+msgid "Department"
+msgstr "系所"
+
+#: .\app\users\models.py:18
+msgid "Departments"
+msgstr "系所"
+
+#: .\app\users\models.py:27
 msgid "username"
 msgstr "职工号、学号"
 
-#: .\app\users\models.py:15
+#: .\app\users\models.py:30
 msgid "Required. It's your pku id. 10 characters. Digits only."
 msgstr "必须。这是北大师生的学工号。由10个数字构成。"
 
-#: .\app\users\models.py:18
+#: .\app\users\models.py:33
 msgid "A user with that username already exists."
 msgstr "具有该学工号的用户已经存在。"
 
-#: .\app\users\models.py:23
+#: .\app\users\models.py:38
 msgid "name"
 msgstr "姓名"
 
-#: .\app\users\models.py:29
+#: .\app\users\models.py:44
 msgid "pku email address"
 msgstr "北京大学邮箱"
 
-#: .\app\users\models.py:31
+#: .\app\users\models.py:46
 msgid ""
 "This is your pku email address, because some clients only require email "
 "address."
 msgstr "这是你的北大邮箱地址，因为一些应用只需要邮箱地址，这可以标识你的身份。"
 
-#: .\app\users\models.py:35
+#: .\app\users\models.py:50
 msgid "nickname"
 msgstr "昵称"
 
-#: .\app\users\models.py:41
+#: .\app\users\models.py:56
 msgid "website"
 msgstr "主页"
 
-#: .\app\users\models.py:47
+#: .\app\users\models.py:62
 msgid "gender"
 msgstr "性别"
 
-#: .\app\users\models.py:49
+#: .\app\users\models.py:64
 msgid "unknown"
 msgstr "保密"
 
-#: .\app\users\models.py:50
+#: .\app\users\models.py:65
 msgid "male"
 msgstr "男"
 
-#: .\app\users\models.py:51
+#: .\app\users\models.py:66
 msgid "female"
 msgstr "女"
 
-#: .\app\users\models.py:57
+#: .\app\users\models.py:72
 msgid "birthdate"
 msgstr "生日"
 
-#: .\app\users\models.py:63
+#: .\app\users\models.py:78
 msgid "phone number"
 msgstr "电话号码"
 
-#: .\app\users\models.py:69
+#: .\app\users\models.py:84
 msgid "address"
 msgstr "办公室"
 
-#: .\app\users\models.py:75
+#: .\app\users\models.py:90
 msgid "preferred email address"
 msgstr "常用邮件地址"
 
-#: .\app\users\models.py:77
+#: .\app\users\models.py:92
 msgid ""
 "This is your usual email address which we will use to get in touch with you."
 msgstr "这是你的常用邮箱，我们用它来最终与你取得联系。"
 
-#: .\app\users\models.py:81
+#: .\app\users\models.py:96
 msgid "is teacher"
 msgstr "职工状态"
 
-#: .\app\users\models.py:85
+#: .\app\users\models.py:100
 msgid "Designates whether the user is a teacher."
 msgstr "指明用户是否为老师。"
 
-#: .\app\users\models.py:90
+#: .\app\users\models.py:105
 msgid "is in school"
 msgstr "是否在校"
 
-#: .\app\users\models.py:96
+#: .\app\users\models.py:111
 msgid "Designate whether the user is in school."
 msgstr "指明用户是否为在校。"
+
+#: .\app\users\models.py:122
+msgid "introduce"
+msgstr "简介"
+
+#: .\app\users\models.py:124
+msgid "Your personal introduction."
+msgstr "你的个人简介。"
 
 #: .\app\users\oidc_scope_claims.py:31
 msgid "PKU Info"
@@ -160,7 +180,9 @@ msgstr "PKU 信息"
 msgid ""
 "Access to your pku information. Includes identity ID, identity type, "
 "identity status."
-msgstr "访问你的北京大学信息。包含学号/工号、身份（教职工或学生）、状态（在校或减离）。"
+msgstr ""
+"访问你的北京大学信息。包含学号/工号、身份（教职工或学生）、状态（在校或减"
+"离）。"
 
 #: .\app\users\templates\users\client_create.html:4
 #: .\app\users\templates\users\client_create.html:8
@@ -170,7 +192,7 @@ msgstr "创建应用"
 
 #: .\app\users\templates\users\client_create.html:25
 #: .\app\users\templates\users\client_update.html:25
-#: .\app\users\templates\users\user_detail.html:97
+#: .\app\users\templates\users\user_detail.html:104
 msgid "Submit"
 msgstr "提交"
 
@@ -232,29 +254,29 @@ msgstr "更新应用"
 msgid "User Profile"
 msgstr "个人资料"
 
-#: .\app\users\templates\users\user_detail.html:81
+#: .\app\users\templates\users\user_detail.html:88
 msgctxt "user profile"
 msgid "Settings"
 msgstr "设置"
 
-#: .\app\users\templates\users\user_detail.html:86
+#: .\app\users\templates\users\user_detail.html:93
 msgid "Recent activity"
 msgstr "最近活动"
 
-#: .\app\users\templates\users\user_detail.html:120
+#: .\app\users\templates\users\user_detail.html:127
 msgid "Authorize"
 msgstr "授权"
 
-#: .\app\users\templates\users\user_detail.html:123
+#: .\app\users\templates\users\user_detail.html:130
 msgid "to access your information"
 msgstr "访问你的信息"
 
-#: .\app\users\templates\users\user_detail.html:136
+#: .\app\users\templates\users\user_detail.html:143
 #, python-format
 msgid "This consent will expire at %(etime)s."
 msgstr "这个授权将在 %(etime)s 过期。"
 
-#: .\app\users\templates\users\user_detail.html:140
+#: .\app\users\templates\users\user_detail.html:147
 #, python-format
 msgid "This consent has been expired at %(etime)s."
 msgstr "这个授权已在 %(etime)s 过期。"

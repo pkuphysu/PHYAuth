@@ -8,7 +8,7 @@ from .validators import UsernameValidator, PKUEmailValidator
 
 class Department(models.Model):
     department = models.CharField(
-        _('Department'),
+        _('department'),
         unique=True,
         max_length=100
     )
@@ -114,8 +114,14 @@ class User(AbstractUser, GuardianUserMixin):
     department = models.ForeignKey(
         to=Department,
         on_delete=models.DO_NOTHING,
-        verbose_name=_('Department'),
+        verbose_name=_('department'),
         null=True
+    )
+
+    introduce = models.TextField(
+        _('introduce'),
+        null=True, blank=True,
+        help_text=_('Your personal introduction.')
     )
 
     REQUIRED_FIELDS = ['email']

@@ -32,6 +32,7 @@ class UserForm(forms.ModelForm):
             'birthdate',
             'phone_number',
             'address',
+            'introduce',
             'is_teacher',
             'in_school',
             'last_login',
@@ -50,6 +51,8 @@ class UserForm(forms.ModelForm):
             'birthdate': forms.DateInput(attrs={'class': 'form-control'}),
             'phone_number': forms.TextInput(attrs={'class': 'form-control'}),
             'address': forms.TextInput(attrs={'class': 'form-control'}),
+            'introduce': forms.Textarea(attrs={'class': 'form-control',
+                                               'rows': 3}),
             'is_teacher': forms.Select(attrs={'class': 'form-control'}),
             'in_school': forms.Select(attrs={'class': 'form-control'}),
             'last_login': forms.DateTimeInput(attrs={'class': 'form-control'})

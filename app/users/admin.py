@@ -19,7 +19,7 @@ class UserAdmin(AbstractUserAdmin):
         (_('Personal Info'), {'fields': (
             'name',
             'first_name', 'last_name', 'nickname', 'email', 'preferred_email', 'department',
-            'gender', 'birthdate', 'phone_number', 'address', 'website'
+            'gender', 'birthdate', 'phone_number', 'address', 'website', 'introduce'
         )}),
         (_('Permissions'), {
             'fields': ('is_staff', 'is_superuser', 'groups', 'user_permissions'),
