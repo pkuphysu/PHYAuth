@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-03 19:43+0800\n"
+"POT-Creation-Date: 2021-03-11 00:51+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Rainshaw <rxg@live.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -77,9 +77,13 @@ msgid "Choose file"
 msgstr "选择文件"
 
 #: .\templates\index.html:5 .\templates\index.html:26
-#: .\templates\index.html:249 .\templates\index.html:254
+#: .\templates\index.html:250 .\templates\index.html:255
 msgid "Home"
 msgstr "主页"
+
+#: .\templates\index.html:59 .\templates\index.html:115
+msgid "Change Avatar"
+msgstr "更换头像"
 
 #: .\templates\index.html:71
 msgid "Change Password"
@@ -99,63 +103,63 @@ msgstr "登入"
 msgid "Uniform Identity Auth"
 msgstr "统一认证"
 
-#: .\templates\index.html:138
+#: .\templates\index.html:139
 msgid "Manage Site"
 msgstr "管理站点"
 
-#: .\templates\index.html:144
+#: .\templates\index.html:145
 msgid "Admin Site"
 msgstr "后台管理"
 
-#: .\templates\index.html:150
+#: .\templates\index.html:151
 msgid "Manage Announcement"
 msgstr "管理公告"
 
-#: .\templates\index.html:157
+#: .\templates\index.html:158
 msgid "Announcement List"
 msgstr "公告列表"
 
-#: .\templates\index.html:164
+#: .\templates\index.html:165
 msgid "Create Announcement"
 msgstr "新建公告"
 
-#: .\templates\index.html:172
+#: .\templates\index.html:173
 msgid "Manage TopLink"
 msgstr "管理顶部导航链接"
 
-#: .\templates\index.html:179
+#: .\templates\index.html:180
 msgid "TopLink List"
 msgstr "链接列表"
 
-#: .\templates\index.html:186
+#: .\templates\index.html:187
 msgid "Create TopLink"
 msgstr "新建导航链接"
 
-#: .\templates\index.html:197
+#: .\templates\index.html:198
 msgid "User Profile"
 msgstr "用户资料"
 
-#: .\templates\index.html:204
+#: .\templates\index.html:205
 msgid "My Client"
 msgstr "我的应用"
 
-#: .\templates\index.html:212
+#: .\templates\index.html:213
 msgid "Client List"
 msgstr "应用列表"
 
-#: .\templates\index.html:218
+#: .\templates\index.html:219
 msgid "Create Client"
 msgstr "创建应用"
 
-#: .\templates\index.html:226
+#: .\templates\index.html:227
 msgid "Admins"
 msgstr "管理员列表"
 
-#: .\templates\index.html:272
+#: .\templates\index.html:273
 msgid "Announcement"
 msgstr "公告"
 
-#: .\templates\index.html:315
+#: .\templates\index.html:316
 msgid "All rights reserved."
 msgstr "版权所有."
 

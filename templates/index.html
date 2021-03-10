@@ -56,9 +56,11 @@
                                     <ul class="dropdown-menu dropdown-menu-lg-right">
                                         <!-- User image -->
                                         <li class="user-header">
-                                            <img src="{% avatar_url size=160 %}" class="img-circle elevation-2"
-                                                 alt="User Image">
-
+                                            <a href="https://gravatar.com/emails/"
+                                               title="{% translate 'Change Avatar' %}">
+                                                <img src="{% avatar_url size=160 %}" class="img-circle elevation-2"
+                                                     alt="User Image">
+                                            </a>
                                             <p>
                                                 {% firstof request.user.get_short_name request.user.get_username %}
                                                 - {{ request.user.get_is_teacher_display }}
@@ -112,8 +114,10 @@
                         {% if request.user.is_authenticated %}
                             <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                                 <div class="image">
-                                    <img src="{% avatar_url size=90 %}" class="img-circle elevation-2"
-                                         alt="User Image">
+                                    <a href="https://gravatar.com/emails/" title="{% translate 'Change Avatar' %}">
+                                        <img src="{% avatar_url size=90 %}" class="img-circle elevation-2"
+                                             alt="User Image">
+                                    </a>
                                 </div>
                                 <div class="info">
                                     <a href="#"

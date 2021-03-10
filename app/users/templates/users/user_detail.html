@@ -21,9 +21,10 @@
                 <div class="card card-primary card-outline">
                     <div class="card-body box-profile">
                         <div class="text-center">
-                            <img class="profile-user-img img-fluid img-circle"
-                                 src="{% avatar_url size=128 %}"
-                                 alt="User profile picture">
+                            <a href="https://gravatar.com/emails/" title="{% translate 'Change Avatar' %}">
+                                <img class="profile-user-img img-fluid img-circle" src="{% avatar_url size=128 %}"
+                                     alt="User profile picture">
+                            </a>
                         </div>
 
                         <h3 class="profile-username text-center">{{ user.get_full_name }}</h3>

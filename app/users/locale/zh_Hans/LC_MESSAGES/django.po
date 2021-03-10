@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-10 00:21+0800\n"
+"POT-Creation-Date: 2021-03-11 00:51+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -253,6 +253,10 @@ msgstr "更新应用"
 #: .\app\users\templates\users\user_detail.html:12
 msgid "User Profile"
 msgstr "个人资料"
+
+#: .\app\users\templates\users\user_detail.html:24
+msgid "Change Avatar"
+msgstr "更换头像"
 
 #: .\app\users\templates\users\user_detail.html:88
 msgctxt "user profile"
