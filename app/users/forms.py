@@ -1,4 +1,5 @@
 import uuid
+from random import randint
 
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
@@ -111,7 +112,12 @@ class ClientForm(OIDC_ClientForm):
         self.fields['require_consent'].disabled = True
 
     def clean_client_id(self):
-        return str(uuid.uuid1())
+        instance = getattr(self, 'instance', None)
+        if instance and instance.pk:
+            return instance.client_id
+        else:
+            import time
+            return str(int(time.time())) + str(randint(1, 999)).zfill(4)
 
     def clean_owner(self):
         return self.user
