@@ -134,7 +134,7 @@ class User(AbstractUser, GuardianUserMixin):
             return self.username + '@pku.edu.cn'
         elif int(self.username[0]) < 2:
             return self.username + '@pku.edu.cn'
-        elif int(self.username[0:1]) >= 20:  # TODO: 每年更新毕业生邮箱
+        elif int(self.username[0:2]) >= 20:  # TODO: 每年更新毕业生邮箱
             return self.username + '@stu.pku.edu.cn'
         else:
             return self.username + '@alumni.pku.edu.cn'
