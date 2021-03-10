@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-11 00:51+0800\n"
+"POT-Creation-Date: 2021-03-11 01:16+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Rainshaw <rxg@live.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -76,90 +76,90 @@ msgstr "物理学院统一身份认证"
 msgid "Choose file"
 msgstr "选择文件"
 
-#: .\templates\index.html:5 .\templates\index.html:26
-#: .\templates\index.html:250 .\templates\index.html:255
+#: .\templates\index.html:6 .\templates\index.html:27
+#: .\templates\index.html:256 .\templates\index.html:261
 msgid "Home"
 msgstr "主页"
 
-#: .\templates\index.html:59 .\templates\index.html:115
+#: .\templates\index.html:63 .\templates\index.html:120
 msgid "Change Avatar"
 msgstr "更换头像"
 
-#: .\templates\index.html:71
+#: .\templates\index.html:76
 msgid "Change Password"
 msgstr "修改密码"
 
-#: .\templates\index.html:75
+#: .\templates\index.html:80
 msgid "Sign Out"
 msgstr "登出"
 
-#: .\templates\index.html:82 .\templates\registration\login.html:4
+#: .\templates\index.html:87 .\templates\registration\login.html:4
 #: .\templates\registration\login.html:59
 #: .\templates\registration\password_reset_form.html:51
 msgid "Sign In"
 msgstr "登入"
 
-#: .\templates\index.html:103
+#: .\templates\index.html:108
 msgid "Uniform Identity Auth"
 msgstr "统一认证"
 
-#: .\templates\index.html:139
+#: .\templates\index.html:145
 msgid "Manage Site"
 msgstr "管理站点"
 
-#: .\templates\index.html:145
+#: .\templates\index.html:151
 msgid "Admin Site"
 msgstr "后台管理"
 
-#: .\templates\index.html:151
+#: .\templates\index.html:157
 msgid "Manage Announcement"
 msgstr "管理公告"
 
-#: .\templates\index.html:158
+#: .\templates\index.html:164
 msgid "Announcement List"
 msgstr "公告列表"
 
-#: .\templates\index.html:165
+#: .\templates\index.html:171
 msgid "Create Announcement"
 msgstr "新建公告"
 
-#: .\templates\index.html:173
+#: .\templates\index.html:179
 msgid "Manage TopLink"
 msgstr "管理顶部导航链接"
 
-#: .\templates\index.html:180
+#: .\templates\index.html:186
 msgid "TopLink List"
 msgstr "链接列表"
 
-#: .\templates\index.html:187
+#: .\templates\index.html:193
 msgid "Create TopLink"
 msgstr "新建导航链接"
 
-#: .\templates\index.html:198
+#: .\templates\index.html:204
 msgid "User Profile"
 msgstr "用户资料"
 
-#: .\templates\index.html:205
+#: .\templates\index.html:211
 msgid "My Client"
 msgstr "我的应用"
 
-#: .\templates\index.html:213
+#: .\templates\index.html:219
 msgid "Client List"
 msgstr "应用列表"
 
-#: .\templates\index.html:219
+#: .\templates\index.html:225
 msgid "Create Client"
 msgstr "创建应用"
 
-#: .\templates\index.html:227
+#: .\templates\index.html:233
 msgid "Admins"
 msgstr "管理员列表"
 
-#: .\templates\index.html:273
+#: .\templates\index.html:279
 msgid "Announcement"
 msgstr "公告"
 
-#: .\templates\index.html:316
+#: .\templates\index.html:322
 msgid "All rights reserved."
 msgstr "版权所有."
 

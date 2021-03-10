@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load django_bootstrap_breadcrumbs %}
 {% load user_helper %}
+{% load cache %}
 
 {% block title %}{% translate 'Home' %}{% endblock %}
 
@@ -25,11 +26,13 @@
                         <li class="nav-item d-none d-sm-inline-block">
                             <a href="{% url 'index' %}" class="nav-link">{% translate 'Home' %}</a>
                         </li>
-                        {% for top_link in top_links %}
-                            <li class="nav-item d-none d-sm-inline-block">
-                                <a href="{{ top_link.url }}" class="nav-link">{{ top_link.name }}</a>
-                            </li>
-                        {% endfor %}
+                        {% cache None nav_top_links %}
+                            {% for top_link in top_links %}
+                                <li class="nav-item d-none d-sm-inline-block">
+                                    <a href="{{ top_link.url }}" class="nav-link">{{ top_link.name }}</a>
+                                </li>
+                            {% endfor %}
+                        {% endcache %}
 
                     </ul>
                 {% endblock nav_header_left %}
