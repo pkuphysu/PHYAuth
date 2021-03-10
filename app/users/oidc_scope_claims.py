@@ -42,7 +42,7 @@ class CustomScopeClaims(ScopeClaims):
             'pku_id': self.user.username,
             'is_teacher': self.user.is_teacher,
             'in_school': self.user.in_school,
-            'department': self.user.department,
+            'department': self.user.department.department,
             'introduce': self.user.introduce,
         }
 
