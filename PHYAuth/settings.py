@@ -166,6 +166,10 @@ LOGIN_URL = SUBPATH + 'login'
 LOGOUT_REDIRECT_URL = SUBPATH
 
 LANGUAGE_COOKIE_PATH = SUBPATH
+LANGUAGES = [
+    ('zh-hans', 'Simplified Chinese'),
+    ('en', 'English'),
+]
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/

@@ -20,6 +20,7 @@ from django.urls import path, include
 from app.portal import views as portal_views
 
 urlpatterns = [
+    path('i18n/', include('django.conf.urls.i18n')),
     # accounts/login/
     # accounts/logout/
     # accounts/password_change/

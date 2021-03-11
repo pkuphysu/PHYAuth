@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-10 00:21+0800\n"
+"POT-Creation-Date: 2021-03-12 04:47+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -259,57 +259,57 @@ msgstr "链接 URL"
 msgid "Update TopLink"
 msgstr "更新顶部导航链接"
 
-#: .\app\portal\views.py:39 .\app\portal\views.py:51 .\app\portal\views.py:124
-#: .\app\portal\views.py:136
+#: .\app\portal\views.py:38 .\app\portal\views.py:50 .\app\portal\views.py:123
+#: .\app\portal\views.py:135
 msgid ""
 "You are not a staff, and do not have permission to view this page, please "
 "contact the administrator!"
 msgstr "你不是管理员，无权访问此页面，请联系管理员！"
 
-#: .\app\portal\views.py:61
+#: .\app\portal\views.py:60
 #, python-format
 msgid "Announcement #%(id)s has been created successfully!"
 msgstr "成功创建公告 #%(id)s！"
 
-#: .\app\portal\views.py:72
+#: .\app\portal\views.py:71
 msgid ""
 "You are not the creator of this announcement, so you do not have the right "
 "to modify it!"
 msgstr "你不是此公告的创建者，无权修改它！"
 
-#: .\app\portal\views.py:82 .\app\portal\views.py:167
+#: .\app\portal\views.py:81 .\app\portal\views.py:166
 #, python-format
 msgid "Announcement #%(id)s has been updated successfully!"
 msgstr "成功更新公告 #%(id)s！"
 
-#: .\app\portal\views.py:91
+#: .\app\portal\views.py:90
 msgid ""
 "You are not the creator of this announcement, so you do not have the right "
 "to delete it!"
 msgstr "你不是此公告的创建者，无权删除它！"
 
-#: .\app\portal\views.py:99 .\app\portal\views.py:184
+#: .\app\portal\views.py:98 .\app\portal\views.py:183
 #, python-format
 msgid "Need %(verbose_name)s Id"
 msgstr "需要 %(verbose_name)s id"
 
-#: .\app\portal\views.py:104 .\app\portal\views.py:189
+#: .\app\portal\views.py:103 .\app\portal\views.py:188
 #, python-format
 msgid "No %(verbose_name)s found matching the query"
 msgstr "没有找到符合条件的 %(verbose_name)s"
 
-#: .\app\portal\views.py:146
+#: .\app\portal\views.py:145
 #, python-format
 msgid "TopLink #%(id)s has been created successfully!"
 msgstr "成功创建顶部链接 #%(id)s！"
 
-#: .\app\portal\views.py:157
+#: .\app\portal\views.py:156
 msgid ""
 "You are not the creator of this toplink, so you do not have the right to "
 "modify it!"
 msgstr "你不是此链接的创建者，无权修改它！"
 
-#: .\app\portal\views.py:176
+#: .\app\portal\views.py:175
 msgid ""
 "You are not the creator of this toplink, so you do not have the right to "
 "delete it!"

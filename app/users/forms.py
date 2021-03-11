@@ -1,4 +1,3 @@
-import uuid
 from random import randint
 
 from django import forms

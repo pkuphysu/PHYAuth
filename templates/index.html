@@ -47,6 +47,27 @@
                                 <i class="fas fa-expand-arrows-alt"></i>
                             </a>
                         </li>
+                        <!-- Language Menu -->
+                        {% get_language_info for LANGUAGE_CODE as lang %}
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" data-toggle="dropdown" href="#">{{ lang.name_local }}</a>
+                            <form action="{% url 'set_language' %}" method="post">
+                                <div class="dropdown-menu dropdown-menu-right p-0">
+                                    {% csrf_token %}
+                                    <input name="next" type="hidden" value="{{ request.path }}">
+                                    {% get_available_languages as LANGUAGES %}
+                                    {% get_language_info_list for LANGUAGES as languages %}
+                                    <div class="btn-group-vertical dropdown-item p-0">
+                                        {% for language in languages %}
+                                            <button class="btn btn-block btn-pku{% if LANGUAGE_CODE == language.code %} disabled{% endif %}"
+                                                    type="submit" name="language" value="{{ language.code }}">
+                                                <i class="flag-icon mr-2 {% if language.code == 'en' %}flag-icon-us{% elif language.code == 'zh-hans' %}flag-icon-cn{% endif %}"></i> {{ language.name_local }}
+                                            </button>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </form>
+                        </li>
                         {% block nav_header_right_user_info %}
                             {% if request.user.is_authenticated %}
                                 <li class="nav-item dropdown user-menu">
