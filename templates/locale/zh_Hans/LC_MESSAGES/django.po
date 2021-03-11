@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-12 04:47+0800\n"
+"POT-Creation-Date: 2021-03-12 05:28+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Rainshaw <rxg@live.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -72,6 +72,144 @@ msgstr "我们很快会修复此问题。"
 msgid "Uniform Identity Authentication of the School of Physics"
 msgstr "物理学院统一身份认证"
 
+#: .\templates\cmsadmin\announcement_create.html:4
+#: .\templates\cmsadmin\announcement_create.html:8
+#: .\templates\cmsadmin\announcement_create.html:11 .\templates\index.html:189
+msgid "Create Announcement"
+msgstr "新建公告"
+
+#: .\templates\cmsadmin\announcement_create.html:25
+#: .\templates\cmsadmin\announcement_update.html:25
+#: .\templates\cmsadmin\toplink_create.html:25
+#: .\templates\cmsadmin\toplink_update.html:25
+msgid "Submit"
+msgstr "提交"
+
+#: .\templates\cmsadmin\announcement_list.html:4
+#: .\templates\cmsadmin\announcement_list.html:8
+#: .\templates\cmsadmin\announcement_list.html:11 .\templates\index.html:182
+msgid "Announcement List"
+msgstr "公告列表"
+
+#: .\templates\cmsadmin\announcement_list.html:21
+#: .\templates\cmsadmin\toplink_list.html:21
+msgid "Create"
+msgstr "新建"
+
+#: .\templates\cmsadmin\announcement_list.html:30
+msgid "Announcement Rank"
+msgstr "公告排序"
+
+#: .\templates\cmsadmin\announcement_list.html:31
+msgid "Announcement Type"
+msgstr "公告类型"
+
+#: .\templates\cmsadmin\announcement_list.html:32
+msgid "Announcement Title"
+msgstr "公告标题"
+
+#: .\templates\cmsadmin\announcement_list.html:33
+#: .\templates\cmsadmin\toplink_list.html:33
+msgid "Operate"
+msgstr "操作"
+
+#: .\templates\cmsadmin\announcement_list.html:45
+#: .\templates\cmsadmin\toplink_list.html:45
+msgid "Edit"
+msgstr "编辑"
+
+#: .\templates\cmsadmin\announcement_list.html:49
+#: .\templates\cmsadmin\toplink_list.html:49
+msgid "Delete"
+msgstr "删除"
+
+#: .\templates\cmsadmin\announcement_list.html:80
+#: .\templates\cmsadmin\toplink_list.html:75
+#: .\templates\registration\password_change_form.html:103
+#: .\templates\registration\password_reset_confirm.html:81
+#: .\templates\registration\password_reset_form.html:72
+msgid "Are you sure?"
+msgstr "你确定吗？"
+
+#: .\templates\cmsadmin\announcement_list.html:81
+#: .\templates\cmsadmin\toplink_list.html:76
+msgid "You won't be able to revert this!"
+msgstr "你无法撤销此操作！"
+
+#: .\templates\cmsadmin\announcement_list.html:86
+#: .\templates\cmsadmin\toplink_list.html:81
+#: .\templates\registration\password_change_form.html:108
+#: .\templates\registration\password_reset_confirm.html:86
+#: .\templates\registration\password_reset_form.html:78
+msgid "Yes"
+msgstr "是的"
+
+#: .\templates\cmsadmin\announcement_list.html:87
+#: .\templates\cmsadmin\toplink_list.html:82
+#: .\templates\registration\password_change_form.html:109
+#: .\templates\registration\password_reset_confirm.html:87
+#: .\templates\registration\password_reset_form.html:79
+msgid "Cancel"
+msgstr "取消"
+
+#: .\templates\cmsadmin\announcement_list.html:103
+#: .\templates\cmsadmin\toplink_list.html:98
+msgid "Success Delete"
+msgstr "删除成功"
+
+#: .\templates\cmsadmin\announcement_list.html:110
+#: .\templates\cmsadmin\announcement_list.html:118
+#: .\templates\cmsadmin\toplink_list.html:105
+#: .\templates\cmsadmin\toplink_list.html:113
+msgid "Fail Delete"
+msgstr "删除失败"
+
+#: .\templates\cmsadmin\announcement_list.html:126
+#: .\templates\cmsadmin\toplink_list.html:121
+msgid "Lucky to see this warning~~"
+msgstr "万幸看到这个警告~~"
+
+#: .\templates\cmsadmin\announcement_list.html:127
+#: .\templates\cmsadmin\toplink_list.html:122
+msgid "This will close in <b></b> milliseconds."
+msgstr "我将在<b></b>毫秒内自动关闭~"
+
+#: .\templates\cmsadmin\announcement_update.html:4
+#: .\templates\cmsadmin\announcement_update.html:8
+#: .\templates\cmsadmin\announcement_update.html:11
+msgid "Update Announcement"
+msgstr "更新公告"
+
+#: .\templates\cmsadmin\toplink_create.html:4
+#: .\templates\cmsadmin\toplink_create.html:8
+#: .\templates\cmsadmin\toplink_create.html:11 .\templates\index.html:211
+msgid "Create TopLink"
+msgstr "新建导航链接"
+
+#: .\templates\cmsadmin\toplink_list.html:4
+#: .\templates\cmsadmin\toplink_list.html:8
+#: .\templates\cmsadmin\toplink_list.html:11 .\templates\index.html:204
+msgid "TopLink List"
+msgstr "链接列表"
+
+#: .\templates\cmsadmin\toplink_list.html:30
+msgid "TopLink Rank"
+msgstr "链接排序"
+
+#: .\templates\cmsadmin\toplink_list.html:31
+msgid "TopLink Name"
+msgstr "链接名称"
+
+#: .\templates\cmsadmin\toplink_list.html:32
+msgid "TopLink URL"
+msgstr "链接地址"
+
+#: .\templates\cmsadmin\toplink_update.html:4
+#: .\templates\cmsadmin\toplink_update.html:8
+#: .\templates\cmsadmin\toplink_update.html:11
+msgid "Update TopLink"
+msgstr "更新导航链接"
+
 #: .\templates\django\forms\widgets\file.html:4
 msgid "Choose file"
 msgstr "选择文件"
@@ -115,25 +253,9 @@ msgstr "后台管理"
 msgid "Manage Announcement"
 msgstr "管理公告"
 
-#: .\templates\index.html:182
-msgid "Announcement List"
-msgstr "公告列表"
-
-#: .\templates\index.html:189
-msgid "Create Announcement"
-msgstr "新建公告"
-
 #: .\templates\index.html:197
 msgid "Manage TopLink"
 msgstr "管理顶部导航链接"
-
-#: .\templates\index.html:204
-msgid "TopLink List"
-msgstr "链接列表"
-
-#: .\templates\index.html:211
-msgid "Create TopLink"
-msgstr "新建导航链接"
 
 #: .\templates\index.html:222
 msgid "User Profile"
@@ -267,24 +389,6 @@ msgstr "请更正以下错误。"
 #: .\templates\registration\password_reset_confirm.html:57
 msgid "Change password"
 msgstr "修改密码"
-
-#: .\templates\registration\password_change_form.html:103
-#: .\templates\registration\password_reset_confirm.html:81
-#: .\templates\registration\password_reset_form.html:72
-msgid "Are you sure?"
-msgstr "你确定吗？"
-
-#: .\templates\registration\password_change_form.html:108
-#: .\templates\registration\password_reset_confirm.html:86
-#: .\templates\registration\password_reset_form.html:78
-msgid "Yes"
-msgstr "是的"
-
-#: .\templates\registration\password_change_form.html:109
-#: .\templates\registration\password_reset_confirm.html:87
-#: .\templates\registration\password_reset_form.html:79
-msgid "Cancel"
-msgstr "取消"
 
 #: .\templates\registration\password_change_form.html:133
 msgid "Please enter old password"

@@ -45,10 +45,11 @@ urlpatterns = [
     path('iaaa/', include('app.pku_iaaa.urls', namespace='pku_iaaa')),
     # /
     # contacts/
-    # announcement-*/
-    # toplink-*/
     path('', portal_views.index, name='index'),
     path('', include('app.portal.urls', namespace='portal')),
+    # announcement-*/
+    # toplink-*/
+    path('', include('app.cmsadmin.urls', namespace='cmsadmin')),
     # secret-admin-url/
     path(f'{settings.ADMIN_URL}', admin.site.urls),
 ]

@@ -1,14 +1,14 @@
 {% extends 'index.html' %}
 {% load django_bootstrap_breadcrumbs %}
 
-{% block title %}{% translate 'Announcement List' %}{% endblock %}
+{% block title %}{% translate 'TopLink List' %}{% endblock %}
 
 {% block content_wrapper_breadcrumb %}
     {{ block.super }}
-    {% breadcrumb_for 'portal:announcement-list' %}{% trans "Announcement List" %}{% endbreadcrumb_for %}
+    {% breadcrumb_for 'cmsadmin:toplink-list' %}{% trans "TopLink List" %}{% endbreadcrumb_for %}
 {% endblock %}
 
-{% block content_wrapper_header %}{% translate 'Announcement List' %}{% endblock %}
+{% block content_wrapper_header %}{% translate 'TopLink List' %}{% endblock %}
 
 {% block content_wrapper_body %}
     <div class="container-fluid">
@@ -17,7 +17,7 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="card-tools">
-                            <a href="{% url 'portal:announcement-create' %}">
+                            <a href="{% url 'cmsadmin:toplink-create' %}">
                                 <button class="btn btn-primary">{% translate 'Create' %}</button>
                             </a>
                         </div>
@@ -27,32 +27,27 @@
                             <thead>
                             <tr>
                                 <th>#</th>
-                                <th>{% translate 'Announcement Rank' %}</th>
-                                <th>{% translate 'Announcement Type' %}</th>
-                                <th>{% translate 'Announcement Title' %}</th>
+                                <th>{% translate 'TopLink Rank' %}</th>
+                                <th>{% translate 'TopLink Name' %}</th>
+                                <th>{% translate 'TopLink URL' %}</th>
                                 <th>{% translate 'Operate' %}</th>
                             </tr>
                             </thead>
                             <tbody>
-                            {% for announcement in announcement_list %}
-                                <tr data-widget="expandable-table" aria-expanded="false">
-                                    <td>{{ announcement.pk }}</td>
-                                    <td>{{ announcement.rank }}</td>
-                                    <td>{{ announcement.get_type_display }}</td>
-                                    <td>{{ announcement.title }}</td>
+                            {% for toplink in toplink_list %}
+                                <tr>
+                                    <td>{{ toplink.pk }}</td>
+                                    <td>{{ toplink.rank }}</td>
+                                    <td>{{ toplink.name }}</td>
+                                    <td>{{ toplink.url }}</td>
                                     <td>
-                                        <a href="{% url 'portal:announcement-update' announcement.pk %}">
+                                        <a href="{% url 'cmsadmin:toplink-update' toplink.pk %}">
                                             <button class="btn btn-info">{% translate 'Edit' %}</button>
                                         </a>
 
                                         <button class="btn btn-danger delete"
-                                                announcement_id="{{ announcement.pk }}">{% translate 'Delete' %}</button>
+                                                toplink_id="{{ toplink.pk }}">{% translate 'Delete' %}</button>
 
-                                    </td>
-                                </tr>
-                                <tr class="expandable-body">
-                                    <td colspan="5">
-                                        <div>{{ announcement.content|safe }}</div>
                                     </td>
                                 </tr>
                             {% endfor %}
@@ -91,9 +86,9 @@
                     //  发请求到后端删除数据
                     $.ajax({
                         //拼接要访问的url地址
-                        url: '{% url 'portal:announcement-delete'  %}',
+                        url: '{% url 'cmsadmin:toplink-delete'  %}',
                         type: 'POST',
-                        data: {id: $(this).attr('announcement_id')},
+                        data: {id: $(this).attr('toplink_id')},
                         beforeSend: function (xhr, settings) {
                             xhr.setRequestHeader("X-CSRFToken", "{{ csrf_token }}");
                         },

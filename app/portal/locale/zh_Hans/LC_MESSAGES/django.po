@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-12 04:47+0800\n"
+"POT-Creation-Date: 2021-03-12 05:28+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -56,7 +56,6 @@ msgid "Top Links"
 msgstr "顶部链接"
 
 #: .\app\portal\models.py:43
-#: .\app\portal\templates\portal\announcement_list.html:31
 msgid "Announcement Type"
 msgstr "公告类型"
 
@@ -81,7 +80,6 @@ msgid "success-green, warning-yellow, info-blue, danger-red"
 msgstr "成功-绿色，警告-黄色，信息-蓝色，危险-红色"
 
 #: .\app\portal\models.py:55
-#: .\app\portal\templates\portal\announcement_list.html:32
 msgid "Announcement Title"
 msgstr "公告标题"
 
@@ -90,7 +88,6 @@ msgid "Announcement Content"
 msgstr "公告内容"
 
 #: .\app\portal\models.py:64
-#: .\app\portal\templates\portal\announcement_list.html:30
 msgid "Announcement Rank"
 msgstr "公告排序"
 
@@ -141,176 +138,3 @@ msgstr "主页"
 #: .\app\portal\templates\portal\admins.html:45
 msgid "Introduction"
 msgstr "简介"
-
-#: .\app\portal\templates\portal\announcement_create.html:4
-#: .\app\portal\templates\portal\announcement_create.html:8
-#: .\app\portal\templates\portal\announcement_create.html:11
-msgid "Create Announcement"
-msgstr "创建公告"
-
-#: .\app\portal\templates\portal\announcement_create.html:25
-#: .\app\portal\templates\portal\announcement_update.html:25
-#: .\app\portal\templates\portal\toplink_create.html:25
-#: .\app\portal\templates\portal\toplink_update.html:25
-msgid "Submit"
-msgstr "提交"
-
-#: .\app\portal\templates\portal\announcement_list.html:4
-#: .\app\portal\templates\portal\announcement_list.html:8
-#: .\app\portal\templates\portal\announcement_list.html:11
-msgid "Announcement List"
-msgstr "公告列表"
-
-#: .\app\portal\templates\portal\announcement_list.html:21
-#: .\app\portal\templates\portal\toplink_list.html:21
-msgid "Create"
-msgstr "创建"
-
-#: .\app\portal\templates\portal\announcement_list.html:33
-#: .\app\portal\templates\portal\toplink_list.html:33
-msgid "Operate"
-msgstr "操作"
-
-#: .\app\portal\templates\portal\announcement_list.html:45
-#: .\app\portal\templates\portal\toplink_list.html:45
-msgid "Edit"
-msgstr "编辑"
-
-#: .\app\portal\templates\portal\announcement_list.html:49
-#: .\app\portal\templates\portal\toplink_list.html:49
-msgid "Delete"
-msgstr "删除"
-
-#: .\app\portal\templates\portal\announcement_list.html:80
-#: .\app\portal\templates\portal\toplink_list.html:75
-msgid "Are you sure?"
-msgstr "你确定吗？"
-
-#: .\app\portal\templates\portal\announcement_list.html:81
-#: .\app\portal\templates\portal\toplink_list.html:76
-msgid "You won't be able to revert this!"
-msgstr "你将无法还原它！"
-
-#: .\app\portal\templates\portal\announcement_list.html:86
-#: .\app\portal\templates\portal\toplink_list.html:81
-msgid "Yes"
-msgstr "是的"
-
-#: .\app\portal\templates\portal\announcement_list.html:87
-#: .\app\portal\templates\portal\toplink_list.html:82
-msgid "Cancel"
-msgstr "取消"
-
-#: .\app\portal\templates\portal\announcement_list.html:103
-#: .\app\portal\templates\portal\toplink_list.html:98
-msgid "Success Delete"
-msgstr "删除成功"
-
-#: .\app\portal\templates\portal\announcement_list.html:110
-#: .\app\portal\templates\portal\announcement_list.html:118
-#: .\app\portal\templates\portal\toplink_list.html:105
-#: .\app\portal\templates\portal\toplink_list.html:113
-msgid "Fail Delete"
-msgstr "删除失败"
-
-#: .\app\portal\templates\portal\announcement_list.html:126
-#: .\app\portal\templates\portal\toplink_list.html:121
-msgid "Lucky to see this warning~~"
-msgstr "很幸运看到这个警告~~~"
-
-#: .\app\portal\templates\portal\announcement_list.html:127
-#: .\app\portal\templates\portal\toplink_list.html:122
-msgid "This will close in <b></b> milliseconds."
-msgstr "将在<b></b>毫秒内关闭。"
-
-#: .\app\portal\templates\portal\announcement_update.html:4
-#: .\app\portal\templates\portal\announcement_update.html:8
-#: .\app\portal\templates\portal\announcement_update.html:11
-msgid "Update Announcement"
-msgstr "更新公告"
-
-#: .\app\portal\templates\portal\toplink_create.html:4
-#: .\app\portal\templates\portal\toplink_create.html:8
-#: .\app\portal\templates\portal\toplink_create.html:11
-msgid "Create TopLink"
-msgstr "新建顶部导航链接"
-
-#: .\app\portal\templates\portal\toplink_list.html:4
-#: .\app\portal\templates\portal\toplink_list.html:8
-#: .\app\portal\templates\portal\toplink_list.html:11
-msgid "TopLink List"
-msgstr "顶部导航链接列表"
-
-#: .\app\portal\templates\portal\toplink_list.html:30
-msgid "TopLink Rank"
-msgstr "链接排序"
-
-#: .\app\portal\templates\portal\toplink_list.html:31
-msgid "TopLink Name"
-msgstr "链接名"
-
-#: .\app\portal\templates\portal\toplink_list.html:32
-msgid "TopLink URL"
-msgstr "链接 URL"
-
-#: .\app\portal\templates\portal\toplink_update.html:4
-#: .\app\portal\templates\portal\toplink_update.html:8
-#: .\app\portal\templates\portal\toplink_update.html:11
-msgid "Update TopLink"
-msgstr "更新顶部导航链接"
-
-#: .\app\portal\views.py:38 .\app\portal\views.py:50 .\app\portal\views.py:123
-#: .\app\portal\views.py:135
-msgid ""
-"You are not a staff, and do not have permission to view this page, please "
-"contact the administrator!"
-msgstr "你不是管理员，无权访问此页面，请联系管理员！"
-
-#: .\app\portal\views.py:60
-#, python-format
-msgid "Announcement #%(id)s has been created successfully!"
-msgstr "成功创建公告 #%(id)s！"
-
-#: .\app\portal\views.py:71
-msgid ""
-"You are not the creator of this announcement, so you do not have the right "
-"to modify it!"
-msgstr "你不是此公告的创建者，无权修改它！"
-
-#: .\app\portal\views.py:81 .\app\portal\views.py:166
-#, python-format
-msgid "Announcement #%(id)s has been updated successfully!"
-msgstr "成功更新公告 #%(id)s！"
-
-#: .\app\portal\views.py:90
-msgid ""
-"You are not the creator of this announcement, so you do not have the right "
-"to delete it!"
-msgstr "你不是此公告的创建者，无权删除它！"
-
-#: .\app\portal\views.py:98 .\app\portal\views.py:183
-#, python-format
-msgid "Need %(verbose_name)s Id"
-msgstr "需要 %(verbose_name)s id"
-
-#: .\app\portal\views.py:103 .\app\portal\views.py:188
-#, python-format
-msgid "No %(verbose_name)s found matching the query"
-msgstr "没有找到符合条件的 %(verbose_name)s"
-
-#: .\app\portal\views.py:145
-#, python-format
-msgid "TopLink #%(id)s has been created successfully!"
-msgstr "成功创建顶部链接 #%(id)s！"
-
-#: .\app\portal\views.py:156
-msgid ""
-"You are not the creator of this toplink, so you do not have the right to "
-"modify it!"
-msgstr "你不是此链接的创建者，无权修改它！"
-
-#: .\app\portal\views.py:175
-msgid ""
-"You are not the creator of this toplink, so you do not have the right to "
-"delete it!"
-msgstr "你不是此链接的创建者，无权删除它！"

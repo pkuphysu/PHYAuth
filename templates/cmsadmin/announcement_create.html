@@ -1,14 +1,14 @@
-{% extends 'portal/toplink_list.html' %}
+{% extends 'cmsadmin/announcement_list.html' %}
 {% load django_bootstrap_breadcrumbs %}
 
-{% block title %}{% translate 'Create TopLink' %}{% endblock %}
+{% block title %}{% translate 'Create Announcement' %}{% endblock %}
 
 {% block content_wrapper_breadcrumb %}
     {{ block.super }}
-    {% breadcrumb_for 'portal:toplink-create' %}{% trans "Create TopLink" %}{% endbreadcrumb_for %}
+    {% breadcrumb_for 'cmsadmin:announcement-create' %}{% trans "Create Announcement" %}{% endbreadcrumb_for %}
 {% endblock %}
 
-{% block content_wrapper_header %}{% translate 'Create TopLink' %}{% endblock %}
+{% block content_wrapper_header %}{% translate 'Create Announcement' %}{% endblock %}
 
 {% block content_wrapper_body %}
     <div class="container-fluid">
@@ -16,7 +16,7 @@
             <div class="col-md-6 mx-auto">
                 <div class="card card-info">
                     <!-- form start -->
-                    <form method="post" action="{% url 'portal:toplink-create' %}">
+                    <form method="post" action="{% url 'cmsadmin:announcement-create' %}">
                         <div class="card-body">
                             {% include 'adminlte/_form.html' %}
                         </div>
