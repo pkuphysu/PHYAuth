@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-12 05:48+0800\n"
+"POT-Creation-Date: 2021-03-12 06:01+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Rainshaw <rxg@live.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -80,6 +80,7 @@ msgstr "创建应用"
 #: .\templates\cmsadmin\announcement_update.html:25
 #: .\templates\cmsadmin\toplink_create.html:25
 #: .\templates\cmsadmin\toplink_update.html:25
+#: .\templates\users\user_detail.html:105
 msgid "Submit"
 msgstr "提交"
 
@@ -284,7 +285,7 @@ msgstr "登入"
 msgid "Uniform Identity Auth"
 msgstr "统一认证"
 
-#: .\templates\index.html:138
+#: .\templates\index.html:138 .\templates\users\user_detail.html:24
 msgid "Change Avatar"
 msgstr "更换头像"
 
@@ -304,7 +305,8 @@ msgstr "管理公告"
 msgid "Manage TopLink"
 msgstr "管理顶部导航链接"
 
-#: .\templates\index.html:223
+#: .\templates\index.html:223 .\templates\users\user_detail.html:6
+#: .\templates\users\user_detail.html:8 .\templates\users\user_detail.html:12
 msgid "User Profile"
 msgstr "用户资料"
 
@@ -312,7 +314,8 @@ msgstr "用户资料"
 msgid "My Client"
 msgstr "我的应用"
 
-#: .\templates\index.html:252
+#: .\templates\index.html:252 .\templates\portal\admins.html:5
+#: .\templates\portal\admins.html:7 .\templates\portal\admins.html:11
 msgid "Admins"
 msgstr "管理员列表"
 
@@ -354,6 +357,7 @@ msgid "Decline"
 msgstr "拒绝"
 
 #: .\templates\oidc_provider\authorize.html:54
+#: .\templates\users\user_detail.html:128
 msgid "Authorize"
 msgstr "确认"
 
@@ -378,6 +382,31 @@ msgstr "创建日期"
 #: .\templates\oidc_provider\error.html:5
 msgid "Error"
 msgstr "错误"
+
+#: .\templates\portal\admins.html:29
+msgid "Identity"
+msgstr "身份"
+
+#: .\templates\portal\admins.html:33
+msgid "Address"
+msgstr "办公室"
+
+#: .\templates\portal\admins.html:33 .\templates\portal\admins.html:37
+#: .\templates\portal\admins.html:41 .\templates\portal\admins.html:45
+msgid "not provided"
+msgstr "未提供"
+
+#: .\templates\portal\admins.html:37
+msgid "Phone"
+msgstr "电话"
+
+#: .\templates\portal\admins.html:41
+msgid "Website"
+msgstr "主页"
+
+#: .\templates\portal\admins.html:45
+msgid "Introduction"
+msgstr "简介"
 
 #: .\templates\registration\login.html:16
 msgid "Sign in to start your session"
@@ -514,3 +543,26 @@ msgstr "请输入一个电子邮件地址"
 #: .\templates\registration\password_reset_form.html:96
 msgid "Please enter a vaild email address"
 msgstr "请输入一个有效的邮件地址"
+
+#: .\templates\users\user_detail.html:89
+msgctxt "user profile"
+msgid "Settings"
+msgstr "设置"
+
+#: .\templates\users\user_detail.html:94
+msgid "Recent activity"
+msgstr "最近活动"
+
+#: .\templates\users\user_detail.html:131
+msgid "to access your information"
+msgstr "访问你的信息"
+
+#: .\templates\users\user_detail.html:144
+#, python-format
+msgid "This consent will expire at %(etime)s."
+msgstr "这个授权将在 %(etime)s 过期。"
+
+#: .\templates\users\user_detail.html:148
+#, python-format
+msgid "This consent has been expired at %(etime)s."
+msgstr "这个授权已在 %(etime)s 过期。"

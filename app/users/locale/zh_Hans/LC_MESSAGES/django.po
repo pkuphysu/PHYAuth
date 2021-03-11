@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-12 05:48+0800\n"
+"POT-Creation-Date: 2021-03-12 06:01+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -156,47 +156,6 @@ msgid ""
 msgstr ""
 "访问你的北京大学信息。包含学号/工号、身份（教职工或学生）、状态（在校或减"
 "离）。"
-
-#: .\app\users\templates\users\user_detail.html:6
-#: .\app\users\templates\users\user_detail.html:8
-#: .\app\users\templates\users\user_detail.html:12
-msgid "User Profile"
-msgstr "个人资料"
-
-#: .\app\users\templates\users\user_detail.html:24
-msgid "Change Avatar"
-msgstr "更换头像"
-
-#: .\app\users\templates\users\user_detail.html:89
-msgctxt "user profile"
-msgid "Settings"
-msgstr "设置"
-
-#: .\app\users\templates\users\user_detail.html:94
-msgid "Recent activity"
-msgstr "最近活动"
-
-#: .\app\users\templates\users\user_detail.html:105
-msgid "Submit"
-msgstr "提交"
-
-#: .\app\users\templates\users\user_detail.html:128
-msgid "Authorize"
-msgstr "授权"
-
-#: .\app\users\templates\users\user_detail.html:131
-msgid "to access your information"
-msgstr "访问你的信息"
-
-#: .\app\users\templates\users\user_detail.html:144
-#, python-format
-msgid "This consent will expire at %(etime)s."
-msgstr "这个授权将在 %(etime)s 过期。"
-
-#: .\app\users\templates\users\user_detail.html:148
-#, python-format
-msgid "This consent has been expired at %(etime)s."
-msgstr "这个授权已在 %(etime)s 过期。"
 
 #: .\app\users\validators.py:9
 msgid ""
