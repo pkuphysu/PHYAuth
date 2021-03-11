@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-12 05:28+0800\n"
+"POT-Creation-Date: 2021-03-12 05:48+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Rainshaw <rxg@live.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -68,16 +68,14 @@ msgstr "哎呀！服务器出错了。"
 msgid "We will work on fixing that right away."
 msgstr "我们很快会修复此问题。"
 
-#: .\templates\base.html:11
-msgid "Uniform Identity Authentication of the School of Physics"
-msgstr "物理学院统一身份认证"
+#: .\templates\apply\client_create.html:4
+#: .\templates\apply\client_create.html:8
+#: .\templates\apply\client_create.html:11 .\templates\index.html:244
+msgid "Create Client"
+msgstr "创建应用"
 
-#: .\templates\cmsadmin\announcement_create.html:4
-#: .\templates\cmsadmin\announcement_create.html:8
-#: .\templates\cmsadmin\announcement_create.html:11 .\templates\index.html:189
-msgid "Create Announcement"
-msgstr "新建公告"
-
+#: .\templates\apply\client_create.html:25
+#: .\templates\apply\client_update.html:25
 #: .\templates\cmsadmin\announcement_create.html:25
 #: .\templates\cmsadmin\announcement_update.html:25
 #: .\templates\cmsadmin\toplink_create.html:25
@@ -85,16 +83,80 @@ msgstr "新建公告"
 msgid "Submit"
 msgstr "提交"
 
-#: .\templates\cmsadmin\announcement_list.html:4
-#: .\templates\cmsadmin\announcement_list.html:8
-#: .\templates\cmsadmin\announcement_list.html:11 .\templates\index.html:182
-msgid "Announcement List"
-msgstr "公告列表"
+#: .\templates\apply\client_list.html:4 .\templates\apply\client_list.html:8
+#: .\templates\apply\client_list.html:11 .\templates\index.html:238
+msgid "Client List"
+msgstr "应用列表"
 
+#: .\templates\apply\client_list.html:21
 #: .\templates\cmsadmin\announcement_list.html:21
 #: .\templates\cmsadmin\toplink_list.html:21
 msgid "Create"
 msgstr "新建"
+
+#: .\templates\apply\client_list.html:30
+msgid "Client Name"
+msgstr "应用名"
+
+#: .\templates\apply\client_list.html:31
+msgid "Client ID"
+msgstr "应用 ID"
+
+#: .\templates\apply\client_list.html:32
+msgid "Client Secret"
+msgstr "应用密钥"
+
+#: .\templates\apply\client_list.html:33
+msgid "Client Type"
+msgstr "应用类型"
+
+#: .\templates\apply\client_list.html:34
+msgid "Reuse Consent?"
+msgstr "重用用户授权？"
+
+#: .\templates\apply\client_list.html:35
+#: .\templates\cmsadmin\announcement_list.html:33
+#: .\templates\cmsadmin\toplink_list.html:33
+msgid "Operate"
+msgstr "操作"
+
+#: .\templates\apply\client_list.html:46
+msgid "yes,no"
+msgstr "是,否"
+
+#: .\templates\apply\client_list.html:49
+#: .\templates\cmsadmin\announcement_list.html:45
+#: .\templates\cmsadmin\toplink_list.html:45
+msgid "Edit"
+msgstr "编辑"
+
+#: .\templates\apply\client_list.html:51
+#: .\templates\cmsadmin\announcement_list.html:49
+#: .\templates\cmsadmin\toplink_list.html:49
+msgid "Delete"
+msgstr "删除"
+
+#: .\templates\apply\client_update.html:4
+#: .\templates\apply\client_update.html:8
+#: .\templates\apply\client_update.html:11
+msgid "Update Client"
+msgstr "修改应用"
+
+#: .\templates\base.html:11
+msgid "Uniform Identity Authentication of the School of Physics"
+msgstr "物理学院统一身份认证"
+
+#: .\templates\cmsadmin\announcement_create.html:4
+#: .\templates\cmsadmin\announcement_create.html:8
+#: .\templates\cmsadmin\announcement_create.html:11 .\templates\index.html:190
+msgid "Create Announcement"
+msgstr "新建公告"
+
+#: .\templates\cmsadmin\announcement_list.html:4
+#: .\templates\cmsadmin\announcement_list.html:8
+#: .\templates\cmsadmin\announcement_list.html:11 .\templates\index.html:183
+msgid "Announcement List"
+msgstr "公告列表"
 
 #: .\templates\cmsadmin\announcement_list.html:30
 msgid "Announcement Rank"
@@ -107,21 +169,6 @@ msgstr "公告类型"
 #: .\templates\cmsadmin\announcement_list.html:32
 msgid "Announcement Title"
 msgstr "公告标题"
-
-#: .\templates\cmsadmin\announcement_list.html:33
-#: .\templates\cmsadmin\toplink_list.html:33
-msgid "Operate"
-msgstr "操作"
-
-#: .\templates\cmsadmin\announcement_list.html:45
-#: .\templates\cmsadmin\toplink_list.html:45
-msgid "Edit"
-msgstr "编辑"
-
-#: .\templates\cmsadmin\announcement_list.html:49
-#: .\templates\cmsadmin\toplink_list.html:49
-msgid "Delete"
-msgstr "删除"
 
 #: .\templates\cmsadmin\announcement_list.html:80
 #: .\templates\cmsadmin\toplink_list.html:75
@@ -182,13 +229,13 @@ msgstr "更新公告"
 
 #: .\templates\cmsadmin\toplink_create.html:4
 #: .\templates\cmsadmin\toplink_create.html:8
-#: .\templates\cmsadmin\toplink_create.html:11 .\templates\index.html:211
+#: .\templates\cmsadmin\toplink_create.html:11 .\templates\index.html:212
 msgid "Create TopLink"
 msgstr "新建导航链接"
 
 #: .\templates\cmsadmin\toplink_list.html:4
 #: .\templates\cmsadmin\toplink_list.html:8
-#: .\templates\cmsadmin\toplink_list.html:11 .\templates\index.html:204
+#: .\templates\cmsadmin\toplink_list.html:11 .\templates\index.html:205
 msgid "TopLink List"
 msgstr "链接列表"
 
@@ -215,7 +262,7 @@ msgid "Choose file"
 msgstr "选择文件"
 
 #: .\templates\index.html:6 .\templates\index.html:27
-#: .\templates\index.html:274 .\templates\index.html:279
+#: .\templates\index.html:275 .\templates\index.html:280
 msgid "Home"
 msgstr "主页"
 
@@ -253,35 +300,27 @@ msgstr "后台管理"
 msgid "Manage Announcement"
 msgstr "管理公告"
 
-#: .\templates\index.html:197
+#: .\templates\index.html:198
 msgid "Manage TopLink"
 msgstr "管理顶部导航链接"
 
-#: .\templates\index.html:222
+#: .\templates\index.html:223
 msgid "User Profile"
 msgstr "用户资料"
 
-#: .\templates\index.html:229
+#: .\templates\index.html:230
 msgid "My Client"
 msgstr "我的应用"
 
-#: .\templates\index.html:237
-msgid "Client List"
-msgstr "应用列表"
-
-#: .\templates\index.html:243
-msgid "Create Client"
-msgstr "创建应用"
-
-#: .\templates\index.html:251
+#: .\templates\index.html:252
 msgid "Admins"
 msgstr "管理员列表"
 
-#: .\templates\index.html:297
+#: .\templates\index.html:298
 msgid "Announcement"
 msgstr "公告"
 
-#: .\templates\index.html:340
+#: .\templates\index.html:341
 msgid "All rights reserved."
 msgstr "版权所有."
 

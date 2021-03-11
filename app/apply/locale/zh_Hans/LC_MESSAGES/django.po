@@ -1,0 +1,66 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-03-12 05:48+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+#: .\app\apply\admin.py:13
+msgid "Base"
+msgstr "基础"
+
+#: .\app\apply\admin.py:18
+msgid "Credentials"
+msgstr "凭据"
+
+#: .\app\apply\admin.py:21
+msgid "Information"
+msgstr "信息"
+
+#: .\app\apply\admin.py:24
+msgid "Session Management"
+msgstr "会话管理"
+
+#: .\app\apply\forms.py:38
+msgid "Client ID will be generated randomly."
+msgstr "应用ID将随机生成。"
+
+#: .\app\apply\forms.py:39
+msgid ""
+"Client Secret will be generated randomly. If you want to get a new secret, "
+"please switch the client to Public and save, then switch back and save."
+msgstr "应用密钥将随机生成。如果你需要修改密钥，请先修改应用类型保存后再修改回来。"
+
+#: .\app\apply\views.py:16 .\app\apply\views.py:28
+msgid ""
+"You are not a developer and do not have permission to view the application, "
+"please contact the administrator!"
+msgstr "您不是开发者，无权查看应用，请联系管理员！"
+
+#: .\app\apply\views.py:30
+#, python-format
+msgid "Client %(name)s has been created successfully!"
+msgstr "应用 %(name)s 创建成功！"
+
+#: .\app\apply\views.py:47
+msgid ""
+"You are not the creator of this application, so you do not have the right to "
+"modify this application!"
+msgstr "您不是此应用的创建者，无权修改此应用！"
+
+#: .\app\apply\views.py:49
+#, python-format
+msgid "Client %(name)s has been updated successfully!"
+msgstr "应用 %(name)s 更新成功！"

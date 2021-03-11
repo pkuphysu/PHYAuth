@@ -5,7 +5,7 @@
 
 {% block content_wrapper_breadcrumb %}
     {{ block.super }}
-    {% breadcrumb_for 'users:client-list' %}{% trans "Client List" %}{% endbreadcrumb_for %}
+    {% breadcrumb_for 'apply:client-list' %}{% trans "Client List" %}{% endbreadcrumb_for %}
 {% endblock %}
 
 {% block content_wrapper_header %}{% translate 'Client List' %}{% endblock %}
@@ -17,7 +17,7 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="card-tools">
-                            <a href="{% url 'users:client-create' %}">
+                            <a href="{% url 'apply:client-create' %}">
                                 <button class="btn btn-primary">{% translate 'Create' %}</button>
                             </a>
                         </div>
@@ -45,7 +45,7 @@
                                     <td>{{ client.client_type }}</td>
                                     <td>{{ client.reuse_consent|yesno:_("yes,no") }}</td>
                                     <td>
-                                        <a href="{% url 'users:client-update' client.pk %}">
+                                        <a href="{% url 'apply:client-update' client.pk %}">
                                             <button class="btn btn-info">{% translate 'Edit' %}</button>
                                         </a>
                                         <button class="btn btn-danger" disabled>{% translate 'Delete' %}</button>

@@ -2,7 +2,7 @@ from hashlib import md5
 
 from django import template
 
-from ..tasks import get_scopes_information
+from ...apply.tasks import get_scopes_information
 
 register = template.Library()
 

@@ -82,6 +82,7 @@ LOCAL_APPS = [
     'app.pku_iaaa.apps.PkuIaaaConfig',
     'app.portal.apps.PortalConfig',
     'app.cmsadmin.apps.CmsadminConfig',
+    'app.apply.apps.ApplyConfig',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS + THIRD_PARTY_APPS
