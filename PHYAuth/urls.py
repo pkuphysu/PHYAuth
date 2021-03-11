@@ -20,32 +20,35 @@ from django.urls import path, include
 from app.portal import views as portal_views
 
 urlpatterns = [
-    # login/
-    # logout/
-    # password_change/
-    # password_reset/
-    # reset/
-    path('', include('django.contrib.auth.urls')),
-    # authorize/
-    # token/
-    # userinfo/
-    # end-session/
-    # .well-known/openid-configuration/
-    # introspect/
-    # jwks/
-    path('', include('oidc_provider.urls', namespace='oidc_provider')),
-    # profile/
-    # client-create/
-    # client-update/
-    # client-list/
-    path('', include('app.users.urls', namespace='users')),
-    # /
-    path('', portal_views.index, name='index'),
-    path('', include('app.portal.urls', namespace='portal')),
+    # accounts/login/
+    # accounts/logout/
+    # accounts/password_change/
+    # accounts/password_reset/
+    # accounts/reset/
+    path('accounts/', include('django.contrib.auth.urls')),
+    # accounts/profile/
+    # accounts/client-create/
+    # accounts/client-update/
+    # accounts/client-list/
+    path('accounts/', include('app.users.urls', namespace='users')),
+    # oidc/authorize/
+    # oidc/token/
+    # oidc/userinfo/
+    # oidc/end-session/
+    # oidc/.well-known/openid-configuration/
+    # oidc/introspect/
+    # oidc/jwks/
+    path('oidc/', include('oidc_provider.urls', namespace='oidc_provider')),
     # iaaa/login
     # iaaa/auth
     path('iaaa/', include('app.pku_iaaa.urls', namespace='pku_iaaa')),
-    # admin/
+    # /
+    # contacts/
+    # announcement-*/
+    # toplink-*/
+    path('', portal_views.index, name='index'),
+    path('', include('app.portal.urls', namespace='portal')),
+    # secret-admin-url/
     path(f'{settings.ADMIN_URL}', admin.site.urls),
 ]
 
