@@ -250,7 +250,7 @@ CUBES_REDIS_TIMEOUT = 60 * 60
 NEVER_REDIS_TIMEOUT = 365 * 24 * 60 * 60
 
 SESSION_COOKIE_AGE = 86400
-SESSION_ENGINE = "django.contrib.sessions.backends.cache"
+SESSION_ENGINE = "django.contrib.sessions.backends.cached_db"
 SESSION_CACHE_ALIAS = "default"
 SESSION_COOKIE_PATH = SUBPATH
 SESSION_COOKIE_SECURE = True
