@@ -1,11 +1,12 @@
 import logging
 
-from django.contrib.auth import get_user_model
+from django.contrib.auth import get_user_model, REDIRECT_FIELD_NAME
 from django.contrib.auth import login
 from django.core.exceptions import PermissionDenied, SuspiciousOperation
 from django.http import HttpResponseRedirect, Http404
 from django.template.response import TemplateResponse
 from django.urls import reverse
+from django.utils.http import url_has_allowed_host_and_scheme
 from django.utils.translation import gettext, gettext_lazy as _
 from django.views.generic.base import View
 
@@ -20,18 +21,27 @@ logger = logging.getLogger(__name__)
 
 class IAAALoginView(View):
     def get(self, request):
-        app = Iaaa.objects.get(pk=1)
+        app = Iaaa.objects.last()
+        redirect_to = request.POST.get(
+            REDIRECT_FIELD_NAME,
+            request.GET.get(REDIRECT_FIELD_NAME, '')
+        )
+
+        url_is_safe = url_has_allowed_host_and_scheme(
+            url=redirect_to,
+            allowed_hosts={request.get_host()},
+            require_https=request.is_secure(),
+        )
+        redirect_to = redirect_to if url_is_safe else ''
+
+        if redirect_to:
+            request.session[REDIRECT_FIELD_NAME] = redirect_to
+
         ctx = {
             'app_id': app.app_id,
             'redirect_url': app.redirect_url,
-            'local_login_redirect_url': request.build_absolute_uri(reverse('login'))
         }
         response = TemplateResponse(request, template='pku_iaaa/login.html', context=ctx)
-
-        redirect_to = request.POST.get('next', request.GET.get('next', ''))
-        if redirect_to:
-            sub_path = request.META.get("SCRIPT_NAME") if request.META.get("SCRIPT_NAME") != '' else '/'
-            response.set_cookie(key='next', value=redirect_to, expires=5 * 60, path=sub_path)
         return response
 
 
@@ -70,10 +80,10 @@ class IAAALoginAuth(View):
             logger.info(f'user {user.username} login by iaaa auth')
             iaaa_user_login_success.send(sender=self.__class__, user_id=user.id)
 
-        if request.COOKIES.get('next'):
-            redirect_to = request.COOKIES.get('next')
-            response = HttpResponseRedirect(redirect_to)
-            sub_path = request.META.get("SCRIPT_NAME") if request.META.get("SCRIPT_NAME") != '' else '/'
-            response.delete_cookie('next', path=sub_path)
-            return response
+        if request.session.get(REDIRECT_FIELD_NAME, ''):
+            redirect_to = request.session.get(REDIRECT_FIELD_NAME)
+            logger.info(redirect_to)
+            del request.session[REDIRECT_FIELD_NAME]
+            return HttpResponseRedirect(redirect_to=redirect_to)
+
         return HttpResponseRedirect(reverse('index'))
