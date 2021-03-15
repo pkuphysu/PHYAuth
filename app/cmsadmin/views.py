@@ -11,6 +11,7 @@ from guardian.mixins import PermissionRequiredMixin as ObjectPermissionRequiredM
 
 from .forms import AnnouncementForm, TopLinkForm
 from ..portal.models import Announcement, TopLink
+from ..utils.views import ErrorMessageMixin
 
 User = get_user_model()
 logger = logging.getLogger(__name__)
@@ -26,7 +27,8 @@ class AnnouncementListView(PermissionRequiredMixin, PermissionListMixin, ListVie
     get_objects_for_user_extra_kwargs = {'accept_global_perms': False}
 
 
-class AnnouncementCreateView(PermissionRequiredMixin, ObjectPermissionRequiredMixin, SuccessMessageMixin, CreateView):
+class AnnouncementCreateView(PermissionRequiredMixin, ObjectPermissionRequiredMixin,
+                             SuccessMessageMixin, ErrorMessageMixin, CreateView):
     model = Announcement
     form_class = AnnouncementForm
     template_name = 'cmsadmin/announcement_create.html'
@@ -34,6 +36,7 @@ class AnnouncementCreateView(PermissionRequiredMixin, ObjectPermissionRequiredMi
     permission_required = 'portal.add_announcement'
     permission_denied_message = _('You are not a staff, and do not have permission to view this page, '
                                   'please contact the administrator!')
+    error_message = _('Please check the error messages showed in the page!')
 
     def get_form_kwargs(self):
         """Return the keyword arguments for instantiating the form."""
@@ -48,13 +51,15 @@ class AnnouncementCreateView(PermissionRequiredMixin, ObjectPermissionRequiredMi
         return reverse('cmsadmin:announcement-list')
 
 
-class AnnouncementUpdateView(PermissionRequiredMixin, ObjectPermissionRequiredMixin, SuccessMessageMixin, UpdateView):
+class AnnouncementUpdateView(PermissionRequiredMixin, ObjectPermissionRequiredMixin,
+                             SuccessMessageMixin, ErrorMessageMixin, UpdateView):
     model = Announcement
     form_class = AnnouncementForm
     template_name = 'cmsadmin/announcement_update.html'
     permission_required = 'portal.change_announcement'
     permission_denied_message = _('You are not the creator of this announcement, '
                                   'so you do not have the right to modify it!')
+    error_message = _('Please check the error messages showed in the page!')
 
     def get_form_kwargs(self):
         """Return the keyword arguments for instantiating the form."""
@@ -111,7 +116,8 @@ class TopLinkListView(PermissionRequiredMixin, PermissionListMixin, ListView):
     get_objects_for_user_extra_kwargs = {'accept_global_perms': False}
 
 
-class TopLinkCreateView(PermissionRequiredMixin, ObjectPermissionRequiredMixin, SuccessMessageMixin, CreateView):
+class TopLinkCreateView(PermissionRequiredMixin, ObjectPermissionRequiredMixin,
+                        SuccessMessageMixin, ErrorMessageMixin, CreateView):
     model = TopLink
     form_class = TopLinkForm
     template_name = 'cmsadmin/toplink_create.html'
@@ -119,6 +125,7 @@ class TopLinkCreateView(PermissionRequiredMixin, ObjectPermissionRequiredMixin, 
     permission_required = 'portal.add_toplink'
     permission_denied_message = _('You are not a staff, and do not have permission to view this page, '
                                   'please contact the administrator!')
+    error_message = _('Please check the error messages showed in the page!')
 
     def get_form_kwargs(self):
         """Return the keyword arguments for instantiating the form."""
@@ -133,13 +140,15 @@ class TopLinkCreateView(PermissionRequiredMixin, ObjectPermissionRequiredMixin, 
         return reverse('cmsadmin:toplink-list')
 
 
-class TopLinkUpdateView(PermissionRequiredMixin, ObjectPermissionRequiredMixin, SuccessMessageMixin, UpdateView):
+class TopLinkUpdateView(PermissionRequiredMixin, ObjectPermissionRequiredMixin,
+                        SuccessMessageMixin, ErrorMessageMixin, UpdateView):
     model = TopLink
     form_class = TopLinkForm
     template_name = 'cmsadmin/toplink_update.html'
     permission_required = 'portal.change_toplink'
     permission_denied_message = _('You are not the creator of this toplink, '
                                   'so you do not have the right to modify it!')
+    error_message = _('Please check the error messages showed in the page!')
 
     def get_form_kwargs(self):
         """Return the keyword arguments for instantiating the form."""

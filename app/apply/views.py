@@ -7,6 +7,7 @@ from guardian.mixins import PermissionRequiredMixin as ObjectPermissionRequiredM
 from oidc_provider.models import Client
 
 from .forms import ClientForm
+from ..utils.views import ErrorMessageMixin
 
 
 class ClientListView(PermissionRequiredMixin, PermissionListMixin, ListView):
@@ -19,7 +20,8 @@ class ClientListView(PermissionRequiredMixin, PermissionListMixin, ListView):
     get_objects_for_user_extra_kwargs = {'with_superuser': False}
 
 
-class ClientCreateView(PermissionRequiredMixin, ObjectPermissionRequiredMixin, SuccessMessageMixin, CreateView):
+class ClientCreateView(PermissionRequiredMixin, ObjectPermissionRequiredMixin,
+                       SuccessMessageMixin, ErrorMessageMixin, CreateView):
     model = Client
     form_class = ClientForm
     template_name = 'apply/client_create.html'
@@ -28,6 +30,7 @@ class ClientCreateView(PermissionRequiredMixin, ObjectPermissionRequiredMixin, S
     permission_denied_message = _('You are not a developer and do not have permission to view the application, '
                                   'please contact the administrator!')
     success_message = _('Client %(name)s has been created successfully!')
+    error_message = _('Please check the error messages showed in the page!')
 
     def get_form_kwargs(self):
         """Return the keyword arguments for instantiating the form."""
@@ -39,7 +42,8 @@ class ClientCreateView(PermissionRequiredMixin, ObjectPermissionRequiredMixin, S
         return reverse('apply:client-list')
 
 
-class ClientUpdateView(PermissionRequiredMixin, ObjectPermissionRequiredMixin, SuccessMessageMixin, UpdateView):
+class ClientUpdateView(PermissionRequiredMixin, ObjectPermissionRequiredMixin,
+                       SuccessMessageMixin, ErrorMessageMixin, UpdateView):
     model = Client
     form_class = ClientForm
     template_name = 'apply/client_update.html'
@@ -47,6 +51,7 @@ class ClientUpdateView(PermissionRequiredMixin, ObjectPermissionRequiredMixin, S
     permission_denied_message = _('You are not the creator of this application, '
                                   'so you do not have the right to modify this application!')
     success_message = _('Client %(name)s has been updated successfully!')
+    error_message = _('Please check the error messages showed in the page!')
     return_403 = True
 
     def get_success_url(self):

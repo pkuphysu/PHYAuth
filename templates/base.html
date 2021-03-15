@@ -62,6 +62,7 @@
         <script>
             {% for message in messages %}
                 toastr.options = {
+                    "positionClass": "toast-bottom-center",
                     "progressBar": true
                 }
                 {% if message.level == DEFAULT_MESSAGE_LEVELS.DEBUG %}

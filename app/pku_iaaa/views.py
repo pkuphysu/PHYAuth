@@ -82,7 +82,6 @@ class IAAALoginAuth(View):
 
         if request.session.get(REDIRECT_FIELD_NAME, ''):
             redirect_to = request.session.get(REDIRECT_FIELD_NAME)
-            logger.info(redirect_to)
             del request.session[REDIRECT_FIELD_NAME]
             return HttpResponseRedirect(redirect_to=redirect_to)
 

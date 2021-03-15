@@ -115,7 +115,7 @@ class User(AbstractUser, GuardianUserMixin):
         to=Department,
         on_delete=models.DO_NOTHING,
         verbose_name=_('department'),
-        null=True
+        null=True, blank=True
     )
 
     introduce = models.TextField(
