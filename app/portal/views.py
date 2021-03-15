@@ -1,4 +1,5 @@
 from django.contrib.auth import get_user_model
+from django.db.models import Q
 from django.shortcuts import render
 
 from .models import Announcement
@@ -15,6 +16,6 @@ def index(request):
 
 def admins(request):
     ctx = {
-        'admins': User.objects.filter(is_admin=True)
+        'admins': User.objects.filter(Q(is_admin=True) | Q(is_superuser=True))
     }
     return render(request, 'portal/admins.html', context=ctx)
