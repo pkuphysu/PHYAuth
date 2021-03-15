@@ -3,6 +3,20 @@
 
 {% block title %}{% translate 'Create Announcement' %}{% endblock %}
 
+{% block extra_style %}
+    <!-- summernote -->
+    <link rel="stylesheet" href="{% static 'adminlte/plugins/summernote/summernote-bs4.min.css' %}">
+{% endblock %}
+
+{% block style %}
+    {# TODO: refactor when summernote provide this feature  #}
+    <style>
+        .note-group-select-from-files {
+            display: none;
+        }
+    </style>
+{% endblock %}
+
 {% block content_wrapper_breadcrumb %}
     {{ block.super }}
     {% breadcrumb_for 'cmsadmin:announcement-create' %}{% trans "Create Announcement" %}{% endbreadcrumb_for %}
@@ -13,7 +27,7 @@
 {% block content_wrapper_body %}
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-6 mx-auto">
+            <div class="col-md-9 mx-auto">
                 <div class="card card-info">
                     <!-- form start -->
                     <form method="post" action="{% url 'cmsadmin:announcement-create' %}">
@@ -32,4 +46,30 @@
         </div>
     </div>
 
+{% endblock %}
+
+{% block extra_javascript %}
+    <!-- Summernote -->
+    <script src="{% static 'adminlte/plugins/summernote/summernote-bs4.min.js' %}"></script>
+    {% get_current_language as LANGUAGE_CODE %}
+    {% if LANGUAGE_CODE == 'zh-hans' %}
+        <!-- include summernote-ko-KR -->
+        <script src="{% static 'adminlte/plugins/summernote/lang/summernote-zh-CN.min.js' %}"></script>
+    {% endif %}
+{% endblock %}
+
+{% block js %}
+    <script>
+        $(function () {
+            // Summernote
+            $('#id_content').summernote({
+                minHeight: 300,
+                maxHeight: 500,
+                disableDragAndDrop: true,
+                {% if LANGUAGE_CODE == 'zh-hans'%}
+                    lang: 'zh-CN',
+                {% endif %}
+            })
+        })
+    </script>
 {% endblock %}
