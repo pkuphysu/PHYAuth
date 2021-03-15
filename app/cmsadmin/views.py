@@ -22,7 +22,7 @@ logger = logging.getLogger(__name__)
 class AnnouncementListView(PermissionRequiredMixin, PermissionListMixin, ListView):
     model = Announcement
     permission_required = 'portal.view_announcement'
-    template_name = 'cmsadmin/announcement_list.html'
+    template_name = 'cmsadmin/portal/announcement_list.html'
     permission_denied_message = _('You are not a staff, and do not have permission to view this page, '
                                   'please contact the administrator!')
     context_object_name = 'announcement_list'
@@ -33,7 +33,7 @@ class AnnouncementCreateView(PermissionRequiredMixin, ObjectPermissionRequiredMi
                              SuccessMessageMixin, ErrorMessageMixin, CreateView):
     model = Announcement
     form_class = AnnouncementForm
-    template_name = 'cmsadmin/announcement_create.html'
+    template_name = 'cmsadmin/portal/announcement_create.html'
     permission_object = None
     permission_required = 'portal.add_announcement'
     permission_denied_message = _('You are not a staff, and do not have permission to view this page, '
@@ -57,7 +57,7 @@ class AnnouncementUpdateView(PermissionRequiredMixin, ObjectPermissionRequiredMi
                              SuccessMessageMixin, ErrorMessageMixin, UpdateView):
     model = Announcement
     form_class = AnnouncementForm
-    template_name = 'cmsadmin/announcement_update.html'
+    template_name = 'cmsadmin/portal/announcement_update.html'
     permission_required = 'portal.change_announcement'
     permission_denied_message = _('You are not the creator of this announcement, '
                                   'so you do not have the right to modify it!')
@@ -111,7 +111,7 @@ class AnnouncementDeleteView(PermissionRequiredMixin, ObjectPermissionRequiredMi
 class TopLinkListView(PermissionRequiredMixin, PermissionListMixin, ListView):
     model = TopLink
     permission_required = 'portal.view_toplink'
-    template_name = 'cmsadmin/toplink_list.html'
+    template_name = 'cmsadmin/portal/toplink_list.html'
     permission_denied_message = _('You are not a staff, and do not have permission to view this page, '
                                   'please contact the administrator!')
     context_object_name = 'toplink_list'
@@ -122,7 +122,7 @@ class TopLinkCreateView(PermissionRequiredMixin, ObjectPermissionRequiredMixin,
                         SuccessMessageMixin, ErrorMessageMixin, CreateView):
     model = TopLink
     form_class = TopLinkForm
-    template_name = 'cmsadmin/toplink_create.html'
+    template_name = 'cmsadmin/portal/toplink_create.html'
     permission_object = None
     permission_required = 'portal.add_toplink'
     permission_denied_message = _('You are not a staff, and do not have permission to view this page, '
@@ -146,7 +146,7 @@ class TopLinkUpdateView(PermissionRequiredMixin, ObjectPermissionRequiredMixin,
                         SuccessMessageMixin, ErrorMessageMixin, UpdateView):
     model = TopLink
     form_class = TopLinkForm
-    template_name = 'cmsadmin/toplink_update.html'
+    template_name = 'cmsadmin/portal/toplink_update.html'
     permission_required = 'portal.change_toplink'
     permission_denied_message = _('You are not the creator of this toplink, '
                                   'so you do not have the right to modify it!')

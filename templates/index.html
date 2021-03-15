@@ -171,48 +171,59 @@
                                             </li>
                                             <li class="nav-item">
                                                 <a href="#" class="nav-link">
-                                                    <i class="nav-icon  far fa-circle"></i>
-                                                    <p>{% translate 'Manage Announcement' %}<i
+                                                    <i class="nav-icon far fa-circle"></i>
+                                                    <p>{% translate 'Manage Site' %}<i
                                                             class="right fas fa-angle-left"></i></p>
                                                 </a>
-                                                <ul class="nav nav-treeview">
+                                                <ul class="nav-treeview">
                                                     <li class="nav-item">
-                                                        <a href="{% url 'cmsadmin:announcement-list' %}"
-                                                           class="nav-link">
-                                                            <i class="nav-icon far fa-dot-circle"></i>
-                                                            <p>{% translate 'Announcement List' %}</p>
+                                                        <a href="#" class="nav-link">
+                                                            <i class="nav-icon  far fa-dot-circle"></i>
+                                                            <p>{% translate 'Manage Announcement' %}<i
+                                                                    class="right fas fa-angle-left"></i></p>
                                                         </a>
+                                                        <ul class="nav nav-treeview">
+                                                            <li class="nav-item">
+                                                                <a href="{% url 'cmsadmin:announcement-list' %}"
+                                                                   class="nav-link">
+                                                                    <i class="nav-icon fas fa-circle"></i>
+                                                                    <p>{% translate 'Announcement List' %}</p>
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a href="{% url 'cmsadmin:announcement-create' %}"
+                                                                   class="nav-link">
+                                                                    <i class="nav-icon fas fa-circle"></i>
+                                                                    <p>{% translate 'Create Announcement' %}</p>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
                                                     </li>
                                                     <li class="nav-item">
-                                                        <a href="{% url 'cmsadmin:announcement-create' %}"
-                                                           class="nav-link">
-                                                            <i class="nav-icon far fa-dot-circle"></i>
-                                                            <p>{% translate 'Create Announcement' %}</p>
+                                                        <a href="#" class="nav-link">
+                                                            <i class="nav-icon  far fa-dot-circle"></i>
+                                                            <p>{% translate 'Manage TopLink' %}<i
+                                                                    class="right fas fa-angle-left"></i></p>
                                                         </a>
+                                                        <ul class="nav nav-treeview">
+                                                            <li class="nav-item">
+                                                                <a href="{% url 'cmsadmin:toplink-list' %}"
+                                                                   class="nav-link">
+                                                                    <i class="nav-icon fas fa-circle"></i>
+                                                                    <p>{% translate 'TopLink List' %}</p>
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a href="{% url 'cmsadmin:toplink-create' %}"
+                                                                   class="nav-link">
+                                                                    <i class="nav-icon fas fa-circle"></i>
+                                                                    <p>{% translate 'Create TopLink' %}</p>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
                                                     </li>
                                                 </ul>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="#" class="nav-link">
-                                                    <i class="nav-icon  far fa-circle"></i>
-                                                    <p>{% translate 'Manage TopLink' %}<i
-                                                            class="right fas fa-angle-left"></i></p>
-                                                </a>
-                                                <ul class="nav nav-treeview">
-                                                    <li class="nav-item">
-                                                        <a href="{% url 'cmsadmin:toplink-list' %}" class="nav-link">
-                                                            <i class="nav-icon far fa-dot-circle"></i>
-                                                            <p>{% translate 'TopLink List' %}</p>
-                                                        </a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a href="{% url 'cmsadmin:toplink-create' %}"
-                                                           class="nav-link">
-                                                            <i class="nav-icon far fa-dot-circle"></i>
-                                                            <p>{% translate 'Create TopLink' %}</p>
-                                                        </a>
-                                                    </li>
-                                                </ul>
+
                                             </li>
                                             <li class="nav-item">
                                                 <a href="#" class="nav-link">
