@@ -1,4 +1,3 @@
-from django.contrib.auth import get_user_model
 from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
@@ -8,8 +7,6 @@ from oidc_provider.models import UserConsent
 
 from .forms import UserForm
 from ..utils.views import ErrorMessageMixin
-
-UserModel = get_user_model()
 
 
 class UserProfileView(ObjectPermissionRequiredMixin, SuccessMessageMixin, ErrorMessageMixin, UpdateView):

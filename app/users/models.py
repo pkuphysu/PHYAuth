@@ -94,7 +94,7 @@ class User(AbstractUser, GuardianUserMixin):
 
     is_teacher = models.BooleanField(
         _('is teacher'),
-        choices=((False, '学生'), (True, '教职工')),
+        choices=((False, _('student')), (True, _('teacher'))),
         default=False,
         help_text=_(
             'Designates whether the user is a teacher.'
@@ -105,8 +105,8 @@ class User(AbstractUser, GuardianUserMixin):
         _('is in school'),
         default=True,
         choices=(
-            (False, '离校、离职'),
-            (True, '在校、在职')
+            (False, _('Not in School')),
+            (True, _('In School'))
         ),
         help_text=_('Designate whether the user is in school.')
     )
@@ -122,6 +122,16 @@ class User(AbstractUser, GuardianUserMixin):
         _('introduce'),
         null=True, blank=True,
         help_text=_('Your personal introduction.')
+    )
+
+    is_admin = models.BooleanField(
+        _('is admin'),
+        default=False,
+        choices=(
+            (False, _('False')),
+            (True, _('True'))
+        ),
+        help_text=_('Admin user can manage this site.')
     )
 
     REQUIRED_FIELDS = ['email']

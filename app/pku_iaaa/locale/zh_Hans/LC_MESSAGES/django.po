@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-13 20:05+0800\n"
+"POT-Creation-Date: 2021-03-15 23:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -43,11 +43,11 @@ msgstr "重定向 URL"
 msgid "IAAA Info"
 msgstr "IAAA 信息"
 
-#: .\app\pku_iaaa\views.py:70
+#: .\app\pku_iaaa\views.py:68
 msgid "No account is found."
 msgstr "没有找到账户。"
 
-#: .\app\pku_iaaa\views.py:72
+#: .\app\pku_iaaa\views.py:70
 msgid ""
 "This application temporarily only serves the teachers and students of the "
 "School of Physics. Now your personal relationship is not in the School of "

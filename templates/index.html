@@ -156,7 +156,7 @@
                                  with font-awesome or any other icon font library -->
 
                             {% block nav_siderbar_links %}
-                                {% if user.is_staff %}
+                                {% if user.is_superuser or user.is_admin %}
                                     <li class="nav-item">
                                         <a href="javascript:void(0);" class="nav-link">
                                             <i class="nav-icon  fas fa-users-cog"></i>

@@ -21,7 +21,7 @@ class UserAdmin(AbstractUserAdmin):
             'gender', 'birthdate', 'phone_number', 'address', 'website', 'introduce'
         )}),
         (_('Permissions'), {
-            'fields': ('is_staff', 'is_superuser', 'groups', 'user_permissions'),
+            'fields': ('is_admin', 'is_staff', 'is_superuser', 'groups', 'user_permissions'),
         }),
         (_('Important Dates'), {'fields': ('last_login', 'date_joined')}),
         (_('Account Status'), {'fields': ('is_active', 'is_teacher', 'in_school')})
@@ -34,6 +34,6 @@ class UserAdmin(AbstractUserAdmin):
         }),
     )
 
-    list_display = ('username', 'name', 'nickname', 'email', 'is_teacher', 'in_school')
-    list_filter = ('is_teacher', 'is_staff', 'is_superuser', 'is_active', 'groups', 'department')
+    list_display = ('username', 'name', 'nickname', 'email', 'is_admin', 'is_teacher', 'in_school')
+    list_filter = ('is_teacher', 'is_admin', 'is_staff', 'is_superuser', 'is_active', 'groups', 'department')
     search_fields = ('username', 'name', 'email', 'nickname')

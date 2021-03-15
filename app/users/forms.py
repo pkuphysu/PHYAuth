@@ -30,6 +30,7 @@ class UserForm(forms.ModelForm):
             'introduce',
             'is_teacher',
             'in_school',
+            'is_admin',
             'last_login',
         ]
         widgets = {
@@ -50,6 +51,7 @@ class UserForm(forms.ModelForm):
                                                'rows': 3}),
             'is_teacher': forms.Select(attrs={'class': 'form-control'}),
             'in_school': forms.Select(attrs={'class': 'form-control'}),
+            'is_admin': forms.Select(attrs={'class': 'form-control'}),
             'last_login': forms.DateTimeInput(attrs={'class': 'form-control'})
         }
 
@@ -58,4 +60,5 @@ class UserForm(forms.ModelForm):
         self.fields['username'].disabled = True
         self.fields['in_school'].disabled = True
         self.fields['is_teacher'].disabled = True
+        self.fields['is_admin'].disabled = True
         self.fields['last_login'].disabled = True

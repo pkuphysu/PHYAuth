@@ -1,6 +1,5 @@
 import logging
 
-from django.contrib.auth import get_user_model
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.http import JsonResponse, Http404
@@ -14,7 +13,6 @@ from ..oidc_client.models import Faq as OidcClientFaq
 from ..oidc_client.forms import FaqForm as OidcClientFaqForm
 from ..utils.views import ErrorMessageMixin
 
-User = get_user_model()
 logger = logging.getLogger(__name__)
 
 

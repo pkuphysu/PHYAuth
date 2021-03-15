@@ -1,6 +1,6 @@
 import logging
 
-from django.contrib.auth import get_user_model, REDIRECT_FIELD_NAME
+from django.contrib.auth import REDIRECT_FIELD_NAME
 from django.contrib.auth import login
 from django.core.exceptions import PermissionDenied, SuspiciousOperation
 from django.http import HttpResponseRedirect, Http404
@@ -13,10 +13,6 @@ from django.views.generic.base import View
 from .auth_backends import IaaaAuthenticationBackend
 from .models import Iaaa
 from .signals import iaaa_user_login_success
-
-UserModel = get_user_model()
-backend = IaaaAuthenticationBackend()
-logger = logging.getLogger(__name__)
 
 
 class IAAALoginView(View):
@@ -47,6 +43,7 @@ class IAAALoginView(View):
 
 class IAAALoginAuth(View):
     def get(self, request):
+        logger = logging.getLogger(__name__)
         _rand = request.GET.get('_rand')
         token = request.GET.get('token')
         if token is None:
@@ -54,6 +51,7 @@ class IAAALoginAuth(View):
             raise SuspiciousOperation
 
         try:
+            backend = IaaaAuthenticationBackend()
             user = backend.authenticate(request, _rand=_rand, token=token)
         except Exception as e:
             msg = e.__class__.__name__

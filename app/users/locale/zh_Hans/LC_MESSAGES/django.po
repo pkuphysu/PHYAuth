@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-15 15:20+0800\n"
+"POT-Creation-Date: 2021-03-15 23:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -125,6 +125,14 @@ msgstr "这是你的常用邮箱，我们用它来最终与你取得联系。"
 msgid "is teacher"
 msgstr "职工状态"
 
+#: .\app\users\models.py:97
+msgid "student"
+msgstr "学生"
+
+#: .\app\users\models.py:97
+msgid "teacher"
+msgstr "教职工"
+
 #: .\app\users\models.py:100
 msgid "Designates whether the user is a teacher."
 msgstr "指明用户是否为老师。"
@@ -132,6 +140,14 @@ msgstr "指明用户是否为老师。"
 #: .\app\users\models.py:105
 msgid "is in school"
 msgstr "是否在校"
+
+#: .\app\users\models.py:108
+msgid "Not in School"
+msgstr "减离、离退"
+
+#: .\app\users\models.py:109
+msgid "In School"
+msgstr "在校、在职"
 
 #: .\app\users\models.py:111
 msgid "Designate whether the user is in school."
@@ -144,6 +160,22 @@ msgstr "简介"
 #: .\app\users\models.py:124
 msgid "Your personal introduction."
 msgstr "你的个人简介。"
+
+#: .\app\users\models.py:128
+msgid "is admin"
+msgstr "管理员状态"
+
+#: .\app\users\models.py:131
+msgid "False"
+msgstr "否"
+
+#: .\app\users\models.py:132
+msgid "True"
+msgstr "是"
+
+#: .\app\users\models.py:134
+msgid "Admin user can manage this site."
+msgstr "管理员可以管理这个站点。"
 
 #: .\app\users\oidc_scope_claims.py:31
 msgid "PKU Info"
@@ -171,10 +203,10 @@ msgstr ""
 "输入你的 职工号或学号开头的北大邮箱地址，它应是如下形式：1234567898@(stu.|"
 "alumni.)pku.edu.cn"
 
-#: .\app\users\views.py:19
+#: .\app\users\views.py:16
 msgid "Your profile has been updated successfully!"
 msgstr "您的个人信息修改成功！"
 
-#: .\app\users\views.py:20
+#: .\app\users\views.py:17
 msgid "Please check the error messages showed in the page!"
 msgstr "请检查页面中显示的错误信息！"

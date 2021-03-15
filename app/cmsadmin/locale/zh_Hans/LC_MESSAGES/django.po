@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-15 22:27+0800\n"
+"POT-Creation-Date: 2021-03-15 23:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,88 +18,88 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: .\app\cmsadmin\views.py:25 .\app\cmsadmin\views.py:35
-#: .\app\cmsadmin\views.py:105 .\app\cmsadmin\views.py:115
-#: .\app\cmsadmin\views.py:184 .\app\cmsadmin\views.py:194
-#: .\app\cmsadmin\views.py:210
+#: .\app\cmsadmin\views.py:23 .\app\cmsadmin\views.py:33
+#: .\app\cmsadmin\views.py:103 .\app\cmsadmin\views.py:113
+#: .\app\cmsadmin\views.py:182 .\app\cmsadmin\views.py:192
+#: .\app\cmsadmin\views.py:208
 msgid ""
 "You are not a staff, and do not have permission to view this page, please "
 "contact the administrator!"
 msgstr "你不是管理员，无权访问此页面，请联系管理员！"
 
-#: .\app\cmsadmin\views.py:37 .\app\cmsadmin\views.py:53
-#: .\app\cmsadmin\views.py:117 .\app\cmsadmin\views.py:133
-#: .\app\cmsadmin\views.py:196 .\app\cmsadmin\views.py:212
+#: .\app\cmsadmin\views.py:35 .\app\cmsadmin\views.py:51
+#: .\app\cmsadmin\views.py:115 .\app\cmsadmin\views.py:131
+#: .\app\cmsadmin\views.py:194 .\app\cmsadmin\views.py:210
 msgid "Please check the error messages showed in the page!"
 msgstr "请检查页面中显示的错误信息！"
 
-#: .\app\cmsadmin\views.py:40
+#: .\app\cmsadmin\views.py:38
 #, python-format
 msgid "Announcement #%(id)s has been created successfully!"
 msgstr "成功创建公告 #%(id)s！"
 
-#: .\app\cmsadmin\views.py:51
+#: .\app\cmsadmin\views.py:49
 msgid ""
 "You are not the creator of this announcement, so you do not have the right "
 "to modify it!"
 msgstr "你不是此公告的创建者，无权修改它！"
 
-#: .\app\cmsadmin\views.py:58 .\app\cmsadmin\views.py:138
-#: .\app\cmsadmin\views.py:218
+#: .\app\cmsadmin\views.py:56 .\app\cmsadmin\views.py:136
+#: .\app\cmsadmin\views.py:216
 msgid "Please specify the pk!"
 msgstr "请指定 pk !"
 
-#: .\app\cmsadmin\views.py:63 .\app\cmsadmin\views.py:143
+#: .\app\cmsadmin\views.py:61 .\app\cmsadmin\views.py:141
 #, python-format
 msgid "Announcement #%(id)s has been updated successfully!"
 msgstr "成功更新公告 #%(id)s！"
 
-#: .\app\cmsadmin\views.py:72
+#: .\app\cmsadmin\views.py:70
 msgid ""
 "You are not the creator of this announcement, so you do not have the right "
 "to delete it!"
 msgstr "你不是此公告的创建者，无权删除它！"
 
-#: .\app\cmsadmin\views.py:80 .\app\cmsadmin\views.py:160
-#: .\app\cmsadmin\views.py:240
+#: .\app\cmsadmin\views.py:78 .\app\cmsadmin\views.py:158
+#: .\app\cmsadmin\views.py:238
 #, python-format
 msgid "Need %(verbose_name)s Id"
 msgstr "需要 %(verbose_name)s id"
 
-#: .\app\cmsadmin\views.py:85 .\app\cmsadmin\views.py:165
-#: .\app\cmsadmin\views.py:245
+#: .\app\cmsadmin\views.py:83 .\app\cmsadmin\views.py:163
+#: .\app\cmsadmin\views.py:243
 #, python-format
 msgid "No %(verbose_name)s found matching the query"
 msgstr "没有找到符合条件的 %(verbose_name)s"
 
-#: .\app\cmsadmin\views.py:120
+#: .\app\cmsadmin\views.py:118
 #, python-format
 msgid "TopLink #%(id)s has been created successfully!"
 msgstr "成功创建顶部链接 #%(id)s！"
 
-#: .\app\cmsadmin\views.py:131
+#: .\app\cmsadmin\views.py:129
 msgid ""
 "You are not the creator of this toplink, so you do not have the right to "
 "modify it!"
 msgstr "你不是此链接的创建者，无权修改它！"
 
-#: .\app\cmsadmin\views.py:152
+#: .\app\cmsadmin\views.py:150
 msgid ""
 "You are not the creator of this toplink, so you do not have the right to "
 "delete it!"
 msgstr "你不是此链接的创建者，无权删除它！"
 
-#: .\app\cmsadmin\views.py:200
+#: .\app\cmsadmin\views.py:198
 #, python-format
 msgid "FAQ #%(id)s has been created successfully!"
 msgstr "成功创建解答 #%(id)s！"
 
-#: .\app\cmsadmin\views.py:223
+#: .\app\cmsadmin\views.py:221
 #, python-format
 msgid "FAQ #%(id)s has been updated successfully!"
 msgstr "成功更新解答 #%(id)s！"
 
-#: .\app\cmsadmin\views.py:232
+#: .\app\cmsadmin\views.py:230
 msgid ""
 "You are not a staff, and do not have permission to delete this faq, please "
 "contact the administrator!"

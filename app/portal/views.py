@@ -1,12 +1,9 @@
-import logging
-
 from django.contrib.auth import get_user_model
 from django.shortcuts import render
 
 from .models import Announcement
 
 User = get_user_model()
-logger = logging.getLogger(__name__)
 
 
 def index(request):
@@ -18,6 +15,6 @@ def index(request):
 
 def admins(request):
     ctx = {
-        'admins': User.objects.filter(is_staff=True)
+        'admins': User.objects.filter(is_admin=True)
     }
     return render(request, 'portal/admins.html', context=ctx)
