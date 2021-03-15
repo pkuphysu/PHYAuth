@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-12 06:01+0800\n"
+"POT-Creation-Date: 2021-03-15 16:31+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Rainshaw <rxg@live.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -68,81 +68,6 @@ msgstr "哎呀！服务器出错了。"
 msgid "We will work on fixing that right away."
 msgstr "我们很快会修复此问题。"
 
-#: .\templates\apply\client_create.html:4
-#: .\templates\apply\client_create.html:8
-#: .\templates\apply\client_create.html:11 .\templates\index.html:244
-msgid "Create Client"
-msgstr "创建应用"
-
-#: .\templates\apply\client_create.html:25
-#: .\templates\apply\client_update.html:25
-#: .\templates\cmsadmin\announcement_create.html:25
-#: .\templates\cmsadmin\announcement_update.html:25
-#: .\templates\cmsadmin\toplink_create.html:25
-#: .\templates\cmsadmin\toplink_update.html:25
-#: .\templates\users\user_detail.html:105
-msgid "Submit"
-msgstr "提交"
-
-#: .\templates\apply\client_list.html:4 .\templates\apply\client_list.html:8
-#: .\templates\apply\client_list.html:11 .\templates\index.html:238
-msgid "Client List"
-msgstr "应用列表"
-
-#: .\templates\apply\client_list.html:21
-#: .\templates\cmsadmin\announcement_list.html:21
-#: .\templates\cmsadmin\toplink_list.html:21
-msgid "Create"
-msgstr "新建"
-
-#: .\templates\apply\client_list.html:30
-msgid "Client Name"
-msgstr "应用名"
-
-#: .\templates\apply\client_list.html:31
-msgid "Client ID"
-msgstr "应用 ID"
-
-#: .\templates\apply\client_list.html:32
-msgid "Client Secret"
-msgstr "应用密钥"
-
-#: .\templates\apply\client_list.html:33
-msgid "Client Type"
-msgstr "应用类型"
-
-#: .\templates\apply\client_list.html:34
-msgid "Reuse Consent?"
-msgstr "重用用户授权？"
-
-#: .\templates\apply\client_list.html:35
-#: .\templates\cmsadmin\announcement_list.html:33
-#: .\templates\cmsadmin\toplink_list.html:33
-msgid "Operate"
-msgstr "操作"
-
-#: .\templates\apply\client_list.html:46
-msgid "yes,no"
-msgstr "是,否"
-
-#: .\templates\apply\client_list.html:49
-#: .\templates\cmsadmin\announcement_list.html:45
-#: .\templates\cmsadmin\toplink_list.html:45
-msgid "Edit"
-msgstr "编辑"
-
-#: .\templates\apply\client_list.html:51
-#: .\templates\cmsadmin\announcement_list.html:49
-#: .\templates\cmsadmin\toplink_list.html:49
-msgid "Delete"
-msgstr "删除"
-
-#: .\templates\apply\client_update.html:4
-#: .\templates\apply\client_update.html:8
-#: .\templates\apply\client_update.html:11
-msgid "Update Client"
-msgstr "修改应用"
-
 #: .\templates\base.html:11
 msgid "Uniform Identity Authentication of the School of Physics"
 msgstr "物理学院统一身份认证"
@@ -153,11 +78,27 @@ msgstr "物理学院统一身份认证"
 msgid "Create Announcement"
 msgstr "新建公告"
 
+#: .\templates\cmsadmin\announcement_create.html:25
+#: .\templates\cmsadmin\announcement_update.html:25
+#: .\templates\cmsadmin\toplink_create.html:25
+#: .\templates\cmsadmin\toplink_update.html:25
+#: .\templates\oidc_client\client_create.html:25
+#: .\templates\oidc_client\client_update.html:25
+#: .\templates\users\user_detail.html:105
+msgid "Submit"
+msgstr "提交"
+
 #: .\templates\cmsadmin\announcement_list.html:4
 #: .\templates\cmsadmin\announcement_list.html:8
 #: .\templates\cmsadmin\announcement_list.html:11 .\templates\index.html:183
 msgid "Announcement List"
 msgstr "公告列表"
+
+#: .\templates\cmsadmin\announcement_list.html:21
+#: .\templates\cmsadmin\toplink_list.html:21
+#: .\templates\oidc_client\client_list.html:21
+msgid "Create"
+msgstr "新建"
 
 #: .\templates\cmsadmin\announcement_list.html:30
 msgid "Announcement Rank"
@@ -170,6 +111,24 @@ msgstr "公告类型"
 #: .\templates\cmsadmin\announcement_list.html:32
 msgid "Announcement Title"
 msgstr "公告标题"
+
+#: .\templates\cmsadmin\announcement_list.html:33
+#: .\templates\cmsadmin\toplink_list.html:33
+#: .\templates\oidc_client\client_list.html:35
+msgid "Operate"
+msgstr "操作"
+
+#: .\templates\cmsadmin\announcement_list.html:45
+#: .\templates\cmsadmin\toplink_list.html:45
+#: .\templates\oidc_client\client_list.html:49
+msgid "Edit"
+msgstr "编辑"
+
+#: .\templates\cmsadmin\announcement_list.html:49
+#: .\templates\cmsadmin\toplink_list.html:49
+#: .\templates\oidc_client\client_list.html:51
+msgid "Delete"
+msgstr "删除"
 
 #: .\templates\cmsadmin\announcement_list.html:80
 #: .\templates\cmsadmin\toplink_list.html:75
@@ -314,6 +273,18 @@ msgstr "用户资料"
 msgid "My Client"
 msgstr "我的应用"
 
+#: .\templates\index.html:238 .\templates\oidc_client\client_list.html:4
+#: .\templates\oidc_client\client_list.html:8
+#: .\templates\oidc_client\client_list.html:11
+msgid "Client List"
+msgstr "应用列表"
+
+#: .\templates\index.html:244 .\templates\oidc_client\client_create.html:4
+#: .\templates\oidc_client\client_create.html:8
+#: .\templates\oidc_client\client_create.html:11
+msgid "Create Client"
+msgstr "创建应用"
+
 #: .\templates\index.html:252 .\templates\portal\admins.html:5
 #: .\templates\portal\admins.html:7 .\templates\portal\admins.html:11
 msgid "Admins"
@@ -326,6 +297,36 @@ msgstr "公告"
 #: .\templates\index.html:341
 msgid "All rights reserved."
 msgstr "版权所有."
+
+#: .\templates\oidc_client\client_list.html:30
+msgid "Client Name"
+msgstr "应用名"
+
+#: .\templates\oidc_client\client_list.html:31
+msgid "Client ID"
+msgstr "应用 ID"
+
+#: .\templates\oidc_client\client_list.html:32
+msgid "Client Secret"
+msgstr "应用密钥"
+
+#: .\templates\oidc_client\client_list.html:33
+msgid "Client Type"
+msgstr "应用类型"
+
+#: .\templates\oidc_client\client_list.html:34
+msgid "Reuse Consent?"
+msgstr "重用用户授权？"
+
+#: .\templates\oidc_client\client_list.html:46
+msgid "yes,no"
+msgstr "是,否"
+
+#: .\templates\oidc_client\client_update.html:4
+#: .\templates\oidc_client\client_update.html:8
+#: .\templates\oidc_client\client_update.html:11
+msgid "Update Client"
+msgstr "修改应用"
 
 #: .\templates\oidc_provider\authorize.html:3
 msgid "Request for Permission"

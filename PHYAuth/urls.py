@@ -47,8 +47,8 @@ urlpatterns = [
     # contacts/
     path('', portal_views.index, name='index'),
     path('', include('app.portal.urls', namespace='portal')),
-    # apply/client-*/
-    path('apply/', include('app.apply.urls', namespace='apply')),
+    # oidc-client/client-*/
+    path('oidc-client/', include('app.oidc_client.urls', namespace='oidc_client')),
     # cmsadmin/announcement-*/
     # cmsadmin/toplink-*/
     path('cmsadmin/', include('app.cmsadmin.urls', namespace='cmsadmin')),

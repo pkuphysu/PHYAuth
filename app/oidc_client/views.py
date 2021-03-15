@@ -1,4 +1,4 @@
-from django.contrib.auth.mixins import PermissionRequiredMixin
+from django.contrib.auth.mixins import PermissionRequiredMixin, LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
@@ -12,7 +12,7 @@ from ..utils.views import ErrorMessageMixin
 
 class ClientListView(PermissionRequiredMixin, PermissionListMixin, ListView):
     model = Client
-    template_name = 'apply/client_list.html'
+    template_name = 'oidc_client/client_list.html'
     permission_required = 'oidc_provider.view_client'
     permission_denied_message = _('You are not a developer and do not have permission to view the application, '
                                   'please contact the administrator!')
@@ -24,7 +24,7 @@ class ClientCreateView(PermissionRequiredMixin, ObjectPermissionRequiredMixin,
                        SuccessMessageMixin, ErrorMessageMixin, CreateView):
     model = Client
     form_class = ClientForm
-    template_name = 'apply/client_create.html'
+    template_name = 'oidc_client/client_create.html'
     permission_object = None
     permission_required = 'oidc_provider.add_client'
     permission_denied_message = _('You are not a developer and do not have permission to view the application, '
@@ -39,14 +39,14 @@ class ClientCreateView(PermissionRequiredMixin, ObjectPermissionRequiredMixin,
         return kwargs
 
     def get_success_url(self):
-        return reverse('apply:client-list')
+        return reverse('oidc_client:client-list')
 
 
 class ClientUpdateView(PermissionRequiredMixin, ObjectPermissionRequiredMixin,
                        SuccessMessageMixin, ErrorMessageMixin, UpdateView):
     model = Client
     form_class = ClientForm
-    template_name = 'apply/client_update.html'
+    template_name = 'oidc_client/client_update.html'
     permission_required = 'oidc_provider.change_client'
     permission_denied_message = _('You are not the creator of this application, '
                                   'so you do not have the right to modify this application!')
@@ -55,4 +55,4 @@ class ClientUpdateView(PermissionRequiredMixin, ObjectPermissionRequiredMixin,
     return_403 = True
 
     def get_success_url(self):
-        return reverse('apply:client-list')
+        return reverse('oidc_client:client-list')

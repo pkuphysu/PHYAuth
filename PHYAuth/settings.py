@@ -82,7 +82,7 @@ LOCAL_APPS = [
     'app.pku_iaaa.apps.PkuIaaaConfig',
     'app.portal.apps.PortalConfig',
     'app.cmsadmin.apps.CmsadminConfig',
-    'app.apply.apps.ApplyConfig',
+    'app.oidc_client.apps.OidcClientConfig',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS + THIRD_PARTY_APPS
@@ -314,7 +314,7 @@ CELERY_WORKER_MAX_TASKS_PER_CHILD = 100000  # 每个worker执行10w个任务就�
 
 LOGGING = {
     'version': 1,
-    'disable_existing_loggers': False,
+    'disable_existing_loggers': True,
     'formatters': {
         'verbose': {
             'format': '{levelname} {asctime} {module} {process:d} {thread:d} {message}',

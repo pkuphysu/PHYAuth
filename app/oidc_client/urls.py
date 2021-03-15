@@ -2,7 +2,7 @@ from django.urls import path
 
 from . import views
 
-app_name = 'apply'
+app_name = 'oidc_client'
 urlpatterns = [
     path('client-create/', views.ClientCreateView.as_view(), name='client-create'),
     path('client-list/', views.ClientListView.as_view(), name='client-list'),
