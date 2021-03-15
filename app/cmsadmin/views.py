@@ -5,11 +5,10 @@ from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.http import JsonResponse, Http404
 from django.urls import reverse
-from django.utils.translation import gettext_lazy as _
+from django.utils.translation import gettext_lazy as _, gettext
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
-from guardian.mixins import PermissionRequiredMixin as ObjectPermissionRequiredMixin, PermissionListMixin
 
-from .forms import AnnouncementForm, TopLinkForm
+from ..portal.forms import AnnouncementForm, TopLinkForm
 from ..portal.models import Announcement, TopLink
 from ..oidc_client.models import Faq as OidcClientFaq
 from ..oidc_client.forms import FaqForm as OidcClientFaqForm
@@ -19,22 +18,19 @@ User = get_user_model()
 logger = logging.getLogger(__name__)
 
 
-class AnnouncementListView(PermissionRequiredMixin, PermissionListMixin, ListView):
+class AnnouncementListView(PermissionRequiredMixin, ListView):
     model = Announcement
     permission_required = 'portal.view_announcement'
     template_name = 'cmsadmin/portal/announcement_list.html'
     permission_denied_message = _('You are not a staff, and do not have permission to view this page, '
                                   'please contact the administrator!')
     context_object_name = 'announcement_list'
-    get_objects_for_user_extra_kwargs = {'accept_global_perms': False}
 
 
-class AnnouncementCreateView(PermissionRequiredMixin, ObjectPermissionRequiredMixin,
-                             SuccessMessageMixin, ErrorMessageMixin, CreateView):
+class AnnouncementCreateView(PermissionRequiredMixin, SuccessMessageMixin, ErrorMessageMixin, CreateView):
     model = Announcement
     form_class = AnnouncementForm
     template_name = 'cmsadmin/portal/announcement_create.html'
-    permission_object = None
     permission_required = 'portal.add_announcement'
     permission_denied_message = _('You are not a staff, and do not have permission to view this page, '
                                   'please contact the administrator!')
@@ -53,8 +49,7 @@ class AnnouncementCreateView(PermissionRequiredMixin, ObjectPermissionRequiredMi
         return reverse('cmsadmin:announcement-list')
 
 
-class AnnouncementUpdateView(PermissionRequiredMixin, ObjectPermissionRequiredMixin,
-                             SuccessMessageMixin, ErrorMessageMixin, UpdateView):
+class AnnouncementUpdateView(PermissionRequiredMixin, SuccessMessageMixin, ErrorMessageMixin, UpdateView):
     model = Announcement
     form_class = AnnouncementForm
     template_name = 'cmsadmin/portal/announcement_update.html'
@@ -62,6 +57,13 @@ class AnnouncementUpdateView(PermissionRequiredMixin, ObjectPermissionRequiredMi
     permission_denied_message = _('You are not the creator of this announcement, '
                                   'so you do not have the right to modify it!')
     error_message = _('Please check the error messages showed in the page!')
+
+    def get_object(self, queryset=None):
+        pk = self.request.GET.get('pk')
+        if pk is None:
+            raise Http404(gettext('Please specify the pk!'))
+        self.kwargs.update({'pk': self.request.GET.get('pk')})
+        return super().get_object(queryset=queryset)
 
     def get_form_kwargs(self):
         """Return the keyword arguments for instantiating the form."""
@@ -76,7 +78,7 @@ class AnnouncementUpdateView(PermissionRequiredMixin, ObjectPermissionRequiredMi
         return reverse('cmsadmin:announcement-list')
 
 
-class AnnouncementDeleteView(PermissionRequiredMixin, ObjectPermissionRequiredMixin, DeleteView):
+class AnnouncementDeleteView(PermissionRequiredMixin, DeleteView):
     model = Announcement
     permission_required = 'portal.delete_announcement'
     permission_denied_message = _('You are not the creator of this announcement, '
@@ -108,22 +110,19 @@ class AnnouncementDeleteView(PermissionRequiredMixin, ObjectPermissionRequiredMi
             return JsonResponse(data={'status': False, 'msg': str(e)})
 
 
-class TopLinkListView(PermissionRequiredMixin, PermissionListMixin, ListView):
+class TopLinkListView(PermissionRequiredMixin, ListView):
     model = TopLink
     permission_required = 'portal.view_toplink'
     template_name = 'cmsadmin/portal/toplink_list.html'
     permission_denied_message = _('You are not a staff, and do not have permission to view this page, '
                                   'please contact the administrator!')
     context_object_name = 'toplink_list'
-    get_objects_for_user_extra_kwargs = {'accept_global_perms': False}
 
 
-class TopLinkCreateView(PermissionRequiredMixin, ObjectPermissionRequiredMixin,
-                        SuccessMessageMixin, ErrorMessageMixin, CreateView):
+class TopLinkCreateView(PermissionRequiredMixin, SuccessMessageMixin, ErrorMessageMixin, CreateView):
     model = TopLink
     form_class = TopLinkForm
     template_name = 'cmsadmin/portal/toplink_create.html'
-    permission_object = None
     permission_required = 'portal.add_toplink'
     permission_denied_message = _('You are not a staff, and do not have permission to view this page, '
                                   'please contact the administrator!')
@@ -142,8 +141,7 @@ class TopLinkCreateView(PermissionRequiredMixin, ObjectPermissionRequiredMixin,
         return reverse('cmsadmin:toplink-list')
 
 
-class TopLinkUpdateView(PermissionRequiredMixin, ObjectPermissionRequiredMixin,
-                        SuccessMessageMixin, ErrorMessageMixin, UpdateView):
+class TopLinkUpdateView(PermissionRequiredMixin, SuccessMessageMixin, ErrorMessageMixin, UpdateView):
     model = TopLink
     form_class = TopLinkForm
     template_name = 'cmsadmin/portal/toplink_update.html'
@@ -151,6 +149,13 @@ class TopLinkUpdateView(PermissionRequiredMixin, ObjectPermissionRequiredMixin,
     permission_denied_message = _('You are not the creator of this toplink, '
                                   'so you do not have the right to modify it!')
     error_message = _('Please check the error messages showed in the page!')
+
+    def get_object(self, queryset=None):
+        pk = self.request.GET.get('pk')
+        if pk is None:
+            raise Http404(gettext('Please specify the pk!'))
+        self.kwargs.update({'pk': self.request.GET.get('pk')})
+        return super().get_object(queryset=queryset)
 
     def get_form_kwargs(self):
         """Return the keyword arguments for instantiating the form."""
@@ -165,7 +170,7 @@ class TopLinkUpdateView(PermissionRequiredMixin, ObjectPermissionRequiredMixin,
         return reverse('cmsadmin:toplink-list')
 
 
-class TopLinkDeleteView(PermissionRequiredMixin, ObjectPermissionRequiredMixin, DeleteView):
+class TopLinkDeleteView(PermissionRequiredMixin, DeleteView):
     model = TopLink
     permission_required = 'portal.delete_toplink'
     permission_denied_message = _('You are not the creator of this toplink, '

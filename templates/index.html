@@ -158,7 +158,7 @@
                             {% block nav_siderbar_links %}
                                 {% if user.is_staff %}
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link">
+                                        <a href="javascript:void(0);" class="nav-link">
                                             <i class="nav-icon  fas fa-users-cog"></i>
                                             <p>{% translate 'Manage Site' %}<i class="right fas fa-angle-left"></i></p>
                                         </a>
@@ -170,14 +170,14 @@
                                                 </a>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="#" class="nav-link">
+                                                <a href="javascript:void(0);" class="nav-link">
                                                     <i class="nav-icon far fa-circle"></i>
                                                     <p>{% translate 'Manage Site' %}<i
                                                             class="right fas fa-angle-left"></i></p>
                                                 </a>
                                                 <ul class="nav-treeview">
                                                     <li class="nav-item">
-                                                        <a href="#" class="nav-link">
+                                                        <a href="javascript:void(0);" class="nav-link">
                                                             <i class="nav-icon  far fa-dot-circle"></i>
                                                             <p>{% translate 'Manage Announcement' %}<i
                                                                     class="right fas fa-angle-left"></i></p>
@@ -197,10 +197,17 @@
                                                                     <p>{% translate 'Create Announcement' %}</p>
                                                                 </a>
                                                             </li>
+                                                            <li class="nav-item">
+                                                                <a href="{% url 'cmsadmin:announcement-update' %}"
+                                                                   class="nav-link" onclick="return false;">
+                                                                    <i class="nav-icon fas fa-circle"></i>
+                                                                    <p>{% translate 'Update Announcement' %}</p>
+                                                                </a>
+                                                            </li>
                                                         </ul>
                                                     </li>
                                                     <li class="nav-item">
-                                                        <a href="#" class="nav-link">
+                                                        <a href="javascript:void(0);" class="nav-link">
                                                             <i class="nav-icon  far fa-dot-circle"></i>
                                                             <p>{% translate 'Manage TopLink' %}<i
                                                                     class="right fas fa-angle-left"></i></p>
@@ -220,20 +227,27 @@
                                                                     <p>{% translate 'Create TopLink' %}</p>
                                                                 </a>
                                                             </li>
+                                                            <li class="nav-item">
+                                                                <a href="{% url 'cmsadmin:toplink-update' %}"
+                                                                   class="nav-link" onclick="return false;">
+                                                                    <i class="nav-icon fas fa-circle"></i>
+                                                                    <p>{% translate 'Update TopLink' %}</p>
+                                                                </a>
+                                                            </li>
                                                         </ul>
                                                     </li>
                                                 </ul>
 
                                             </li>
                                             <li class="nav-item">
-                                                <a href="#" class="nav-link">
+                                                <a href="javascript:void(0);" class="nav-link">
                                                     <i class="nav-icon  far fa-circle"></i>
                                                     <p>{% translate 'Manage Oidc Client' %}<i
                                                             class="right fas fa-angle-left"></i></p>
                                                 </a>
                                                 <ul class="nav nav-treeview">
                                                     <li class="nav-item">
-                                                        <a href="#" class="nav-link">
+                                                        <a href="javascript:void(0);" class="nav-link">
                                                             <i class="nav-icon far fa-dot-circle"></i>
                                                             <p>{% translate 'Manage FAQ' %}<i
                                                                     class="right fas fa-angle-left"></i></p>
@@ -267,7 +281,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="javascript:void(0);" class="nav-link">
                                         <i class="nav-icon fab fa-app-store-ios"></i>
                                         <p>
                                             {% translate 'My Client' %}

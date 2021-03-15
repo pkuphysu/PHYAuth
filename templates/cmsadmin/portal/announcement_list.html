@@ -41,8 +41,8 @@
                                     <td>{{ announcement.get_type_display }}</td>
                                     <td>{{ announcement.title }}</td>
                                     <td>
-                                        <a href="{% url 'cmsadmin:announcement-update' announcement.pk %}">
-                                            <button class="btn btn-info">{% translate 'Edit' %}</button>
+                                        <a href="{% url 'cmsadmin:announcement-update' %}?pk={{ announcement.pk }}">
+                                            <button class="btn btn-info update">{% translate 'Edit' %}</button>
                                         </a>
 
                                         <button class="btn btn-danger delete"

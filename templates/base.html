@@ -33,6 +33,21 @@
             .sidebar-light-red .nav-sidebar > .nav-item > .nav-link.active {
                 background-color: #8B0016;
             }
+
+            .sidebar-light-red .nav-treeview > .nav-item > .nav-link.active {
+                background-color: rgba(139, 0, 22, .7);
+                color: #fff;
+            }
+
+            .sidebar-light-red .nav-treeview > .nav-item > .nav-treeview > .nav-item > .nav-link.active {
+                background-color: rgba(139, 0, 22, .4);
+                color: #212529;
+            }
+
+            .sidebar-light-red .nav-treeview > .nav-item > .nav-treeview > .nav-item > .nav-treeview > .nav-item > .nav-link.active {
+                background-color: rgba(139, 0, 22, .1);
+                color: #212529;
+            }
         </style>
     {% endblock %}
 
@@ -82,16 +97,16 @@
     <script>
         window.onload = function () {
             /** add active class and stay opened when selected */
-            var url = window.location.href;
+            var url = window.location.pathname;
 
             // for sidebar menu entirely but not cover treeview
             $('ul.nav-sidebar a').filter(function () {
-                return this.href === url;
+                return this.pathname === url;
             }).addClass('active');
 
             // for treeview
             $('ul.nav-treeview a').filter(function () {
-                return this.href === url;
+                return this.pathname === url;
             }).parentsUntil(".nav-sidebar > .nav-treeview").addClass('menu-open').prev('a').addClass('active');
         }
     </script>

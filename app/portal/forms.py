@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth import get_user_model
 
-from ..portal.models import Announcement, TopLink
+from .models import Announcement, TopLink
 
 User = get_user_model()
 

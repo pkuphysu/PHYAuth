@@ -41,7 +41,7 @@
                                     <td>{{ toplink.name }}</td>
                                     <td>{{ toplink.url }}</td>
                                     <td>
-                                        <a href="{% url 'cmsadmin:toplink-update' toplink.pk %}">
+                                        <a href="{% url 'cmsadmin:toplink-update' %}?pk={{ toplink.pk }}">
                                             <button class="btn btn-info">{% translate 'Edit' %}</button>
                                         </a>
 

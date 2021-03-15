@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-15 18:35+0800\n"
+"POT-Creation-Date: 2021-03-15 22:02+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Rainshaw <rxg@live.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -72,148 +72,37 @@ msgstr "我们很快会修复此问题。"
 msgid "Uniform Identity Authentication of the School of Physics"
 msgstr "物理学院统一身份认证"
 
-#: .\templates\cmsadmin\announcement_create.html:4
-#: .\templates\cmsadmin\announcement_create.html:8
-#: .\templates\cmsadmin\announcement_create.html:11 .\templates\index.html:190
-msgid "Create Announcement"
-msgstr "新建公告"
+#: .\templates\cmsadmin\oidc_client\faq_create.html:4
+#: .\templates\cmsadmin\oidc_client\faq_create.html:13
+#: .\templates\cmsadmin\oidc_client\faq_create.html:16
+#: .\templates\index.html:258
+msgid "Create FAQ"
+msgstr "新建疑问与解答"
 
-#: .\templates\cmsadmin\announcement_create.html:25
-#: .\templates\cmsadmin\announcement_update.html:25
 #: .\templates\cmsadmin\oidc_client\faq_create.html:30
 #: .\templates\cmsadmin\oidc_client\faq_update.html:30
-#: .\templates\cmsadmin\toplink_create.html:25
-#: .\templates\cmsadmin\toplink_update.html:25
+#: .\templates\cmsadmin\portal\announcement_create.html:25
+#: .\templates\cmsadmin\portal\announcement_update.html:25
+#: .\templates\cmsadmin\portal\toplink_create.html:25
+#: .\templates\cmsadmin\portal\toplink_update.html:25
 #: .\templates\oidc_client\client_create.html:25
 #: .\templates\oidc_client\client_update.html:25
 #: .\templates\users\user_detail.html:105
 msgid "Submit"
 msgstr "提交"
 
-#: .\templates\cmsadmin\announcement_list.html:4
-#: .\templates\cmsadmin\announcement_list.html:8
-#: .\templates\cmsadmin\announcement_list.html:11 .\templates\index.html:183
-msgid "Announcement List"
-msgstr "公告列表"
+#: .\templates\cmsadmin\oidc_client\faq_list.html:4
+#: .\templates\cmsadmin\oidc_client\faq_list.html:8
+#: .\templates\cmsadmin\oidc_client\faq_list.html:11 .\templates\index.html:251
+msgid "FAQ List"
+msgstr "疑问与解答列表"
 
-#: .\templates\cmsadmin\announcement_list.html:21
 #: .\templates\cmsadmin\oidc_client\faq_list.html:21
-#: .\templates\cmsadmin\toplink_list.html:21
+#: .\templates\cmsadmin\portal\announcement_list.html:21
+#: .\templates\cmsadmin\portal\toplink_list.html:21
 #: .\templates\oidc_client\client_list.html:21
 msgid "Create"
 msgstr "新建"
-
-#: .\templates\cmsadmin\announcement_list.html:30
-msgid "Announcement Rank"
-msgstr "公告排序"
-
-#: .\templates\cmsadmin\announcement_list.html:31
-msgid "Announcement Type"
-msgstr "公告类型"
-
-#: .\templates\cmsadmin\announcement_list.html:32
-msgid "Announcement Title"
-msgstr "公告标题"
-
-#: .\templates\cmsadmin\announcement_list.html:33
-#: .\templates\cmsadmin\oidc_client\faq_list.html:32
-#: .\templates\cmsadmin\toplink_list.html:33
-#: .\templates\oidc_client\client_list.html:35
-msgid "Operate"
-msgstr "操作"
-
-#: .\templates\cmsadmin\announcement_list.html:45
-#: .\templates\cmsadmin\oidc_client\faq_list.html:43
-#: .\templates\cmsadmin\toplink_list.html:45
-#: .\templates\oidc_client\client_list.html:49
-msgid "Edit"
-msgstr "编辑"
-
-#: .\templates\cmsadmin\announcement_list.html:49
-#: .\templates\cmsadmin\oidc_client\faq_list.html:47
-#: .\templates\cmsadmin\toplink_list.html:49
-#: .\templates\oidc_client\client_list.html:51
-msgid "Delete"
-msgstr "删除"
-
-#: .\templates\cmsadmin\announcement_list.html:80
-#: .\templates\cmsadmin\oidc_client\faq_list.html:78
-#: .\templates\cmsadmin\toplink_list.html:75
-#: .\templates\registration\password_change_form.html:103
-#: .\templates\registration\password_reset_confirm.html:81
-#: .\templates\registration\password_reset_form.html:72
-msgid "Are you sure?"
-msgstr "你确定吗？"
-
-#: .\templates\cmsadmin\announcement_list.html:81
-#: .\templates\cmsadmin\oidc_client\faq_list.html:79
-#: .\templates\cmsadmin\toplink_list.html:76
-msgid "You won't be able to revert this!"
-msgstr "你无法撤销此操作！"
-
-#: .\templates\cmsadmin\announcement_list.html:86
-#: .\templates\cmsadmin\oidc_client\faq_list.html:84
-#: .\templates\cmsadmin\toplink_list.html:81
-#: .\templates\registration\password_change_form.html:108
-#: .\templates\registration\password_reset_confirm.html:86
-#: .\templates\registration\password_reset_form.html:78
-msgid "Yes"
-msgstr "是的"
-
-#: .\templates\cmsadmin\announcement_list.html:87
-#: .\templates\cmsadmin\oidc_client\faq_list.html:85
-#: .\templates\cmsadmin\toplink_list.html:82
-#: .\templates\registration\password_change_form.html:109
-#: .\templates\registration\password_reset_confirm.html:87
-#: .\templates\registration\password_reset_form.html:79
-msgid "Cancel"
-msgstr "取消"
-
-#: .\templates\cmsadmin\announcement_list.html:103
-#: .\templates\cmsadmin\oidc_client\faq_list.html:101
-#: .\templates\cmsadmin\toplink_list.html:98
-msgid "Success Delete"
-msgstr "删除成功"
-
-#: .\templates\cmsadmin\announcement_list.html:110
-#: .\templates\cmsadmin\announcement_list.html:118
-#: .\templates\cmsadmin\oidc_client\faq_list.html:108
-#: .\templates\cmsadmin\oidc_client\faq_list.html:116
-#: .\templates\cmsadmin\toplink_list.html:105
-#: .\templates\cmsadmin\toplink_list.html:113
-msgid "Fail Delete"
-msgstr "删除失败"
-
-#: .\templates\cmsadmin\announcement_list.html:126
-#: .\templates\cmsadmin\oidc_client\faq_list.html:124
-#: .\templates\cmsadmin\toplink_list.html:121
-msgid "Lucky to see this warning~~"
-msgstr "万幸看到这个警告~~"
-
-#: .\templates\cmsadmin\announcement_list.html:127
-#: .\templates\cmsadmin\oidc_client\faq_list.html:125
-#: .\templates\cmsadmin\toplink_list.html:122
-msgid "This will close in <b></b> milliseconds."
-msgstr "我将在<b></b>毫秒内自动关闭~"
-
-#: .\templates\cmsadmin\announcement_update.html:4
-#: .\templates\cmsadmin\announcement_update.html:8
-#: .\templates\cmsadmin\announcement_update.html:11
-msgid "Update Announcement"
-msgstr "更新公告"
-
-#: .\templates\cmsadmin\oidc_client\faq_create.html:4
-#: .\templates\cmsadmin\oidc_client\faq_create.html:13
-#: .\templates\cmsadmin\oidc_client\faq_create.html:16
-#: .\templates\index.html:239
-msgid "Create FAQ"
-msgstr "新建疑问与解答"
-
-#: .\templates\cmsadmin\oidc_client\faq_list.html:4
-#: .\templates\cmsadmin\oidc_client\faq_list.html:8
-#: .\templates\cmsadmin\oidc_client\faq_list.html:11 .\templates\index.html:233
-msgid "FAQ List"
-msgstr "疑问与解答列表"
 
 #: .\templates\cmsadmin\oidc_client\faq_list.html:30
 msgid "Question"
@@ -223,39 +112,155 @@ msgstr "疑问"
 msgid "Show"
 msgstr "显示状态"
 
+#: .\templates\cmsadmin\oidc_client\faq_list.html:32
+#: .\templates\cmsadmin\portal\announcement_list.html:33
+#: .\templates\cmsadmin\portal\toplink_list.html:33
+#: .\templates\oidc_client\client_list.html:35
+msgid "Operate"
+msgstr "操作"
+
+#: .\templates\cmsadmin\oidc_client\faq_list.html:43
+#: .\templates\cmsadmin\portal\announcement_list.html:45
+#: .\templates\cmsadmin\portal\toplink_list.html:45
+#: .\templates\oidc_client\client_list.html:49
+msgid "Edit"
+msgstr "编辑"
+
+#: .\templates\cmsadmin\oidc_client\faq_list.html:47
+#: .\templates\cmsadmin\portal\announcement_list.html:49
+#: .\templates\cmsadmin\portal\toplink_list.html:49
+#: .\templates\oidc_client\client_list.html:51
+msgid "Delete"
+msgstr "删除"
+
+#: .\templates\cmsadmin\oidc_client\faq_list.html:78
+#: .\templates\cmsadmin\portal\announcement_list.html:80
+#: .\templates\cmsadmin\portal\toplink_list.html:75
+#: .\templates\registration\password_change_form.html:103
+#: .\templates\registration\password_reset_confirm.html:81
+#: .\templates\registration\password_reset_form.html:72
+msgid "Are you sure?"
+msgstr "你确定吗？"
+
+#: .\templates\cmsadmin\oidc_client\faq_list.html:79
+#: .\templates\cmsadmin\portal\announcement_list.html:81
+#: .\templates\cmsadmin\portal\toplink_list.html:76
+msgid "You won't be able to revert this!"
+msgstr "你无法撤销此操作！"
+
+#: .\templates\cmsadmin\oidc_client\faq_list.html:84
+#: .\templates\cmsadmin\portal\announcement_list.html:86
+#: .\templates\cmsadmin\portal\toplink_list.html:81
+#: .\templates\registration\password_change_form.html:108
+#: .\templates\registration\password_reset_confirm.html:86
+#: .\templates\registration\password_reset_form.html:78
+msgid "Yes"
+msgstr "是的"
+
+#: .\templates\cmsadmin\oidc_client\faq_list.html:85
+#: .\templates\cmsadmin\portal\announcement_list.html:87
+#: .\templates\cmsadmin\portal\toplink_list.html:82
+#: .\templates\registration\password_change_form.html:109
+#: .\templates\registration\password_reset_confirm.html:87
+#: .\templates\registration\password_reset_form.html:79
+msgid "Cancel"
+msgstr "取消"
+
+#: .\templates\cmsadmin\oidc_client\faq_list.html:101
+#: .\templates\cmsadmin\portal\announcement_list.html:103
+#: .\templates\cmsadmin\portal\toplink_list.html:98
+msgid "Success Delete"
+msgstr "删除成功"
+
+#: .\templates\cmsadmin\oidc_client\faq_list.html:108
+#: .\templates\cmsadmin\oidc_client\faq_list.html:116
+#: .\templates\cmsadmin\portal\announcement_list.html:110
+#: .\templates\cmsadmin\portal\announcement_list.html:118
+#: .\templates\cmsadmin\portal\toplink_list.html:104
+#: .\templates\cmsadmin\portal\toplink_list.html:112
+msgid "Fail Delete"
+msgstr "删除失败"
+
+#: .\templates\cmsadmin\oidc_client\faq_list.html:124
+#: .\templates\cmsadmin\portal\announcement_list.html:126
+#: .\templates\cmsadmin\portal\toplink_list.html:120
+msgid "Lucky to see this warning~~"
+msgstr "万幸看到这个警告~~"
+
+#: .\templates\cmsadmin\oidc_client\faq_list.html:125
+#: .\templates\cmsadmin\portal\announcement_list.html:127
+#: .\templates\cmsadmin\portal\toplink_list.html:121
+msgid "This will close in <b></b> milliseconds."
+msgstr "我将在<b></b>毫秒内自动关闭~"
+
 #: .\templates\cmsadmin\oidc_client\faq_update.html:4
 #: .\templates\cmsadmin\oidc_client\faq_update.html:13
 #: .\templates\cmsadmin\oidc_client\faq_update.html:16
 msgid "Update FAQ"
 msgstr "更新疑问与解答"
 
-#: .\templates\cmsadmin\toplink_create.html:4
-#: .\templates\cmsadmin\toplink_create.html:8
-#: .\templates\cmsadmin\toplink_create.html:11 .\templates\index.html:212
+#: .\templates\cmsadmin\portal\announcement_create.html:4
+#: .\templates\cmsadmin\portal\announcement_create.html:8
+#: .\templates\cmsadmin\portal\announcement_create.html:11
+#: .\templates\index.html:193
+msgid "Create Announcement"
+msgstr "新建公告"
+
+#: .\templates\cmsadmin\portal\announcement_list.html:4
+#: .\templates\cmsadmin\portal\announcement_list.html:8
+#: .\templates\cmsadmin\portal\announcement_list.html:11
+#: .\templates\index.html:187
+msgid "Announcement List"
+msgstr "公告列表"
+
+#: .\templates\cmsadmin\portal\announcement_list.html:30
+msgid "Announcement Rank"
+msgstr "公告排序"
+
+#: .\templates\cmsadmin\portal\announcement_list.html:31
+msgid "Announcement Type"
+msgstr "公告类型"
+
+#: .\templates\cmsadmin\portal\announcement_list.html:32
+msgid "Announcement Title"
+msgstr "公告标题"
+
+#: .\templates\cmsadmin\portal\announcement_update.html:4
+#: .\templates\cmsadmin\portal\announcement_update.html:8
+#: .\templates\cmsadmin\portal\announcement_update.html:11
+#: .\templates\index.html:199
+msgid "Update Announcement"
+msgstr "更新公告"
+
+#: .\templates\cmsadmin\portal\toplink_create.html:4
+#: .\templates\cmsadmin\portal\toplink_create.html:8
+#: .\templates\cmsadmin\portal\toplink_create.html:11
+#: .\templates\index.html:219
 msgid "Create TopLink"
 msgstr "新建导航链接"
 
-#: .\templates\cmsadmin\toplink_list.html:4
-#: .\templates\cmsadmin\toplink_list.html:8
-#: .\templates\cmsadmin\toplink_list.html:11 .\templates\index.html:205
+#: .\templates\cmsadmin\portal\toplink_list.html:4
+#: .\templates\cmsadmin\portal\toplink_list.html:8
+#: .\templates\cmsadmin\portal\toplink_list.html:11 .\templates\index.html:213
 msgid "TopLink List"
 msgstr "链接列表"
 
-#: .\templates\cmsadmin\toplink_list.html:30
+#: .\templates\cmsadmin\portal\toplink_list.html:30
 msgid "TopLink Rank"
 msgstr "链接排序"
 
-#: .\templates\cmsadmin\toplink_list.html:31
+#: .\templates\cmsadmin\portal\toplink_list.html:31
 msgid "TopLink Name"
 msgstr "链接名称"
 
-#: .\templates\cmsadmin\toplink_list.html:32
+#: .\templates\cmsadmin\portal\toplink_list.html:32
 msgid "TopLink URL"
 msgstr "链接地址"
 
-#: .\templates\cmsadmin\toplink_update.html:4
-#: .\templates\cmsadmin\toplink_update.html:8
-#: .\templates\cmsadmin\toplink_update.html:11
+#: .\templates\cmsadmin\portal\toplink_update.html:4
+#: .\templates\cmsadmin\portal\toplink_update.html:8
+#: .\templates\cmsadmin\portal\toplink_update.html:11
+#: .\templates\index.html:225
 msgid "Update TopLink"
 msgstr "更新导航链接"
 
@@ -264,7 +269,7 @@ msgid "Choose file"
 msgstr "选择文件"
 
 #: .\templates\index.html:6 .\templates\index.html:27
-#: .\templates\index.html:310 .\templates\index.html:315
+#: .\templates\index.html:329 .\templates\index.html:334
 msgid "Home"
 msgstr "主页"
 
@@ -290,7 +295,7 @@ msgstr "统一认证"
 msgid "Change Avatar"
 msgstr "更换头像"
 
-#: .\templates\index.html:163
+#: .\templates\index.html:163 .\templates\index.html:175
 msgid "Manage Site"
 msgstr "管理站点"
 
@@ -298,58 +303,58 @@ msgstr "管理站点"
 msgid "Admin Site"
 msgstr "后台管理"
 
-#: .\templates\index.html:175
+#: .\templates\index.html:181
 msgid "Manage Announcement"
 msgstr "管理公告"
 
-#: .\templates\index.html:198
+#: .\templates\index.html:207
 msgid "Manage TopLink"
 msgstr "管理顶部导航链接"
 
-#: .\templates\index.html:220
+#: .\templates\index.html:236
 msgid "Manage Oidc Client"
 msgstr "管理 Oidc 应用"
 
-#: .\templates\index.html:227
+#: .\templates\index.html:243
 msgid "Manage FAQ"
 msgstr "管理疑问与解答"
 
-#: .\templates\index.html:252 .\templates\users\user_detail.html:6
+#: .\templates\index.html:271 .\templates\users\user_detail.html:6
 #: .\templates\users\user_detail.html:8 .\templates\users\user_detail.html:12
 msgid "User Profile"
 msgstr "用户资料"
 
-#: .\templates\index.html:259
+#: .\templates\index.html:278
 msgid "My Client"
 msgstr "我的应用"
 
-#: .\templates\index.html:267 .\templates\oidc_client\client_list.html:4
+#: .\templates\index.html:286 .\templates\oidc_client\client_list.html:4
 #: .\templates\oidc_client\client_list.html:8
 #: .\templates\oidc_client\client_list.html:11
 msgid "Client List"
 msgstr "应用列表"
 
-#: .\templates\index.html:273 .\templates\oidc_client\client_create.html:4
+#: .\templates\index.html:292 .\templates\oidc_client\client_create.html:4
 #: .\templates\oidc_client\client_create.html:8
 #: .\templates\oidc_client\client_create.html:11
 msgid "Create Client"
 msgstr "创建应用"
 
-#: .\templates\index.html:279 .\templates\oidc_client\faq.html:4
+#: .\templates\index.html:298 .\templates\oidc_client\faq.html:4
 #: .\templates\oidc_client\faq.html:8 .\templates\oidc_client\faq.html:11
 msgid "FAQ"
 msgstr "疑问与解答"
 
-#: .\templates\index.html:287 .\templates\portal\admins.html:5
+#: .\templates\index.html:306 .\templates\portal\admins.html:5
 #: .\templates\portal\admins.html:7 .\templates\portal\admins.html:11
 msgid "Admins"
 msgstr "管理员列表"
 
-#: .\templates\index.html:333
+#: .\templates\index.html:352
 msgid "Announcement"
 msgstr "公告"
 
-#: .\templates\index.html:376
+#: .\templates\index.html:395
 msgid "All rights reserved."
 msgstr "版权所有."
 
@@ -383,11 +388,11 @@ msgstr "是,否"
 msgid "Update Client"
 msgstr "修改应用"
 
-#: .\templates\oidc_client\faq.html:37
+#: .\templates\oidc_client\faq.html:38
 msgid "Contact us"
 msgstr "联系我们"
 
-#: .\templates\oidc_client\faq.html:38
+#: .\templates\oidc_client\faq.html:39
 msgid "if you found not the right anwser or you have a other question?"
 msgstr "如果你没有找到正确回答或你有其他问题？"
 
