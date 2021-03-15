@@ -14,4 +14,9 @@ urlpatterns = [
     path('toplink-create/', views.TopLinkCreateView.as_view(), name='toplink-create'),
     path('toplink-update/<int:pk>/', views.TopLinkUpdateView.as_view(), name='toplink-update'),
     path('toplink-delete/', views.TopLinkDeleteView.as_view(), name='toplink-delete'),
+
+    path('oidc-client-faq-list/', views.OidcClientFaqListView.as_view(), name='oidc-client-faq-list'),
+    path('oidc-client-faq-create/', views.OidcClientFaqCreateView.as_view(), name='oidc-client-faq-create'),
+    path('oidc-client-faq-update/<int:pk>/', views.OidcClientFaqUpdateView.as_view(), name='oidc-client-faq-update'),
+    path('oidc-client-faq-delete/', views.OidcClientFaqDeleteView.as_view(), name='oidc-client-faq-delete'),
 ]

@@ -214,6 +214,38 @@
                                                     </li>
                                                 </ul>
                                             </li>
+                                            <li class="nav-item">
+                                                <a href="#" class="nav-link">
+                                                    <i class="nav-icon  far fa-circle"></i>
+                                                    <p>{% translate 'Manage Oidc Client' %}<i
+                                                            class="right fas fa-angle-left"></i></p>
+                                                </a>
+                                                <ul class="nav nav-treeview">
+                                                    <li class="nav-item">
+                                                        <a href="#" class="nav-link">
+                                                            <i class="nav-icon far fa-dot-circle"></i>
+                                                            <p>{% translate 'Manage FAQ' %}<i
+                                                                    class="right fas fa-angle-left"></i></p>
+                                                        </a>
+                                                        <ul class="nav nav-treeview">
+                                                            <li class="nav-item">
+                                                                <a href="{% url 'cmsadmin:oidc-client-faq-list' %}"
+                                                                   class="nav-link">
+                                                                    <i class="nav-icon fas fa-circle"></i>
+                                                                    <p>{% translate 'FAQ List' %}</p>
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a href="{% url 'cmsadmin:oidc-client-faq-create' %}"
+                                                                   class="nav-link">
+                                                                    <i class="nav-icon fas fa-circle"></i>
+                                                                    <p>{% translate 'Create FAQ' %}</p>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
                                         </ul>
                                     </li>
                                 {% endif %}
@@ -242,6 +274,12 @@
                                             <a href="{% url 'oidc_client:client-create' %}" class="nav-link">
                                                 <i class="far fa-circle nav-icon"></i>
                                                 <p>{% translate 'Create Client' %}</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="{% url 'oidc_client:faq' %}" class="nav-link">
+                                                <i class="far fa-circle nav-icon"></i>
+                                                <p>{% translate 'FAQ' %}</p>
                                             </a>
                                         </li>
                                     </ul>

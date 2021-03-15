@@ -4,6 +4,8 @@ from guardian.admin import GuardedModelAdmin
 from oidc_provider.admin import ClientForm
 from oidc_provider.models import Client
 
+from .models import Faq
+
 admin.site.unregister(Client)
 
 
@@ -30,3 +32,10 @@ class ClientAdmin(GuardedModelAdmin):
     readonly_fields = ['date_created']
     search_fields = ['name']
     raw_id_fields = ['owner']
+
+
+@admin.register(Faq)
+class FaqAdmin(GuardedModelAdmin):
+    list_display = ['question', 'answer', 'get_show_display']
+    search_fields = ['question', 'answer']
+    list_filter = ['show']

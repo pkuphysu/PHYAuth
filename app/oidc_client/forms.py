@@ -6,6 +6,8 @@ from django.utils.translation import gettext_lazy as _
 from oidc_provider.admin import ClientForm as OIDC_ClientForm
 from oidc_provider.models import Client
 
+from .models import Faq
+
 UserModel = get_user_model()
 
 
@@ -63,3 +65,18 @@ class ClientForm(OIDC_ClientForm):
 
     def clean_owner(self):
         return self.user
+
+
+class FaqForm(forms.ModelForm):
+    class Meta:
+        model = Faq
+        fields = [
+            'question',
+            'answer',
+            'show'
+        ]
+        widgets = {
+            'question': forms.TextInput(attrs={'class': 'form-control'}),
+            'answer': forms.Textarea(attrs={'class': 'form-control'}),
+            'show': forms.Select(attrs={'class': 'form-control'})
+        }

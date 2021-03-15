@@ -1,0 +1,151 @@
+{% extends 'index.html' %}
+{% load django_bootstrap_breadcrumbs %}
+
+{% block title %}{% translate 'FAQ List' %}{% endblock %}
+
+{% block content_wrapper_breadcrumb %}
+    {{ block.super }}
+    {% breadcrumb_for 'cmsadmin:oidc-client-faq-list' %}{% trans "FAQ List" %}{% endbreadcrumb_for %}
+{% endblock %}
+
+{% block content_wrapper_header %}{% translate 'FAQ List' %}{% endblock %}
+
+{% block content_wrapper_body %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-tools">
+                            <a href="{% url 'cmsadmin:oidc-client-faq-create' %}">
+                                <button class="btn btn-primary">{% translate 'Create' %}</button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>{% translate 'Question' %}</th>
+                                <th>{% translate 'Show' %}</th>
+                                <th>{% translate 'Operate' %}</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for faq in faq_list %}
+                                <tr data-widget="expandable-table" aria-expanded="false">
+                                    <td>{{ faq.pk }}</td>
+                                    <td>{{ faq.question }}</td>
+                                    <td>{{ faq.get_show_display }}</td>
+                                    <td>
+                                        <a href="{% url 'cmsadmin:oidc-client-faq-update' faq.pk %}">
+                                            <button class="btn btn-info">{% translate 'Edit' %}</button>
+                                        </a>
+
+                                        <button class="btn btn-danger delete"
+                                                faq_id="{{ faq.pk }}">{% translate 'Delete' %}</button>
+
+                                    </td>
+                                </tr>
+                                <tr class="expandable-body">
+                                    <td colspan="5">
+                                        {{ faq.answer|safe }}
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+        </div>
+        <!-- /.row -->
+    </div>
+{% endblock %}
+
+{% block extra_javascript %}
+    <script src="{% static 'adminlte/plugins/sweetalert2/sweetalert2.all.min.js' %}"></script>
+{% endblock %}
+
+{% block js %}
+    <script>
+
+        $('.delete').click(function () {
+            Swal.fire({
+                title: '{% translate 'Are you sure?' %}',
+                text: "{% blocktranslate %}You won't be able to revert this!{% endblocktranslate %}",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: '{% translate 'Yes' %}',
+                cancelButtonText: '{% translate 'Cancel' %}',
+                heightAuto: false,
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    //  发请求到后端删除数据
+                    $.ajax({
+                        //拼接要访问的url地址
+                        url: '{% url 'cmsadmin:oidc-client-faq-delete'  %}',
+                        type: 'POST',
+                        data: {id: $(this).attr('faq_id')},
+                        beforeSend: function (xhr, settings) {
+                            xhr.setRequestHeader("X-CSRFToken", "{{ csrf_token }}");
+                        },
+                        success: (res) => {
+                            if (res.status) {
+                                Swal.fire({
+                                    title: '{% translate 'Success Delete' %}',
+                                    icon: 'success',
+                                });
+                                $(this).parent().parent().next().remove();
+                                $(this).parent().parent().remove();
+                            } else {
+                                Swal.fire({
+                                    title: '{% translate "Fail Delete" %}',
+                                    text: res.msg,
+                                    icon: 'error',
+                                })
+                            }
+                        },
+                        error: (data) => {
+                            Swal.fire({
+                                title: '{% translate "Fail Delete" %}',
+                                text: 'data',
+                                icon: 'error'
+                            })
+                        }
+                    })
+                } else {
+                    Swal.fire({
+                        title: '{% translate "Lucky to see this warning~~" %}',
+                        html: '{% translate "This will close in <b></b> milliseconds." %}',
+                        icon: 'info',
+                        timer: 1000,
+                        timerProgressBar: true,
+                        didOpen: () => {
+                            Swal.showLoading()
+                            timerInterval = setInterval(() => {
+                                const content = Swal.getContent()
+                                if (content) {
+                                    const b = content.querySelector('b')
+                                    if (b) {
+                                        b.textContent = Swal.getTimerLeft()
+                                    }
+                                }
+                            }, 100)
+                        },
+                        willClose: () => {
+                            clearInterval(timerInterval)
+                        }
+                    });
+                }
+            });
+
+        });
+
+    </script>
+{% endblock %}

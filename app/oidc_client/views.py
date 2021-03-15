@@ -7,7 +7,19 @@ from guardian.mixins import PermissionRequiredMixin as ObjectPermissionRequiredM
 from oidc_provider.models import Client
 
 from .forms import ClientForm
+from .models import Faq
 from ..utils.views import ErrorMessageMixin
+
+
+class FaqListView(LoginRequiredMixin, ListView):
+    model = Faq
+    template_name = 'oidc_client/faq.html'
+    context_object_name = 'faq_list'
+
+    def get_queryset(self):
+        qs = super().get_queryset()
+        qs = qs.filter(show=True)
+        return qs
 
 
 class ClientListView(PermissionRequiredMixin, PermissionListMixin, ListView):
