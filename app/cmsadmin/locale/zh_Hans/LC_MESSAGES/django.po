@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-15 22:02+0800\n"
+"POT-Creation-Date: 2021-03-15 22:18+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -45,6 +45,7 @@ msgid ""
 msgstr "你不是此公告的创建者，无权修改它！"
 
 #: .\app\cmsadmin\views.py:64 .\app\cmsadmin\views.py:156
+#: .\app\cmsadmin\views.py:242
 msgid "Please specify the pk!"
 msgstr "请指定 pk !"
 
@@ -60,13 +61,13 @@ msgid ""
 msgstr "你不是此公告的创建者，无权删除它！"
 
 #: .\app\cmsadmin\views.py:92 .\app\cmsadmin\views.py:184
-#: .\app\cmsadmin\views.py:257
+#: .\app\cmsadmin\views.py:264
 #, python-format
 msgid "Need %(verbose_name)s Id"
 msgstr "需要 %(verbose_name)s id"
 
 #: .\app\cmsadmin\views.py:97 .\app\cmsadmin\views.py:189
-#: .\app\cmsadmin\views.py:262
+#: .\app\cmsadmin\views.py:269
 #, python-format
 msgid "No %(verbose_name)s found matching the query"
 msgstr "没有找到符合条件的 %(verbose_name)s"
@@ -93,12 +94,12 @@ msgstr "你不是此链接的创建者，无权删除它！"
 msgid "FAQ #%(id)s has been created successfully!"
 msgstr "成功创建解答 #%(id)s！"
 
-#: .\app\cmsadmin\views.py:240
+#: .\app\cmsadmin\views.py:247
 #, python-format
 msgid "FAQ #%(id)s has been updated successfully!"
 msgstr "成功更新解答 #%(id)s！"
 
-#: .\app\cmsadmin\views.py:249
+#: .\app\cmsadmin\views.py:256
 msgid ""
 "You are not a staff, and do not have permission to delete this faq, please "
 "contact the administrator!"

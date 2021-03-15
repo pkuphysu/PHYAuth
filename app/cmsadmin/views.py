@@ -236,6 +236,13 @@ class OidcClientFaqUpdateView(PermissionRequiredMixin, SuccessMessageMixin, Erro
     error_message = _('Please check the error messages showed in the page!')
     template_name = 'cmsadmin/oidc_client/faq_update.html'
 
+    def get_object(self, queryset=None):
+        pk = self.request.GET.get('pk')
+        if pk is None:
+            raise Http404(gettext('Please specify the pk!'))
+        self.kwargs.update({'pk': self.request.GET.get('pk')})
+        return super().get_object(queryset=queryset)
+
     def get_success_message(self, cleaned_data):
         return _('FAQ #%(id)s has been updated successfully!') % {'id': self.object.pk}
 

@@ -17,6 +17,6 @@ urlpatterns = [
 
     path('oidc-client-faq-list/', views.OidcClientFaqListView.as_view(), name='oidc-client-faq-list'),
     path('oidc-client-faq-create/', views.OidcClientFaqCreateView.as_view(), name='oidc-client-faq-create'),
-    path('oidc-client-faq-update/<int:pk>/', views.OidcClientFaqUpdateView.as_view(), name='oidc-client-faq-update'),
+    path('oidc-client-faq-update/', views.OidcClientFaqUpdateView.as_view(), name='oidc-client-faq-update'),
     path('oidc-client-faq-delete/', views.OidcClientFaqDeleteView.as_view(), name='oidc-client-faq-delete'),
 ]

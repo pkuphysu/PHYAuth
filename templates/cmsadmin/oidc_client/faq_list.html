@@ -39,7 +39,7 @@
                                     <td>{{ faq.question }}</td>
                                     <td>{{ faq.get_show_display }}</td>
                                     <td>
-                                        <a href="{% url 'cmsadmin:oidc-client-faq-update' faq.pk %}">
+                                        <a href="{% url 'cmsadmin:oidc-client-faq-update' %}?pk={{ faq.pk }}">
                                             <button class="btn btn-info">{% translate 'Edit' %}</button>
                                         </a>
 
