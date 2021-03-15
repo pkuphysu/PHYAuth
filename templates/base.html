@@ -34,7 +34,12 @@
                 background-color: #8B0016;
             }
 
-            .sidebar-light-red .nav-treeview > .nav-item > .nav-link.active {
+            .nav-pills .nav-link:not(.active):hover {
+                color: #ee3148;
+            }
+
+            .sidebar-light-red .nav-treeview > .nav-item > .nav-link.active,
+            .sidebar-light-red .nav-treeview > .nav-item > .nav-link.active:hover {
                 background-color: rgba(139, 0, 22, .7);
                 color: #fff;
             }
