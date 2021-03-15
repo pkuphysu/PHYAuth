@@ -1,16 +1,8 @@
-from django.conf import settings
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
 
 class TopLink(models.Model):
-    owner = models.ForeignKey(
-        settings.AUTH_USER_MODEL,
-        on_delete=models.SET_NULL,
-        null=True, blank=True, default=None,
-        verbose_name=_('Owner'),
-        related_name='toplink_set'
-    )
     name = models.CharField(
         _('Link Name'),
         max_length=32,
@@ -32,13 +24,6 @@ class TopLink(models.Model):
 
 
 class Announcement(models.Model):
-    owner = models.ForeignKey(
-        settings.AUTH_USER_MODEL,
-        on_delete=models.SET_NULL,
-        null=True, blank=True, default=None,
-        verbose_name=_('Owner'),
-        related_name='announcement_set'
-    )
     type = models.CharField(
         _('Announcement Type'),
         max_length=20,

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-15 22:18+0800\n"
+"POT-Creation-Date: 2021-03-15 22:27+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,87 +19,87 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: .\app\cmsadmin\views.py:25 .\app\cmsadmin\views.py:35
-#: .\app\cmsadmin\views.py:117 .\app\cmsadmin\views.py:127
-#: .\app\cmsadmin\views.py:208 .\app\cmsadmin\views.py:218
-#: .\app\cmsadmin\views.py:234
+#: .\app\cmsadmin\views.py:105 .\app\cmsadmin\views.py:115
+#: .\app\cmsadmin\views.py:184 .\app\cmsadmin\views.py:194
+#: .\app\cmsadmin\views.py:210
 msgid ""
 "You are not a staff, and do not have permission to view this page, please "
 "contact the administrator!"
 msgstr "你不是管理员，无权访问此页面，请联系管理员！"
 
-#: .\app\cmsadmin\views.py:37 .\app\cmsadmin\views.py:59
-#: .\app\cmsadmin\views.py:129 .\app\cmsadmin\views.py:151
-#: .\app\cmsadmin\views.py:220 .\app\cmsadmin\views.py:236
+#: .\app\cmsadmin\views.py:37 .\app\cmsadmin\views.py:53
+#: .\app\cmsadmin\views.py:117 .\app\cmsadmin\views.py:133
+#: .\app\cmsadmin\views.py:196 .\app\cmsadmin\views.py:212
 msgid "Please check the error messages showed in the page!"
 msgstr "请检查页面中显示的错误信息！"
 
-#: .\app\cmsadmin\views.py:46
+#: .\app\cmsadmin\views.py:40
 #, python-format
 msgid "Announcement #%(id)s has been created successfully!"
 msgstr "成功创建公告 #%(id)s！"
 
-#: .\app\cmsadmin\views.py:57
+#: .\app\cmsadmin\views.py:51
 msgid ""
 "You are not the creator of this announcement, so you do not have the right "
 "to modify it!"
 msgstr "你不是此公告的创建者，无权修改它！"
 
-#: .\app\cmsadmin\views.py:64 .\app\cmsadmin\views.py:156
-#: .\app\cmsadmin\views.py:242
+#: .\app\cmsadmin\views.py:58 .\app\cmsadmin\views.py:138
+#: .\app\cmsadmin\views.py:218
 msgid "Please specify the pk!"
 msgstr "请指定 pk !"
 
-#: .\app\cmsadmin\views.py:75 .\app\cmsadmin\views.py:167
+#: .\app\cmsadmin\views.py:63 .\app\cmsadmin\views.py:143
 #, python-format
 msgid "Announcement #%(id)s has been updated successfully!"
 msgstr "成功更新公告 #%(id)s！"
 
-#: .\app\cmsadmin\views.py:84
+#: .\app\cmsadmin\views.py:72
 msgid ""
 "You are not the creator of this announcement, so you do not have the right "
 "to delete it!"
 msgstr "你不是此公告的创建者，无权删除它！"
 
-#: .\app\cmsadmin\views.py:92 .\app\cmsadmin\views.py:184
-#: .\app\cmsadmin\views.py:264
+#: .\app\cmsadmin\views.py:80 .\app\cmsadmin\views.py:160
+#: .\app\cmsadmin\views.py:240
 #, python-format
 msgid "Need %(verbose_name)s Id"
 msgstr "需要 %(verbose_name)s id"
 
-#: .\app\cmsadmin\views.py:97 .\app\cmsadmin\views.py:189
-#: .\app\cmsadmin\views.py:269
+#: .\app\cmsadmin\views.py:85 .\app\cmsadmin\views.py:165
+#: .\app\cmsadmin\views.py:245
 #, python-format
 msgid "No %(verbose_name)s found matching the query"
 msgstr "没有找到符合条件的 %(verbose_name)s"
 
-#: .\app\cmsadmin\views.py:138
+#: .\app\cmsadmin\views.py:120
 #, python-format
 msgid "TopLink #%(id)s has been created successfully!"
 msgstr "成功创建顶部链接 #%(id)s！"
 
-#: .\app\cmsadmin\views.py:149
+#: .\app\cmsadmin\views.py:131
 msgid ""
 "You are not the creator of this toplink, so you do not have the right to "
 "modify it!"
 msgstr "你不是此链接的创建者，无权修改它！"
 
-#: .\app\cmsadmin\views.py:176
+#: .\app\cmsadmin\views.py:152
 msgid ""
 "You are not the creator of this toplink, so you do not have the right to "
 "delete it!"
 msgstr "你不是此链接的创建者，无权删除它！"
 
-#: .\app\cmsadmin\views.py:224
+#: .\app\cmsadmin\views.py:200
 #, python-format
 msgid "FAQ #%(id)s has been created successfully!"
 msgstr "成功创建解答 #%(id)s！"
 
-#: .\app\cmsadmin\views.py:247
+#: .\app\cmsadmin\views.py:223
 #, python-format
 msgid "FAQ #%(id)s has been updated successfully!"
 msgstr "成功更新解答 #%(id)s！"
 
-#: .\app\cmsadmin\views.py:256
+#: .\app\cmsadmin\views.py:232
 msgid ""
 "You are not a staff, and do not have permission to delete this faq, please "
 "contact the administrator!"

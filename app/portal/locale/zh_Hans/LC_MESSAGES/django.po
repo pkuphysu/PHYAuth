@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-12 06:01+0800\n"
+"POT-Creation-Date: 2021-03-15 22:27+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,23 +22,19 @@ msgstr ""
 msgid "portal management"
 msgstr "门户管理"
 
-#: .\app\portal\models.py:11 .\app\portal\models.py:39
-msgid "Owner"
-msgstr "创建者"
-
-#: .\app\portal\models.py:15
+#: .\app\portal\models.py:7
 msgid "Link Name"
 msgstr "链接名"
 
-#: .\app\portal\models.py:19
+#: .\app\portal\models.py:11
 msgid "Link URL"
 msgstr "链接 URL"
 
-#: .\app\portal\models.py:23
+#: .\app\portal\models.py:15
 msgid "Link Rank"
 msgstr "链接排序"
 
-#: .\app\portal\models.py:24
+#: .\app\portal\models.py:16
 msgid ""
 "It is the default order of the links, they should not be same!\n"
 "The smaller it is, the more front it will be.\n"
@@ -47,61 +43,61 @@ msgstr ""
 "这是默认的链接的排序，不应该相同！数字越小越靠前，如果某几个相同，则按照创建"
 "先后排序。"
 
-#: .\app\portal\models.py:30
+#: .\app\portal\models.py:22
 msgid "Top Link"
 msgstr "顶部链接"
 
-#: .\app\portal\models.py:31
+#: .\app\portal\models.py:23
 msgid "Top Links"
 msgstr "顶部链接"
 
-#: .\app\portal\models.py:43
+#: .\app\portal\models.py:28
 msgid "Announcement Type"
 msgstr "公告类型"
 
-#: .\app\portal\models.py:46
+#: .\app\portal\models.py:31
 msgid "success"
 msgstr "成功"
 
-#: .\app\portal\models.py:47
+#: .\app\portal\models.py:32
 msgid "warning"
 msgstr "警告"
 
-#: .\app\portal\models.py:48
+#: .\app\portal\models.py:33
 msgid "info"
 msgstr "信息"
 
-#: .\app\portal\models.py:49
+#: .\app\portal\models.py:34
 msgid "danger"
 msgstr "危险"
 
-#: .\app\portal\models.py:51
+#: .\app\portal\models.py:36
 msgid "success-green, warning-yellow, info-blue, danger-red"
 msgstr "成功-绿色，警告-黄色，信息-蓝色，危险-红色"
 
-#: .\app\portal\models.py:55
+#: .\app\portal\models.py:40
 msgid "Announcement Title"
 msgstr "公告标题"
 
-#: .\app\portal\models.py:60
+#: .\app\portal\models.py:45
 msgid "Announcement Content"
 msgstr "公告内容"
 
-#: .\app\portal\models.py:64
+#: .\app\portal\models.py:49
 msgid "Announcement Rank"
 msgstr "公告排序"
 
-#: .\app\portal\models.py:65
+#: .\app\portal\models.py:50
 msgid ""
 "It is the default order of the announcement!\n"
 "The smaller it is, the more front it will be.\n"
 "If some are the same, the later create one will appear firstly."
 msgstr "这是公告的默认排序，越小越靠前。如果一些相同，则越晚发布的公告越靠前。"
 
-#: .\app\portal\models.py:71
+#: .\app\portal\models.py:56
 msgid "Announcement"
 msgstr "公告"
 
-#: .\app\portal\models.py:72
+#: .\app\portal\models.py:57
 msgid "Announcements"
 msgstr "公告"

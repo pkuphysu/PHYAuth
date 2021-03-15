@@ -36,12 +36,6 @@ class AnnouncementCreateView(PermissionRequiredMixin, SuccessMessageMixin, Error
                                   'please contact the administrator!')
     error_message = _('Please check the error messages showed in the page!')
 
-    def get_form_kwargs(self):
-        """Return the keyword arguments for instantiating the form."""
-        kwargs = super().get_form_kwargs()
-        kwargs.update({'owner': self.request.user})
-        return kwargs
-
     def get_success_message(self, cleaned_data):
         return _('Announcement #%(id)s has been created successfully!') % {'id': self.object.pk}
 
@@ -64,12 +58,6 @@ class AnnouncementUpdateView(PermissionRequiredMixin, SuccessMessageMixin, Error
             raise Http404(gettext('Please specify the pk!'))
         self.kwargs.update({'pk': self.request.GET.get('pk')})
         return super().get_object(queryset=queryset)
-
-    def get_form_kwargs(self):
-        """Return the keyword arguments for instantiating the form."""
-        kwargs = super().get_form_kwargs()
-        kwargs.update({'owner': self.request.user})
-        return kwargs
 
     def get_success_message(self, cleaned_data):
         return _('Announcement #%(id)s has been updated successfully!') % {'id': self.object.pk}
@@ -128,12 +116,6 @@ class TopLinkCreateView(PermissionRequiredMixin, SuccessMessageMixin, ErrorMessa
                                   'please contact the administrator!')
     error_message = _('Please check the error messages showed in the page!')
 
-    def get_form_kwargs(self):
-        """Return the keyword arguments for instantiating the form."""
-        kwargs = super().get_form_kwargs()
-        kwargs.update({'owner': self.request.user})
-        return kwargs
-
     def get_success_message(self, cleaned_data):
         return _('TopLink #%(id)s has been created successfully!') % {'id': self.object.pk}
 
@@ -156,12 +138,6 @@ class TopLinkUpdateView(PermissionRequiredMixin, SuccessMessageMixin, ErrorMessa
             raise Http404(gettext('Please specify the pk!'))
         self.kwargs.update({'pk': self.request.GET.get('pk')})
         return super().get_object(queryset=queryset)
-
-    def get_form_kwargs(self):
-        """Return the keyword arguments for instantiating the form."""
-        kwargs = super().get_form_kwargs()
-        kwargs.update({'owner': self.request.user})
-        return kwargs
 
     def get_success_message(self, cleaned_data):
         return _('Announcement #%(id)s has been updated successfully!') % {'id': self.object.pk}
