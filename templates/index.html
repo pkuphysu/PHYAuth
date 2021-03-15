@@ -368,6 +368,7 @@
                                             <h3 class="card-title">{% translate 'Announcement' %}</h3>
                                         </div>
                                         <div class="card-body">
+                                        {% cache None index_announcements %}
                                             {% for announcement in announcements %}
                                                 <div class="alert alert-{{ announcement.type }}">
                                                     <h5>
@@ -385,6 +386,7 @@
                                                     {{ announcement.content|safe }}
                                                 </div>
                                             {% endfor %}
+                                        {% endcache %}
                                         </div>
                                         <!-- /.card-body -->
                                     </div>

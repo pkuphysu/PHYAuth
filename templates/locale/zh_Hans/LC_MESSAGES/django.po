@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-15 22:18+0800\n"
+"POT-Creation-Date: 2021-03-15 22:40+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Rainshaw <rxg@live.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -355,7 +355,7 @@ msgstr "管理员列表"
 msgid "Announcement"
 msgstr "公告"
 
-#: .\templates\index.html:411
+#: .\templates\index.html:413
 msgid "All rights reserved."
 msgstr "版权所有."
 
