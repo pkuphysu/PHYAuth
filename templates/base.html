@@ -19,6 +19,8 @@
         <!-- overlayScrollbars -->
         <link rel="stylesheet"
               href="{% static 'adminlte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css' %}">
+        <!-- Toastr -->
+        <link rel="stylesheet" href="{% static 'adminlte/plugins/toastr/toastr.min.css' %}">
         <!-- Theme style -->
         <link rel="stylesheet" href="{% static 'adminlte/dist/css/adminlte.min.css' %}">
         <!-- flag-icon-css -->
@@ -49,6 +51,8 @@
     <script src="{% static 'adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
     <!-- overlayScrollbars -->
     <script src="{% static 'adminlte/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js' %}"></script>
+    <!-- Toastr -->
+    <script src="{% static 'adminlte/plugins/toastr/toastr.min.js' %}"></script>
     <!-- AdminLTE App -->
     <script src="{% static 'adminlte/dist/js/adminlte.min.js' %}"></script>
 
@@ -57,30 +61,20 @@
     {% if messages %}
         <script>
             {% for message in messages %}
-                $(document).Toasts('create', {
-                    {% if message.level == DEFAULT_MESSAGE_LEVELS.DEBUG %}
-                        class: 'bg-maroon',
-                        title: 'Debug',
-                        icon: 'fas fa-bug',
-                    {% elif  message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
-                        class: 'bg-info',
-                        title: 'Info',
-                        icon: 'fas fa-info',
-                    {% elif message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
-                        class: 'bg-success',
-                        title: 'Success',
-                        icon: 'fas fa-check',
-                    {% elif message.level == DEFAULT_MESSAGE_LEVELS.WARNING %}
-                        class: 'bg-warning',
-                        title: 'Warning',
-                        icon: 'fas fa-exclamation-triangle',
-                    {% elif message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
-                        class: 'bg-danger',
-                        title: 'Error',
-                        icon: 'fas fa-ban',
-                    {% endif %}
-                    body: '{{ message }}'
-                })
+                toastr.options = {
+                    "progressBar": true
+                }
+                {% if message.level == DEFAULT_MESSAGE_LEVELS.DEBUG %}
+                    toastr.debug('{{ message }}');
+                {% elif  message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+                    toastr.info('{{ message }}');
+                {% elif message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+                    toastr.success('{{ message }}');
+                {% elif message.level == DEFAULT_MESSAGE_LEVELS.WARNING %}
+                    toastr.warning('{{ message }}');
+                {% elif message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                    toastr.error('{{ message }}');
+                {% endif %}
             {% endfor %}
         </script>
     {% endif %}
