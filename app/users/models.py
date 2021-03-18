@@ -152,7 +152,11 @@ class User(AbstractUser, GuardianUserMixin):
     def get_preferred_email(self):
         if self.preferred_email:
             return self.preferred_email
+        elif self.email:
+            return self.email
         else:
+            self.email = self.get_pku_email()
+            self.save()
             return self.email
 
     def get_full_name(self):

@@ -17,7 +17,7 @@ def userinfo(claims, user: User):
     claims['birthdate'] = user.birthdate
 
     claims['email'] = user.get_preferred_email()
-    claims['email_verified'] = user.get_pku_email()
+    claims['email_verified'] = user.email
 
     claims['phone_number'] = user.phone_number
 
