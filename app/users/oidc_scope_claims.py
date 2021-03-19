@@ -30,7 +30,7 @@ class CustomScopeClaims(ScopeClaims):
     info_pku = (
         _(u'PKU Info'),
         _(u'Access to your pku information. Includes identity ID, '
-          u'identity type, identity status.'),
+          u'identity type, identity status, department, self introduce.'),
     )
 
     def scope_pku(self):
