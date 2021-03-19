@@ -48,7 +48,13 @@ class UserListView(PermissionRequiredMixin, ListView):
     template_name = 'cmsadmin/users/user_list.html'
     context_object_name = 'user_list'
     paginate_by = 50
-    queryset = User.objects.all().order_by('-pk')
+    ordering = '-pk'
+
+    def get_queryset(self):
+        qs = super(UserListView, self).get_queryset()
+        username = self.request.GET.get('username', '')
+        qs = qs.filter(username__icontains=username)
+        return qs
 
 
 class UserCreateView(PermissionRequiredMixin, SuccessMessageMixin, ErrorMessageMixin, CreateView):
@@ -153,6 +159,7 @@ class DepartmentListView(PermissionRequiredMixin, ListView):
     template_name = 'cmsadmin/users/department_list.html'
     context_object_name = 'department_list'
     paginate_by = 50
+    ordering = 'pk'
 
 
 class DepartmentCreateView(PermissionRequiredMixin, SuccessMessageMixin, ErrorMessageMixin, CreateView):

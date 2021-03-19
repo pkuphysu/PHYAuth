@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-19 21:49+0800\n"
+"POT-Creation-Date: 2021-03-19 22:29+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Rainshaw <rxg@live.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -106,7 +106,6 @@ msgstr "疑问与解答列表"
 #: .\templates\cmsadmin\portal\announcement_list.html:21
 #: .\templates\cmsadmin\portal\toplink_list.html:21
 #: .\templates\cmsadmin\users\department_list.html:21
-#: .\templates\cmsadmin\users\user_list.html:21
 #: .\templates\oidc_client\client_list.html:21
 msgid "Create"
 msgstr "新建"
@@ -123,7 +122,7 @@ msgstr "显示状态"
 #: .\templates\cmsadmin\portal\announcement_list.html:33
 #: .\templates\cmsadmin\portal\toplink_list.html:33
 #: .\templates\cmsadmin\users\department_list.html:31
-#: .\templates\cmsadmin\users\user_list.html:35
+#: .\templates\cmsadmin\users\user_list.html:43
 #: .\templates\oidc_client\client_list.html:35
 msgid "Operate"
 msgstr "操作"
@@ -132,7 +131,7 @@ msgstr "操作"
 #: .\templates\cmsadmin\portal\announcement_list.html:45
 #: .\templates\cmsadmin\portal\toplink_list.html:45
 #: .\templates\cmsadmin\users\department_list.html:41
-#: .\templates\cmsadmin\users\user_list.html:49
+#: .\templates\cmsadmin\users\user_list.html:57
 #: .\templates\oidc_client\client_list.html:49
 msgid "Edit"
 msgstr "编辑"
@@ -141,7 +140,7 @@ msgstr "编辑"
 #: .\templates\cmsadmin\portal\announcement_list.html:49
 #: .\templates\cmsadmin\portal\toplink_list.html:49
 #: .\templates\cmsadmin\users\department_list.html:45
-#: .\templates\cmsadmin\users\user_list.html:56
+#: .\templates\cmsadmin\users\user_list.html:64
 #: .\templates\oidc_client\client_list.html:51
 msgid "Delete"
 msgstr "删除"
@@ -150,7 +149,7 @@ msgstr "删除"
 #: .\templates\cmsadmin\portal\announcement_list.html:80
 #: .\templates\cmsadmin\portal\toplink_list.html:75
 #: .\templates\cmsadmin\users\department_list.html:71
-#: .\templates\cmsadmin\users\user_list.html:82
+#: .\templates\cmsadmin\users\user_list.html:126
 #: .\templates\registration\password_change_form.html:103
 #: .\templates\registration\password_reset_confirm.html:81
 #: .\templates\registration\password_reset_form.html:72
@@ -161,7 +160,7 @@ msgstr "你确定吗？"
 #: .\templates\cmsadmin\portal\announcement_list.html:81
 #: .\templates\cmsadmin\portal\toplink_list.html:76
 #: .\templates\cmsadmin\users\department_list.html:72
-#: .\templates\cmsadmin\users\user_list.html:83
+#: .\templates\cmsadmin\users\user_list.html:127
 msgid "You won't be able to revert this!"
 msgstr "你无法撤销此操作！"
 
@@ -169,7 +168,7 @@ msgstr "你无法撤销此操作！"
 #: .\templates\cmsadmin\portal\announcement_list.html:86
 #: .\templates\cmsadmin\portal\toplink_list.html:81
 #: .\templates\cmsadmin\users\department_list.html:77
-#: .\templates\cmsadmin\users\user_list.html:88
+#: .\templates\cmsadmin\users\user_list.html:132
 #: .\templates\registration\password_change_form.html:108
 #: .\templates\registration\password_reset_confirm.html:86
 #: .\templates\registration\password_reset_form.html:78
@@ -180,7 +179,7 @@ msgstr "是的"
 #: .\templates\cmsadmin\portal\announcement_list.html:87
 #: .\templates\cmsadmin\portal\toplink_list.html:82
 #: .\templates\cmsadmin\users\department_list.html:78
-#: .\templates\cmsadmin\users\user_list.html:89
+#: .\templates\cmsadmin\users\user_list.html:133
 #: .\templates\registration\password_change_form.html:109
 #: .\templates\registration\password_reset_confirm.html:87
 #: .\templates\registration\password_reset_form.html:79
@@ -191,7 +190,7 @@ msgstr "取消"
 #: .\templates\cmsadmin\portal\announcement_list.html:103
 #: .\templates\cmsadmin\portal\toplink_list.html:98
 #: .\templates\cmsadmin\users\department_list.html:94
-#: .\templates\cmsadmin\users\user_list.html:105
+#: .\templates\cmsadmin\users\user_list.html:149
 msgid "Success Delete"
 msgstr "删除成功"
 
@@ -203,8 +202,8 @@ msgstr "删除成功"
 #: .\templates\cmsadmin\portal\toplink_list.html:112
 #: .\templates\cmsadmin\users\department_list.html:100
 #: .\templates\cmsadmin\users\department_list.html:108
-#: .\templates\cmsadmin\users\user_list.html:111
-#: .\templates\cmsadmin\users\user_list.html:119
+#: .\templates\cmsadmin\users\user_list.html:155
+#: .\templates\cmsadmin\users\user_list.html:163
 msgid "Fail Delete"
 msgstr "删除失败"
 
@@ -212,7 +211,7 @@ msgstr "删除失败"
 #: .\templates\cmsadmin\portal\announcement_list.html:126
 #: .\templates\cmsadmin\portal\toplink_list.html:120
 #: .\templates\cmsadmin\users\department_list.html:116
-#: .\templates\cmsadmin\users\user_list.html:127
+#: .\templates\cmsadmin\users\user_list.html:171
 msgid "Lucky to see this warning~~"
 msgstr "万幸看到这个警告~~"
 
@@ -220,7 +219,7 @@ msgstr "万幸看到这个警告~~"
 #: .\templates\cmsadmin\portal\announcement_list.html:127
 #: .\templates\cmsadmin\portal\toplink_list.html:121
 #: .\templates\cmsadmin\users\department_list.html:117
-#: .\templates\cmsadmin\users\user_list.html:128
+#: .\templates\cmsadmin\users\user_list.html:172
 msgid "This will close in <b></b> milliseconds."
 msgstr "我将在<b></b>毫秒内自动关闭~"
 
@@ -311,7 +310,7 @@ msgid "Department List"
 msgstr "部门列表"
 
 #: .\templates\cmsadmin\users\department_list.html:30
-#: .\templates\cmsadmin\users\user_list.html:32
+#: .\templates\cmsadmin\users\user_list.html:40
 msgid "department"
 msgstr "部门"
 
@@ -340,29 +339,53 @@ msgstr "修改用户组"
 msgid "User List"
 msgstr "用户列表"
 
-#: .\templates\cmsadmin\users\user_list.html:30
+#: .\templates\cmsadmin\users\user_list.html:23
+msgid "Search PKU ID"
+msgstr "搜索学号、职工号"
+
+#: .\templates\cmsadmin\users\user_list.html:38
 msgid "username"
 msgstr "职工号、学号"
 
-#: .\templates\cmsadmin\users\user_list.html:31
+#: .\templates\cmsadmin\users\user_list.html:39
 msgid "name"
 msgstr "姓名"
 
-#: .\templates\cmsadmin\users\user_list.html:33
+#: .\templates\cmsadmin\users\user_list.html:41
 msgid "is teacher"
 msgstr "身份"
 
-#: .\templates\cmsadmin\users\user_list.html:34
+#: .\templates\cmsadmin\users\user_list.html:42
 msgid "is in school"
 msgstr "是否在校"
 
-#: .\templates\cmsadmin\users\user_list.html:44
+#: .\templates\cmsadmin\users\user_list.html:52
 msgid "unkown"
 msgstr "未知"
 
-#: .\templates\cmsadmin\users\user_list.html:52
+#: .\templates\cmsadmin\users\user_list.html:60
 msgid "Edit User Group"
 msgstr "修改用户组"
+
+#: .\templates\cmsadmin\users\user_list.html:77
+#: .\templates\cmsadmin\users\user_list.html:83
+msgid "first"
+msgstr "首页"
+
+#: .\templates\cmsadmin\users\user_list.html:79
+#: .\templates\cmsadmin\users\user_list.html:85
+msgid "previous"
+msgstr "前一页"
+
+#: .\templates\cmsadmin\users\user_list.html:95
+#: .\templates\cmsadmin\users\user_list.html:101
+msgid "next"
+msgstr "后一页"
+
+#: .\templates\cmsadmin\users\user_list.html:98
+#: .\templates\cmsadmin\users\user_list.html:103
+msgid "last"
+msgstr "尾页"
 
 #: .\templates\cmsadmin\users\user_update.html:4
 #: .\templates\cmsadmin\users\user_update.html:8
