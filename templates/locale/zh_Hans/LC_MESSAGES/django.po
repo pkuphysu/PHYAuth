@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-19 22:29+0800\n"
+"POT-Creation-Date: 2021-03-19 23:41+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Rainshaw <rxg@live.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -639,6 +639,14 @@ msgstr "忘记密码？"
 #: .\templates\registration\login.html:77
 msgid "I have no account"
 msgstr "我没有账户"
+
+#: .\templates\registration\login.html:107
+msgid "No account?"
+msgstr "没有账户?"
+
+#: .\templates\registration\login.html:108
+msgid "You can use iaaa login, then you will have your account!"
+msgstr "你可以使用北京大学统一身份认证登录，然后你会有你的账户！"
 
 #: .\templates\registration\password_change_done.html:10
 msgid "Your password was changed."
