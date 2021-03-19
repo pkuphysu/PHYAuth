@@ -157,6 +157,12 @@
                                  with font-awesome or any other icon font library -->
 
                             {% block nav_siderbar_links %}
+                                <li class="nav-item">
+                                    <a href="{% url 'portal:index' %}" class="nav-link">
+                                        <i class="nav-icon fas fa-home"></i>
+                                        <p>{% translate 'Home' %}</p>
+                                    </a>
+                                </li>
                                 {% if user.is_superuser or user.is_admin %}
                                     <li class="nav-item">
                                         <a href="javascript:void(0);" class="nav-link">
@@ -241,6 +247,45 @@
                                                     </li>
                                                 </ul>
 
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="javascript:void(0);" class="nav-link">
+                                                    <i class="nav-icon  far fa-circle"></i>
+                                                    <p>{% translate 'Manage Users' %}<i
+                                                            class="right fas fa-angle-left"></i></p>
+                                                </a>
+                                                <ul class="nav nav-treeview">
+                                                    <li class="nav-item">
+                                                        <a href="javascript:void(0);" class="nav-link">
+                                                            <i class="nav-icon far fa-dot-circle"></i>
+                                                            <p>{% translate 'Manage User' %}<i
+                                                                    class="right fas fa-angle-left"></i></p>
+                                                        </a>
+                                                        <ul class="nav nav-treeview">
+                                                            <li class="nav-item">
+                                                                <a href="{% url 'cmsadmin:users-user-list' %}"
+                                                                   class="nav-link">
+                                                                    <i class="nav-icon fas fa-circle"></i>
+                                                                    <p>{% translate 'User List' %}</p>
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a href="{% url 'cmsadmin:users-user-create' %}"
+                                                                   class="nav-link">
+                                                                    <i class="nav-icon fas fa-circle"></i>
+                                                                    <p>{% translate 'Create User' %}</p>
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a href="{% url 'cmsadmin:users-user-update' %}"
+                                                                   class="nav-link" onclick="return false;">
+                                                                    <i class="nav-icon fas fa-circle"></i>
+                                                                    <p>{% translate 'Update User' %}</p>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
                                             </li>
                                             <li class="nav-item">
                                                 <a href="javascript:void(0);" class="nav-link">

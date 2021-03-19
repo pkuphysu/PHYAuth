@@ -1,6 +1,6 @@
 from django.urls import path
 
-from .views import oidc_client_view, portal_view
+from .views import oidc_client_view, portal_view, users_view
 
 app_name = 'cmsadmin'
 
@@ -20,6 +20,14 @@ urlpatterns += [
     path('portal-toplink-create/', portal_view.TopLinkCreateView.as_view(), name='portal-toplink-create'),
     path('portal-toplink-update/', portal_view.TopLinkUpdateView.as_view(), name='portal-toplink-update'),
     path('portal-toplink-delete/', portal_view.TopLinkDeleteView.as_view(), name='portal-toplink-delete'),
+]
+
+# users manage view
+urlpatterns += [
+    path('users-user-list/', users_view.UserListView.as_view(), name='users-user-list'),
+    path('users-user-create/', users_view.UserCreateView.as_view(), name='users-user-create'),
+    path('users-user-update/', users_view.UserUpdateView.as_view(), name='users-user-update'),
+    path('users-user-delete/', users_view.UserDeleteView.as_view(), name='users-user-delete'),
 ]
 
 # oidc manage view
