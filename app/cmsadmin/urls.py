@@ -28,6 +28,11 @@ urlpatterns += [
     path('users-user-create/', users_view.UserCreateView.as_view(), name='users-user-create'),
     path('users-user-update/', users_view.UserUpdateView.as_view(), name='users-user-update'),
     path('users-user-delete/', users_view.UserDeleteView.as_view(), name='users-user-delete'),
+
+    path('users-departement-list/', users_view.DepartmentListView.as_view(), name='users-department-list'),
+    path('users-departement-create/', users_view.DepartmentCreateView.as_view(), name='users-department-create'),
+    path('users-departement-update/', users_view.DepartmentUpdateView.as_view(), name='users-department-update'),
+    path('users-departement-delete/', users_view.DepartmentDeleteView.as_view(), name='users-department-delete'),
 ]
 
 # oidc manage view

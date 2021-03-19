@@ -285,6 +285,36 @@
                                                             </li>
                                                         </ul>
                                                     </li>
+                                                    <li class="nav-item">
+                                                        <a href="javascript:void(0);" class="nav-link">
+                                                            <i class="nav-icon far fa-dot-circle"></i>
+                                                            <p>{% translate 'Manage Department' %}<i
+                                                                    class="right fas fa-angle-left"></i></p>
+                                                        </a>
+                                                        <ul class="nav nav-treeview">
+                                                            <li class="nav-item">
+                                                                <a href="{% url 'cmsadmin:users-department-list' %}"
+                                                                   class="nav-link">
+                                                                    <i class="nav-icon fas fa-circle"></i>
+                                                                    <p>{% translate 'Department List' %}</p>
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a href="{% url 'cmsadmin:users-department-create' %}"
+                                                                   class="nav-link">
+                                                                    <i class="nav-icon fas fa-circle"></i>
+                                                                    <p>{% translate 'Create Department' %}</p>
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a href="{% url 'cmsadmin:users-department-update' %}"
+                                                                   class="nav-link" onclick="return false;">
+                                                                    <i class="nav-icon fas fa-circle"></i>
+                                                                    <p>{% translate 'Update Department' %}</p>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
                                                 </ul>
                                             </li>
                                             <li class="nav-item">

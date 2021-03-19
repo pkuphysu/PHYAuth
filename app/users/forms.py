@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 
-from .models import User
+from .models import User, Department
 
 
 class RegisterForm(UserCreationForm):
@@ -62,3 +62,14 @@ class UserForm(forms.ModelForm):
         self.fields['is_teacher'].disabled = True
         self.fields['is_admin'].disabled = True
         self.fields['last_login'].disabled = True
+
+
+class DepartmentForm(forms.ModelForm):
+    class Meta:
+        model = Department
+        fields = [
+            'department'
+        ]
+        widgets = {
+            'department': forms.TextInput(attrs={'class': 'form-control'})
+        }
