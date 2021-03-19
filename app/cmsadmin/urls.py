@@ -27,6 +27,7 @@ urlpatterns += [
     path('users-user-list/', users_view.UserListView.as_view(), name='users-user-list'),
     path('users-user-create/', users_view.UserCreateView.as_view(), name='users-user-create'),
     path('users-user-update/', users_view.UserUpdateView.as_view(), name='users-user-update'),
+    path('users-user-group-update/', users_view.UserGroupUpdateView.as_view(), name='users-user-group-update'),
     path('users-user-delete/', users_view.UserDeleteView.as_view(), name='users-user-delete'),
 
     path('users-departement-list/', users_view.DepartmentListView.as_view(), name='users-department-list'),

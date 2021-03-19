@@ -1,5 +1,6 @@
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
+from django import forms
 from django.http import Http404, JsonResponse
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _, gettext
@@ -19,6 +20,26 @@ class UserForm(IUserForm):
         self.fields['is_admin'].disabled = False
 
 
+class UserGroupForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = [
+            'username',
+            'name',
+            'groups',
+        ]
+        widgets = {
+            'username': forms.TextInput(attrs={'class': 'form-control'}),
+            'name': forms.TextInput(attrs={'class': 'form-control'}),
+            'groups': forms.SelectMultiple(attrs={'class': 'duallistbox'})
+        }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['username'].disabled = True
+        self.fields['name'].disabled = True
+
+
 class UserListView(PermissionRequiredMixin, ListView):
     model = User
     permission_required = 'users.view_user'
@@ -27,6 +48,7 @@ class UserListView(PermissionRequiredMixin, ListView):
     template_name = 'cmsadmin/users/user_list.html'
     context_object_name = 'user_list'
     paginate_by = 50
+    queryset = User.objects.all().order_by('-pk')
 
 
 class UserCreateView(PermissionRequiredMixin, SuccessMessageMixin, ErrorMessageMixin, CreateView):
@@ -53,6 +75,29 @@ class UserUpdateView(PermissionRequiredMixin, SuccessMessageMixin, ErrorMessageM
                                   'please contact the administrator!')
     error_message = _('Please check the error messages showed in the page!')
     template_name = 'cmsadmin/users/user_update.html'
+
+    def get_object(self, queryset=None):
+        pk = self.request.GET.get('pk')
+        if pk is None:
+            raise Http404(gettext('Please specify the pk!'))
+        self.kwargs.update({'pk': self.request.GET.get('pk')})
+        return super().get_object(queryset=queryset)
+
+    def get_success_message(self, cleaned_data):
+        return _('User #%(id)s has been updated successfully!') % {'id': self.object.username}
+
+    def get_success_url(self):
+        return reverse('cmsadmin:users-user-list')
+
+
+class UserGroupUpdateView(PermissionRequiredMixin, SuccessMessageMixin, ErrorMessageMixin, UpdateView):
+    model = User
+    form_class = UserGroupForm
+    permission_required = 'users.change_user'
+    permission_denied_message = _('You are not a staff, and do not have permission to view this page, '
+                                  'please contact the administrator!')
+    error_message = _('Please check the error messages showed in the page!')
+    template_name = 'cmsadmin/users/user_group_update.html'
 
     def get_object(self, queryset=None):
         pk = self.request.GET.get('pk')

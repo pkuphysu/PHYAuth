@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-19 20:59+0800\n"
+"POT-Creation-Date: 2021-03-19 21:49+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,10 +25,11 @@ msgstr ""
 #: .\app\cmsadmin\views\portal_view.py:27
 #: .\app\cmsadmin\views\portal_view.py:97
 #: .\app\cmsadmin\views\portal_view.py:107
-#: .\app\cmsadmin\views\users_view.py:25 .\app\cmsadmin\views\users_view.py:36
-#: .\app\cmsadmin\views\users_view.py:52 .\app\cmsadmin\views\users_view.py:106
-#: .\app\cmsadmin\views\users_view.py:117
-#: .\app\cmsadmin\views\users_view.py:133
+#: .\app\cmsadmin\views\users_view.py:46 .\app\cmsadmin\views\users_view.py:58
+#: .\app\cmsadmin\views\users_view.py:74 .\app\cmsadmin\views\users_view.py:97
+#: .\app\cmsadmin\views\users_view.py:151
+#: .\app\cmsadmin\views\users_view.py:162
+#: .\app\cmsadmin\views\users_view.py:178
 msgid ""
 "You are not a staff, and do not have permission to view this page, please "
 "contact the administrator!"
@@ -40,9 +41,9 @@ msgstr "你不是管理员，无权访问此页面，请联系管理员！"
 #: .\app\cmsadmin\views\portal_view.py:45
 #: .\app\cmsadmin\views\portal_view.py:109
 #: .\app\cmsadmin\views\portal_view.py:125
-#: .\app\cmsadmin\views\users_view.py:38 .\app\cmsadmin\views\users_view.py:54
-#: .\app\cmsadmin\views\users_view.py:119
-#: .\app\cmsadmin\views\users_view.py:135
+#: .\app\cmsadmin\views\users_view.py:60 .\app\cmsadmin\views\users_view.py:76
+#: .\app\cmsadmin\views\users_view.py:99 .\app\cmsadmin\views\users_view.py:164
+#: .\app\cmsadmin\views\users_view.py:180
 msgid "Please check the error messages showed in the page!"
 msgstr "请检查页面中显示的错误信息！"
 
@@ -54,7 +55,8 @@ msgstr "成功创建解答 #%(id)s！"
 #: .\app\cmsadmin\views\oidc_client_view.py:50
 #: .\app\cmsadmin\views\portal_view.py:50
 #: .\app\cmsadmin\views\portal_view.py:130
-#: .\app\cmsadmin\views\users_view.py:60 .\app\cmsadmin\views\users_view.py:141
+#: .\app\cmsadmin\views\users_view.py:82 .\app\cmsadmin\views\users_view.py:105
+#: .\app\cmsadmin\views\users_view.py:186
 msgid "Please specify the pk!"
 msgstr "请指定 pk !"
 
@@ -64,7 +66,8 @@ msgid "FAQ #%(id)s has been updated successfully!"
 msgstr "成功更新解答 #%(id)s！"
 
 #: .\app\cmsadmin\views\oidc_client_view.py:64
-#: .\app\cmsadmin\views\users_view.py:74 .\app\cmsadmin\views\users_view.py:155
+#: .\app\cmsadmin\views\users_view.py:119
+#: .\app\cmsadmin\views\users_view.py:200
 msgid ""
 "You are not a staff, and do not have permission to delete this faq, please "
 "contact the administrator!"
@@ -73,7 +76,8 @@ msgstr "你不是管理员，无权删除此解答，请联系管理员！"
 #: .\app\cmsadmin\views\oidc_client_view.py:72
 #: .\app\cmsadmin\views\portal_view.py:72
 #: .\app\cmsadmin\views\portal_view.py:152
-#: .\app\cmsadmin\views\users_view.py:82 .\app\cmsadmin\views\users_view.py:163
+#: .\app\cmsadmin\views\users_view.py:127
+#: .\app\cmsadmin\views\users_view.py:208
 #, python-format
 msgid "Need %(verbose_name)s Id"
 msgstr "需要 %(verbose_name)s id"
@@ -81,7 +85,8 @@ msgstr "需要 %(verbose_name)s id"
 #: .\app\cmsadmin\views\oidc_client_view.py:77
 #: .\app\cmsadmin\views\portal_view.py:77
 #: .\app\cmsadmin\views\portal_view.py:157
-#: .\app\cmsadmin\views\users_view.py:87 .\app\cmsadmin\views\users_view.py:168
+#: .\app\cmsadmin\views\users_view.py:132
+#: .\app\cmsadmin\views\users_view.py:213
 #, python-format
 msgid "No %(verbose_name)s found matching the query"
 msgstr "没有找到符合条件的 %(verbose_name)s"
@@ -126,22 +131,22 @@ msgid ""
 "delete it!"
 msgstr "你不是此链接的创建者，无权删除它！"
 
-#: .\app\cmsadmin\views\users_view.py:42
+#: .\app\cmsadmin\views\users_view.py:64
 #, python-format
 msgid "User #%(id)s has been created successfully!"
 msgstr "成功创建用户 #%(id)s！"
 
-#: .\app\cmsadmin\views\users_view.py:65
+#: .\app\cmsadmin\views\users_view.py:87 .\app\cmsadmin\views\users_view.py:110
 #, python-format
 msgid "User #%(id)s has been updated successfully!"
 msgstr "成功更新用户 #%(id)s！"
 
-#: .\app\cmsadmin\views\users_view.py:123
+#: .\app\cmsadmin\views\users_view.py:168
 #, python-format
 msgid "Department #%(id)s has been created successfully!"
 msgstr "成功创建部门 #%(id)s！"
 
-#: .\app\cmsadmin\views\users_view.py:146
+#: .\app\cmsadmin\views\users_view.py:191
 #, python-format
 msgid "Department #%(id)s has been updated successfully!"
 msgstr "成功更新部门 #%(id)s！"

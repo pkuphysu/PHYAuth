@@ -48,6 +48,9 @@
                                         <a href="{% url 'cmsadmin:users-user-update' %}?pk={{ user.pk }}">
                                             <button class="btn btn-info">{% translate 'Edit' %}</button>
                                         </a>
+                                        <a href="{% url 'cmsadmin:users-user-group-update' %}?pk={{ user.pk }}">
+                                            <button class="btn btn-info">{% translate 'Edit User Group' %}</button>
+                                        </a>
 
                                         <button class="btn btn-danger delete"
                                                 data-id="{{ user.pk }}">{% translate 'Delete' %}</button>
