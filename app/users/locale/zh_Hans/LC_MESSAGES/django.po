@@ -40,15 +40,15 @@ msgstr "用户管理"
 
 #: .\app\users\models.py:11 .\app\users\models.py:117
 msgid "department"
-msgstr "系所"
+msgstr "部门"
 
 #: .\app\users\models.py:17
 msgid "Department"
-msgstr "系所"
+msgstr "部门"
 
 #: .\app\users\models.py:18
 msgid "Departments"
-msgstr "系所"
+msgstr "部门"
 
 #: .\app\users\models.py:27
 msgid "username"
