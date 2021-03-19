@@ -20,7 +20,7 @@ def toplink_update(sender, **kwargs):
 
 @receiver(post_delete, sender=Announcement)
 @receiver(post_save, sender=Announcement)
-def toplink_update(sender, **kwargs):
+def announcement_update(sender, **kwargs):
     key = make_template_fragment_key('index_announcements')
     cache.delete(key)
     logger.info(f'Delete index_announcements cache.')
