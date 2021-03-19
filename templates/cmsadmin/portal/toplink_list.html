@@ -17,7 +17,7 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="card-tools">
-                            <a href="{% url 'cmsadmin:toplink-create' %}">
+                            <a href="{% url 'cmsadmin:portal-toplink-create' %}">
                                 <button class="btn btn-primary">{% translate 'Create' %}</button>
                             </a>
                         </div>
@@ -41,7 +41,7 @@
                                     <td>{{ toplink.name }}</td>
                                     <td>{{ toplink.url }}</td>
                                     <td>
-                                        <a href="{% url 'cmsadmin:toplink-update' %}?pk={{ toplink.pk }}">
+                                        <a href="{% url 'cmsadmin:portal-toplink-update' %}?pk={{ toplink.pk }}">
                                             <button class="btn btn-info">{% translate 'Edit' %}</button>
                                         </a>
 
@@ -86,7 +86,7 @@
                     //  发请求到后端删除数据
                     $.ajax({
                         //拼接要访问的url地址
-                        url: '{% url 'cmsadmin:toplink-delete'  %}',
+                        url: '{% url 'cmsadmin:portal-toplink-delete'  %}',
                         type: 'POST',
                         data: {id: $(this).attr('toplink_id')},
                         beforeSend: function (xhr, settings) {

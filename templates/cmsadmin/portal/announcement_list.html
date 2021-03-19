@@ -17,7 +17,7 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="card-tools">
-                            <a href="{% url 'cmsadmin:announcement-create' %}">
+                            <a href="{% url 'cmsadmin:portal-announcement-create' %}">
                                 <button class="btn btn-primary">{% translate 'Create' %}</button>
                             </a>
                         </div>
@@ -41,7 +41,7 @@
                                     <td>{{ announcement.get_type_display }}</td>
                                     <td>{{ announcement.title }}</td>
                                     <td>
-                                        <a href="{% url 'cmsadmin:announcement-update' %}?pk={{ announcement.pk }}">
+                                        <a href="{% url 'cmsadmin:portal-announcement-update' %}?pk={{ announcement.pk }}">
                                             <button class="btn btn-info update">{% translate 'Edit' %}</button>
                                         </a>
 
@@ -91,7 +91,7 @@
                     //  发请求到后端删除数据
                     $.ajax({
                         //拼接要访问的url地址
-                        url: '{% url 'cmsadmin:announcement-delete'  %}',
+                        url: '{% url 'cmsadmin:portal-announcement-delete'  %}',
                         type: 'POST',
                         data: {id: $(this).attr('announcement_id')},
                         beforeSend: function (xhr, settings) {
