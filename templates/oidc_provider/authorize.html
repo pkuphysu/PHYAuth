@@ -22,8 +22,8 @@
                     {{ client.name }}</b></h3>
                 <h5 class="widget-user-desc text-white">
                     {% translate 'Client Ownner: ' %}
-                    {% if clent.owner is not None %}
-                        {{ client.owner }}
+                    {% if client.owner is not None %}
+                        {{ client.owner.get_full_name }}
                     {% else %}
                         {% translate 'Unknown' %}
                     {% endif %}
