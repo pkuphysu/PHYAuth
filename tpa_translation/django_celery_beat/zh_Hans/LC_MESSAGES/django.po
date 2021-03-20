@@ -76,7 +76,7 @@ msgstr "运行选中的任务"
 
 #: .\django_celery_beat\apps.py:13
 msgid "Periodic Tasks"
-msgstr "周期性任务"
+msgstr "周期任务"
 
 #: .\django_celery_beat\models.py:26
 msgid "Days"
@@ -144,7 +144,7 @@ msgstr "航海黄昏"
 
 #: .\django_celery_beat\models.py:48
 msgid "Solar noon"
-msgstr ""
+msgstr "正午"
 
 #: .\django_celery_beat\models.py:49
 msgid "Sunrise"
@@ -155,34 +155,28 @@ msgid "Sunset"
 msgstr "日落"
 
 #: .\django_celery_beat\models.py:84
-#, fuzzy
-#| msgid "solar event"
 msgid "Solar Event"
 msgstr "日程事件"
 
 #: .\django_celery_beat\models.py:85
 msgid "The type of solar event when the job should run"
-msgstr "作业应运行的太阳事件的类型"
+msgstr "当任务应该执行时的日程事件类型"
 
 #: .\django_celery_beat\models.py:89
-#, fuzzy
-#| msgid "latitude"
 msgid "Latitude"
 msgstr "纬度"
 
 #: .\django_celery_beat\models.py:90
 msgid "Run the task when the event happens at this latitude"
-msgstr "在此纬度发生事件时运行任务"
+msgstr "当在此纬度发生事件时执行任务"
 
 #: .\django_celery_beat\models.py:95
-#, fuzzy
-#| msgid "longitude"
 msgid "Longitude"
 msgstr "经度"
 
 #: .\django_celery_beat\models.py:96
 msgid "Run the task when the event happens at this longitude"
-msgstr "在此经度发生事件时运行任务"
+msgstr "当在此经度发生事件时执行任务"
 
 #: .\django_celery_beat\models.py:103
 msgid "solar event"
@@ -198,17 +192,15 @@ msgstr "周期数"
 
 #: .\django_celery_beat\models.py:154
 msgid "Number of interval periods to wait before running the task again"
-msgstr "再次运行任务之前要等待的间隔时间"
+msgstr "再次执行任务之前要等待的间隔周期数"
 
 #: .\django_celery_beat\models.py:160
-#, fuzzy
-#| msgid "interval"
 msgid "Interval Period"
-msgstr "间隔"
+msgstr "间隔周期"
 
 #: .\django_celery_beat\models.py:161
 msgid "The type of period between task runs (Example: days)"
-msgstr "任务运行之间的时间间隔类型（例如：天）"
+msgstr "任务每次执行之间的时间间隔类型（例如：天）"
 
 #: .\django_celery_beat\models.py:167
 msgid "interval"
@@ -228,35 +220,31 @@ msgstr "每 {} {}"
 
 #: .\django_celery_beat\models.py:212
 msgid "Clock Time"
-msgstr "时钟时间"
+msgstr "定时时间"
 
 #: .\django_celery_beat\models.py:213
 msgid "Run the task at clocked time"
-msgstr "在定时的时间运行任务"
+msgstr "在定时时间执行任务"
 
 #: .\django_celery_beat\models.py:219 .\django_celery_beat\models.py:220
 msgid "clocked"
 msgstr "定时"
 
 #: .\django_celery_beat\models.py:260
-#, fuzzy
-#| msgid "Minutes"
 msgid "Minute(s)"
 msgstr "分钟"
 
 #: .\django_celery_beat\models.py:262
 msgid "Cron Minutes to Run. Use \"*\" for \"all\". (Example: \"0,30\")"
-msgstr "Cron分钟运行。 将\"*\"用作\"all\"。（例如：\"0,30\"）"
+msgstr "计划执行的分钟。 将\"*\"用作\"all\"。（例如：\"0,30\"）"
 
 #: .\django_celery_beat\models.py:267
-#, fuzzy
-#| msgid "Hours"
 msgid "Hour(s)"
 msgstr "小时"
 
 #: .\django_celery_beat\models.py:269
 msgid "Cron Hours to Run. Use \"*\" for \"all\". (Example: \"8,20\")"
-msgstr "Cron小时运行。 将\"*\"用作\"all\"。（例如：\"8,20\"）"
+msgstr "计划执行的小时。 将\"*\"用作\"all\"。（例如：\"8,20\"）"
 
 #: .\django_celery_beat\models.py:274
 msgid "Day(s) Of The Week"
@@ -264,7 +252,7 @@ msgstr "一个星期的第几天"
 
 #: .\django_celery_beat\models.py:276
 msgid "Cron Days Of The Week to Run. Use \"*\" for \"all\". (Example: \"0,5\")"
-msgstr "每周的第Cron天运行。将\"*\"用作\"all\"。（例如：\"0,5\"）"
+msgstr "计划执行的每周的第几天。将\"*\"用作\"all\"。（例如：\"0,5\"）"
 
 #: .\django_celery_beat\models.py:282
 msgid "Day(s) Of The Month"
@@ -273,7 +261,7 @@ msgstr "一个月的第几天"
 #: .\django_celery_beat\models.py:284
 msgid ""
 "Cron Days Of The Month to Run. Use \"*\" for \"all\". (Example: \"1,15\")"
-msgstr "每月的第Cron天运行。将\"*\"用作\"all\"。（例如：\"0,5\"）"
+msgstr "计划执行的每个月的第几天。将\"*\"用作\"all\"。（例如：\"0,5\"）"
 
 #: .\django_celery_beat\models.py:290
 msgid "Month(s) Of The Year"
@@ -282,15 +270,15 @@ msgstr "一年的第几个月"
 #: .\django_celery_beat\models.py:292
 msgid ""
 "Cron Months Of The Year to Run. Use \"*\" for \"all\". (Example: \"0,6\")"
-msgstr "每年的第Cron天运行。将\"*\"用作\"all\"。（例如：\"0,5\"）"
+msgstr "计划执行的每一年的第几个月。将\"*\"用作\"all\"。（例如：\"0,5\"）"
 
 #: .\django_celery_beat\models.py:299
 msgid "Cron Timezone"
-msgstr "Cron时区"
+msgstr "计划任务的时区"
 
 #: .\django_celery_beat\models.py:301
 msgid "Timezone to Run the Cron Schedule on. Default is UTC."
-msgstr "运行Cron时间表的时区。 默认为UTC。"
+msgstr "执行计划任务表的时区。 默认为UTC。"
 
 #: .\django_celery_beat\models.py:307
 msgid "crontab"
@@ -312,47 +300,47 @@ msgstr "该任务的简短说明"
 msgid ""
 "The Name of the Celery Task that Should be Run.  (Example: \"proj.tasks."
 "import_contacts\")"
-msgstr "应该运行的任务的名称。（例如：\"proj.tasks.import_contacts\")"
+msgstr "被执行的任务的名称。（例如：\"proj.tasks.import_contacts\")"
 
 #: .\django_celery_beat\models.py:407
 msgid "Interval Schedule"
-msgstr "间隔定时"
+msgstr "间隔时间表"
 
 #: .\django_celery_beat\models.py:408
 msgid ""
 "Interval Schedule to run the task on.  Set only one schedule type, leave the "
 "others null."
-msgstr "以固定间隔运行任务。 仅设置一种计划类型，将其他保留为空。"
+msgstr "执行任务的间隔时间表。 仅设置一种时间表类型，将其他保留为空。"
 
 #: .\django_celery_beat\models.py:413
 msgid "Crontab Schedule"
-msgstr "准确定时"
+msgstr "计划时间表"
 
 #: .\django_celery_beat\models.py:414
 msgid ""
 "Crontab Schedule to run the task on.  Set only one schedule type, leave the "
 "others null."
-msgstr "定时以运行任务。 仅设置一种计划类型，将其他保留为空。"
+msgstr "执行任务的计划时间表。 仅设置一种时间表类型，将其他保留为空。"
 
 #: .\django_celery_beat\models.py:419
 msgid "Solar Schedule"
-msgstr "太阳定时"
+msgstr "日程时间表"
 
 #: .\django_celery_beat\models.py:420
 msgid ""
 "Solar Schedule to run the task on.  Set only one schedule type, leave the "
 "others null."
-msgstr "以太阳时运行任务。 仅设置一种计划类型，将其他保留为空。"
+msgstr "执行任务的日程时间表。 仅设置一种时间表类型，将其他保留为空。"
 
 #: .\django_celery_beat\models.py:425
 msgid "Clocked Schedule"
-msgstr "倒计时"
+msgstr "定时时间表"
 
 #: .\django_celery_beat\models.py:426
 msgid ""
 "Clocked Schedule to run the task on.  Set only one schedule type, leave the "
 "others null."
-msgstr "倒计时运行任务。 仅设置一种计划类型，将其他保留为空。"
+msgstr "执行任务的定时时间表。 仅设置一种时间表类型，将其他保留为空。"
 
 #: .\django_celery_beat\models.py:432
 msgid "Positional Arguments"
@@ -414,22 +402,22 @@ msgstr "优先级数字，介于0和255之间。支持者：RabbitMQ，Redis（�
 
 #: .\django_celery_beat\models.py:482
 msgid "Expires Datetime"
-msgstr "到期日期时间"
+msgstr "过期时刻"
 
 #: .\django_celery_beat\models.py:484
 msgid ""
 "Datetime after which the schedule will no longer trigger the task to run"
-msgstr "日期时间，计划表将在此日期后不再触发任务运行"
+msgstr "过期时刻，计划表将在此时刻后不再触发任务执行"
 
 #: .\django_celery_beat\models.py:489
 msgid "Expires timedelta with seconds"
-msgstr "失效时间，以秒为单位"
+msgstr "过期时间间隔，以秒为单位"
 
 #: .\django_celery_beat\models.py:491
 msgid ""
 "Timedelta with seconds which the schedule will no longer trigger the task to "
 "run"
-msgstr "该秒数过后，不再触发任务运行"
+msgstr "再过该秒后，不再触发任务执行"
 
 #: .\django_celery_beat\models.py:497
 msgid "One-off Task"
@@ -437,7 +425,7 @@ msgstr "一次任务"
 
 #: .\django_celery_beat\models.py:499
 msgid "If True, the schedule will only run the task a single time"
-msgstr "如果为True，则计划将仅一次运行任务"
+msgstr "如果为True，则计划将仅运行任务一次"
 
 #: .\django_celery_beat\models.py:503
 msgid "Start Datetime"
@@ -445,7 +433,7 @@ msgstr "开始时间"
 
 #: .\django_celery_beat\models.py:505
 msgid "Datetime when the schedule should begin triggering the task to run"
-msgstr "时间表应开始触发任务运行的日期时间"
+msgstr "时间表开始触发任务执行的时刻"
 
 #: .\django_celery_beat\models.py:510
 msgid "Enabled"
@@ -453,17 +441,17 @@ msgstr "已启用"
 
 #: .\django_celery_beat\models.py:511
 msgid "Set to False to disable the schedule"
-msgstr "设置为False可禁用计划"
+msgstr "设置为False可禁用时间表"
 
 #: .\django_celery_beat\models.py:516
 msgid "Last Run Datetime"
-msgstr "上次运行日期时间"
+msgstr "上次运行时刻"
 
 #: .\django_celery_beat\models.py:518
 msgid ""
 "Datetime that the schedule last triggered the task to run. Reset to None if "
 "enabled is set to False."
-msgstr "计划最后一次触发任务运行的日期时间。 如果enabled设置为False，则重置为None。"
+msgstr "最后一次触发任务执行的时刻。 如果enabled设置为False，则重置为None。"
 
 #: .\django_celery_beat\models.py:523
 msgid "Total Run Count"
@@ -471,7 +459,7 @@ msgstr "总运行次数"
 
 #: .\django_celery_beat\models.py:525
 msgid "Running count of how many times the schedule has triggered the task"
-msgstr "计划已触发任务多少次的运行计数"
+msgstr "任务执行多少次的运行计数"
 
 #: .\django_celery_beat\models.py:530
 msgid "Last Modified"
@@ -479,11 +467,9 @@ msgstr "最后修改"
 
 #: .\django_celery_beat\models.py:531
 msgid "Datetime that this PeriodicTask was last modified"
-msgstr "该周期性任务的最后修改日期"
+msgstr "该周期性任务的最后修改时刻"
 
 #: .\django_celery_beat\models.py:535
-#, fuzzy
-#| msgid "description"
 msgid "Description"
 msgstr "描述"
 
@@ -498,51 +484,3 @@ msgstr "周期性任务"
 #: .\django_celery_beat\models.py:547
 msgid "periodic tasks"
 msgstr "周期性任务"
-
-#~ msgid "event"
-#~ msgstr "事件"
-
-#~ msgid "every"
-#~ msgstr "每"
-
-#~ msgid "period"
-#~ msgstr "周期"
-
-#~ msgid "minute"
-#~ msgstr "分钟"
-
-#~ msgid "hour"
-#~ msgstr "小时"
-
-#~ msgid "day of week"
-#~ msgstr "一星期的第几天"
-
-#~ msgid "day of month"
-#~ msgstr "一个月的第几天"
-
-#~ msgid "name"
-#~ msgstr "名称"
-
-#~ msgid "Useful description"
-#~ msgstr "有用的描述"
-
-#~ msgid "task name"
-#~ msgstr "任务名称"
-
-#~ msgid "Use one of interval/crontab"
-#~ msgstr "使用间隔/计划任务"
-
-#~ msgid "solar"
-#~ msgstr "太阳"
-
-#~ msgid "Arguments"
-#~ msgstr "参数"
-
-#~ msgid "queue"
-#~ msgstr "队列"
-
-#~ msgid "expires"
-#~ msgstr "超时"
-
-#~ msgid "Home"
-#~ msgstr "主页"
