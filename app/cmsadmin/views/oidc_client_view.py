@@ -17,6 +17,7 @@ class OidcClientFaqListView(PermissionRequiredMixin, ListView):
                                   'please contact the administrator!')
     template_name = 'cmsadmin/oidc_client/faq_list.html'
     context_object_name = 'faq_list'
+    ordering = ('rank', 'pk')
 
 
 class OidcClientFaqCreateView(PermissionRequiredMixin, SuccessMessageMixin, ErrorMessageMixin, CreateView):

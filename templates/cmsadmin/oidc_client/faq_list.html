@@ -29,6 +29,7 @@
                                 <th>#</th>
                                 <th>{% translate 'Question' %}</th>
                                 <th>{% translate 'Show' %}</th>
+                                <th>{% translate 'Rank' %}</th>
                                 <th>{% translate 'Operate' %}</th>
                             </tr>
                             </thead>
@@ -38,13 +39,14 @@
                                     <td>{{ faq.pk }}</td>
                                     <td>{{ faq.question }}</td>
                                     <td>{{ faq.get_show_display }}</td>
+                                    <td>{{ faq.rank }}</td>
                                     <td>
                                         <a href="{% url 'cmsadmin:oidc-client-faq-update' %}?pk={{ faq.pk }}">
                                             <button class="btn btn-info">{% translate 'Edit' %}</button>
                                         </a>
 
                                         <button class="btn btn-danger delete"
-                                                faq_id="{{ faq.pk }}">{% translate 'Delete' %}</button>
+                                                data-id="{{ faq.pk }}">{% translate 'Delete' %}</button>
 
                                     </td>
                                 </tr>
@@ -91,7 +93,7 @@
                         //拼接要访问的url地址
                         url: '{% url 'cmsadmin:oidc-client-faq-delete'  %}',
                         type: 'POST',
-                        data: {id: $(this).attr('faq_id')},
+                        data: {id: $(this).attr('data-id')},
                         beforeSend: function (xhr, settings) {
                             xhr.setRequestHeader("X-CSRFToken", "{{ csrf_token }}");
                         },

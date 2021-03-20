@@ -46,7 +46,7 @@
                                         </a>
 
                                         <button class="btn btn-danger delete"
-                                                announcement_id="{{ announcement.pk }}">{% translate 'Delete' %}</button>
+                                                data-id="{{ announcement.pk }}">{% translate 'Delete' %}</button>
 
                                     </td>
                                 </tr>
@@ -93,7 +93,7 @@
                         //拼接要访问的url地址
                         url: '{% url 'cmsadmin:portal-announcement-delete'  %}',
                         type: 'POST',
-                        data: {id: $(this).attr('announcement_id')},
+                        data: {id: $(this).attr('data-id')},
                         beforeSend: function (xhr, settings) {
                             xhr.setRequestHeader("X-CSRFToken", "{{ csrf_token }}");
                         },

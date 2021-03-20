@@ -17,6 +17,7 @@ class AnnouncementListView(PermissionRequiredMixin, ListView):
     permission_denied_message = _('You are not a staff, and do not have permission to view this page, '
                                   'please contact the administrator!')
     context_object_name = 'announcement_list'
+    ordering = ('rank', '-pk')
 
 
 class AnnouncementCreateView(PermissionRequiredMixin, SuccessMessageMixin, ErrorMessageMixin, CreateView):
@@ -97,6 +98,7 @@ class TopLinkListView(PermissionRequiredMixin, ListView):
     permission_denied_message = _('You are not a staff, and do not have permission to view this page, '
                                   'please contact the administrator!')
     context_object_name = 'toplink_list'
+    ordering = ('rank', 'pk')
 
 
 class TopLinkCreateView(PermissionRequiredMixin, SuccessMessageMixin, ErrorMessageMixin, CreateView):

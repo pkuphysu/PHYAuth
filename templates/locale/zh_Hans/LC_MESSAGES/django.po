@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-20 19:22+0800\n"
+"POT-Creation-Date: 2021-03-20 23:59+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Rainshaw <rxg@live.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -119,6 +119,10 @@ msgid "Show"
 msgstr "显示状态"
 
 #: .\templates\cmsadmin\oidc_client\faq_list.html:32
+msgid "Rank"
+msgstr "排序"
+
+#: .\templates\cmsadmin\oidc_client\faq_list.html:33
 #: .\templates\cmsadmin\portal\announcement_list.html:33
 #: .\templates\cmsadmin\portal\toplink_list.html:33
 #: .\templates\cmsadmin\users\department_list.html:31
@@ -127,7 +131,7 @@ msgstr "显示状态"
 msgid "Operate"
 msgstr "操作"
 
-#: .\templates\cmsadmin\oidc_client\faq_list.html:43
+#: .\templates\cmsadmin\oidc_client\faq_list.html:45
 #: .\templates\cmsadmin\portal\announcement_list.html:45
 #: .\templates\cmsadmin\portal\toplink_list.html:45
 #: .\templates\cmsadmin\users\department_list.html:41
@@ -136,7 +140,7 @@ msgstr "操作"
 msgid "Edit"
 msgstr "编辑"
 
-#: .\templates\cmsadmin\oidc_client\faq_list.html:47
+#: .\templates\cmsadmin\oidc_client\faq_list.html:49
 #: .\templates\cmsadmin\portal\announcement_list.html:49
 #: .\templates\cmsadmin\portal\toplink_list.html:49
 #: .\templates\cmsadmin\users\department_list.html:45
@@ -145,7 +149,7 @@ msgstr "编辑"
 msgid "Delete"
 msgstr "删除"
 
-#: .\templates\cmsadmin\oidc_client\faq_list.html:78
+#: .\templates\cmsadmin\oidc_client\faq_list.html:80
 #: .\templates\cmsadmin\portal\announcement_list.html:80
 #: .\templates\cmsadmin\portal\toplink_list.html:75
 #: .\templates\cmsadmin\users\department_list.html:71
@@ -156,7 +160,7 @@ msgstr "删除"
 msgid "Are you sure?"
 msgstr "你确定吗？"
 
-#: .\templates\cmsadmin\oidc_client\faq_list.html:79
+#: .\templates\cmsadmin\oidc_client\faq_list.html:81
 #: .\templates\cmsadmin\portal\announcement_list.html:81
 #: .\templates\cmsadmin\portal\toplink_list.html:76
 #: .\templates\cmsadmin\users\department_list.html:72
@@ -164,7 +168,7 @@ msgstr "你确定吗？"
 msgid "You won't be able to revert this!"
 msgstr "你无法撤销此操作！"
 
-#: .\templates\cmsadmin\oidc_client\faq_list.html:84
+#: .\templates\cmsadmin\oidc_client\faq_list.html:86
 #: .\templates\cmsadmin\portal\announcement_list.html:86
 #: .\templates\cmsadmin\portal\toplink_list.html:81
 #: .\templates\cmsadmin\users\department_list.html:77
@@ -175,7 +179,7 @@ msgstr "你无法撤销此操作！"
 msgid "Yes"
 msgstr "是的"
 
-#: .\templates\cmsadmin\oidc_client\faq_list.html:85
+#: .\templates\cmsadmin\oidc_client\faq_list.html:87
 #: .\templates\cmsadmin\portal\announcement_list.html:87
 #: .\templates\cmsadmin\portal\toplink_list.html:82
 #: .\templates\cmsadmin\users\department_list.html:78
@@ -186,7 +190,7 @@ msgstr "是的"
 msgid "Cancel"
 msgstr "取消"
 
-#: .\templates\cmsadmin\oidc_client\faq_list.html:101
+#: .\templates\cmsadmin\oidc_client\faq_list.html:103
 #: .\templates\cmsadmin\portal\announcement_list.html:103
 #: .\templates\cmsadmin\portal\toplink_list.html:98
 #: .\templates\cmsadmin\users\department_list.html:94
@@ -194,8 +198,8 @@ msgstr "取消"
 msgid "Success Delete"
 msgstr "删除成功"
 
-#: .\templates\cmsadmin\oidc_client\faq_list.html:108
-#: .\templates\cmsadmin\oidc_client\faq_list.html:116
+#: .\templates\cmsadmin\oidc_client\faq_list.html:110
+#: .\templates\cmsadmin\oidc_client\faq_list.html:118
 #: .\templates\cmsadmin\portal\announcement_list.html:110
 #: .\templates\cmsadmin\portal\announcement_list.html:118
 #: .\templates\cmsadmin\portal\toplink_list.html:104
@@ -207,7 +211,7 @@ msgstr "删除成功"
 msgid "Fail Delete"
 msgstr "删除失败"
 
-#: .\templates\cmsadmin\oidc_client\faq_list.html:124
+#: .\templates\cmsadmin\oidc_client\faq_list.html:126
 #: .\templates\cmsadmin\portal\announcement_list.html:126
 #: .\templates\cmsadmin\portal\toplink_list.html:120
 #: .\templates\cmsadmin\users\department_list.html:116
@@ -215,7 +219,7 @@ msgstr "删除失败"
 msgid "Lucky to see this warning~~"
 msgstr "万幸看到这个警告~~"
 
-#: .\templates\cmsadmin\oidc_client\faq_list.html:125
+#: .\templates\cmsadmin\oidc_client\faq_list.html:127
 #: .\templates\cmsadmin\portal\announcement_list.html:127
 #: .\templates\cmsadmin\portal\toplink_list.html:121
 #: .\templates\cmsadmin\users\department_list.html:117
