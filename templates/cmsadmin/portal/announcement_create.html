@@ -8,15 +8,6 @@
     <link rel="stylesheet" href="{% static 'adminlte/plugins/summernote/summernote-bs4.min.css' %}">
 {% endblock %}
 
-{% block style %}
-    {# TODO: refactor when summernote provide this feature  #}
-    <style>
-        .note-group-select-from-files {
-            display: none;
-        }
-    </style>
-{% endblock %}
-
 {% block content_wrapper_breadcrumb %}
     {{ block.super }}
     {% breadcrumb_for 'cmsadmin:announcement-create' %}{% trans "Create Announcement" %}{% endbreadcrumb_for %}
@@ -65,7 +56,6 @@
             $('#id_content').summernote({
                 minHeight: 300,
                 maxHeight: 500,
-                disableDragAndDrop: true,
                 {% if LANGUAGE_CODE == 'zh-hans'%}
                     lang: 'zh-CN',
                 {% endif %}

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-20 17:19+0800\n"
+"POT-Creation-Date: 2021-03-20 18:08+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Rainshaw <rxg@live.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -73,16 +73,16 @@ msgid "Uniform Identity Authentication of the School of Physics"
 msgstr "物理学院统一身份认证"
 
 #: .\templates\cmsadmin\oidc_client\faq_create.html:4
-#: .\templates\cmsadmin\oidc_client\faq_create.html:22
-#: .\templates\cmsadmin\oidc_client\faq_create.html:25
+#: .\templates\cmsadmin\oidc_client\faq_create.html:13
+#: .\templates\cmsadmin\oidc_client\faq_create.html:16
 #: .\templates\index.html:345
 msgid "Create FAQ"
 msgstr "新建疑问与解答"
 
-#: .\templates\cmsadmin\oidc_client\faq_create.html:39
-#: .\templates\cmsadmin\oidc_client\faq_update.html:39
-#: .\templates\cmsadmin\portal\announcement_create.html:39
-#: .\templates\cmsadmin\portal\announcement_update.html:39
+#: .\templates\cmsadmin\oidc_client\faq_create.html:30
+#: .\templates\cmsadmin\oidc_client\faq_update.html:30
+#: .\templates\cmsadmin\portal\announcement_create.html:30
+#: .\templates\cmsadmin\portal\announcement_update.html:30
 #: .\templates\cmsadmin\portal\toplink_create.html:25
 #: .\templates\cmsadmin\portal\toplink_update.html:25
 #: .\templates\cmsadmin\users\department_create.html:25
@@ -224,15 +224,15 @@ msgid "This will close in <b></b> milliseconds."
 msgstr "我将在<b></b>毫秒内自动关闭~"
 
 #: .\templates\cmsadmin\oidc_client\faq_update.html:4
-#: .\templates\cmsadmin\oidc_client\faq_update.html:22
-#: .\templates\cmsadmin\oidc_client\faq_update.html:25
+#: .\templates\cmsadmin\oidc_client\faq_update.html:13
+#: .\templates\cmsadmin\oidc_client\faq_update.html:16
 #: .\templates\index.html:352
 msgid "Update FAQ"
 msgstr "更新疑问与解答"
 
 #: .\templates\cmsadmin\portal\announcement_create.html:4
-#: .\templates\cmsadmin\portal\announcement_create.html:22
-#: .\templates\cmsadmin\portal\announcement_create.html:25
+#: .\templates\cmsadmin\portal\announcement_create.html:13
+#: .\templates\cmsadmin\portal\announcement_create.html:16
 #: .\templates\index.html:206
 msgid "Create Announcement"
 msgstr "新建公告"
@@ -257,8 +257,8 @@ msgid "Announcement Title"
 msgstr "公告标题"
 
 #: .\templates\cmsadmin\portal\announcement_update.html:4
-#: .\templates\cmsadmin\portal\announcement_update.html:22
-#: .\templates\cmsadmin\portal\announcement_update.html:25
+#: .\templates\cmsadmin\portal\announcement_update.html:13
+#: .\templates\cmsadmin\portal\announcement_update.html:16
 #: .\templates\index.html:213
 msgid "Update Announcement"
 msgstr "更新公告"
