@@ -15,7 +15,7 @@ class AnnouncementForm(forms.ModelForm):
         widgets = {
             'type': forms.Select(attrs={'class': 'form-control'}),
             'title': forms.TextInput(attrs={'class': 'form-control'}),
-            'content': forms.Textarea(attrs={'class': 'form-control'}),
+            'content': forms.Textarea(attrs={'class': 'form-control summernote'}),
             'rank': forms.NumberInput(attrs={'class': 'form-control'}),
         }
 

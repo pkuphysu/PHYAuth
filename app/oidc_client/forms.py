@@ -78,7 +78,7 @@ class FaqForm(forms.ModelForm):
         ]
         widgets = {
             'question': forms.TextInput(attrs={'class': 'form-control'}),
-            'answer': forms.Textarea(attrs={'class': 'form-control'}),
+            'answer': forms.Textarea(attrs={'class': 'form-control summernote'}),
             'show': forms.Select(attrs={'class': 'form-control'}),
             'rank': forms.NumberInput(attrs={'class': 'form-control'}),
         }

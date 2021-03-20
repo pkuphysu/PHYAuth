@@ -3,11 +3,6 @@
 
 {% block title %}{% translate 'Create FAQ' %}{% endblock %}
 
-{% block extra_style %}
-    <!-- summernote -->
-    <link rel="stylesheet" href="{% static 'adminlte/plugins/summernote/summernote-bs4.min.css' %}">
-{% endblock %}
-
 {% block content_wrapper_breadcrumb %}
     {{ block.super }}
     {% breadcrumb_for 'cmsadmin:oidc-client-faq-create' %}{% trans "Create FAQ" %}{% endbreadcrumb_for %}
@@ -39,27 +34,6 @@
 
 {% endblock %}
 
-{% block extra_javascript %}
-    <!-- Summernote -->
-    <script src="{% static 'adminlte/plugins/summernote/summernote-bs4.min.js' %}"></script>
-    {% get_current_language as LANGUAGE_CODE %}
-    {% if LANGUAGE_CODE == 'zh-hans' %}
-        <!-- include summernote-ko-KR -->
-        <script src="{% static 'adminlte/plugins/summernote/lang/summernote-zh-CN.min.js' %}"></script>
-    {% endif %}
-{% endblock %}
-
-{% block js %}
-    <script>
-        $(function () {
-            // Summernote
-            $('#id_answer').summernote({
-                minHeight: 300,
-                maxHeight: 500,
-                {% if LANGUAGE_CODE == 'zh-hans'%}
-                    lang: 'zh-CN',
-                {% endif %}
-            })
-        })
-    </script>
+{% block extra_body %}
+    {% include 'cmsadmin/summernote.html' %}
 {% endblock %}
