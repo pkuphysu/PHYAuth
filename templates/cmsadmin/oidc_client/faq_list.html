@@ -41,7 +41,8 @@
                                     <td>{{ faq.get_show_display }}</td>
                                     <td>{{ faq.rank }}</td>
                                     <td>
-                                        <a href="{% url 'cmsadmin:oidc-client-faq-update' %}?pk={{ faq.pk }}">
+                                        <a href="{% url 'cmsadmin:oidc-client-faq-update' %}?pk={{ faq.pk }}"
+                                           onclick="event.stopPropagation();">
                                             <button class="btn btn-info">{% translate 'Edit' %}</button>
                                         </a>
 

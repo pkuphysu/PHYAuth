@@ -41,7 +41,8 @@
                                     <td>{{ announcement.get_type_display }}</td>
                                     <td>{{ announcement.title }}</td>
                                     <td>
-                                        <a href="{% url 'cmsadmin:portal-announcement-update' %}?pk={{ announcement.pk }}">
+                                        <a href="{% url 'cmsadmin:portal-announcement-update' %}?pk={{ announcement.pk }}"
+                                           onclick="event.stopPropagation();">
                                             <button class="btn btn-info update">{% translate 'Edit' %}</button>
                                         </a>
 
