@@ -253,9 +253,10 @@ SESSION_COOKIE_AGE = 86400
 SESSION_ENGINE = "django.contrib.sessions.backends.cached_db"
 SESSION_CACHE_ALIAS = "default"
 SESSION_COOKIE_PATH = SUBPATH
-SESSION_COOKIE_SECURE = True
+if not DEBUG:
+    SESSION_COOKIE_SECURE = True
 
-CSRF_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
 CSRF_COOKIE_PATH = SUBPATH
 
 OIDC_USERINFO = 'app.users.oidc_scope_claims.userinfo'
