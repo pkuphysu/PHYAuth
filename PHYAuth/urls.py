@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include
+from oidc_provider import views as oidc_provider_views
 
 from app.portal import views as portal_views
 
@@ -39,6 +40,7 @@ urlpatterns = [
     # oidc/.well-known/openid-configuration/
     # oidc/introspect/
     # oidc/jwks/
+    path('.well-known/openid-configuration/', oidc_provider_views.ProviderInfoView.as_view(), name='provider-info'),
     path('oidc/', include('oidc_provider.urls', namespace='oidc_provider')),
     # iaaa/login
     # iaaa/auth

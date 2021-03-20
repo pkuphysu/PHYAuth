@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-19 23:41+0800\n"
+"POT-Creation-Date: 2021-03-20 17:19+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Rainshaw <rxg@live.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -398,8 +398,8 @@ msgid "Choose file"
 msgstr "选择文件"
 
 #: .\templates\index.html:6 .\templates\index.html:27
-#: .\templates\index.html:163 .\templates\index.html:423
-#: .\templates\index.html:428
+#: .\templates\index.html:163 .\templates\index.html:429
+#: .\templates\index.html:434
 msgid "Home"
 msgstr "主页"
 
@@ -487,16 +487,20 @@ msgstr "创建应用"
 msgid "FAQ"
 msgstr "疑问与解答"
 
-#: .\templates\index.html:400 .\templates\portal\admins.html:5
+#: .\templates\index.html:398
+msgid "OpenID Configuration"
+msgstr "OpenID 配置信息"
+
+#: .\templates\index.html:406 .\templates\portal\admins.html:5
 #: .\templates\portal\admins.html:7 .\templates\portal\admins.html:11
 msgid "Admins"
 msgstr "管理员列表"
 
-#: .\templates\index.html:446
+#: .\templates\index.html:452
 msgid "Announcement"
 msgstr "公告"
 
-#: .\templates\index.html:491
+#: .\templates\index.html:497
 msgid "All rights reserved."
 msgstr "版权所有."
 
