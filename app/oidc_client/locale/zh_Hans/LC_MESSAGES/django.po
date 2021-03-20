@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-15 18:35+0800\n"
+"POT-Creation-Date: 2021-03-20 17:36+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -69,36 +69,49 @@ msgstr "隐藏"
 msgid "Show"
 msgstr "显示"
 
-#: .\app\oidc_client\models.py:25
+#: .\app\oidc_client\models.py:24
+msgid "faq order"
+msgstr "疑问与解答排序"
+
+#: .\app\oidc_client\models.py:26
+msgid ""
+"It is the default order of the faq!\n"
+"The smaller it is, the more front it will be.\n"
+"If some are the same, the earlier create one will appear firstly."
+msgstr ""
+"这是默认的疑问与解答的排序，不应该相同！数字越小越靠前，如果某几个相同，则按照创建"
+"先后排序。"
+
+#: .\app\oidc_client\models.py:31
 msgid "oidc faq"
 msgstr "OpenID 疑问与解答"
 
-#: .\app\oidc_client\models.py:26
+#: .\app\oidc_client\models.py:32
 msgid "oidc faqs"
 msgstr "OpenID 疑问与解答"
 
-#: .\app\oidc_client\views.py:29 .\app\oidc_client\views.py:42
+#: .\app\oidc_client\views.py:30 .\app\oidc_client\views.py:43
 msgid ""
 "You are not a developer and do not have permission to view the application, "
 "please contact the administrator!"
 msgstr "您不是开发者，无权查看应用，请联系管理员！"
 
-#: .\app\oidc_client\views.py:44
+#: .\app\oidc_client\views.py:45
 #, python-format
 msgid "Client %(name)s has been created successfully!"
 msgstr "应用 %(name)s 创建成功！"
 
-#: .\app\oidc_client\views.py:45 .\app\oidc_client\views.py:66
+#: .\app\oidc_client\views.py:46 .\app\oidc_client\views.py:67
 msgid "Please check the error messages showed in the page!"
 msgstr "请检查页面中显示的错误信息！"
 
-#: .\app\oidc_client\views.py:63
+#: .\app\oidc_client\views.py:64
 msgid ""
 "You are not the creator of this application, so you do not have the right to "
 "modify this application!"
 msgstr "您不是此应用的创建者，无权修改此应用！"
 
-#: .\app\oidc_client\views.py:65
+#: .\app\oidc_client\views.py:66
 #, python-format
 msgid "Client %(name)s has been updated successfully!"
 msgstr "应用 %(name)s 更新成功！"

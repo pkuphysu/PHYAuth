@@ -11,7 +11,7 @@ class TopLink(models.Model):
         _('Link URL'),
         max_length=100
     )
-    rank = models.SmallIntegerField(
+    rank = models.PositiveSmallIntegerField(
         _('Link Rank'),
         help_text=_('It is the default order of the links, they should not be same!\n'
                     'The smaller it is, the more front it will be.\n'
@@ -45,7 +45,7 @@ class Announcement(models.Model):
         _('Announcement Content'),
     )
 
-    rank = models.SmallIntegerField(
+    rank = models.PositiveSmallIntegerField(
         _('Announcement Rank'),
         help_text=_('It is the default order of the announcement!\n'
                     'The smaller it is, the more front it will be.\n'

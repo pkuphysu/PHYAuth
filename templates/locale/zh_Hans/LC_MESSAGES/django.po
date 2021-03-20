@@ -482,8 +482,8 @@ msgstr "应用列表"
 msgid "Create Client"
 msgstr "创建应用"
 
-#: .\templates\index.html:392 .\templates\oidc_client\faq.html:4
-#: .\templates\oidc_client\faq.html:8 .\templates\oidc_client\faq.html:11
+#: .\templates\index.html:392 .\templates\oidc_client\faq.html:5
+#: .\templates\oidc_client\faq.html:9 .\templates\oidc_client\faq.html:12
 msgid "FAQ"
 msgstr "疑问与解答"
 
@@ -534,11 +534,11 @@ msgstr "是,否"
 msgid "Update Client"
 msgstr "修改应用"
 
-#: .\templates\oidc_client\faq.html:38
+#: .\templates\oidc_client\faq.html:41
 msgid "Contact us"
 msgstr "联系我们"
 
-#: .\templates\oidc_client\faq.html:39
+#: .\templates\oidc_client\faq.html:42
 msgid "if you found not the right anwser or you have a other question?"
 msgstr "如果你没有找到正确回答或你有其他问题？"
 

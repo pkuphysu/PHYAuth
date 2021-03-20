@@ -20,6 +20,12 @@ class Faq(models.Model):
         ),
         default=True
     )
+    rank = models.PositiveSmallIntegerField(
+        _('faq order'),
+        help_text=_('It is the default order of the faq!\n'
+                    'The smaller it is, the more front it will be.\n'
+                    'If some are the same, the earlier create one will appear firstly.')
+    )
 
     class Meta:
         verbose_name = _('oidc faq')

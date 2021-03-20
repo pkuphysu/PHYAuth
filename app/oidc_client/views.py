@@ -15,6 +15,7 @@ class FaqListView(LoginRequiredMixin, ListView):
     model = Faq
     template_name = 'oidc_client/faq.html'
     context_object_name = 'faq_list'
+    ordering = ('rank', 'id')
 
     def get_queryset(self):
         qs = super().get_queryset()
@@ -30,6 +31,7 @@ class ClientListView(PermissionRequiredMixin, PermissionListMixin, ListView):
                                   'please contact the administrator!')
     context_object_name = 'client_list'
     get_objects_for_user_extra_kwargs = {'with_superuser': False}
+    ordering = 'pk'
 
 
 class ClientCreateView(PermissionRequiredMixin, ObjectPermissionRequiredMixin,

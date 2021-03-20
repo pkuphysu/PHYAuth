@@ -5,7 +5,7 @@ from .models import TopLink, Announcement
 
 
 @admin.register(TopLink)
-class TopLinkAdmin(GuardedModelAdmin):
+class TopLinkAdmin(admin.ModelAdmin):
     list_display = [
         "name",
         "url",
@@ -14,7 +14,7 @@ class TopLinkAdmin(GuardedModelAdmin):
 
 
 @admin.register(Announcement)
-class AnnouncementAdmin(GuardedModelAdmin):
+class AnnouncementAdmin(admin.ModelAdmin):
     list_display = [
         "type",
         "title",

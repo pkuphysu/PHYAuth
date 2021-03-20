@@ -1,5 +1,6 @@
 {% extends 'index.html' %}
 {% load django_bootstrap_breadcrumbs %}
+{% load cache %}
 
 {% block title %}{% translate 'FAQ' %}{% endblock %}
 
@@ -13,23 +14,25 @@
 {% block content_wrapper_body %}
     <div class="row">
         <div class="col-12" id="accordion">
-            {% for faq in faq_list %}
-                <div class="card card-primary card-outline">
-                    <a class="d-block w-100" data-toggle="collapse" href="#collapse{{ forloop.counter }}">
-                        <div class="card-header">
-                            <h4 class="card-title w-100">
-                                {{ forloop.counter }}. {{ faq.question }}
-                            </h4>
-                        </div>
-                    </a>
-                    <div id="collapse{{ forloop.counter }}" class="collapse {% if forloop.first %}show{% endif %}"
-                         data-parent="#accordion">
-                        <div class="card-body">
-                            {{ faq.answer|safe }}
+            {% cache None oidc_client_faq_page %}
+                {% for faq in faq_list %}
+                    <div class="card card-primary card-outline">
+                        <a class="d-block w-100" data-toggle="collapse" href="#collapse{{ forloop.counter }}">
+                            <div class="card-header">
+                                <h4 class="card-title w-100">
+                                    {{ forloop.counter }}. {{ faq.question }}
+                                </h4>
+                            </div>
+                        </a>
+                        <div id="collapse{{ forloop.counter }}" class="collapse {% if forloop.first %}show{% endif %}"
+                             data-parent="#accordion">
+                            <div class="card-body">
+                                {{ faq.answer|safe }}
+                            </div>
                         </div>
                     </div>
-                </div>
-            {% endfor %}
+                {% endfor %}
+            {% endcache %}
         </div>
     </div>
     <div class="row">

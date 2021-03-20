@@ -35,7 +35,7 @@ class ClientAdmin(GuardedModelAdmin):
 
 
 @admin.register(Faq)
-class FaqAdmin(GuardedModelAdmin):
-    list_display = ['question', 'answer', 'get_show_display']
+class FaqAdmin(admin.ModelAdmin):
+    list_display = ['question', 'answer', 'get_show_display', 'rank']
     search_fields = ['question', 'answer']
     list_filter = ['show']
