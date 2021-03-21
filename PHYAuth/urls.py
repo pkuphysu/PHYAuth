@@ -19,10 +19,12 @@ from django.urls import path, include
 from oidc_provider import views as oidc_provider_views
 
 from app.portal import views as portal_views
+from app.users import views as users_views
 
 urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),
     # accounts/login/
+    path('accounts/login/', users_views.MyLoginView.as_view(), name='login'),
     # accounts/logout/
     # accounts/password_change/
     # accounts/password_reset/

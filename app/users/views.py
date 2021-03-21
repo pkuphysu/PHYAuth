@@ -1,4 +1,7 @@
+from django.contrib.auth import REDIRECT_FIELD_NAME
+from django.contrib.auth.views import LoginView
 from django.contrib.messages.views import SuccessMessageMixin
+from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 from django.views.generic import UpdateView
@@ -28,3 +31,13 @@ class UserProfileView(ObjectPermissionRequiredMixin, SuccessMessageMixin, ErrorM
 
     def get_success_url(self):
         return reverse('users:user-profile')
+
+
+class MyLoginView(LoginView):
+    def form_valid(self, form):
+        response = super().form_valid(form)
+        if self.request.session.get(REDIRECT_FIELD_NAME, ''):
+            redirect_to = self.request.session.get(REDIRECT_FIELD_NAME)
+            del self.request.session[REDIRECT_FIELD_NAME]
+            return HttpResponseRedirect(redirect_to=redirect_to)
+        return response

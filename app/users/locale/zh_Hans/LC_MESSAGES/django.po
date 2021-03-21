@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-19 23:07+0800\n"
+"POT-Creation-Date: 2021-03-21 18:54+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -203,10 +203,10 @@ msgstr ""
 "输入你的 职工号或学号开头的北大邮箱地址，它应是如下形式：1234567898@(stu.|"
 "alumni.)pku.edu.cn"
 
-#: .\app\users\views.py:16
+#: .\app\users\views.py:19
 msgid "Your profile has been updated successfully!"
 msgstr "您的个人信息修改成功！"
 
-#: .\app\users\views.py:17
+#: .\app\users\views.py:20
 msgid "Please check the error messages showed in the page!"
 msgstr "请检查页面中显示的错误信息！"
