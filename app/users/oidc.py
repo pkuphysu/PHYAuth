@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.contrib.auth import get_user_model
 from django.utils.translation import ugettext as _
 from oidc_provider.lib.claims import ScopeClaims
@@ -70,5 +71,38 @@ class CustomScopeClaims(ScopeClaims):
         return dic
 
 
+def check_profile(user):
+    return user.get_full_name() and user.first_name and user.last_name \
+           and user.nickname and user.website and user.birthdate
+
+
+def check_email(user):
+    return user.preferred_email and user.email
+
+
+def check_phone(user):
+    return user.phone_number
+
+
+def check_address(user):
+    return user.address
+
+
+def check_pku(user):
+    return user.department and user.introduce
+
+
 def after_login_hook_func(request, user, client):
+    scope = request.GET.get('scope', '').split()
+    message = ''
+    if ('profile' in scope and not check_profile(user)) or \
+            ('email' in scope and not check_email(user)) or \
+            ('phone' in scope and not check_phone(user)) or \
+            ('address' in scope and not check_address(user)) or \
+            ('pku' in scope and not check_pku(user)):
+        message += _('Some of your information is not complete, '
+                     'we recommend that you should complete your profile first.')
+
+    if message:
+        messages.add_message(request, messages.WARNING, message)
     return None

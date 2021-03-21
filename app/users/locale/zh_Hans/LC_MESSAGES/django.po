@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-21 19:08+0800\n"
+"POT-Creation-Date: 2021-03-21 20:15+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -177,51 +177,57 @@ msgstr "是"
 msgid "Admin user can manage this site."
 msgstr "管理员可以管理这个站点。"
 
-#: .\app\users\oidc.py:31
+#: .\app\users\oidc.py:33
 msgid "Basic profile"
 msgstr "基本资料"
 
-#: .\app\users\oidc.py:32
+#: .\app\users\oidc.py:34
 msgid ""
 "Access to your basic information. Includes names, given_name, family_name, "
 "nickname, gender, birthdate and website."
 msgstr "访问您的基本信息。包括姓名、昵称、性别、生日和主页。"
 
-#: .\app\users\oidc.py:37
+#: .\app\users\oidc.py:39
 msgid "Email"
 msgstr "邮箱"
 
-#: .\app\users\oidc.py:38
+#: .\app\users\oidc.py:40
 msgid "Access to your pku email address and preferred email address."
 msgstr "访问您的北大电子邮件地址和常用电子邮件地址。"
 
-#: .\app\users\oidc.py:42
+#: .\app\users\oidc.py:44
 msgid "Phone number"
 msgstr "电话号码"
 
-#: .\app\users\oidc.py:43
+#: .\app\users\oidc.py:45
 msgid "Access to your phone number."
 msgstr "访问您的电话号码。"
 
-#: .\app\users\oidc.py:47
+#: .\app\users\oidc.py:49
 msgid "Address information"
 msgstr "地址信息"
 
-#: .\app\users\oidc.py:48
+#: .\app\users\oidc.py:50
 msgid "Access to your address."
 msgstr "访问您的办公室地址。"
 
-#: .\app\users\oidc.py:52
+#: .\app\users\oidc.py:54
 msgid "PKU Info"
 msgstr "PKU 信息"
 
-#: .\app\users\oidc.py:53
+#: .\app\users\oidc.py:55
 msgid ""
 "Access to your pku information. Includes identity ID, identity type, "
 "identity status, department, self introduce."
 msgstr ""
 "访问你的北京大学信息。包含学号/工号、身份（教职工或学生）、状态（在校或减"
 "离）、部门和您的个人简介。"
+
+#: .\app\users\oidc.py:110
+msgid ""
+"Some of your information is not complete, we recommend that you should "
+"complete your profile first."
+msgstr "您的信息不完整，我们建议您先完善个人信息。"
 
 #: .\app\users\validators.py:9
 msgid ""
