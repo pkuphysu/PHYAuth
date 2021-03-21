@@ -1,5 +1,6 @@
 from django.contrib import messages
 from django.contrib.auth import get_user_model
+from django.core.exceptions import ValidationError
 from django.utils.translation import ugettext as _
 from oidc_provider.lib.claims import ScopeClaims
 
@@ -60,7 +61,13 @@ class CustomScopeClaims(ScopeClaims):
         # self.userinfo - Dict returned by OIDC_USERINFO function.
         # self.scopes - List of scopes requested.
         # self.client - Client requesting this claims.
+        try:
+            self.user.username_validator(self.user.username)
+            is_pku = True
+        except ValidationError:
+            is_pku = False
         dic = {
+            'is_pku': is_pku,
             'pku_id': self.user.username,
             'is_teacher': self.user.is_teacher,
             'in_school': self.user.in_school,
