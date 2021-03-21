@@ -11,7 +11,7 @@ from .models import Faq
 from ..utils.views import ErrorMessageMixin
 
 
-class FaqListView(LoginRequiredMixin, ListView):
+class FaqListView(ListView):
     model = Faq
     template_name = 'oidc_client/faq.html'
     context_object_name = 'faq_list'
