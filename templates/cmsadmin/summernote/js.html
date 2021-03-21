@@ -1,0 +1,18 @@
+<script>
+    $(document).ready(function () {
+        $('.summernote').summernote({
+            minHeight: 300,
+            maxHeight: 500,
+            {% if LANGUAGE_CODE == 'zh-hans'%}
+                lang: 'zh-CN',
+            {% endif %}
+            styleTags: [
+                {title: 'blockquote', tag: 'blockquote', className: 'quote-info', value: 'blockquote'},
+                {title: 'blockquote', tag: 'blockquote', className: 'quote-warning', value: 'blockquote'},
+                {title: 'blockquote', tag: 'blockquote', className: 'quote-danger', value: 'blockquote'},
+                {title: 'blockquote', tag: 'blockquote', className: 'quote-success', value: 'blockquote'},
+                'p', 'pre', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'
+            ],
+        })
+    });
+</script>
