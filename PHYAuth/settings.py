@@ -259,8 +259,9 @@ if not DEBUG:
     CSRF_COOKIE_SECURE = True
 CSRF_COOKIE_PATH = SUBPATH
 
-OIDC_USERINFO = 'app.users.oidc_scope_claims.userinfo'
-OIDC_EXTRA_SCOPE_CLAIMS = 'app.users.oidc_scope_claims.CustomScopeClaims'
+OIDC_USERINFO = 'app.users.oidc.userinfo'
+OIDC_EXTRA_SCOPE_CLAIMS = 'app.users.oidc.CustomScopeClaims'
+OIDC_AFTER_USERLOGIN_HOOK = 'app.users.oidc.after_login_hook_func'
 
 ADMINS = CONFIG.get('DJANGO', 'ADMINS')
 ADMINS = [tuple(ADMINS.split())]

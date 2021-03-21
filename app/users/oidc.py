@@ -27,6 +27,27 @@ def userinfo(claims, user: User):
 
 
 class CustomScopeClaims(ScopeClaims):
+    info_profile = (
+        _(u'Basic profile'),
+        _(u'Access to your basic information. Includes names, given_name, family_name, nickname,'
+          u' gender, birthdate and website.'),
+    )
+
+    info_email = (
+        _(u'Email'),
+        _(u'Access to your pku email address and preferred email address.'),
+    )
+
+    info_phone = (
+        _(u'Phone number'),
+        _(u'Access to your phone number.'),
+    )
+
+    info_address = (
+        _(u'Address information'),
+        _(u'Access to your address.'),
+    )
+
     info_pku = (
         _(u'PKU Info'),
         _(u'Access to your pku information. Includes identity ID, '
@@ -47,3 +68,7 @@ class CustomScopeClaims(ScopeClaims):
         }
 
         return dic
+
+
+def after_login_hook_func(request, user, client):
+    return None
