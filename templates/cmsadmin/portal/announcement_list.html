@@ -28,7 +28,6 @@
                             <tr>
                                 <th>#</th>
                                 <th>{% translate 'Announcement Rank' %}</th>
-                                <th>{% translate 'Announcement Type' %}</th>
                                 <th>{% translate 'Announcement Title' %}</th>
                                 <th>{% translate 'Operate' %}</th>
                             </tr>
@@ -38,7 +37,6 @@
                                 <tr data-widget="expandable-table" aria-expanded="false">
                                     <td>{{ announcement.pk }}</td>
                                     <td>{{ announcement.rank }}</td>
-                                    <td>{{ announcement.get_type_display }}</td>
                                     <td>{{ announcement.title }}</td>
                                     <td>
                                         <a href="{% url 'cmsadmin:portal-announcement-update' %}?pk={{ announcement.pk }}"

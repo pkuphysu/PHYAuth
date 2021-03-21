@@ -24,18 +24,6 @@ class TopLink(models.Model):
 
 
 class Announcement(models.Model):
-    type = models.CharField(
-        _('Announcement Type'),
-        max_length=20,
-        choices=(
-            ('success', _('success')),
-            ('warning', _('warning')),
-            ('info', _('info')),
-            ('danger', _('danger')),
-        ),
-        help_text=_('success-green, warning-yellow, info-blue, danger-red')
-    )
-
     title = models.CharField(
         _('Announcement Title'),
         max_length=100,

@@ -7,13 +7,11 @@ class AnnouncementForm(forms.ModelForm):
     class Meta:
         model = Announcement
         fields = [
-            'type',
             'title',
             'content',
             'rank'
         ]
         widgets = {
-            'type': forms.Select(attrs={'class': 'form-control'}),
             'title': forms.TextInput(attrs={'class': 'form-control'}),
             'content': forms.Textarea(attrs={'class': 'form-control summernote'}),
             'rank': forms.NumberInput(attrs={'class': 'form-control'}),

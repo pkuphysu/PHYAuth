@@ -16,7 +16,6 @@ class TopLinkAdmin(admin.ModelAdmin):
 @admin.register(Announcement)
 class AnnouncementAdmin(admin.ModelAdmin):
     list_display = [
-        "type",
         "title",
         "content",
         "rank"
