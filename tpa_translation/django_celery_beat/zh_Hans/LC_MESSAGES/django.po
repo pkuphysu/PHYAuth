@@ -282,11 +282,11 @@ msgstr "执行计划任务表的时区。 默认为UTC。"
 
 #: .\django_celery_beat\models.py:307
 msgid "crontab"
-msgstr "计划任务"
+msgstr "计划时间"
 
 #: .\django_celery_beat\models.py:308
 msgid "crontabs"
-msgstr "计划任务"
+msgstr "计划时间"
 
 #: .\django_celery_beat\models.py:393
 msgid "Name"

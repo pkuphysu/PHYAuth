@@ -10,7 +10,7 @@
         <p>{{ client.name }}申请访问{{ name }}的以下信息：</p>
         <p style="background-color: #f5f5f5;border: 0 solid #DDD;padding: 10px 15px;margin:18px 0">
             {% for scope in scopes %}
-                <b>{{ scope.name }}</b>:<i>{{ scope.description }}</i>
+                <b>{{ scope.name }}</b>:<i>{{ scope.description }}</i><br>
             {% endfor %}
         </p>
         <p>如这不是您执行的操作，请尽快前往网站更改密码并撤销授权。</p>
