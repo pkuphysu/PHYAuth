@@ -1,10 +1,9 @@
 ;(function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined'
-    && typeof require === 'function' ? factory(require('../moment')) :
-        typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-            factory(global.moment)
-}(this, (function (moment) {
-    'use strict';
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../moment')) :
+   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
+   factory(global.moment)
+}(this, (function (moment) { 'use strict';
 
     //! moment.js locale configuration
 
@@ -80,14 +79,14 @@
             return n === 0
                 ? 0
                 : n === 1
-                    ? 1
-                    : n === 2
-                        ? 2
-                        : n % 100 >= 3 && n % 100 <= 10
-                            ? 3
-                            : n % 100 >= 11
-                                ? 4
-                                : 5;
+                ? 1
+                : n === 2
+                ? 2
+                : n % 100 >= 3 && n % 100 <= 10
+                ? 3
+                : n % 100 >= 11
+                ? 4
+                : 5;
         },
         plurals = {
             s: [
@@ -292,14 +291,14 @@
             return n === 0
                 ? 0
                 : n === 1
-                    ? 1
-                    : n === 2
-                        ? 2
-                        : n % 100 >= 3 && n % 100 <= 10
-                            ? 3
-                            : n % 100 >= 11
-                                ? 4
-                                : 5;
+                ? 1
+                : n === 2
+                ? 2
+                : n % 100 >= 3 && n % 100 <= 10
+                ? 3
+                : n % 100 >= 11
+                ? 4
+                : 5;
         },
         plurals$1 = {
             s: [
@@ -675,14 +674,14 @@
             return n === 0
                 ? 0
                 : n === 1
-                    ? 1
-                    : n === 2
-                        ? 2
-                        : n % 100 >= 3 && n % 100 <= 10
-                            ? 3
-                            : n % 100 >= 11
-                                ? 4
-                                : 5;
+                ? 1
+                : n === 2
+                ? 2
+                : n % 100 >= 3 && n % 100 <= 10
+                ? 3
+                : n % 100 >= 11
+                ? 4
+                : 5;
         },
         plurals$2 = {
             s: [
@@ -934,10 +933,9 @@
         return num % 10 === 1 && num % 100 !== 11
             ? forms[0]
             : num % 10 >= 2 && num % 10 <= 4 && (num % 100 < 10 || num % 100 >= 20)
-                ? forms[1]
-                : forms[2];
+            ? forms[1]
+            : forms[2];
     }
-
     function relativeTimeWithPlural(number, withoutSuffix, key) {
         var format = {
             ss: withoutSuffix ? 'секунда_секунды_секунд' : 'секунду_секунды_секунд',
@@ -1048,8 +1046,8 @@
                 case 'w':
                 case 'W':
                     return (number % 10 === 2 || number % 10 === 3) &&
-                    number % 100 !== 12 &&
-                    number % 100 !== 13
+                        number % 100 !== 12 &&
+                        number % 100 !== 13
                         ? number + '-і'
                         : number + '-ы';
                 case 'D':
@@ -1565,7 +1563,6 @@
         };
         return number + ' ' + mutation(format[key], number);
     }
-
     function specialMutationForYears(number) {
         switch (lastNumber(number)) {
             case 1:
@@ -1578,21 +1575,18 @@
                 return number + ' vloaz';
         }
     }
-
     function lastNumber(number) {
         if (number > 9) {
             return lastNumber(number % 10);
         }
         return number;
     }
-
     function mutation(text, number) {
         if (number === 2) {
             return softMutation(text);
         }
         return text;
     }
-
     function softMutation(text) {
         var mutationTable = {
             m: 'v',
@@ -1945,10 +1939,10 @@
                     : number === 2
                     ? 'n'
                     : number === 3
-                        ? 'r'
-                        : number === 4
-                            ? 't'
-                            : 'è';
+                    ? 'r'
+                    : number === 4
+                    ? 't'
+                    : 'è';
             if (period === 'w' || period === 'W') {
                 output = 'a';
             }
@@ -1963,7 +1957,7 @@
     //! moment.js locale configuration
 
     var months$3 = 'leden_únor_březen_duben_květen_červen_červenec_srpen_září_říjen_listopad_prosinec'.split(
-        '_'
+            '_'
         ),
         monthsShort = 'led_úno_bře_dub_kvě_čvn_čvc_srp_zář_říj_lis_pro'.split('_'),
         monthsParse$1 = [
@@ -1987,7 +1981,6 @@
     function plural$1(n) {
         return n > 1 && n < 5 && ~~(n / 10) !== 1;
     }
-
     function translate$1(number, withoutSuffix, key, isFuture) {
         var result = number + ' ';
         switch (key) {
@@ -2162,8 +2155,8 @@
                 var affix = /сехет$/i.exec(output)
                     ? 'рен'
                     : /ҫул$/i.exec(output)
-                        ? 'тан'
-                        : 'ран';
+                    ? 'тан'
+                    : 'ран';
                 return output + affix;
             },
             past: '%s каялла',
@@ -2791,10 +2784,10 @@
                         : b === 1
                         ? 'st'
                         : b === 2
-                            ? 'nd'
-                            : b === 3
-                                ? 'rd'
-                                : 'th';
+                        ? 'nd'
+                        : b === 3
+                        ? 'rd'
+                        : 'th';
             return number + output;
         },
         week: {
@@ -2856,10 +2849,10 @@
                         : b === 1
                         ? 'st'
                         : b === 2
-                            ? 'nd'
-                            : b === 3
-                                ? 'rd'
-                                : 'th';
+                        ? 'nd'
+                        : b === 3
+                        ? 'rd'
+                        : 'th';
             return number + output;
         },
     });
@@ -2917,10 +2910,10 @@
                         : b === 1
                         ? 'st'
                         : b === 2
-                            ? 'nd'
-                            : b === 3
-                                ? 'rd'
-                                : 'th';
+                        ? 'nd'
+                        : b === 3
+                        ? 'rd'
+                        : 'th';
             return number + output;
         },
         week: {
@@ -2982,10 +2975,10 @@
                         : b === 1
                         ? 'st'
                         : b === 2
-                            ? 'nd'
-                            : b === 3
-                                ? 'rd'
-                                : 'th';
+                        ? 'nd'
+                        : b === 3
+                        ? 'rd'
+                        : 'th';
             return number + output;
         },
         week: {
@@ -3047,10 +3040,10 @@
                         : b === 1
                         ? 'st'
                         : b === 2
-                            ? 'nd'
-                            : b === 3
-                                ? 'rd'
-                                : 'th';
+                        ? 'nd'
+                        : b === 3
+                        ? 'rd'
+                        : 'th';
             return number + output;
         },
     });
@@ -3108,10 +3101,10 @@
                         : b === 1
                         ? 'st'
                         : b === 2
-                            ? 'nd'
-                            : b === 3
-                                ? 'rd'
-                                : 'th';
+                        ? 'nd'
+                        : b === 3
+                        ? 'rd'
+                        : 'th';
             return number + output;
         },
         week: {
@@ -3173,10 +3166,10 @@
                         : b === 1
                         ? 'st'
                         : b === 2
-                            ? 'nd'
-                            : b === 3
-                                ? 'rd'
-                                : 'th';
+                        ? 'nd'
+                        : b === 3
+                        ? 'rd'
+                        : 'th';
             return number + output;
         },
         week: {
@@ -3238,10 +3231,10 @@
                         : b === 1
                         ? 'st'
                         : b === 2
-                            ? 'nd'
-                            : b === 3
-                                ? 'rd'
-                                : 'th';
+                        ? 'nd'
+                        : b === 3
+                        ? 'rd'
+                        : 'th';
             return number + output;
         },
         week: {
@@ -3315,7 +3308,7 @@
     //! moment.js locale configuration
 
     var monthsShortDot = 'ene._feb._mar._abr._may._jun._jul._ago._sep._oct._nov._dic.'.split(
-        '_'
+            '_'
         ),
         monthsShort$1 = 'ene_feb_mar_abr_may_jun_jul_ago_sep_oct_nov_dic'.split('_'),
         monthsParse$2 = [
@@ -3417,7 +3410,7 @@
     //! moment.js locale configuration
 
     var monthsShortDot$1 = 'ene._feb._mar._abr._may._jun._jul._ago._sep._oct._nov._dic.'.split(
-        '_'
+            '_'
         ),
         monthsShort$2 = 'ene_feb_mar_abr_may_jun_jul_ago_sep_oct_nov_dic'.split('_'),
         monthsParse$3 = [
@@ -3520,7 +3513,7 @@
     //! moment.js locale configuration
 
     var monthsShortDot$2 = 'ene._feb._mar._abr._may._jun._jul._ago._sep._oct._nov._dic.'.split(
-        '_'
+            '_'
         ),
         monthsShort$3 = 'ene_feb_mar_abr_may_jun_jul_ago_sep_oct_nov_dic'.split('_'),
         monthsParse$4 = [
@@ -3622,7 +3615,7 @@
     //! moment.js locale configuration
 
     var monthsShortDot$3 = 'ene._feb._mar._abr._may._jun._jul._ago._sep._oct._nov._dic.'.split(
-        '_'
+            '_'
         ),
         monthsShort$4 = 'ene_feb_mar_abr_may_jun_jul_ago_sep_oct_nov_dic'.split('_'),
         monthsParse$5 = [
@@ -3966,7 +3959,7 @@
     //! moment.js locale configuration
 
     var numbersPast = 'nolla yksi kaksi kolme neljä viisi kuusi seitsemän kahdeksan yhdeksän'.split(
-        ' '
+            ' '
         ),
         numbersFuture = [
             'nolla',
@@ -3980,7 +3973,6 @@
             numbersPast[8],
             numbersPast[9],
         ];
-
     function translate$2(number, withoutSuffix, key, isFuture) {
         var result = '';
         switch (key) {
@@ -4018,7 +4010,6 @@
         result = verbalNumber(number, isFuture) + ' ' + result;
         return result;
     }
-
     function verbalNumber(number, isFuture) {
         return number < 10
             ? isFuture
@@ -4429,7 +4420,7 @@
     //! moment.js locale configuration
 
     var monthsShortWithDots = 'jan._feb._mrt._apr._mai_jun._jul._aug._sep._okt._nov._des.'.split(
-        '_'
+            '_'
         ),
         monthsShortWithoutDots = 'jan_feb_mrt_apr_mai_jun_jul_aug_sep_okt_nov_des'.split(
             '_'
@@ -5521,7 +5512,6 @@
     var weekEndings = 'vasárnap hétfőn kedden szerdán csütörtökön pénteken szombaton'.split(
         ' '
     );
-
     function translate$4(number, withoutSuffix, key, isFuture) {
         var num = number;
         switch (key) {
@@ -5556,7 +5546,6 @@
         }
         return '';
     }
-
     function week(isFuture) {
         return (
             (isFuture ? '' : '[múlt] ') +
@@ -5803,7 +5792,6 @@
         }
         return true;
     }
-
     function translate$5(number, withoutSuffix, key, isFuture) {
         var result = number + ' ';
         switch (key) {
@@ -6048,8 +6036,8 @@
                             (this.hours() > 1
                                 ? 'lle '
                                 : this.hours() === 0
-                                    ? ' '
-                                    : "ll'") +
+                                ? ' '
+                                : "ll'") +
                             ']LT'
                         );
                     default:
@@ -6058,8 +6046,8 @@
                             (this.hours() > 1
                                 ? 'lle '
                                 : this.hours() === 0
-                                    ? ' '
-                                    : "ll'") +
+                                ? ' '
+                                : "ll'") +
                             ']LT'
                         );
                 }
@@ -6975,7 +6963,6 @@
         };
         return withoutSuffix ? format[key][0] : format[key][1];
     }
-
     function processFutureTime(string) {
         var number = string.substr(0, string.indexOf(' '));
         if (eifelerRegelAppliesToNumber(number)) {
@@ -6983,7 +6970,6 @@
         }
         return 'an ' + string;
     }
-
     function processPastTime(string) {
         var number = string.substr(0, string.indexOf(' '));
         if (eifelerRegelAppliesToNumber(number)) {
@@ -6991,7 +6977,6 @@
         }
         return 'virun ' + string;
     }
-
     /**
      * Returns true if the word before the given number loses the '-n' ending.
      * e.g. 'an 10 Deeg' but 'a 5 Deeg'
@@ -7174,7 +7159,6 @@
         y: 'metai_metų_metus',
         yy: 'metai_metų_metus',
     };
-
     function translateSeconds(number, withoutSuffix, key, isFuture) {
         if (withoutSuffix) {
             return 'kelios sekundės';
@@ -7182,23 +7166,19 @@
             return isFuture ? 'kelių sekundžių' : 'kelias sekundes';
         }
     }
-
     function translateSingular(number, withoutSuffix, key, isFuture) {
         return withoutSuffix
             ? forms(key)[0]
             : isFuture
-                ? forms(key)[1]
-                : forms(key)[2];
+            ? forms(key)[1]
+            : forms(key)[2];
     }
-
     function special(number) {
         return number % 10 === 0 || (number > 10 && number < 20);
     }
-
     function forms(key) {
         return units[key].split('_');
     }
-
     function translate$6(number, withoutSuffix, key, isFuture) {
         var result = number + ' ';
         if (number === 1) {
@@ -7215,7 +7195,6 @@
             }
         }
     }
-
     moment.defineLocale('lt', {
         months: {
             format: 'sausio_vasario_kovo_balandžio_gegužės_birželio_liepos_rugpjūčio_rugsėjo_spalio_lapkričio_gruodžio'.split(
@@ -7300,7 +7279,6 @@
         y: 'gada_gadiem_gads_gadi'.split('_'),
         yy: 'gada_gadiem_gads_gadi'.split('_'),
     };
-
     /**
      * @param withoutSuffix boolean true = a length of time; false = before/after a period of time.
      */
@@ -7314,15 +7292,12 @@
             return number % 10 === 1 && number % 100 !== 11 ? forms[0] : forms[1];
         }
     }
-
     function relativeTimeWithPlural$1(number, withoutSuffix, key) {
         return number + ' ' + format(units$1[key], number, withoutSuffix);
     }
-
     function relativeTimeWithSingular(number, withoutSuffix, key) {
         return format(units$1[key], number, withoutSuffix);
     }
-
     function relativeSeconds(number, withoutSuffix) {
         return withoutSuffix ? 'dažas sekundes' : 'dažām sekundēm';
     }
@@ -7396,8 +7371,8 @@
             return number === 1
                 ? wordKey[0]
                 : number >= 2 && number <= 4
-                    ? wordKey[1]
-                    : wordKey[2];
+                ? wordKey[1]
+                : wordKey[2];
         },
         translate: function (number, withoutSuffix, key) {
             var wordKey = translator.words[key];
@@ -8460,7 +8435,7 @@
     //! moment.js locale configuration
 
     var monthsShortWithDots$1 = 'jan._feb._mrt._apr._mei_jun._jul._aug._sep._okt._nov._dec.'.split(
-        '_'
+            '_'
         ),
         monthsShortWithoutDots$1 = 'jan_feb_mrt_apr_mei_jun_jul_aug_sep_okt_nov_dec'.split(
             '_'
@@ -8558,7 +8533,7 @@
     //! moment.js locale configuration
 
     var monthsShortWithDots$2 = 'jan._feb._mrt._apr._mei_jun._jul._aug._sep._okt._nov._dec.'.split(
-        '_'
+            '_'
         ),
         monthsShortWithoutDots$2 = 'jan_feb_mrt_apr_mei_jun_jul_aug_sep_okt_nov_dec'.split(
             '_'
@@ -8776,10 +8751,10 @@
                     : number === 2
                     ? 'n'
                     : number === 3
-                        ? 'r'
-                        : number === 4
-                            ? 't'
-                            : 'è';
+                    ? 'r'
+                    : number === 4
+                    ? 't'
+                    : 'è';
             if (period === 'w' || period === 'W') {
                 output = 'a';
             }
@@ -8912,7 +8887,7 @@
     //! moment.js locale configuration
 
     var monthsNominative = 'styczeń_luty_marzec_kwiecień_maj_czerwiec_lipiec_sierpień_wrzesień_październik_listopad_grudzień'.split(
-        '_'
+            '_'
         ),
         monthsSubjective = 'stycznia_lutego_marca_kwietnia_maja_czerwca_lipca_sierpnia_września_października_listopada_grudnia'.split(
             '_'
@@ -8931,11 +8906,9 @@
             /^lis/i,
             /^gru/i,
         ];
-
     function plural$3(n) {
         return n % 10 < 5 && n % 10 > 1 && ~~(n / 10) % 10 !== 1;
     }
-
     function translate$8(number, withoutSuffix, key) {
         var result = number + ' ';
         switch (key) {
@@ -9237,10 +9210,9 @@
         return num % 10 === 1 && num % 100 !== 11
             ? forms[0]
             : num % 10 >= 2 && num % 10 <= 4 && (num % 100 < 10 || num % 100 >= 20)
-                ? forms[1]
-                : forms[2];
+            ? forms[1]
+            : forms[2];
     }
-
     function relativeTimeWithPlural$3(number, withoutSuffix, key) {
         var format = {
             ss: withoutSuffix ? 'секунда_секунды_секунд' : 'секунду_секунды_секунд',
@@ -9257,7 +9229,6 @@
             return number + ' ' + plural$4(format[key], +number);
         }
     }
-
     var monthsParse$b = [
         /^янв/i,
         /^фев/i,
@@ -9633,14 +9604,12 @@
     //! moment.js locale configuration
 
     var months$9 = 'január_február_marec_apríl_máj_jún_júl_august_september_október_november_december'.split(
-        '_'
+            '_'
         ),
         monthsShort$7 = 'jan_feb_mar_apr_máj_jún_júl_aug_sep_okt_nov_dec'.split('_');
-
     function plural$5(n) {
         return n > 1 && n < 5;
     }
-
     function translate$9(number, withoutSuffix, key, isFuture) {
         var result = number + ' ';
         switch (key) {
@@ -10017,8 +9986,8 @@
             return number === 1
                 ? wordKey[0]
                 : number >= 2 && number <= 4
-                    ? wordKey[1]
-                    : wordKey[2];
+                ? wordKey[1]
+                : wordKey[2];
         },
         translate: function (number, withoutSuffix, key) {
             var wordKey = translator$1.words[key];
@@ -10129,8 +10098,8 @@
             return number === 1
                 ? wordKey[0]
                 : number >= 2 && number <= 4
-                    ? wordKey[1]
-                    : wordKey[2];
+                ? wordKey[1]
+                : wordKey[2];
         },
         translate: function (number, withoutSuffix, key) {
             var wordKey = translator$2.words[key];
@@ -10358,10 +10327,10 @@
                         : b === 1
                         ? ':a'
                         : b === 2
-                            ? ':a'
-                            : b === 3
-                                ? ':e'
-                                : ':e';
+                        ? ':a'
+                        : b === 3
+                        ? ':e'
+                        : ':e';
             return number + output;
         },
         week: {
@@ -10681,10 +10650,10 @@
                         : b === 1
                         ? 'st'
                         : b === 2
-                            ? 'nd'
-                            : b === 3
-                                ? 'rd'
-                                : 'th';
+                        ? 'nd'
+                        : b === 3
+                        ? 'rd'
+                        : 'th';
             return number + output;
         },
         week: {
@@ -11021,8 +10990,8 @@
                 : output.indexOf('jar') !== -1
                 ? time.slice(0, -3) + 'waQ'
                 : output.indexOf('DIS') !== -1
-                    ? time.slice(0, -3) + 'nem'
-                    : time + ' pIq';
+                ? time.slice(0, -3) + 'nem'
+                : time + ' pIq';
         return time;
     }
 
@@ -11034,8 +11003,8 @@
                 : output.indexOf('jar') !== -1
                 ? time.slice(0, -3) + 'wen'
                 : output.indexOf('DIS') !== -1
-                    ? time.slice(0, -3) + 'ben'
-                    : time + ' ret';
+                ? time.slice(0, -3) + 'ben'
+                : time + ' ret';
         return time;
     }
 
@@ -11314,8 +11283,8 @@
         return isFuture
             ? format[key][0]
             : withoutSuffix
-                ? format[key][0]
-                : format[key][1];
+            ? format[key][0]
+            : format[key][1];
     }
 
     //! moment.js locale configuration
@@ -11532,10 +11501,9 @@
         return num % 10 === 1 && num % 100 !== 11
             ? forms[0]
             : num % 10 >= 2 && num % 10 <= 4 && (num % 100 < 10 || num % 100 >= 20)
-                ? forms[1]
-                : forms[2];
+            ? forms[1]
+            : forms[2];
     }
-
     function relativeTimeWithPlural$4(number, withoutSuffix, key) {
         var format = {
             ss: withoutSuffix ? 'секунда_секунди_секунд' : 'секунду_секунди_секунд',
@@ -11553,7 +11521,6 @@
             return number + ' ' + plural$6(format[key], +number);
         }
     }
-
     function weekdaysCaseReplace(m, format) {
         var weekdays = {
                 nominative: 'неділя_понеділок_вівторок_середа_четвер_п’ятниця_субота'.split(
@@ -11580,11 +11547,10 @@
         nounCase = /(\[[ВвУу]\]) ?dddd/.test(format)
             ? 'accusative'
             : /\[?(?:минулої|наступної)? ?\] ?dddd/.test(format)
-                ? 'genitive'
-                : 'nominative';
+            ? 'genitive'
+            : 'nominative';
         return weekdays[nounCase][m.day()];
     }
-
     function processHoursFunction(str) {
         return function () {
             return str + 'о' + (this.hours() === 11 ? 'б' : '') + '] LT';
@@ -11994,10 +11960,10 @@
                         : b === 1
                         ? 'st'
                         : b === 2
-                            ? 'nd'
-                            : b === 3
-                                ? 'rd'
-                                : 'th';
+                        ? 'nd'
+                        : b === 3
+                        ? 'rd'
+                        : 'th';
             return number + output;
         },
         week: {

@@ -67,24 +67,8 @@ shadowSize and lineWidth are derived as well from the points series.
         series: {
             points: {
                 errorbars: null, //should be 'x', 'y' or 'xy'
-                xerr: {
-                    err: 'x',
-                    show: null,
-                    asymmetric: null,
-                    upperCap: null,
-                    lowerCap: null,
-                    color: null,
-                    radius: null
-                },
-                yerr: {
-                    err: 'y',
-                    show: null,
-                    asymmetric: null,
-                    upperCap: null,
-                    lowerCap: null,
-                    color: null,
-                    radius: null
-                }
+                xerr: {err: 'x', show: null, asymmetric: null, upperCap: null, lowerCap: null, color: null, radius: null},
+                yerr: {err: 'y', show: null, asymmetric: null, upperCap: null, lowerCap: null, color: null, radius: null}
             }
         }
     };
@@ -96,8 +80,8 @@ shadowSize and lineWidth are derived as well from the points series.
 
         // x,y values
         var format = [
-            {x: true, number: true, required: true},
-            {y: true, number: true, required: true}
+            { x: true, number: true, required: true },
+            { y: true, number: true, required: true }
         ];
 
         var errors = series.points.errorbars;
@@ -105,19 +89,19 @@ shadowSize and lineWidth are derived as well from the points series.
         if (errors === 'x' || errors === 'xy') {
             // lower / upper error
             if (series.points.xerr.asymmetric) {
-                format.push({x: true, number: true, required: true});
-                format.push({x: true, number: true, required: true});
+                format.push({ x: true, number: true, required: true });
+                format.push({ x: true, number: true, required: true });
             } else {
-                format.push({x: true, number: true, required: true});
+                format.push({ x: true, number: true, required: true });
             }
         }
         if (errors === 'y' || errors === 'xy') {
             // lower / upper error
             if (series.points.yerr.asymmetric) {
-                format.push({y: true, number: true, required: true});
-                format.push({y: true, number: true, required: true});
+                format.push({ y: true, number: true, required: true });
+                format.push({ y: true, number: true, required: true });
             } else {
-                format.push({y: true, number: true, required: true});
+                format.push({ y: true, number: true, required: true });
             }
         }
         datapoints.format = format;
@@ -159,7 +143,7 @@ shadowSize and lineWidth are derived as well from the points series.
                     }
                 }
             }
-            // only Y
+        // only Y
         } else {
             if (eb === 'y') {
                 if (yerr.asymmetric) {
