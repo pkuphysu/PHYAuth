@@ -49,10 +49,13 @@ class IaaaAuthenticationBackend:
             if created:
                 user = self.configure_user(user_info, user)
                 logger.info(self.__class__.__name__ + f' create a user {user.id}')
-                iaaa_user_create.send(sender=self.__class__, user_id=user.id)
+                iaaa_user_create.send(sender=self.__class__, user=user)
+            else:
+                user = self.update_user(user_info, user)
         else:
             try:
                 user = UserModel._default_manager.get_by_natural_key(identity_id)
+                user = self.update_user(user_info, user)
             except UserModel.DoesNotExist:
                 pass
         return user
@@ -75,6 +78,16 @@ class IaaaAuthenticationBackend:
         user.email = user.get_pku_email()
         user.name = user_info['name']
         user.nickname = user_info['name']
+        user.save()
+        return user
+
+    @classmethod
+    def update_user(cls, user_info, user):
+        user.is_teacher = False if user_info['identityType'] == '学生' else True
+        if user.is_teacher:
+            user.in_school = True if user_info['detailType'] == '在职' else False
+        else:
+            user.in_school = True if user_info['identityStatus'] == '在校' else False
         user.save()
         return user
 
@@ -107,7 +120,8 @@ class IaaaAuthenticationBackend:
         else:
             raise IaaaError(response["errCode"], response["errMsg"])
 
-    def get_user(self, user_id):
+    @classmethod
+    def get_user(cls, user_id):
         try:
             user = UserModel._default_manager.get(pk=user_id)
         except UserModel.DoesNotExist:

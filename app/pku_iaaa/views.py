@@ -76,7 +76,7 @@ class IAAALoginAuth(View):
             user.backend = backend_path
             login(request, user)
             logger.info(f'user {user.username} login by iaaa auth')
-            iaaa_user_login_success.send(sender=self.__class__, user_id=user.id)
+            iaaa_user_login_success.send(sender=self.__class__, user=user)
 
         if request.session.get(REDIRECT_FIELD_NAME, ''):
             redirect_to = request.session.get(REDIRECT_FIELD_NAME)
