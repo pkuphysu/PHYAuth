@@ -8,7 +8,7 @@ from django.views.generic import UpdateView
 from guardian.mixins import PermissionRequiredMixin as ObjectPermissionRequiredMixin
 from oidc_provider.models import UserConsent
 
-from .forms import UserForm
+from .forms import UserForm, MyAuthenticationForm
 from ..utils.views import ErrorMessageMixin
 
 
@@ -34,6 +34,8 @@ class UserProfileView(ObjectPermissionRequiredMixin, SuccessMessageMixin, ErrorM
 
 
 class MyLoginView(LoginView):
+    authentication_form = MyAuthenticationForm
+
     def form_valid(self, form):
         response = super().form_valid(form)
         if self.request.session.get(REDIRECT_FIELD_NAME, ''):

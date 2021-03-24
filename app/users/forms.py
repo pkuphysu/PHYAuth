@@ -1,5 +1,7 @@
 from django import forms
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.core.exceptions import ValidationError
+from django.utils.translation import gettext_lazy as _
 
 from .models import User, Department
 
@@ -76,3 +78,41 @@ class DepartmentForm(forms.ModelForm):
         widgets = {
             'department': forms.TextInput(attrs={'class': 'form-control'})
         }
+
+
+class MyAuthenticationForm(AuthenticationForm):
+    error_messages = {
+        'invalid_login': _(
+            "Please enter a correct %(username)s and password. Note that both "
+            "fields may be case-sensitive."
+        ),
+        'inactive': _("This account is inactive."),
+        'need_iaaa': _("You need use iaaa for login to update your account state. "
+                       "This request will appear every three months."),
+    }
+
+    def confirm_login_allowed(self, user):
+        """
+        Controls whether the given User may log in. This is a policy setting,
+        independent of end-user authentication. This default behavior is to
+        allow login by active users, and reject login by inactive users.
+
+        If the given user cannot log in, this method should raise a
+        ``ValidationError``.
+
+        If the given user may log in, this method should return None.
+        """
+        super().confirm_login_allowed(user)
+        from django.utils import timezone
+        from datetime import timedelta
+        # 非本校人士无需校验 IAAA 登录
+        try:
+            user.username_validator(user.username)
+        except ValidationError:
+            return
+        if user.last_iaaa_login is None or timezone.now() - user.last_iaaa_login > timedelta(weeks=12):
+            raise ValidationError(
+                self.error_messages['need_iaaa'],
+                code='need_iaaa',
+            )
+
