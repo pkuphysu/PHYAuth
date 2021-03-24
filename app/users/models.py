@@ -134,6 +134,8 @@ class User(AbstractUser, GuardianUserMixin):
         help_text=_('Admin user can manage this site.')
     )
 
+    last_iaaa_login = models.DateTimeField(_('last iaaa login'), blank=True, null=True)
+
     REQUIRED_FIELDS = ['email']
 
     class Meta(AbstractUser.Meta):

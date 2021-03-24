@@ -23,7 +23,7 @@ class UserAdmin(AbstractUserAdmin):
         (_('Permissions'), {
             'fields': ('is_admin', 'is_staff', 'is_superuser', 'groups', 'user_permissions'),
         }),
-        (_('Important Dates'), {'fields': ('last_login', 'date_joined')}),
+        (_('Important Dates'), {'fields': ('last_login', 'last_iaaa_login', 'date_joined')}),
         (_('Account Status'), {'fields': ('is_active', 'is_teacher', 'in_school')})
     )
 
