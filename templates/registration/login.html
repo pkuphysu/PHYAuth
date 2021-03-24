@@ -18,7 +18,7 @@
 
             <form action="{% url 'login' %}" method="post">
                 {% csrf_token %}
-                <span class="error">{{ form.non_field_errors }}</span>
+                <span class="error text-red">{{ form.non_field_errors }}</span>
                 <div class="form-group">
                     <div class="input-group">
                         {% form_mod form.username "form-control" "PKU ID" %}
