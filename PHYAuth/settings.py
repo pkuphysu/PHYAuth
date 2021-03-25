@@ -43,6 +43,10 @@ DJANGO_APPS = [
     'django.contrib.humanize',
 ]
 
+USER_APPS = [
+    'app.users.apps.UsersConfig',
+]
+
 THIRD_PARTY_APPS = [
     'oidc_provider',
     'django_celery_results',
@@ -78,14 +82,13 @@ if DEBUG:
     }
 
 LOCAL_APPS = [
-    'app.users.apps.UsersConfig',
     'app.pku_iaaa.apps.PkuIaaaConfig',
     'app.portal.apps.PortalConfig',
     'app.cmsadmin.apps.CmsadminConfig',
     'app.oidc_client.apps.OidcClientConfig',
 ]
 
-INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS + THIRD_PARTY_APPS
+INSTALLED_APPS = DJANGO_APPS + USER_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
