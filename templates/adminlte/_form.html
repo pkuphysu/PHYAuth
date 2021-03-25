@@ -5,15 +5,18 @@
         {% if field.widget_type == 'checkbox' %}
             <div class="custom-control custom-checkbox">
                 {{ field }}
-                <label for="{{ field.id_for_label }}" class="custom-control-label">
-                    {{ field.label }}{% if field.field.required %}
-                        <span class="text-red">*</span>
-                    {% endif %}
-                </label>
+                <label for="{{ field.id_for_label }}" class="custom-control-label">{{ field.label }}{% if field.field.required %}<span class="text-red">*</span>{% endif %}</label>
+            </div>
+        {% elif field.widget_type == 'date' %}
+            <label for="{{ field.id_for_label }}">{{ field.label }}{% if field.field.required %}<span class="text-red">*</span>{% endif %}</label>
+            <div class="input-group date" id="{{ field.id_for_label }}" data-target-input="nearest">
+                {{ field }}
+                <div class="input-group-append" data-target="#{{ field.id_for_label }}" data-toggle="datetimepicker">
+                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                </div>
             </div>
         {% else %}
-            <label for="{{ field.id_for_label }}">
-                {{ field.label }}{% if field.field.required %}<span class="text-red">*</span>{% endif %}</label>
+            <label for="{{ field.id_for_label }}">{{ field.label }}{% if field.field.required %}<span class="text-red">*</span>{% endif %}</label>
             {{ field }}
         {% endif %}
         {% if field.field.help_text %}

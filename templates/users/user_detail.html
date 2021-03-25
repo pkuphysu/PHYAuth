@@ -5,6 +5,12 @@
 
 {% block title %}{% translate 'User Profile' %}{% endblock %}
 
+{% block extra_style %}
+    <!-- Tempusdominus Bootstrap 4 -->
+    <link rel="stylesheet"
+          href="{% static 'adminlte/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css' %}">
+{% endblock %}
+
 {% block content_wrapper_header %}{% translate 'User Profile' %}{% endblock %}
 
 {% block content_wrapper_breadcrumb %}
@@ -170,4 +176,22 @@
             <!-- /.col -->
         </div>
     </div>
+{% endblock %}
+
+{% block extra_javascript %}
+    <script src="{% static 'adminlte/plugins/moment/moment.min.js' %}"></script>
+    <!-- Tempusdominus Bootstrap 4 -->
+    <script src="{% static 'adminlte/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js' %}"></script>
+{% endblock %}
+
+{% block js %}
+    <script>
+        $(function () {
+            //Date picker
+            $('#id_birthdate').datetimepicker({
+                viewMode: 'years',
+                format: 'YYYY/MM/DD'
+            });
+        })
+    </script>
 {% endblock %}

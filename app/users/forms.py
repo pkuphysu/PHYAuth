@@ -47,7 +47,7 @@ class UserForm(forms.ModelForm):
             'department': forms.Select(attrs={'class': 'form-control'}),
             'website': forms.URLInput(attrs={'class': 'form-control'}),
             'gender': forms.Select(attrs={'class': 'form-control'}),
-            'birthdate': forms.DateInput(attrs={'class': 'form-control'}),
+            'birthdate': forms.DateInput(attrs={'class': 'form-control datetimepicker-input'}),
             'phone_number': forms.TextInput(attrs={'class': 'form-control'}),
             'address': forms.TextInput(attrs={'class': 'form-control'}),
             'introduce': forms.Textarea(attrs={'class': 'form-control',
