@@ -8,8 +8,8 @@ from ..pku_iaaa.signals import iaaa_user_create, iaaa_user_login_success
 
 
 @receiver(iaaa_user_create)
-def user_create_send_email(sender, **kwargs):
-    user_register_email.delay(user_id=kwargs['user_id'])
+def user_create_send_email(sender, user, **kwargs):
+    user_register_email.delay(user_id=user.id)
 
 
 @receiver(iaaa_user_login_success)
