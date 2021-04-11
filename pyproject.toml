@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "phyauth"
+version = "0.1.0"
+description = ""
+authors = ["Rainshaw <rxg@live.com>"]
+
+[[tool.poetry.source]]
+name = 'default'
+url = 'https://pypi.tuna.tsinghua.edu.cn/simple'
+default = true
+
+[tool.poetry.dependencies]
+python = "^3.9"
+Django = "^3.2"
+django-oidc-provider = "^0.7.0"
+requests = "^2.25.1"
+celery = "^5.0.5"
+django-celery-results = "^2.0.1"
+django-celery-beat = "^2.2.0"
+mysqlclient = "^2.0.3"
+configparser = "^5.0.2"
+django-redis = "^4.12.1"
+django-bootstrap-breadcrumbs = "^0.9.2"
+django-guardian = "^2.3.0"
+daphne = "^3.0.2"
+
+[tool.poetry.dev-dependencies]
+django-debug-toolbar = "^3.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
