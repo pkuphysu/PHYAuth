@@ -12,7 +12,7 @@ vine = "5.0.0"
 [package.source]
 type = "legacy"
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-reference = 'default'
+reference = "default"
 
 [[package]]
 name = "asgiref"
@@ -28,7 +28,7 @@ tests = ["pytest", "pytest-asyncio", "mypy (>=0.800)"]
 [package.source]
 type = "legacy"
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-reference = 'default'
+reference = "default"
 
 [[package]]
 name = "attrs"
@@ -47,7 +47,7 @@ tests_no_zope = ["coverage[toml] (>=5.0.2)", "hypothesis", "pympler", "pytest (>
 [package.source]
 type = "legacy"
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-reference = 'default'
+reference = "default"
 
 [[package]]
 name = "autobahn"
@@ -77,7 +77,7 @@ xbr = ["xbr (>=21.2.1)", "cbor2 (>=5.2.0)", "zlmdb (>=21.2.1)", "twisted (>=20.3
 [package.source]
 type = "legacy"
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-reference = 'default'
+reference = "default"
 
 [[package]]
 name = "automat"
@@ -97,7 +97,7 @@ visualize = ["graphviz (>0.5.1)", "Twisted (>=16.1.1)"]
 [package.source]
 type = "legacy"
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-reference = 'default'
+reference = "default"
 
 [[package]]
 name = "billiard"
@@ -110,7 +110,7 @@ python-versions = "*"
 [package.source]
 type = "legacy"
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-reference = 'default'
+reference = "default"
 
 [[package]]
 name = "celery"
@@ -167,7 +167,7 @@ zstd = ["zstandard"]
 [package.source]
 type = "legacy"
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-reference = 'default'
+reference = "default"
 
 [[package]]
 name = "certifi"
@@ -180,7 +180,7 @@ python-versions = "*"
 [package.source]
 type = "legacy"
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-reference = 'default'
+reference = "default"
 
 [[package]]
 name = "cffi"
@@ -196,7 +196,7 @@ pycparser = "*"
 [package.source]
 type = "legacy"
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-reference = 'default'
+reference = "default"
 
 [[package]]
 name = "chardet"
@@ -209,7 +209,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 [package.source]
 type = "legacy"
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-reference = 'default'
+reference = "default"
 
 [[package]]
 name = "click"
@@ -222,7 +222,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 [package.source]
 type = "legacy"
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-reference = 'default'
+reference = "default"
 
 [[package]]
 name = "click-didyoumean"
@@ -238,7 +238,7 @@ click = "*"
 [package.source]
 type = "legacy"
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-reference = 'default'
+reference = "default"
 
 [[package]]
 name = "click-plugins"
@@ -257,7 +257,7 @@ dev = ["pytest (>=3.6)", "pytest-cov", "wheel", "coveralls"]
 [package.source]
 type = "legacy"
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-reference = 'default'
+reference = "default"
 
 [[package]]
 name = "click-repl"
@@ -275,7 +275,7 @@ six = "*"
 [package.source]
 type = "legacy"
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-reference = 'default'
+reference = "default"
 
 [[package]]
 name = "configparser"
@@ -292,7 +292,7 @@ testing = ["pytest (>=4.6)", "pytest-checkdocs (>=1.2.3)", "pytest-flake8", "pyt
 [package.source]
 type = "legacy"
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-reference = 'default'
+reference = "default"
 
 [[package]]
 name = "constantly"
@@ -305,7 +305,7 @@ python-versions = "*"
 [package.source]
 type = "legacy"
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-reference = 'default'
+reference = "default"
 
 [[package]]
 name = "cryptography"
@@ -329,7 +329,7 @@ test = ["pytest (>=6.0)", "pytest-cov", "pytest-subtests", "pytest-xdist", "pret
 [package.source]
 type = "legacy"
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-reference = 'default'
+reference = "default"
 
 [[package]]
 name = "daphne"
@@ -350,7 +350,7 @@ tests = ["hypothesis (==4.23)", "pytest (>=3.10,<4.0)", "pytest-asyncio (>=0.8,<
 [package.source]
 type = "legacy"
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-reference = 'default'
+reference = "default"
 
 [[package]]
 name = "django"
@@ -372,7 +372,7 @@ bcrypt = ["bcrypt"]
 [package.source]
 type = "legacy"
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-reference = 'default'
+reference = "default"
 
 [[package]]
 name = "django-bootstrap-breadcrumbs"
@@ -388,7 +388,7 @@ six = "*"
 [package.source]
 type = "legacy"
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-reference = 'default'
+reference = "default"
 
 [[package]]
 name = "django-celery-beat"
@@ -407,7 +407,7 @@ python-crontab = ">=2.3.4"
 [package.source]
 type = "legacy"
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-reference = 'default'
+reference = "default"
 
 [[package]]
 name = "django-celery-results"
@@ -423,11 +423,11 @@ celery = ">=4.4,<6.0"
 [package.source]
 type = "legacy"
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-reference = 'default'
+reference = "default"
 
 [[package]]
 name = "django-debug-toolbar"
-version = "3.2"
+version = "3.2.1"
 description = "A configurable set of panels that display various debug information about the current request/response."
 category = "dev"
 optional = false
@@ -440,7 +440,7 @@ sqlparse = ">=0.2.0"
 [package.source]
 type = "legacy"
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-reference = 'default'
+reference = "default"
 
 [[package]]
 name = "django-guardian"
@@ -456,7 +456,7 @@ Django = ">=2.2"
 [package.source]
 type = "legacy"
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-reference = 'default'
+reference = "default"
 
 [[package]]
 name = "django-oidc-provider"
@@ -472,7 +472,7 @@ pyjwkest = ">=1.3.0"
 [package.source]
 type = "legacy"
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-reference = 'default'
+reference = "default"
 
 [[package]]
 name = "django-redis"
@@ -489,7 +489,7 @@ redis = ">=3.0.0"
 [package.source]
 type = "legacy"
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-reference = 'default'
+reference = "default"
 
 [[package]]
 name = "django-timezone-field"
@@ -509,7 +509,7 @@ rest_framework = ["djangorestframework (>=3.0.0)"]
 [package.source]
 type = "legacy"
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-reference = 'default'
+reference = "default"
 
 [[package]]
 name = "future"
@@ -522,7 +522,7 @@ python-versions = ">=2.6, !=3.0.*, !=3.1.*, !=3.2.*"
 [package.source]
 type = "legacy"
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-reference = 'default'
+reference = "default"
 
 [[package]]
 name = "hyperlink"
@@ -538,7 +538,7 @@ idna = ">=2.5"
 [package.source]
 type = "legacy"
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-reference = 'default'
+reference = "default"
 
 [[package]]
 name = "idna"
@@ -551,7 +551,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 [package.source]
 type = "legacy"
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-reference = 'default'
+reference = "default"
 
 [[package]]
 name = "incremental"
@@ -567,7 +567,7 @@ scripts = ["click (>=6.0)", "twisted (>=16.4.0)"]
 [package.source]
 type = "legacy"
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-reference = 'default'
+reference = "default"
 
 [[package]]
 name = "kombu"
@@ -599,7 +599,7 @@ zookeeper = ["kazoo (>=1.3.1)"]
 [package.source]
 type = "legacy"
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-reference = 'default'
+reference = "default"
 
 [[package]]
 name = "mysqlclient"
@@ -612,7 +612,7 @@ python-versions = ">=3.5"
 [package.source]
 type = "legacy"
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-reference = 'default'
+reference = "default"
 
 [[package]]
 name = "prompt-toolkit"
@@ -628,7 +628,7 @@ wcwidth = "*"
 [package.source]
 type = "legacy"
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-reference = 'default'
+reference = "default"
 
 [[package]]
 name = "pyasn1"
@@ -641,7 +641,7 @@ python-versions = "*"
 [package.source]
 type = "legacy"
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-reference = 'default'
+reference = "default"
 
 [[package]]
 name = "pyasn1-modules"
@@ -657,7 +657,7 @@ pyasn1 = ">=0.4.6,<0.5.0"
 [package.source]
 type = "legacy"
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-reference = 'default'
+reference = "default"
 
 [[package]]
 name = "pycparser"
@@ -670,7 +670,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 [package.source]
 type = "legacy"
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-reference = 'default'
+reference = "default"
 
 [[package]]
 name = "pycryptodomex"
@@ -683,7 +683,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 [package.source]
 type = "legacy"
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-reference = 'default'
+reference = "default"
 
 [[package]]
 name = "pyjwkest"
@@ -702,7 +702,7 @@ six = "*"
 [package.source]
 type = "legacy"
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-reference = 'default'
+reference = "default"
 
 [[package]]
 name = "pyopenssl"
@@ -723,7 +723,7 @@ test = ["flaky", "pretend", "pytest (>=3.0.1)"]
 [package.source]
 type = "legacy"
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-reference = 'default'
+reference = "default"
 
 [[package]]
 name = "python-crontab"
@@ -743,7 +743,7 @@ cron-schedule = ["croniter"]
 [package.source]
 type = "legacy"
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-reference = 'default'
+reference = "default"
 
 [[package]]
 name = "python-dateutil"
@@ -759,7 +759,7 @@ six = ">=1.5"
 [package.source]
 type = "legacy"
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-reference = 'default'
+reference = "default"
 
 [[package]]
 name = "pytz"
@@ -772,7 +772,7 @@ python-versions = "*"
 [package.source]
 type = "legacy"
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-reference = 'default'
+reference = "default"
 
 [[package]]
 name = "redis"
@@ -788,7 +788,7 @@ hiredis = ["hiredis (>=0.1.3)"]
 [package.source]
 type = "legacy"
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-reference = 'default'
+reference = "default"
 
 [[package]]
 name = "requests"
@@ -811,7 +811,7 @@ socks = ["PySocks (>=1.5.6,!=1.5.7)", "win-inet-pton"]
 [package.source]
 type = "legacy"
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-reference = 'default'
+reference = "default"
 
 [[package]]
 name = "service-identity"
@@ -836,7 +836,7 @@ tests = ["coverage (>=4.2.0)", "pytest"]
 [package.source]
 type = "legacy"
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-reference = 'default'
+reference = "default"
 
 [[package]]
 name = "six"
@@ -849,7 +849,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*"
 [package.source]
 type = "legacy"
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-reference = 'default'
+reference = "default"
 
 [[package]]
 name = "sqlparse"
@@ -862,7 +862,7 @@ python-versions = ">=3.5"
 [package.source]
 type = "legacy"
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-reference = 'default'
+reference = "default"
 
 [[package]]
 name = "twisted"
@@ -901,7 +901,7 @@ windows_platform = ["pywin32 (!=226)", "cython-test-exception-raiser (>=1.0,<2.0
 [package.source]
 type = "legacy"
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-reference = 'default'
+reference = "default"
 
 [[package]]
 name = "twisted-iocpsupport"
@@ -914,7 +914,7 @@ python-versions = "*"
 [package.source]
 type = "legacy"
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-reference = 'default'
+reference = "default"
 
 [[package]]
 name = "txaio"
@@ -932,7 +932,7 @@ twisted = ["zope.interface (>=5.2.0)", "twisted (>=20.3.0)"]
 [package.source]
 type = "legacy"
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-reference = 'default'
+reference = "default"
 
 [[package]]
 name = "urllib3"
@@ -950,7 +950,7 @@ brotli = ["brotlipy (>=0.6.0)"]
 [package.source]
 type = "legacy"
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-reference = 'default'
+reference = "default"
 
 [[package]]
 name = "vine"
@@ -963,7 +963,7 @@ python-versions = ">=3.6"
 [package.source]
 type = "legacy"
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-reference = 'default'
+reference = "default"
 
 [[package]]
 name = "wcwidth"
@@ -976,7 +976,7 @@ python-versions = "*"
 [package.source]
 type = "legacy"
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-reference = 'default'
+reference = "default"
 
 [[package]]
 name = "zope.interface"
@@ -994,7 +994,7 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 [package.source]
 type = "legacy"
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-reference = 'default'
+reference = "default"
 
 [metadata]
 lock-version = "1.1"
@@ -1136,8 +1136,8 @@ django-celery-results = [
     {file = "django_celery_results-2.0.1.tar.gz", hash = "sha256:d625e324138e5b2ef46ffa9e89fa353c16d619420066ac8b240ef9247b293a84"},
 ]
 django-debug-toolbar = [
-    {file = "django-debug-toolbar-3.2.tar.gz", hash = "sha256:84e2607d900dbd571df0a2acf380b47c088efb787dce9805aefeb407341961d2"},
-    {file = "django_debug_toolbar-3.2-py3-none-any.whl", hash = "sha256:9e5a25d0c965f7e686f6a8ba23613ca9ca30184daa26487706d4829f5cfb697a"},
+    {file = "django-debug-toolbar-3.2.1.tar.gz", hash = "sha256:a5ff2a54f24bf88286f9872836081078f4baa843dc3735ee88524e89f8821e33"},
+    {file = "django_debug_toolbar-3.2.1-py3-none-any.whl", hash = "sha256:e759e63e3fe2d3110e0e519639c166816368701eab4a47fed75d7de7018467b9"},
 ]
 django-guardian = [
     {file = "django-guardian-2.3.0.tar.gz", hash = "sha256:ed2de26e4defb800919c5749fb1bbe370d72829fbd72895b6cf4f7f1a7607e1b"},
