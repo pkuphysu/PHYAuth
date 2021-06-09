@@ -18,6 +18,7 @@ class UserForm(IUserForm):
         self.fields['in_school'].disabled = False
         self.fields['is_teacher'].disabled = False
         self.fields['is_admin'].disabled = False
+        self.fields['is_active'].disabled = False
 
 
 class UserGroupForm(forms.ModelForm):
