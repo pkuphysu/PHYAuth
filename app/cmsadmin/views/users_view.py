@@ -12,6 +12,11 @@ from app.utils.views import ErrorMessageMixin
 
 
 class UserForm(IUserForm):
+    class Meta(IUserForm.Meta):
+        help_texts = {
+            'is_active': _('for users not in school of physics, this must be checked for them to login successfully!')
+        }
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['username'].disabled = False

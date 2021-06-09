@@ -60,6 +60,9 @@ class UserForm(forms.ModelForm):
             'last_iaaa_login': forms.DateTimeInput(attrs={'class': 'form-control'}),
             'last_login': forms.DateTimeInput(attrs={'class': 'form-control'})
         }
+        help_texts = {
+            'is_active': '',
+        }
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

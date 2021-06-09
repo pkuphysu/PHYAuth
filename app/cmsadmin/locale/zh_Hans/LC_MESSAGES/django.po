@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-20 23:59+0800\n"
+"POT-Creation-Date: 2021-06-09 20:02+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,136 +18,129 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: .\app\cmsadmin\views\oidc_client_view.py:16
-#: .\app\cmsadmin\views\oidc_client_view.py:27
-#: .\app\cmsadmin\views\oidc_client_view.py:43
-#: .\app\cmsadmin\views\portal_view.py:17
-#: .\app\cmsadmin\views\portal_view.py:28
-#: .\app\cmsadmin\views\portal_view.py:98
-#: .\app\cmsadmin\views\portal_view.py:109
-#: .\app\cmsadmin\views\users_view.py:46 .\app\cmsadmin\views\users_view.py:64
-#: .\app\cmsadmin\views\users_view.py:80 .\app\cmsadmin\views\users_view.py:103
-#: .\app\cmsadmin\views\users_view.py:157
-#: .\app\cmsadmin\views\users_view.py:169
-#: .\app\cmsadmin\views\users_view.py:185
+#: app/cmsadmin/views/oidc_client_view.py:16
+#: app/cmsadmin/views/oidc_client_view.py:27
+#: app/cmsadmin/views/oidc_client_view.py:43
+#: app/cmsadmin/views/portal_view.py:17 app/cmsadmin/views/portal_view.py:28
+#: app/cmsadmin/views/portal_view.py:98 app/cmsadmin/views/portal_view.py:109
+#: app/cmsadmin/views/users_view.py:52 app/cmsadmin/views/users_view.py:70
+#: app/cmsadmin/views/users_view.py:86 app/cmsadmin/views/users_view.py:109
+#: app/cmsadmin/views/users_view.py:163 app/cmsadmin/views/users_view.py:175
+#: app/cmsadmin/views/users_view.py:191
 msgid ""
 "You are not a staff, and do not have permission to view this page, please "
 "contact the administrator!"
 msgstr "你不是管理员，无权访问此页面，请联系管理员！"
 
-#: .\app\cmsadmin\views\oidc_client_view.py:29
-#: .\app\cmsadmin\views\oidc_client_view.py:45
-#: .\app\cmsadmin\views\portal_view.py:30
-#: .\app\cmsadmin\views\portal_view.py:46
-#: .\app\cmsadmin\views\portal_view.py:111
-#: .\app\cmsadmin\views\portal_view.py:127
-#: .\app\cmsadmin\views\users_view.py:66 .\app\cmsadmin\views\users_view.py:82
-#: .\app\cmsadmin\views\users_view.py:105
-#: .\app\cmsadmin\views\users_view.py:171
-#: .\app\cmsadmin\views\users_view.py:187
+#: app/cmsadmin/views/oidc_client_view.py:29
+#: app/cmsadmin/views/oidc_client_view.py:45
+#: app/cmsadmin/views/portal_view.py:30 app/cmsadmin/views/portal_view.py:46
+#: app/cmsadmin/views/portal_view.py:111 app/cmsadmin/views/portal_view.py:127
+#: app/cmsadmin/views/users_view.py:72 app/cmsadmin/views/users_view.py:88
+#: app/cmsadmin/views/users_view.py:111 app/cmsadmin/views/users_view.py:177
+#: app/cmsadmin/views/users_view.py:193
 msgid "Please check the error messages showed in the page!"
 msgstr "请检查页面中显示的错误信息！"
 
-#: .\app\cmsadmin\views\oidc_client_view.py:33
+#: app/cmsadmin/views/oidc_client_view.py:33
 #, python-format
 msgid "FAQ #%(id)s has been created successfully!"
 msgstr "成功创建解答 #%(id)s！"
 
-#: .\app\cmsadmin\views\oidc_client_view.py:51
-#: .\app\cmsadmin\views\portal_view.py:51
-#: .\app\cmsadmin\views\portal_view.py:132
-#: .\app\cmsadmin\views\users_view.py:88 .\app\cmsadmin\views\users_view.py:111
-#: .\app\cmsadmin\views\users_view.py:193
+#: app/cmsadmin/views/oidc_client_view.py:51
+#: app/cmsadmin/views/portal_view.py:51 app/cmsadmin/views/portal_view.py:132
+#: app/cmsadmin/views/users_view.py:94 app/cmsadmin/views/users_view.py:117
+#: app/cmsadmin/views/users_view.py:199
 msgid "Please specify the pk!"
 msgstr "请指定 pk !"
 
-#: .\app\cmsadmin\views\oidc_client_view.py:56
+#: app/cmsadmin/views/oidc_client_view.py:56
 #, python-format
 msgid "FAQ #%(id)s has been updated successfully!"
 msgstr "成功更新解答 #%(id)s！"
 
-#: .\app\cmsadmin\views\oidc_client_view.py:65
-#: .\app\cmsadmin\views\users_view.py:125
-#: .\app\cmsadmin\views\users_view.py:207
+#: app/cmsadmin/views/oidc_client_view.py:65
+#: app/cmsadmin/views/users_view.py:131 app/cmsadmin/views/users_view.py:213
 msgid ""
 "You are not a staff, and do not have permission to delete this faq, please "
 "contact the administrator!"
 msgstr "你不是管理员，无权删除此解答，请联系管理员！"
 
-#: .\app\cmsadmin\views\oidc_client_view.py:73
-#: .\app\cmsadmin\views\portal_view.py:73
-#: .\app\cmsadmin\views\portal_view.py:154
-#: .\app\cmsadmin\views\users_view.py:133
-#: .\app\cmsadmin\views\users_view.py:215
+#: app/cmsadmin/views/oidc_client_view.py:73
+#: app/cmsadmin/views/portal_view.py:73 app/cmsadmin/views/portal_view.py:154
+#: app/cmsadmin/views/users_view.py:139 app/cmsadmin/views/users_view.py:221
 #, python-format
 msgid "Need %(verbose_name)s Id"
 msgstr "需要 %(verbose_name)s id"
 
-#: .\app\cmsadmin\views\oidc_client_view.py:78
-#: .\app\cmsadmin\views\portal_view.py:78
-#: .\app\cmsadmin\views\portal_view.py:159
-#: .\app\cmsadmin\views\users_view.py:138
-#: .\app\cmsadmin\views\users_view.py:220
+#: app/cmsadmin/views/oidc_client_view.py:78
+#: app/cmsadmin/views/portal_view.py:78 app/cmsadmin/views/portal_view.py:159
+#: app/cmsadmin/views/users_view.py:144 app/cmsadmin/views/users_view.py:226
 #, python-format
 msgid "No %(verbose_name)s found matching the query"
 msgstr "没有找到符合条件的 %(verbose_name)s"
 
-#: .\app\cmsadmin\views\portal_view.py:33
+#: app/cmsadmin/views/portal_view.py:33
 #, python-format
 msgid "Announcement #%(id)s has been created successfully!"
 msgstr "成功创建公告 #%(id)s！"
 
-#: .\app\cmsadmin\views\portal_view.py:44
+#: app/cmsadmin/views/portal_view.py:44
 msgid ""
 "You are not the creator of this announcement, so you do not have the right "
 "to modify it!"
 msgstr "你不是此公告的创建者，无权修改它！"
 
-#: .\app\cmsadmin\views\portal_view.py:56
-#: .\app\cmsadmin\views\portal_view.py:137
+#: app/cmsadmin/views/portal_view.py:56 app/cmsadmin/views/portal_view.py:137
 #, python-format
 msgid "Announcement #%(id)s has been updated successfully!"
 msgstr "成功更新公告 #%(id)s！"
 
-#: .\app\cmsadmin\views\portal_view.py:65
+#: app/cmsadmin/views/portal_view.py:65
 msgid ""
 "You are not the creator of this announcement, so you do not have the right "
 "to delete it!"
 msgstr "你不是此公告的创建者，无权删除它！"
 
-#: .\app\cmsadmin\views\portal_view.py:114
+#: app/cmsadmin/views/portal_view.py:114
 #, python-format
 msgid "TopLink #%(id)s has been created successfully!"
 msgstr "成功创建顶部链接 #%(id)s！"
 
-#: .\app\cmsadmin\views\portal_view.py:125
+#: app/cmsadmin/views/portal_view.py:125
 msgid ""
 "You are not the creator of this toplink, so you do not have the right to "
 "modify it!"
 msgstr "你不是此链接的创建者，无权修改它！"
 
-#: .\app\cmsadmin\views\portal_view.py:146
+#: app/cmsadmin/views/portal_view.py:146
 msgid ""
 "You are not the creator of this toplink, so you do not have the right to "
 "delete it!"
 msgstr "你不是此链接的创建者，无权删除它！"
 
-#: .\app\cmsadmin\views\users_view.py:70
+#: app/cmsadmin/views/users_view.py:17
+msgid ""
+"for users not in school of physics, this must be checked for them to login "
+"successfully!"
+msgstr "对于非物理学院的师生，必须勾选此项。否则他们将无法登录！"
+
+#: app/cmsadmin/views/users_view.py:76
 #, python-format
 msgid "User #%(id)s has been created successfully!"
 msgstr "成功创建用户 #%(id)s！"
 
-#: .\app\cmsadmin\views\users_view.py:93 .\app\cmsadmin\views\users_view.py:116
+#: app/cmsadmin/views/users_view.py:99 app/cmsadmin/views/users_view.py:122
 #, python-format
 msgid "User #%(id)s has been updated successfully!"
 msgstr "成功更新用户 #%(id)s！"
 
-#: .\app\cmsadmin\views\users_view.py:175
+#: app/cmsadmin/views/users_view.py:181
 #, python-format
 msgid "Department #%(id)s has been created successfully!"
 msgstr "成功创建部门 #%(id)s！"
 
-#: .\app\cmsadmin\views\users_view.py:198
+#: app/cmsadmin/views/users_view.py:204
 #, python-format
 msgid "Department #%(id)s has been updated successfully!"
 msgstr "成功更新部门 #%(id)s！"

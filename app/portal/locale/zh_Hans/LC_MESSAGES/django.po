@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-21 18:31+0800\n"
+"POT-Creation-Date: 2021-06-09 20:02+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,23 +18,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: .\app\portal\apps.py:7
+#: app/portal/apps.py:7
 msgid "portal management"
 msgstr "门户管理"
 
-#: .\app\portal\models.py:7
+#: app/portal/models.py:7
 msgid "Link Name"
 msgstr "链接名"
 
-#: .\app\portal\models.py:11
+#: app/portal/models.py:11
 msgid "Link URL"
 msgstr "链接 URL"
 
-#: .\app\portal\models.py:15
+#: app/portal/models.py:15
 msgid "Link Rank"
 msgstr "链接排序"
 
-#: .\app\portal\models.py:16
+#: app/portal/models.py:16
 msgid ""
 "It is the default order of the links, they should not be same!\n"
 "The smaller it is, the more front it will be.\n"
@@ -43,37 +43,37 @@ msgstr ""
 "这是默认的链接的排序，不应该相同！数字越小越靠前，如果某几个相同，则按照创建"
 "先后排序。"
 
-#: .\app\portal\models.py:22
+#: app/portal/models.py:22
 msgid "Top Link"
 msgstr "顶部链接"
 
-#: .\app\portal\models.py:23
+#: app/portal/models.py:23
 msgid "Top Links"
 msgstr "顶部链接"
 
-#: .\app\portal\models.py:28
+#: app/portal/models.py:28
 msgid "Announcement Title"
 msgstr "公告标题"
 
-#: .\app\portal\models.py:33
+#: app/portal/models.py:33
 msgid "Announcement Content"
 msgstr "公告内容"
 
-#: .\app\portal\models.py:37
+#: app/portal/models.py:37
 msgid "Announcement Rank"
 msgstr "公告排序"
 
-#: .\app\portal\models.py:38
+#: app/portal/models.py:38
 msgid ""
 "It is the default order of the announcement!\n"
 "The smaller it is, the more front it will be.\n"
 "If some are the same, the later create one will appear firstly."
 msgstr "这是公告的默认排序，越小越靠前。如果一些相同，则越晚发布的公告越靠前。"
 
-#: .\app\portal\models.py:44
+#: app/portal/models.py:44
 msgid "Announcement"
 msgstr "公告"
 
-#: .\app\portal\models.py:45
+#: app/portal/models.py:45
 msgid "Announcements"
 msgstr "公告"

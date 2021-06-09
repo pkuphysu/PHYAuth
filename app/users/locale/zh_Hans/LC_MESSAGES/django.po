@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-24 17:32+0800\n"
+"POT-Creation-Date: 2021-06-09 20:02+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,225 +18,225 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: .\app\users\admin.py:18
+#: app/users/admin.py:18
 msgid "Personal Info"
 msgstr "个人信息"
 
-#: .\app\users\admin.py:23
+#: app/users/admin.py:23
 msgid "Permissions"
 msgstr "权限"
 
-#: .\app\users\admin.py:26
+#: app/users/admin.py:26
 msgid "Important Dates"
 msgstr "重要日期"
 
-#: .\app\users\admin.py:27
+#: app/users/admin.py:27
 msgid "Account Status"
 msgstr "账户状态"
 
-#: .\app\users\apps.py:7
+#: app/users/apps.py:7
 msgid "user management"
 msgstr "用户管理"
 
-#: .\app\users\forms.py:86
+#: app/users/forms.py:92
 #, python-format
 msgid ""
 "Please enter a correct %(username)s and password. Note that both fields may "
 "be case-sensitive."
 msgstr "请输入一个正确的 %(username)s 和密码. 注意他们都是大区分大小写的."
 
-#: .\app\users\forms.py:89
+#: app/users/forms.py:95
 msgid "This account is inactive."
 msgstr "该帐号未激活。"
 
-#: .\app\users\forms.py:90
+#: app/users/forms.py:96
 msgid ""
 "You need use iaaa for login to update your account state. This request will "
 "appear every three months."
 msgstr "你需要使用 IAAA 登录更新你的信息。这个要求会每三个月出现一次。"
 
-#: .\app\users\models.py:11 .\app\users\models.py:117
+#: app/users/models.py:11 app/users/models.py:117
 msgid "department"
 msgstr "部门"
 
-#: .\app\users\models.py:17
+#: app/users/models.py:17
 msgid "Department"
 msgstr "部门"
 
-#: .\app\users\models.py:18
+#: app/users/models.py:18
 msgid "Departments"
 msgstr "部门"
 
-#: .\app\users\models.py:27
+#: app/users/models.py:27
 msgid "username"
 msgstr "职工号、学号"
 
-#: .\app\users\models.py:30
+#: app/users/models.py:30
 msgid "Required. It's your pku id. 10 characters. Digits only."
 msgstr "必须。这是北大师生的学工号。由10个数字构成。"
 
-#: .\app\users\models.py:33
+#: app/users/models.py:33
 msgid "A user with that username already exists."
 msgstr "具有该学工号的用户已经存在。"
 
-#: .\app\users\models.py:38
+#: app/users/models.py:38
 msgid "name"
 msgstr "姓名"
 
-#: .\app\users\models.py:44
+#: app/users/models.py:44
 msgid "pku email address"
 msgstr "北京大学邮箱"
 
-#: .\app\users\models.py:46
+#: app/users/models.py:46
 msgid ""
 "This is your pku email address, because some clients only require email "
 "address."
 msgstr "这是你的北大邮箱地址，因为一些应用只需要邮箱地址，这可以标识你的身份。"
 
-#: .\app\users\models.py:50
+#: app/users/models.py:50
 msgid "nickname"
 msgstr "昵称"
 
-#: .\app\users\models.py:56
+#: app/users/models.py:56
 msgid "website"
 msgstr "主页"
 
-#: .\app\users\models.py:62
+#: app/users/models.py:62
 msgid "gender"
 msgstr "性别"
 
-#: .\app\users\models.py:64
+#: app/users/models.py:64
 msgid "unknown"
 msgstr "保密"
 
-#: .\app\users\models.py:65
+#: app/users/models.py:65
 msgid "male"
 msgstr "男"
 
-#: .\app\users\models.py:66
+#: app/users/models.py:66
 msgid "female"
 msgstr "女"
 
-#: .\app\users\models.py:72
+#: app/users/models.py:72
 msgid "birthdate"
 msgstr "生日"
 
-#: .\app\users\models.py:78
+#: app/users/models.py:78
 msgid "phone number"
 msgstr "电话号码"
 
-#: .\app\users\models.py:84
+#: app/users/models.py:84
 msgid "address"
 msgstr "办公室"
 
-#: .\app\users\models.py:90
+#: app/users/models.py:90
 msgid "preferred email address"
 msgstr "常用邮件地址"
 
-#: .\app\users\models.py:92
+#: app/users/models.py:92
 msgid ""
 "This is your usual email address which we will use to get in touch with you."
 msgstr "这是你的常用邮箱，我们用它来最终与你取得联系。"
 
-#: .\app\users\models.py:96
+#: app/users/models.py:96
 msgid "is teacher"
 msgstr "职工状态"
 
-#: .\app\users\models.py:97
+#: app/users/models.py:97
 msgid "student"
 msgstr "学生"
 
-#: .\app\users\models.py:97
+#: app/users/models.py:97
 msgid "teacher"
 msgstr "教职工"
 
-#: .\app\users\models.py:100
+#: app/users/models.py:100
 msgid "Designates whether the user is a teacher."
 msgstr "指明用户是否为老师。"
 
-#: .\app\users\models.py:105
+#: app/users/models.py:105
 msgid "is in school"
 msgstr "是否在校"
 
-#: .\app\users\models.py:108
+#: app/users/models.py:108
 msgid "Not in School"
 msgstr "减离、离退"
 
-#: .\app\users\models.py:109
+#: app/users/models.py:109
 msgid "In School"
 msgstr "在校、在职"
 
-#: .\app\users\models.py:111
+#: app/users/models.py:111
 msgid "Designate whether the user is in school."
 msgstr "指明用户是否为在校。"
 
-#: .\app\users\models.py:122
+#: app/users/models.py:122
 msgid "introduce"
 msgstr "简介"
 
-#: .\app\users\models.py:124
+#: app/users/models.py:124
 msgid "Your personal introduction."
 msgstr "你的个人简介。"
 
-#: .\app\users\models.py:128
+#: app/users/models.py:128
 msgid "is admin"
 msgstr "管理员状态"
 
-#: .\app\users\models.py:131
+#: app/users/models.py:131
 msgid "False"
 msgstr "否"
 
-#: .\app\users\models.py:132
+#: app/users/models.py:132
 msgid "True"
 msgstr "是"
 
-#: .\app\users\models.py:134
+#: app/users/models.py:134
 msgid "Admin user can manage this site."
 msgstr "管理员可以管理这个站点。"
 
-#: .\app\users\models.py:137
+#: app/users/models.py:137
 msgid "last iaaa login"
 msgstr "上次 IAAA 登录"
 
-#: .\app\users\oidc.py:33
+#: app/users/oidc.py:33
 msgid "Basic profile"
 msgstr "基本资料"
 
-#: .\app\users\oidc.py:34
+#: app/users/oidc.py:34
 msgid ""
 "Access to your basic information. Includes names, given_name, family_name, "
 "nickname, gender, birthdate and website."
 msgstr "访问您的基本信息。包括姓名、昵称、性别、生日和主页。"
 
-#: .\app\users\oidc.py:39
+#: app/users/oidc.py:39
 msgid "Email"
 msgstr "邮箱"
 
-#: .\app\users\oidc.py:40
+#: app/users/oidc.py:40
 msgid "Access to your pku email address and preferred email address."
 msgstr "访问您的北大电子邮件地址和常用电子邮件地址。"
 
-#: .\app\users\oidc.py:44
+#: app/users/oidc.py:44
 msgid "Phone number"
 msgstr "电话号码"
 
-#: .\app\users\oidc.py:45
+#: app/users/oidc.py:45
 msgid "Access to your phone number."
 msgstr "访问您的电话号码。"
 
-#: .\app\users\oidc.py:49
+#: app/users/oidc.py:49
 msgid "Address information"
 msgstr "地址信息"
 
-#: .\app\users\oidc.py:50
+#: app/users/oidc.py:50
 msgid "Access to your address."
 msgstr "访问您的办公室地址。"
 
-#: .\app\users\oidc.py:54
+#: app/users/oidc.py:54
 msgid "PKU Info"
 msgstr "PKU 信息"
 
-#: .\app\users\oidc.py:55
+#: app/users/oidc.py:55
 msgid ""
 "Access to your pku information. Includes identity ID, identity type, "
 "identity status, department, self introduce."
@@ -244,19 +244,19 @@ msgstr ""
 "访问你的北京大学信息。包含学号/工号、身份（教职工或学生）、状态（在校或减"
 "离）、部门和您的个人简介。"
 
-#: .\app\users\oidc.py:110
+#: app/users/oidc.py:110
 msgid ""
 "Some of your information is not complete, we recommend that you should "
 "complete your profile first."
 msgstr "您的信息不完整，我们建议您先完善个人信息。"
 
-#: .\app\users\validators.py:9
+#: app/users/validators.py:9
 msgid ""
 "Enter a valid username. It's your pku id. This value may contain only "
 "numbers."
 msgstr "请输入一个有效职工号或学号，应仅包含数字。"
 
-#: .\app\users\validators.py:16
+#: app/users/validators.py:16
 msgid ""
 "Enter your ID email address, it should be in 2000000000@(stu.|alumni.)pku."
 "edu.cn format."
@@ -264,10 +264,10 @@ msgstr ""
 "输入你的 职工号或学号开头的北大邮箱地址，它应是如下形式：1234567898@(stu.|"
 "alumni.)pku.edu.cn"
 
-#: .\app\users\views.py:19
+#: app/users/views.py:19
 msgid "Your profile has been updated successfully!"
 msgstr "您的个人信息修改成功！"
 
-#: .\app\users\views.py:20
+#: app/users/views.py:20
 msgid "Please check the error messages showed in the page!"
 msgstr "请检查页面中显示的错误信息！"

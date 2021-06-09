@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-15 23:24+0800\n"
+"POT-Creation-Date: 2021-06-09 20:02+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,36 +18,36 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: .\app\pku_iaaa\apps.py:7
+#: app/pku_iaaa/apps.py:7
 msgid "IAAA Config"
 msgstr "IAAA 配置"
 
-#: .\app\pku_iaaa\models.py:7
+#: app/pku_iaaa/models.py:7
 msgid "APP ID"
 msgstr "应用 ID"
 
-#: .\app\pku_iaaa\models.py:10 .\app\pku_iaaa\models.py:16
-#: .\app\pku_iaaa\models.py:22
+#: app/pku_iaaa/models.py:10 app/pku_iaaa/models.py:16
+#: app/pku_iaaa/models.py:22
 msgid "Required. Please connect pkucc for help."
 msgstr "必须，如您不清楚如何配置，请联系计算中心。"
 
-#: .\app\pku_iaaa\models.py:14
+#: app/pku_iaaa/models.py:14
 msgid "KEY"
 msgstr "密钥"
 
-#: .\app\pku_iaaa\models.py:20
+#: app/pku_iaaa/models.py:20
 msgid "REDIRECT URL"
 msgstr "重定向 URL"
 
-#: .\app\pku_iaaa\models.py:26
+#: app/pku_iaaa/models.py:26
 msgid "IAAA Info"
 msgstr "IAAA 信息"
 
-#: .\app\pku_iaaa\views.py:68
+#: app/pku_iaaa/views.py:68
 msgid "No account is found."
 msgstr "没有找到账户。"
 
-#: .\app\pku_iaaa\views.py:70
+#: app/pku_iaaa/views.py:70
 msgid ""
 "This application temporarily only serves the teachers and students of the "
 "School of Physics. Now your personal relationship is not in the School of "

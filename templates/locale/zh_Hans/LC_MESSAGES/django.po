@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-24 15:27+0800\n"
+"POT-Creation-Date: 2021-06-09 20:02+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Rainshaw <rxg@live.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,718 +18,709 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: .\templates\400.html:4 .\templates\400.html:6 .\templates\400.html:10
+#: templates/400.html:4 templates/400.html:6 templates/400.html:10
 msgid "400 Bad Request"
 msgstr ""
 
-#: .\templates\400.html:19
+#: templates/400.html:19
 msgid "Oops! Your request is illegal."
 msgstr "哎呀！你发送了一个非法请求。"
 
-#: .\templates\400.html:22 .\templates\403.html:25 .\templates\404.html:26
-#: .\templates\500.html:22
+#: templates/400.html:22 templates/403.html:25 templates/404.html:26
+#: templates/500.html:22
 msgid "If you have any question, please contact us!"
 msgstr "如果你有任何疑问，请联系我们。"
 
-#: .\templates\400.html:23 .\templates\403.html:26 .\templates\404.html:27
-#: .\templates\500.html:23
+#: templates/400.html:23 templates/403.html:26 templates/404.html:27
+#: templates/500.html:23
 msgid "Return to home"
 msgstr "返回主页"
 
-#: .\templates\403.html:4 .\templates\403.html:6 .\templates\403.html:10
+#: templates/403.html:4 templates/403.html:6 templates/403.html:10
 msgid "403 Forbidden"
 msgstr ""
 
-#: .\templates\403.html:19
+#: templates/403.html:19
 msgid "Oops! Your are not allowed to view this page."
 msgstr "哎呀！你不能访问此页面。"
 
-#: .\templates\403.html:22 .\templates\404.html:23
+#: templates/403.html:22 templates/404.html:23
 msgid "This is the exception info:"
 msgstr "这是错误信息："
 
-#: .\templates\404.html:5 .\templates\404.html:7 .\templates\404.html:11
+#: templates/404.html:5 templates/404.html:7 templates/404.html:11
 msgid "404 Not Found"
 msgstr ""
 
-#: .\templates\404.html:20
+#: templates/404.html:20
 msgid "Oops! Page not found."
 msgstr "哎呀！页面没有找到"
 
-#: .\templates\500.html:4 .\templates\500.html:6 .\templates\500.html:10
+#: templates/500.html:4 templates/500.html:6 templates/500.html:10
 msgid "500 Server Error"
 msgstr ""
 
-#: .\templates\500.html:19
+#: templates/500.html:19
 msgid "Oops! Something went wrong."
 msgstr "哎呀！服务器出错了。"
 
-#: .\templates\500.html:21
+#: templates/500.html:21
 msgid "We will work on fixing that right away."
 msgstr "我们很快会修复此问题。"
 
-#: .\templates\base.html:11
+#: templates/base.html:11
 msgid "Uniform Identity Authentication of the School of Physics"
 msgstr "物理学院统一身份认证"
 
-#: .\templates\cmsadmin\oidc_client\faq_create.html:4
-#: .\templates\cmsadmin\oidc_client\faq_create.html:8
-#: .\templates\cmsadmin\oidc_client\faq_create.html:11
-#: .\templates\index.html:345
+#: templates/cmsadmin/oidc_client/faq_create.html:4
+#: templates/cmsadmin/oidc_client/faq_create.html:8
+#: templates/cmsadmin/oidc_client/faq_create.html:11 templates/index.html:345
 msgid "Create FAQ"
 msgstr "新建疑问与解答"
 
-#: .\templates\cmsadmin\oidc_client\faq_create.html:25
-#: .\templates\cmsadmin\oidc_client\faq_update.html:25
-#: .\templates\cmsadmin\portal\announcement_create.html:25
-#: .\templates\cmsadmin\portal\announcement_update.html:25
-#: .\templates\cmsadmin\portal\toplink_create.html:25
-#: .\templates\cmsadmin\portal\toplink_update.html:25
-#: .\templates\cmsadmin\users\department_create.html:25
-#: .\templates\cmsadmin\users\department_update.html:25
-#: .\templates\cmsadmin\users\user_create.html:25
-#: .\templates\cmsadmin\users\user_group_update.html:30
-#: .\templates\cmsadmin\users\user_update.html:25
-#: .\templates\oidc_client\client_create.html:25
-#: .\templates\oidc_client\client_update.html:25
-#: .\templates\users\user_detail.html:105
+#: templates/cmsadmin/oidc_client/faq_create.html:25
+#: templates/cmsadmin/oidc_client/faq_update.html:25
+#: templates/cmsadmin/portal/announcement_create.html:25
+#: templates/cmsadmin/portal/announcement_update.html:25
+#: templates/cmsadmin/portal/toplink_create.html:25
+#: templates/cmsadmin/portal/toplink_update.html:25
+#: templates/cmsadmin/users/department_create.html:25
+#: templates/cmsadmin/users/department_update.html:25
+#: templates/cmsadmin/users/user_create.html:31
+#: templates/cmsadmin/users/user_group_update.html:30
+#: templates/cmsadmin/users/user_update.html:31
+#: templates/oidc_client/client_create.html:25
+#: templates/oidc_client/client_update.html:25
+#: templates/users/user_detail.html:111
 msgid "Submit"
 msgstr "提交"
 
-#: .\templates\cmsadmin\oidc_client\faq_list.html:4
-#: .\templates\cmsadmin\oidc_client\faq_list.html:8
-#: .\templates\cmsadmin\oidc_client\faq_list.html:11 .\templates\index.html:338
+#: templates/cmsadmin/oidc_client/faq_list.html:4
+#: templates/cmsadmin/oidc_client/faq_list.html:8
+#: templates/cmsadmin/oidc_client/faq_list.html:11 templates/index.html:338
 msgid "FAQ List"
 msgstr "疑问与解答列表"
 
-#: .\templates\cmsadmin\oidc_client\faq_list.html:21
-#: .\templates\cmsadmin\portal\announcement_list.html:21
-#: .\templates\cmsadmin\portal\toplink_list.html:21
-#: .\templates\cmsadmin\users\department_list.html:21
-#: .\templates\oidc_client\client_list.html:21
+#: templates/cmsadmin/oidc_client/faq_list.html:21
+#: templates/cmsadmin/portal/announcement_list.html:21
+#: templates/cmsadmin/portal/toplink_list.html:21
+#: templates/cmsadmin/users/department_list.html:21
+#: templates/oidc_client/client_list.html:21
 msgid "Create"
 msgstr "新建"
 
-#: .\templates\cmsadmin\oidc_client\faq_list.html:30
+#: templates/cmsadmin/oidc_client/faq_list.html:30
 msgid "Question"
 msgstr "疑问"
 
-#: .\templates\cmsadmin\oidc_client\faq_list.html:31
+#: templates/cmsadmin/oidc_client/faq_list.html:31
 msgid "Show"
 msgstr "显示状态"
 
-#: .\templates\cmsadmin\oidc_client\faq_list.html:32
+#: templates/cmsadmin/oidc_client/faq_list.html:32
 msgid "Rank"
 msgstr "排序"
 
-#: .\templates\cmsadmin\oidc_client\faq_list.html:33
-#: .\templates\cmsadmin\portal\announcement_list.html:32
-#: .\templates\cmsadmin\portal\toplink_list.html:33
-#: .\templates\cmsadmin\users\department_list.html:31
-#: .\templates\cmsadmin\users\user_list.html:43
-#: .\templates\oidc_client\client_list.html:35
+#: templates/cmsadmin/oidc_client/faq_list.html:33
+#: templates/cmsadmin/portal/announcement_list.html:32
+#: templates/cmsadmin/portal/toplink_list.html:33
+#: templates/cmsadmin/users/department_list.html:31
+#: templates/cmsadmin/users/user_list.html:43
+#: templates/oidc_client/client_list.html:35
 msgid "Operate"
 msgstr "操作"
 
-#: .\templates\cmsadmin\oidc_client\faq_list.html:46
-#: .\templates\cmsadmin\portal\announcement_list.html:44
-#: .\templates\cmsadmin\portal\toplink_list.html:45
-#: .\templates\cmsadmin\users\department_list.html:41
-#: .\templates\cmsadmin\users\user_list.html:57
-#: .\templates\oidc_client\client_list.html:49
+#: templates/cmsadmin/oidc_client/faq_list.html:46
+#: templates/cmsadmin/portal/announcement_list.html:44
+#: templates/cmsadmin/portal/toplink_list.html:45
+#: templates/cmsadmin/users/department_list.html:41
+#: templates/cmsadmin/users/user_list.html:57
+#: templates/oidc_client/client_list.html:49
 msgid "Edit"
 msgstr "编辑"
 
-#: .\templates\cmsadmin\oidc_client\faq_list.html:50
-#: .\templates\cmsadmin\portal\announcement_list.html:48
-#: .\templates\cmsadmin\portal\toplink_list.html:49
-#: .\templates\cmsadmin\users\department_list.html:45
-#: .\templates\cmsadmin\users\user_list.html:64
-#: .\templates\oidc_client\client_list.html:51
+#: templates/cmsadmin/oidc_client/faq_list.html:50
+#: templates/cmsadmin/portal/announcement_list.html:48
+#: templates/cmsadmin/portal/toplink_list.html:49
+#: templates/cmsadmin/users/department_list.html:45
+#: templates/cmsadmin/users/user_list.html:64
+#: templates/oidc_client/client_list.html:51
 msgid "Delete"
 msgstr "删除"
 
-#: .\templates\cmsadmin\oidc_client\faq_list.html:81
-#: .\templates\cmsadmin\portal\announcement_list.html:79
-#: .\templates\cmsadmin\portal\toplink_list.html:75
-#: .\templates\cmsadmin\users\department_list.html:71
-#: .\templates\cmsadmin\users\user_list.html:126
-#: .\templates\registration\password_change_form.html:103
-#: .\templates\registration\password_reset_confirm.html:81
-#: .\templates\registration\password_reset_form.html:72
+#: templates/cmsadmin/oidc_client/faq_list.html:81
+#: templates/cmsadmin/portal/announcement_list.html:79
+#: templates/cmsadmin/portal/toplink_list.html:75
+#: templates/cmsadmin/users/department_list.html:71
+#: templates/cmsadmin/users/user_list.html:126
+#: templates/registration/password_change_form.html:103
+#: templates/registration/password_reset_confirm.html:81
+#: templates/registration/password_reset_form.html:72
 msgid "Are you sure?"
 msgstr "你确定吗？"
 
-#: .\templates\cmsadmin\oidc_client\faq_list.html:82
-#: .\templates\cmsadmin\portal\announcement_list.html:80
-#: .\templates\cmsadmin\portal\toplink_list.html:76
-#: .\templates\cmsadmin\users\department_list.html:72
-#: .\templates\cmsadmin\users\user_list.html:127
+#: templates/cmsadmin/oidc_client/faq_list.html:82
+#: templates/cmsadmin/portal/announcement_list.html:80
+#: templates/cmsadmin/portal/toplink_list.html:76
+#: templates/cmsadmin/users/department_list.html:72
+#: templates/cmsadmin/users/user_list.html:127
 msgid "You won't be able to revert this!"
 msgstr "你无法撤销此操作！"
 
-#: .\templates\cmsadmin\oidc_client\faq_list.html:87
-#: .\templates\cmsadmin\portal\announcement_list.html:85
-#: .\templates\cmsadmin\portal\toplink_list.html:81
-#: .\templates\cmsadmin\users\department_list.html:77
-#: .\templates\cmsadmin\users\user_list.html:132
-#: .\templates\registration\password_change_form.html:108
-#: .\templates\registration\password_reset_confirm.html:86
-#: .\templates\registration\password_reset_form.html:78
+#: templates/cmsadmin/oidc_client/faq_list.html:87
+#: templates/cmsadmin/portal/announcement_list.html:85
+#: templates/cmsadmin/portal/toplink_list.html:81
+#: templates/cmsadmin/users/department_list.html:77
+#: templates/cmsadmin/users/user_list.html:132
+#: templates/registration/password_change_form.html:108
+#: templates/registration/password_reset_confirm.html:86
+#: templates/registration/password_reset_form.html:78
 msgid "Yes"
 msgstr "是的"
 
-#: .\templates\cmsadmin\oidc_client\faq_list.html:88
-#: .\templates\cmsadmin\portal\announcement_list.html:86
-#: .\templates\cmsadmin\portal\toplink_list.html:82
-#: .\templates\cmsadmin\users\department_list.html:78
-#: .\templates\cmsadmin\users\user_list.html:133
-#: .\templates\registration\password_change_form.html:109
-#: .\templates\registration\password_reset_confirm.html:87
-#: .\templates\registration\password_reset_form.html:79
+#: templates/cmsadmin/oidc_client/faq_list.html:88
+#: templates/cmsadmin/portal/announcement_list.html:86
+#: templates/cmsadmin/portal/toplink_list.html:82
+#: templates/cmsadmin/users/department_list.html:78
+#: templates/cmsadmin/users/user_list.html:133
+#: templates/registration/password_change_form.html:109
+#: templates/registration/password_reset_confirm.html:87
+#: templates/registration/password_reset_form.html:79
 msgid "Cancel"
 msgstr "取消"
 
-#: .\templates\cmsadmin\oidc_client\faq_list.html:104
-#: .\templates\cmsadmin\portal\announcement_list.html:102
-#: .\templates\cmsadmin\portal\toplink_list.html:98
-#: .\templates\cmsadmin\users\department_list.html:94
-#: .\templates\cmsadmin\users\user_list.html:149
+#: templates/cmsadmin/oidc_client/faq_list.html:104
+#: templates/cmsadmin/portal/announcement_list.html:102
+#: templates/cmsadmin/portal/toplink_list.html:98
+#: templates/cmsadmin/users/department_list.html:94
+#: templates/cmsadmin/users/user_list.html:149
 msgid "Success Delete"
 msgstr "删除成功"
 
-#: .\templates\cmsadmin\oidc_client\faq_list.html:111
-#: .\templates\cmsadmin\oidc_client\faq_list.html:119
-#: .\templates\cmsadmin\portal\announcement_list.html:109
-#: .\templates\cmsadmin\portal\announcement_list.html:117
-#: .\templates\cmsadmin\portal\toplink_list.html:104
-#: .\templates\cmsadmin\portal\toplink_list.html:112
-#: .\templates\cmsadmin\users\department_list.html:100
-#: .\templates\cmsadmin\users\department_list.html:108
-#: .\templates\cmsadmin\users\user_list.html:155
-#: .\templates\cmsadmin\users\user_list.html:163
+#: templates/cmsadmin/oidc_client/faq_list.html:111
+#: templates/cmsadmin/oidc_client/faq_list.html:119
+#: templates/cmsadmin/portal/announcement_list.html:109
+#: templates/cmsadmin/portal/announcement_list.html:117
+#: templates/cmsadmin/portal/toplink_list.html:104
+#: templates/cmsadmin/portal/toplink_list.html:112
+#: templates/cmsadmin/users/department_list.html:100
+#: templates/cmsadmin/users/department_list.html:108
+#: templates/cmsadmin/users/user_list.html:155
+#: templates/cmsadmin/users/user_list.html:163
 msgid "Fail Delete"
 msgstr "删除失败"
 
-#: .\templates\cmsadmin\oidc_client\faq_list.html:127
-#: .\templates\cmsadmin\portal\announcement_list.html:125
-#: .\templates\cmsadmin\portal\toplink_list.html:120
-#: .\templates\cmsadmin\users\department_list.html:116
-#: .\templates\cmsadmin\users\user_list.html:171
+#: templates/cmsadmin/oidc_client/faq_list.html:127
+#: templates/cmsadmin/portal/announcement_list.html:125
+#: templates/cmsadmin/portal/toplink_list.html:120
+#: templates/cmsadmin/users/department_list.html:116
+#: templates/cmsadmin/users/user_list.html:171
 msgid "Lucky to see this warning~~"
 msgstr "万幸看到这个警告~~"
 
-#: .\templates\cmsadmin\oidc_client\faq_list.html:128
-#: .\templates\cmsadmin\portal\announcement_list.html:126
-#: .\templates\cmsadmin\portal\toplink_list.html:121
-#: .\templates\cmsadmin\users\department_list.html:117
-#: .\templates\cmsadmin\users\user_list.html:172
+#: templates/cmsadmin/oidc_client/faq_list.html:128
+#: templates/cmsadmin/portal/announcement_list.html:126
+#: templates/cmsadmin/portal/toplink_list.html:121
+#: templates/cmsadmin/users/department_list.html:117
+#: templates/cmsadmin/users/user_list.html:172
 msgid "This will close in <b></b> milliseconds."
 msgstr "我将在<b></b>毫秒内自动关闭~"
 
-#: .\templates\cmsadmin\oidc_client\faq_update.html:4
-#: .\templates\cmsadmin\oidc_client\faq_update.html:8
-#: .\templates\cmsadmin\oidc_client\faq_update.html:11
-#: .\templates\index.html:352
+#: templates/cmsadmin/oidc_client/faq_update.html:4
+#: templates/cmsadmin/oidc_client/faq_update.html:8
+#: templates/cmsadmin/oidc_client/faq_update.html:11 templates/index.html:352
 msgid "Update FAQ"
 msgstr "更新疑问与解答"
 
-#: .\templates\cmsadmin\portal\announcement_create.html:4
-#: .\templates\cmsadmin\portal\announcement_create.html:8
-#: .\templates\cmsadmin\portal\announcement_create.html:11
-#: .\templates\index.html:206
+#: templates/cmsadmin/portal/announcement_create.html:4
+#: templates/cmsadmin/portal/announcement_create.html:8
+#: templates/cmsadmin/portal/announcement_create.html:11
+#: templates/index.html:206
 msgid "Create Announcement"
 msgstr "新建公告"
 
-#: .\templates\cmsadmin\portal\announcement_list.html:4
-#: .\templates\cmsadmin\portal\announcement_list.html:8
-#: .\templates\cmsadmin\portal\announcement_list.html:11
-#: .\templates\index.html:199
+#: templates/cmsadmin/portal/announcement_list.html:4
+#: templates/cmsadmin/portal/announcement_list.html:8
+#: templates/cmsadmin/portal/announcement_list.html:11 templates/index.html:199
 msgid "Announcement List"
 msgstr "公告列表"
 
-#: .\templates\cmsadmin\portal\announcement_list.html:30
+#: templates/cmsadmin/portal/announcement_list.html:30
 msgid "Announcement Rank"
 msgstr "公告排序"
 
-#: .\templates\cmsadmin\portal\announcement_list.html:31
+#: templates/cmsadmin/portal/announcement_list.html:31
 msgid "Announcement Title"
 msgstr "公告标题"
 
-#: .\templates\cmsadmin\portal\announcement_update.html:4
-#: .\templates\cmsadmin\portal\announcement_update.html:8
-#: .\templates\cmsadmin\portal\announcement_update.html:11
-#: .\templates\index.html:213
+#: templates/cmsadmin/portal/announcement_update.html:4
+#: templates/cmsadmin/portal/announcement_update.html:8
+#: templates/cmsadmin/portal/announcement_update.html:11
+#: templates/index.html:213
 msgid "Update Announcement"
 msgstr "更新公告"
 
-#: .\templates\cmsadmin\portal\toplink_create.html:4
-#: .\templates\cmsadmin\portal\toplink_create.html:8
-#: .\templates\cmsadmin\portal\toplink_create.html:11
-#: .\templates\index.html:236
+#: templates/cmsadmin/portal/toplink_create.html:4
+#: templates/cmsadmin/portal/toplink_create.html:8
+#: templates/cmsadmin/portal/toplink_create.html:11 templates/index.html:236
 msgid "Create TopLink"
 msgstr "新建导航链接"
 
-#: .\templates\cmsadmin\portal\toplink_list.html:4
-#: .\templates\cmsadmin\portal\toplink_list.html:8
-#: .\templates\cmsadmin\portal\toplink_list.html:11 .\templates\index.html:229
+#: templates/cmsadmin/portal/toplink_list.html:4
+#: templates/cmsadmin/portal/toplink_list.html:8
+#: templates/cmsadmin/portal/toplink_list.html:11 templates/index.html:229
 msgid "TopLink List"
 msgstr "链接列表"
 
-#: .\templates\cmsadmin\portal\toplink_list.html:30
+#: templates/cmsadmin/portal/toplink_list.html:30
 msgid "TopLink Rank"
 msgstr "链接排序"
 
-#: .\templates\cmsadmin\portal\toplink_list.html:31
+#: templates/cmsadmin/portal/toplink_list.html:31
 msgid "TopLink Name"
 msgstr "链接名称"
 
-#: .\templates\cmsadmin\portal\toplink_list.html:32
+#: templates/cmsadmin/portal/toplink_list.html:32
 msgid "TopLink URL"
 msgstr "链接地址"
 
-#: .\templates\cmsadmin\portal\toplink_update.html:4
-#: .\templates\cmsadmin\portal\toplink_update.html:8
-#: .\templates\cmsadmin\portal\toplink_update.html:11
-#: .\templates\index.html:243
+#: templates/cmsadmin/portal/toplink_update.html:4
+#: templates/cmsadmin/portal/toplink_update.html:8
+#: templates/cmsadmin/portal/toplink_update.html:11 templates/index.html:243
 msgid "Update TopLink"
 msgstr "更新导航链接"
 
-#: .\templates\cmsadmin\users\department_create.html:4
-#: .\templates\cmsadmin\users\department_create.html:8
-#: .\templates\cmsadmin\users\department_create.html:11
-#: .\templates\index.html:306
+#: templates/cmsadmin/users/department_create.html:4
+#: templates/cmsadmin/users/department_create.html:8
+#: templates/cmsadmin/users/department_create.html:11 templates/index.html:306
 msgid "Create Department"
 msgstr "新建部门"
 
-#: .\templates\cmsadmin\users\department_list.html:4
-#: .\templates\cmsadmin\users\department_list.html:8
-#: .\templates\cmsadmin\users\department_list.html:11
-#: .\templates\index.html:299
+#: templates/cmsadmin/users/department_list.html:4
+#: templates/cmsadmin/users/department_list.html:8
+#: templates/cmsadmin/users/department_list.html:11 templates/index.html:299
 msgid "Department List"
 msgstr "部门列表"
 
-#: .\templates\cmsadmin\users\department_list.html:30
-#: .\templates\cmsadmin\users\user_list.html:40
+#: templates/cmsadmin/users/department_list.html:30
+#: templates/cmsadmin/users/user_list.html:40
 msgid "department"
 msgstr "部门"
 
-#: .\templates\cmsadmin\users\department_update.html:4
-#: .\templates\cmsadmin\users\department_update.html:8
-#: .\templates\cmsadmin\users\department_update.html:11
-#: .\templates\index.html:313
+#: templates/cmsadmin/users/department_update.html:4
+#: templates/cmsadmin/users/department_update.html:8
+#: templates/cmsadmin/users/department_update.html:11 templates/index.html:313
 msgid "Update Department"
 msgstr "修改部门"
 
-#: .\templates\cmsadmin\users\user_create.html:4
-#: .\templates\cmsadmin\users\user_create.html:8
-#: .\templates\cmsadmin\users\user_create.html:11 .\templates\index.html:276
+#: templates/cmsadmin/users/user_create.html:4
+#: templates/cmsadmin/users/user_create.html:14
+#: templates/cmsadmin/users/user_create.html:17 templates/index.html:276
 msgid "Create User"
 msgstr "新建用户"
 
-#: .\templates\cmsadmin\users\user_group_update.html:4
-#: .\templates\cmsadmin\users\user_group_update.html:13
-#: .\templates\cmsadmin\users\user_group_update.html:16
+#: templates/cmsadmin/users/user_group_update.html:4
+#: templates/cmsadmin/users/user_group_update.html:13
+#: templates/cmsadmin/users/user_group_update.html:16
 msgid "Update User Group"
 msgstr "修改用户组"
 
-#: .\templates\cmsadmin\users\user_list.html:4
-#: .\templates\cmsadmin\users\user_list.html:8
-#: .\templates\cmsadmin\users\user_list.html:11 .\templates\index.html:269
+#: templates/cmsadmin/users/user_list.html:4
+#: templates/cmsadmin/users/user_list.html:8
+#: templates/cmsadmin/users/user_list.html:11 templates/index.html:269
 msgid "User List"
 msgstr "用户列表"
 
-#: .\templates\cmsadmin\users\user_list.html:23
+#: templates/cmsadmin/users/user_list.html:23
 msgid "Search PKU ID"
 msgstr "搜索学号、职工号"
 
-#: .\templates\cmsadmin\users\user_list.html:38
+#: templates/cmsadmin/users/user_list.html:38
 msgid "username"
 msgstr "职工号、学号"
 
-#: .\templates\cmsadmin\users\user_list.html:39
+#: templates/cmsadmin/users/user_list.html:39
 msgid "name"
 msgstr "姓名"
 
-#: .\templates\cmsadmin\users\user_list.html:41
+#: templates/cmsadmin/users/user_list.html:41
 msgid "is teacher"
 msgstr "身份"
 
-#: .\templates\cmsadmin\users\user_list.html:42
+#: templates/cmsadmin/users/user_list.html:42
 msgid "is in school"
 msgstr "是否在校"
 
-#: .\templates\cmsadmin\users\user_list.html:52
+#: templates/cmsadmin/users/user_list.html:52
 msgid "unkown"
 msgstr "未知"
 
-#: .\templates\cmsadmin\users\user_list.html:60
+#: templates/cmsadmin/users/user_list.html:60
 msgid "Edit User Group"
 msgstr "修改用户组"
 
-#: .\templates\cmsadmin\users\user_list.html:77
-#: .\templates\cmsadmin\users\user_list.html:83
+#: templates/cmsadmin/users/user_list.html:77
+#: templates/cmsadmin/users/user_list.html:83
 msgid "first"
 msgstr "首页"
 
-#: .\templates\cmsadmin\users\user_list.html:79
-#: .\templates\cmsadmin\users\user_list.html:85
+#: templates/cmsadmin/users/user_list.html:79
+#: templates/cmsadmin/users/user_list.html:85
 msgid "previous"
 msgstr "前一页"
 
-#: .\templates\cmsadmin\users\user_list.html:95
-#: .\templates\cmsadmin\users\user_list.html:101
+#: templates/cmsadmin/users/user_list.html:95
+#: templates/cmsadmin/users/user_list.html:101
 msgid "next"
 msgstr "后一页"
 
-#: .\templates\cmsadmin\users\user_list.html:98
-#: .\templates\cmsadmin\users\user_list.html:103
+#: templates/cmsadmin/users/user_list.html:98
+#: templates/cmsadmin/users/user_list.html:103
 msgid "last"
 msgstr "尾页"
 
-#: .\templates\cmsadmin\users\user_update.html:4
-#: .\templates\cmsadmin\users\user_update.html:8
-#: .\templates\cmsadmin\users\user_update.html:11 .\templates\index.html:283
+#: templates/cmsadmin/users/user_update.html:4
+#: templates/cmsadmin/users/user_update.html:14
+#: templates/cmsadmin/users/user_update.html:17 templates/index.html:283
 msgid "Update User"
 msgstr "修改用户"
 
-#: .\templates\django\forms\widgets\file.html:4
+#: templates/django/forms/widgets/file.html:4
 msgid "Choose file"
 msgstr "选择文件"
 
-#: .\templates\index.html:6 .\templates\index.html:27
-#: .\templates\index.html:163 .\templates\index.html:429
-#: .\templates\index.html:434
+#: templates/index.html:6 templates/index.html:27 templates/index.html:163
+#: templates/index.html:429 templates/index.html:434
 msgid "Home"
 msgstr "主页"
 
-#: .\templates\index.html:94
+#: templates/index.html:94
 msgid "Change Password"
 msgstr "修改密码"
 
-#: .\templates\index.html:98
+#: templates/index.html:98
 msgid "Sign Out"
 msgstr "登出"
 
-#: .\templates\index.html:105 .\templates\registration\login.html:4
-#: .\templates\registration\login.html:59
-#: .\templates\registration\password_reset_form.html:51
+#: templates/index.html:105 templates/registration/login.html:4
+#: templates/registration/login.html:59
+#: templates/registration/password_reset_form.html:51
 msgid "Sign In"
 msgstr "登入"
 
-#: .\templates\index.html:126
+#: templates/index.html:126
 msgid "Uniform Identity Auth"
 msgstr "统一认证"
 
-#: .\templates\index.html:138 .\templates\users\user_detail.html:24
+#: templates/index.html:138 templates/users/user_detail.html:30
 msgid "Change Avatar"
 msgstr "更换头像"
 
-#: .\templates\index.html:170 .\templates\index.html:184
+#: templates/index.html:170 templates/index.html:184
 msgid "Manage Site"
 msgstr "管理站点"
 
-#: .\templates\index.html:177
+#: templates/index.html:177
 msgid "Admin Site"
 msgstr "后台管理"
 
-#: .\templates\index.html:191
+#: templates/index.html:191
 msgid "Manage Announcement"
 msgstr "管理公告"
 
-#: .\templates\index.html:221
+#: templates/index.html:221
 msgid "Manage TopLink"
 msgstr "管理顶部导航链接"
 
-#: .\templates\index.html:254
+#: templates/index.html:254
 msgid "Manage Users"
 msgstr "用户管理"
 
-#: .\templates\index.html:261
+#: templates/index.html:261
 msgid "Manage User"
 msgstr "管理用户"
 
-#: .\templates\index.html:291
+#: templates/index.html:291
 msgid "Manage Department"
 msgstr "管理部门"
 
-#: .\templates\index.html:323
+#: templates/index.html:323
 msgid "Manage Oidc Client"
 msgstr "管理 Oidc 应用"
 
-#: .\templates\index.html:330
+#: templates/index.html:330
 msgid "Manage FAQ"
 msgstr "管理疑问与解答"
 
-#: .\templates\index.html:365 .\templates\users\user_detail.html:6
-#: .\templates\users\user_detail.html:8 .\templates\users\user_detail.html:12
+#: templates/index.html:365 templates/users/user_detail.html:6
+#: templates/users/user_detail.html:14 templates/users/user_detail.html:18
 msgid "User Profile"
 msgstr "用户资料"
 
-#: .\templates\index.html:372
+#: templates/index.html:372
 msgid "My Client"
 msgstr "我的应用"
 
-#: .\templates\index.html:380 .\templates\oidc_client\client_list.html:4
-#: .\templates\oidc_client\client_list.html:8
-#: .\templates\oidc_client\client_list.html:11
+#: templates/index.html:380 templates/oidc_client/client_list.html:4
+#: templates/oidc_client/client_list.html:8
+#: templates/oidc_client/client_list.html:11
 msgid "Client List"
 msgstr "应用列表"
 
-#: .\templates\index.html:386 .\templates\oidc_client\client_create.html:4
-#: .\templates\oidc_client\client_create.html:8
-#: .\templates\oidc_client\client_create.html:11
+#: templates/index.html:386 templates/oidc_client/client_create.html:4
+#: templates/oidc_client/client_create.html:8
+#: templates/oidc_client/client_create.html:11
 msgid "Create Client"
 msgstr "创建应用"
 
-#: .\templates\index.html:392 .\templates\oidc_client\faq.html:5
-#: .\templates\oidc_client\faq.html:9 .\templates\oidc_client\faq.html:12
+#: templates/index.html:392 templates/oidc_client/faq.html:5
+#: templates/oidc_client/faq.html:9 templates/oidc_client/faq.html:12
 msgid "FAQ"
 msgstr "疑问与解答"
 
-#: .\templates\index.html:398
+#: templates/index.html:398
 msgid "OpenID Configuration"
 msgstr "OpenID 配置信息"
 
-#: .\templates\index.html:406 .\templates\portal\admins.html:5
-#: .\templates\portal\admins.html:7 .\templates\portal\admins.html:11
+#: templates/index.html:406 templates/portal/admins.html:5
+#: templates/portal/admins.html:7 templates/portal/admins.html:11
 msgid "Admins"
 msgstr "管理员列表"
 
-#: .\templates\index.html:452
+#: templates/index.html:452
 msgid "Announcement"
 msgstr "公告"
 
-#: .\templates\index.html:484
+#: templates/index.html:484
 msgid "All rights reserved."
 msgstr "版权所有."
 
-#: .\templates\oidc_client\client_list.html:30
+#: templates/oidc_client/client_list.html:30
 msgid "Client Name"
 msgstr "应用名"
 
-#: .\templates\oidc_client\client_list.html:31
+#: templates/oidc_client/client_list.html:31
 msgid "Client ID"
 msgstr "应用 ID"
 
-#: .\templates\oidc_client\client_list.html:32
+#: templates/oidc_client/client_list.html:32
 msgid "Client Secret"
 msgstr "应用密钥"
 
-#: .\templates\oidc_client\client_list.html:33
+#: templates/oidc_client/client_list.html:33
 msgid "Client Type"
 msgstr "应用类型"
 
-#: .\templates\oidc_client\client_list.html:34
+#: templates/oidc_client/client_list.html:34
 msgid "Reuse Consent?"
 msgstr "重用用户授权？"
 
-#: .\templates\oidc_client\client_list.html:46
+#: templates/oidc_client/client_list.html:46
 msgid "yes,no"
 msgstr "是,否"
 
-#: .\templates\oidc_client\client_update.html:4
-#: .\templates\oidc_client\client_update.html:8
-#: .\templates\oidc_client\client_update.html:11
+#: templates/oidc_client/client_update.html:4
+#: templates/oidc_client/client_update.html:8
+#: templates/oidc_client/client_update.html:11
 msgid "Update Client"
 msgstr "修改应用"
 
-#: .\templates\oidc_client\faq.html:41
+#: templates/oidc_client/faq.html:41
 msgid "Contact us"
 msgstr "联系我们"
 
-#: .\templates\oidc_client\faq.html:42
+#: templates/oidc_client/faq.html:42
 msgid "if you found not the right anwser or you have a other question?"
 msgstr "如果你没有找到正确回答或你有其他问题？"
 
-#: .\templates\oidc_provider\authorize.html:3
+#: templates/oidc_provider/authorize.html:3
 msgid "Request for Permission"
 msgstr "请求许可"
 
-#: .\templates\oidc_provider\authorize.html:21
+#: templates/oidc_provider/authorize.html:21
 msgid "Client Name: "
 msgstr "应用名："
 
-#: .\templates\oidc_provider\authorize.html:24
+#: templates/oidc_provider/authorize.html:24
 msgid "Client Ownner: "
 msgstr "开发者："
 
-#: .\templates\oidc_provider\authorize.html:28
-#: .\templates\oidc_provider\authorize.html:74
-#: .\templates\oidc_provider\authorize.html:92
+#: templates/oidc_provider/authorize.html:28
+#: templates/oidc_provider/authorize.html:74
+#: templates/oidc_provider/authorize.html:92
 msgid "Unknown"
 msgstr "未知"
 
-#: .\templates\oidc_provider\authorize.html:34
+#: templates/oidc_provider/authorize.html:34
 #, python-format
 msgid ""
 "Client <strong>%(name)s</strong> would like to access this information of "
 "you ..."
 msgstr "应用 <strong>%(name)s</strong> 想要获取你的以下信息："
 
-#: .\templates\oidc_provider\authorize.html:51
+#: templates/oidc_provider/authorize.html:51
 msgid "Decline"
 msgstr "拒绝"
 
-#: .\templates\oidc_provider\authorize.html:54
-#: .\templates\users\user_detail.html:128
+#: templates/oidc_provider/authorize.html:54
+#: templates/users/user_detail.html:134
 msgid "Authorize"
 msgstr "确认"
 
-#: .\templates\oidc_provider\authorize.html:58
+#: templates/oidc_provider/authorize.html:58
 msgid "Authorizing will redirect to"
 msgstr "授权将重定向到"
 
-#: .\templates\oidc_provider\authorize.html:71
-#: .\templates\oidc_provider\authorize.html:75
+#: templates/oidc_provider/authorize.html:71
+#: templates/oidc_provider/authorize.html:75
 msgid "Client Website"
 msgstr "应用主页"
 
-#: .\templates\oidc_provider\authorize.html:89
-#: .\templates\oidc_provider\authorize.html:93
+#: templates/oidc_provider/authorize.html:89
+#: templates/oidc_provider/authorize.html:93
 msgid "Privacy Policy"
 msgstr "隐私策略"
 
-#: .\templates\oidc_provider\authorize.html:105
+#: templates/oidc_provider/authorize.html:105
 msgid "Date Created"
 msgstr "创建日期"
 
-#: .\templates\oidc_provider\error.html:5
+#: templates/oidc_provider/error.html:5
 msgid "Error"
 msgstr "错误"
 
-#: .\templates\portal\admins.html:29
+#: templates/portal/admins.html:29
 msgid "Identity"
 msgstr "身份"
 
-#: .\templates\portal\admins.html:33
+#: templates/portal/admins.html:33
 msgid "Address"
 msgstr "办公室"
 
-#: .\templates\portal\admins.html:33 .\templates\portal\admins.html:37
-#: .\templates\portal\admins.html:41 .\templates\portal\admins.html:45
+#: templates/portal/admins.html:33 templates/portal/admins.html:37
+#: templates/portal/admins.html:41 templates/portal/admins.html:45
 msgid "not provided"
 msgstr "未提供"
 
-#: .\templates\portal\admins.html:37
+#: templates/portal/admins.html:37
 msgid "Phone"
 msgstr "电话"
 
-#: .\templates\portal\admins.html:41
+#: templates/portal/admins.html:41
 msgid "Website"
 msgstr "主页"
 
-#: .\templates\portal\admins.html:45
+#: templates/portal/admins.html:45
 msgid "Introduction"
 msgstr "简介"
 
-#: .\templates\registration\login.html:16
+#: templates/registration/login.html:16
 msgid "Sign in to start your session"
 msgstr "登录以开始您的会话"
 
-#: .\templates\registration\login.html:65
+#: templates/registration/login.html:65
 msgid "or"
 msgstr "或"
 
-#: .\templates\registration\login.html:68
+#: templates/registration/login.html:68
 msgid "Sign in using PKU IAAA"
 msgstr "使用北京大学统一身份认证登入"
 
-#: .\templates\registration\login.html:74
-#: .\templates\registration\password_change_form.html:89
+#: templates/registration/login.html:74
+#: templates/registration/password_change_form.html:89
 msgid "forgot password?"
 msgstr "忘记密码？"
 
-#: .\templates\registration\login.html:77
+#: templates/registration/login.html:77
 msgid "I have no account"
 msgstr "我没有账户"
 
-#: .\templates\registration\login.html:107
+#: templates/registration/login.html:107
 msgid "No account?"
 msgstr "没有账户?"
 
-#: .\templates\registration\login.html:108
+#: templates/registration/login.html:108
 msgid "You can use iaaa login, then you will have your account!"
 msgstr "你可以使用北京大学统一身份认证登录，然后你会有你的账户！"
 
-#: .\templates\registration\password_change_done.html:10
+#: templates/registration/password_change_done.html:10
 msgid "Your password was changed."
 msgstr "你的密码已修改。"
 
-#: .\templates\registration\password_change_done.html:12
-#: .\templates\registration\password_reset_complete.html:12
-#: .\templates\registration\password_reset_done.html:14
+#: templates/registration/password_change_done.html:12
+#: templates/registration/password_reset_complete.html:12
+#: templates/registration/password_reset_done.html:14
 msgid "Return to Sign In"
 msgstr "返回登入"
 
-#: .\templates\registration\password_change_form.html:15
+#: templates/registration/password_change_form.html:15
 msgid ""
 "Please enter your old password, for security’s sake, and then enter your new "
 "password twice so we can verify you typed it in correctly."
 msgstr "安全起见请输入你的旧密码。然后输入两次你的新密码以确保输入正确。"
 
-#: .\templates\registration\password_change_form.html:21
+#: templates/registration/password_change_form.html:21
 msgid "Please correct the error below."
 msgstr "请更正以下错误。"
 
-#: .\templates\registration\password_change_form.html:23
+#: templates/registration/password_change_form.html:23
 msgid "Please correct the errors below."
 msgstr "请更正以下错误。"
 
-#: .\templates\registration\password_change_form.html:82
-#: .\templates\registration\password_reset_confirm.html:57
+#: templates/registration/password_change_form.html:82
+#: templates/registration/password_reset_confirm.html:57
 msgid "Change password"
 msgstr "修改密码"
 
-#: .\templates\registration\password_change_form.html:133
+#: templates/registration/password_change_form.html:133
 msgid "Please enter old password"
 msgstr "请输入旧密码"
 
-#: .\templates\registration\password_change_form.html:136
+#: templates/registration/password_change_form.html:136
 msgid "Please enter new password"
 msgstr "请输入新密码"
 
-#: .\templates\registration\password_change_form.html:137
-#: .\templates\registration\password_change_form.html:141
-#: .\templates\registration\password_reset_confirm.html:109
-#: .\templates\registration\password_reset_confirm.html:113
+#: templates/registration/password_change_form.html:137
+#: templates/registration/password_change_form.html:141
+#: templates/registration/password_reset_confirm.html:109
+#: templates/registration/password_reset_confirm.html:113
 msgid "Password length cannot be less than 8 characters"
 msgstr "密码长度不能少于8个字符"
 
-#: .\templates\registration\password_change_form.html:140
+#: templates/registration/password_change_form.html:140
 msgid "Please enter new password again"
 msgstr "请再次输入密码"
 
-#: .\templates\registration\password_change_form.html:142
-#: .\templates\registration\password_reset_confirm.html:114
+#: templates/registration/password_change_form.html:142
+#: templates/registration/password_reset_confirm.html:114
 msgid "Two password entries are inconsistent"
 msgstr "两个密码不同"
 
-#: .\templates\registration\password_reset_complete.html:10
+#: templates/registration/password_reset_complete.html:10
 msgid "Your password has been set.  You may go ahead and log in now."
 msgstr "你的密码己经设置完成，现在你可以继续进行登录。"
 
-#: .\templates\registration\password_reset_confirm.html:15
+#: templates/registration/password_reset_confirm.html:15
 msgid ""
 "Please enter your new password twice so we can verify you typed it in "
 "correctly."
 msgstr "请输入两遍新密码，以便我们校验你输入的是否正确。"
 
-#: .\templates\registration\password_reset_confirm.html:65
+#: templates/registration/password_reset_confirm.html:65
 msgid ""
 "The password reset link was invalid, possibly because it has already been "
 "used.  Please request a new password reset."
 msgstr "密码重置链接无效，可能是因为它已使用。可以请求一次新的密码重置。"
 
-#: .\templates\registration\password_reset_confirm.html:108
+#: templates/registration/password_reset_confirm.html:108
 msgid "Please enter password"
 msgstr "请输入密码"
 
-#: .\templates\registration\password_reset_confirm.html:112
+#: templates/registration/password_reset_confirm.html:112
 msgid "Please enter password again"
 msgstr "请再次输入密码"
 
-#: .\templates\registration\password_reset_done.html:10
+#: templates/registration/password_reset_done.html:10
 msgid ""
 "We’ve emailed you instructions for setting your password, if an account "
 "exists with the email you entered. You should receive them shortly."
@@ -737,7 +728,7 @@ msgstr ""
 "如果你所输入的电子邮箱存在对应的用户，我们将通过电子邮件向你发送设置密码的操"
 "作步骤说明。你应该很快就会收到。"
 
-#: .\templates\registration\password_reset_done.html:12
+#: templates/registration/password_reset_done.html:12
 msgid ""
 "If you don’t receive an email, please make sure you’ve entered the address "
 "you registered with, and check your spam folder."
@@ -745,7 +736,7 @@ msgstr ""
 "如果你没有收到电子邮件，请检查输入的是你注册的电子邮箱地址。另外，也请检查你"
 "的垃圾邮件文件夹。"
 
-#: .\templates\registration\password_reset_form.html:14
+#: templates/registration/password_reset_form.html:14
 msgid ""
 "You forgot your password? Here you can easily retrieve a new password with "
 "your pku email. This should be equal to your email in profile."
@@ -753,41 +744,41 @@ msgstr ""
 "忘记了你的密码？这里你可以方便的通过你的北大邮箱设置一个新密码。这个邮箱需要"
 "与你用户资料中的北大邮箱相同。"
 
-#: .\templates\registration\password_reset_form.html:43
+#: templates/registration/password_reset_form.html:43
 msgid "Request password reset"
 msgstr "请求重置密码"
 
-#: .\templates\registration\password_reset_form.html:73
+#: templates/registration/password_reset_form.html:73
 msgid "An email will be sent to "
 msgstr "一封电子邮件将被邮寄至 "
 
-#: .\templates\registration\password_reset_form.html:95
+#: templates/registration/password_reset_form.html:95
 msgid "Please enter a email address"
 msgstr "请输入一个电子邮件地址"
 
-#: .\templates\registration\password_reset_form.html:96
+#: templates/registration/password_reset_form.html:96
 msgid "Please enter a vaild email address"
 msgstr "请输入一个有效的邮件地址"
 
-#: .\templates\users\user_detail.html:89
+#: templates/users/user_detail.html:95
 msgctxt "user profile"
 msgid "Settings"
 msgstr "设置"
 
-#: .\templates\users\user_detail.html:94
+#: templates/users/user_detail.html:100
 msgid "Recent activity"
 msgstr "最近活动"
 
-#: .\templates\users\user_detail.html:131
+#: templates/users/user_detail.html:137
 msgid "to access your information"
 msgstr "访问你的信息"
 
-#: .\templates\users\user_detail.html:144
+#: templates/users/user_detail.html:150
 #, python-format
 msgid "This consent will expire at %(etime)s."
 msgstr "这个授权将在 %(etime)s 过期。"
 
-#: .\templates\users\user_detail.html:148
+#: templates/users/user_detail.html:154
 #, python-format
 msgid "This consent has been expired at %(etime)s."
 msgstr "这个授权已在 %(etime)s 过期。"
