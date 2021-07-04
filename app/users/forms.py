@@ -1,4 +1,5 @@
 from django import forms
+from django.conf import settings
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
@@ -115,6 +116,8 @@ class MyAuthenticationForm(AuthenticationForm):
         try:
             user.username_validator(user.username)
         except ValidationError:
+            return
+        if settings.DEBUG:
             return
         if user.last_iaaa_login is None or timezone.now() - user.last_iaaa_login > timedelta(weeks=12):
             raise ValidationError(
