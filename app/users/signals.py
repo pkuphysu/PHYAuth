@@ -39,7 +39,7 @@ def user_create(sender, **kwargs):
 
 @receiver(pre_save, sender=settings.AUTH_USER_MODEL)
 def user_active_update(sender, **kwargs):
-    if not kwargs['created']:
+    if kwargs['instance'].id:
         user = kwargs['instance']
         o_user = get_user_model().objects.get(id=user.id)
         if not o_user.is_active and user.is_active:
