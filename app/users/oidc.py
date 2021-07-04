@@ -53,7 +53,7 @@ class CustomScopeClaims(ScopeClaims):
     info_pku = (
         _(u'PKU Info'),
         _(u'Access to your pku information. Includes identity ID, '
-          u'identity type, identity status, department, self introduce.'),
+          u'identity type, identity status, department, self introduce, and groups.'),
     )
 
     def scope_pku(self):
@@ -73,6 +73,7 @@ class CustomScopeClaims(ScopeClaims):
             'in_school': self.user.in_school,
             'department': self.user.department.department if self.user.department else None,
             'introduce': self.user.introduce,
+            'groups': list(self.user.groups.values_list('name', flat=True))
         }
 
         return dic
