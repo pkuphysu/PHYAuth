@@ -1,10 +1,17 @@
+import logging
+
 from django.conf import settings
-from django.db.models.signals import post_save
+from django.contrib.auth import get_user_model
+from django.db.models.signals import post_save, pre_save
 from django.dispatch import receiver
 from django.utils import timezone
 
-from .tasks import user_register_email
+from .tasks import user_register_email, user_active_update_email
 from ..pku_iaaa.signals import iaaa_user_create, iaaa_user_login_success
+
+
+UserModel = get_user_model()
+logger = logging.getLogger(__name__)
 
 
 @receiver(iaaa_user_create)
@@ -28,3 +35,13 @@ def user_create(sender, **kwargs):
         user = kwargs['instance']
         user.add_obj_perm('change_user', user)
         user.add_obj_perm('view_user', user)
+
+
+@receiver(pre_save, sender=settings.AUTH_USER_MODEL)
+def user_active_update(sender, **kwargs):
+    if not kwargs['created']:
+        user = kwargs['instance']
+        o_user = get_user_model().objects.get(id=user.id)
+        if not o_user.is_active and user.is_active:
+            user_active_update_email.delay(user.id)
+            logger.info(f'user {user.username} is marked as active!')

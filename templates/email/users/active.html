@@ -1,0 +1,12 @@
+{% extends 'email/base.html' %}
+
+{% block content %}
+    <h2 style="border-bottom:1px solid #DDD;font-size:14px;font-weight:normal;padding:13px 0 10px 8px;">
+        <span style="color: #12ADDB;font-weight: bold;">&gt; </span>
+        您的账号已激活，欢迎使用物理学院统一身份认证平台！
+    </h2>
+    <div style="padding:0 12px 0 12px;margin-top:18px">
+        <p>现在时间：<span style="border-bottom:1px dashed #ccc;">{% now "Y-m-d H:i" %}</span></p>
+        <p>如这不是您执行的操作，请尽快联系管理员。</p>
+    </div>
+{% endblock %}

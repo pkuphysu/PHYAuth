@@ -15,13 +15,27 @@ logger = logging.getLogger(__name__)
 @shared_task(base=TransactionAwareTask)
 def user_register_email(user_id):
     domain = settings.DOMAIN + settings.SUBPATH
-
     user = UserModel.objects.get(id=user_id)
-
     from_email = settings.EMAIL_FROM
     subject = '欢迎注册物理学院统一身份认证系统'
     tea_html = loader.render_to_string(
         'email/users/register.html',
+        {
+            'domain': domain,
+            'name': user.get_full_name(),
+        }
+    )
+    my_send_mail.delay(subject, tea_html, from_email, [user.get_preferred_email()])
+
+
+@shared_task(base=TransactionAwareTask)
+def user_active_update_email(user_id):
+    domain = settings.DOMAIN + settings.SUBPATH
+    user = UserModel.objects.get(id=user_id)
+    from_email = settings.EMAIL_FROM
+    subject = '管理员已帮您激活账号'
+    tea_html = loader.render_to_string(
+        'email/users/active.html',
         {
             'domain': domain,
             'name': user.get_full_name(),
