@@ -67,7 +67,7 @@ class IaaaAuthenticationBackend:
 
         By default, return the user unmodified.
         """
-        if user_info['deptId'] != '00004':
+        if user_info['deptId'] not in ['00004', '00189']:  # 00004 物理学院 00189 科维理研究所
             user.is_active = False
 
         user.is_teacher = False if user_info['identityType'] == '学生' else True
