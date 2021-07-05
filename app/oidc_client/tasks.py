@@ -1,10 +1,13 @@
 from celery import shared_task
 from django.conf import settings
 from django.contrib.auth import get_user_model
+from django.core import signing
 from django.template import loader
+from django.urls import reverse
 from oidc_provider.models import Client
 
 from PHYAuth.celery import TransactionAwareTask, my_send_mail
+from .models import MemberShip
 from ..utils.oidc import get_scopes_information
 
 UserModel = get_user_model()
@@ -27,6 +30,39 @@ def consent_accept_email(user_id, client_id, scope):
 
             'client': client,
             'scopes': get_scopes_information(scope)
+        }
+    )
+    my_send_mail.delay(subject, tea_html, from_email, [user.get_preferred_email()])
+
+
+@shared_task(base=TransactionAwareTask)
+def appgroup_invite_user_email(ms_id):
+    domain = settings.DOMAIN + settings.SUBPATH
+
+    ms = MemberShip.objects.get(id=ms_id)
+    group = ms.group
+    user = ms.user
+    inviter = ms.inviter
+
+    if domain.endswith('/'):
+        invite_url = domain[:-1]
+    else:
+        invite_url = domain
+
+    value = signing.dumps({'ms_id': ms.id})
+
+    invite_url += reverse('oidc_client:appgroup-user-invite-accept', kwargs={'gid': group.id, 'signstr': value})
+
+    from_email = settings.EMAIL_FROM
+    subject = f'{inviter.name}邀请您加入{group.name}'
+    tea_html = loader.render_to_string(
+        'email/oidc_provider/appgroup_invite_user.html',
+        {
+            'domain': domain,
+            'name': user.get_full_name(),
+            'group': group,
+            'inviter': inviter,
+            'invite_url': invite_url,
         }
     )
     my_send_mail.delay(subject, tea_html, from_email, [user.get_preferred_email()])

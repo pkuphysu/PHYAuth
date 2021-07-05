@@ -2,13 +2,13 @@ import logging
 
 from django.core.cache import cache
 from django.core.cache.utils import make_template_fragment_key
-from django.db.models.signals import post_save, post_delete
+from django.db.models.signals import post_save, post_delete, pre_save
 from django.dispatch import receiver
 from oidc_provider.models import Client
 from oidc_provider.signals import user_accept_consent
 
-from .models import Faq, AppGroup
-from .tasks import consent_accept_email
+from .models import Faq, AppGroup, MemberShip
+from .tasks import consent_accept_email, appgroup_invite_user_email
 
 logger = logging.getLogger(__name__)
 
@@ -30,13 +30,37 @@ def client_create(sender, **kwargs):
 
 
 @receiver(post_save, sender=AppGroup)
-def client_create(sender, **kwargs):
+def appgroup_create(sender, **kwargs):
     if kwargs['created']:
         group = kwargs['instance']
         user = group.owner
         user.add_obj_perm('view_appgroup', group)
         user.add_obj_perm('change_appgroup', group)
         user.add_obj_perm('delete_appgroup', group)
+
+
+@receiver(pre_save, sender=AppGroup)
+def appgroup_update(sender, **kwargs):
+    if kwargs['instance'].id:
+        group = kwargs['instance']
+        o_group = AppGroup.objects.get(id=group.id)
+        if o_group.owner != group.owner:
+            user = group.owner
+            user.add_obj_perm('view_appgroup', group)
+            user.add_obj_perm('change_appgroup', group)
+            user.add_obj_perm('delete_appgroup', group)
+            o_user = o_group.owner
+            o_user.del_obj_perm('view_appgroup', group)
+            o_user.del_obj_perm('change_appgroup', group)
+            o_user.del_obj_perm('delete_appgroup', group)
+            logger.info(f'App Group {group.id} {group.name} change owner from {o_user.username} to {user.username}.')
+
+
+@receiver(post_save, sender=MemberShip)
+def appgroup_update(sender, **kwargs):
+    if kwargs['created']:
+        ms = kwargs['instance']
+        appgroup_invite_user_email.delay(ms.id)
 
 
 @receiver(post_delete, sender=Faq)

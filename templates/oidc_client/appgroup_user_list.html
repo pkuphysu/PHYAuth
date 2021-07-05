@@ -1,14 +1,14 @@
-{% extends 'index.html' %}
+{% extends 'oidc_client/appgroup_list.html' %}
 {% load django_bootstrap_breadcrumbs %}
 
-{% block title %}{% translate 'App Group List' %}{% endblock %}
+{% block title %}{% translate 'User List' %}{% endblock %}
 
 {% block content_wrapper_breadcrumb %}
     {{ block.super }}
-    {% breadcrumb_for 'oidc_client:appgroup-list' %}{% trans "App Group List" %}{% endbreadcrumb_for %}
+    {% breadcrumb_for 'oidc_client:appgroup-user' group.id %}{% trans "User List" %}{% endbreadcrumb_for %}
 {% endblock %}
 
-{% block content_wrapper_header %}{% translate 'App Group List' %}{% endblock %}
+{% block content_wrapper_header %}{% translate 'User List' %}{% endblock %}
 
 {% block content_wrapper_body %}
     <div class="container-fluid">
@@ -17,8 +17,8 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="card-tools">
-                            <a href="{% url 'oidc_client:appgroup-create' %}">
-                                <button class="btn btn-primary">{% translate 'Create' %}</button>
+                            <a href="{% url 'oidc_client:appgroup-user-invite' group.id%}">
+                                <button class="btn btn-primary">{% translate 'Invite' %}</button>
                             </a>
                         </div>
                     </div>
@@ -27,24 +27,37 @@
                             <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>{% translate 'Name' %}</th>
-                                <th>{% translate 'User Count' %}</th>
+                                <th>{% translate 'username' %}</th>
+                                <th>{% translate 'name' %}</th>
+                                <th>{% translate 'is teacher' %}</th>
+                                <th>{% translate 'is in school' %}</th>
+                                <th>{% translate 'inviter' %}</th>
+                                <th>{% translate 'invite time' %}</th>
+                                <th>{% translate 'date joined' %}</th>
+                                <th>{% translate 'remark' %}</th>
                                 <th>{% translate 'Operate' %}</th>
                             </tr>
                             </thead>
                             <tbody>
-                            {% for appgroup in appgroup_list %}
+                            {% for membership in membership_list %}
                                 <tr>
-                                    <td>{{ appgroup.pk }}</td>
-                                    <td>{{ appgroup.name }}</td>
-                                    <td>{{ appgroup.users.count }}<a href="{% url 'oidc_client:appgroup-user' appgroup.pk %}">
-                                            <button class="btn btn-info">{% translate 'Manage' %}</button>
-                                        </a></td>
+                                    <td>{{ membership.pk }}</td>
+                                    <td>{{ membership.user.username }}</td>
+                                    <td>{{ membership.user.name }}</td>
+                                    <td>{{ membership.user.get_is_teacher_display }}</td>
+                                    <td>{{ membership.user.get_in_school_display }}</td>
+                                    <td>{{ membership.inviter.name }}</td>
+                                    <td>{{ membership.invite_time }}</td>
                                     <td>
-                                        <a href="{% url 'oidc_client:appgroup-update' appgroup.pk %}">
-                                            <button class="btn btn-info">{% translate 'Edit' %}</button>
-                                        </a>
-                                        <button class="btn btn-danger delete" data-id="{{ appgroup.pk }}">{% translate 'Delete' %}</button>
+                                        {% if membership.date_joined %}
+                                            {{ membership.date_joined }}
+                                        {% else %}
+                                            <button class="btn btn-danger reinvite" data-id="{{ membership.pk }}">{% translate 'Reinvite' %}</button>
+                                        {% endif %}
+                                    </td>
+                                    <td>{{ membership.remark }}</td>
+                                    <td>
+                                        <button class="btn btn-danger delete" data-id="{{ membership.pk }}">{% translate 'Delete' %}</button>
                                     </td>
                                 </tr>
                             {% endfor %}
@@ -84,7 +97,7 @@
                     //  发请求到后端删除数据
                     $.ajax({
                         //拼接要访问的url地址
-                        url: '{% url 'oidc_client:appgroup-delete'  %}',
+                        url: '{% url 'oidc_client:appgroup-user-delete' group.id %}',
                         type: 'POST',
                         data: {id: $(this).attr('data-id')},
                         beforeSend: function (xhr, settings) {

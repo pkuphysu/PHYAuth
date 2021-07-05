@@ -37,12 +37,12 @@ class AppGroup(models.Model):
     name = models.CharField(_('group name'), max_length=150, unique=True)
     users = models.ManyToManyField(
         settings.AUTH_USER_MODEL,
-        verbose_name=_('app groups'),
-        blank=True,
+        verbose_name=_('users'),
         help_text=_(
             'The users belong to this group.'
         ),
-        related_name="app_group_set",
+        through='MemberShip',
+        through_fields=('group', 'user')
     )
     owner = models.ForeignKey(
         settings.AUTH_USER_MODEL,
@@ -55,4 +55,20 @@ class AppGroup(models.Model):
         verbose_name = _('app group')
         verbose_name_plural = _('app groups')
 
+    def __str__(self):
+        return self.name
 
+
+class MemberShip(models.Model):
+    group = models.ForeignKey(AppGroup, on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    inviter = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL,
+                                null=True, blank=True, related_name='membership_invites')
+    invite_time = models.DateTimeField(auto_now_add=True)
+    date_joined = models.DateTimeField(blank=True, null=True)
+    remark = models.TextField(blank=True, null=True)
+
+    class Meta:
+        unique_together = ('group', 'user',)
+        verbose_name = _('membership')
+        verbose_name_plural = _('memberships')

@@ -6,7 +6,7 @@ from django.utils.translation import gettext_lazy as _
 from oidc_provider.admin import ClientForm as OIDC_ClientForm
 from oidc_provider.models import Client
 
-from .models import Faq, AppGroup
+from .models import Faq, AppGroup, MemberShip
 
 UserModel = get_user_model()
 
@@ -110,3 +110,56 @@ class AppGroupForm(forms.ModelForm):
 
     def clean_owner(self):
         return self.user
+
+
+class MemberShipForm(forms.ModelForm):
+    user = forms.ModelChoiceField(queryset=UserModel.objects.all(),
+                                  to_field_name='username',
+                                  widget=forms.TextInput(attrs={'class': 'form-control'}),
+                                  help_text=_('The pku id of the user which you are inviting.'),
+                                  error_messages={
+                                      'required': _('Please enter the user\'s pku id'),
+                                      'invalid_choice': _('User of this pku id not found, maybe he/she have not'
+                                                          'sign up with this site, please check again.')
+                                  })
+
+    field_order = ['user', 'remark', 'group', 'inviter']
+
+    class Meta:
+        model = MemberShip
+        fields = [
+            'group',
+            'inviter',
+            'user',
+            'remark',
+        ]
+        widgets = {
+            'group': forms.Select(attrs={'class': 'form-control'}),
+            'inviter': forms.Select(attrs={'class': 'form-control'}),
+            'remark': forms.Textarea(attrs={'class': 'form-control',
+                                            'rows': 3})
+        }
+        help_texts = {
+            'remark': _('Some descriptions, e.g. invite reason.')
+        }
+
+    def __init__(self, *args, **kwargs):
+        self.inviter = kwargs.pop('inviter', None)
+        self.group = kwargs.pop('group', None)
+        super().__init__(*args, **kwargs)
+        if self.inviter:
+            self.fields['inviter'].required = False
+            self.fields['inviter'].initial = self.inviter
+            self.fields['inviter'].queryset = UserModel.objects.filter(pk=self.inviter.pk)
+        self.fields['inviter'].disabled = True
+        if self.group:
+            self.fields['group'].required = False
+            self.fields['group'].initial = self.group
+            self.fields['group'].queryset = AppGroup.objects.filter(pk=self.group.pk)
+        self.fields['group'].disabled = True
+
+    def clean_inviter(self):
+        return self.inviter
+
+    def clean_group(self):
+        return self.group

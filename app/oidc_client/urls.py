@@ -13,4 +13,10 @@ urlpatterns = [
     path('appgroup-create/', views.AppGroupCreateView.as_view(), name='appgroup-create'),
     path('appgroup-update/<int:pk>/', views.AppGroupUpdateView.as_view(), name='appgroup-update'),
     path('appgroup-delete/', views.AppGroupDeleteView.as_view(), name='appgroup-delete'),
+
+    path('appgroup/<int:gid>/user/', views.AppGroupUserListView.as_view(), name='appgroup-user'),
+    path('appgroup/<int:gid>/invite/<str:signstr>/', views.AppGroupInviteUserAcceptView.as_view(),
+         name='appgroup-user-invite-accept'),
+    path('appgroup/<int:gid>/invite/', views.AppGroupInviteUserView.as_view(), name='appgroup-user-invite'),
+    path('appgroup/<int:gid>/delete/', views.AppGroupDelUserView.as_view(), name='appgroup-user-delete'),
 ]

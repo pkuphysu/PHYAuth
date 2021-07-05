@@ -4,7 +4,7 @@ from guardian.admin import GuardedModelAdmin
 from oidc_provider.admin import ClientForm
 from oidc_provider.models import Client
 
-from .models import Faq
+from .models import Faq, AppGroup, MemberShip
 
 admin.site.unregister(Client)
 
@@ -39,3 +39,15 @@ class FaqAdmin(admin.ModelAdmin):
     list_display = ['question', 'answer', 'get_show_display', 'rank']
     search_fields = ['question', 'answer']
     list_filter = ['show']
+
+
+@admin.register(AppGroup)
+class AppGroupAdmin(admin.ModelAdmin):
+    list_display = ['owner', 'name']
+    search_fields = ['owner__username', 'owner__name', 'name']
+
+
+@admin.register(MemberShip)
+class MemberShipAdmin(admin.ModelAdmin):
+    list_display = ['group', 'user', 'inviter', 'invite_time', 'date_joined', 'remark']
+    search_fields = ['group__name', 'user__username', 'user__name', 'inviter__username', 'inviter__name']

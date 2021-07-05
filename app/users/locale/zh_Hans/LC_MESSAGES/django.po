@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-04 22:46+0800\n"
+"POT-Creation-Date: 2021-07-06 00:41+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -264,10 +264,20 @@ msgstr ""
 "输入你的 职工号或学号开头的北大邮箱地址，它应是如下形式：1234567898@(stu.|"
 "alumni.)pku.edu.cn"
 
-#: app/users/views.py:19
+#: app/users/views.py:20
 msgid "Your profile has been updated successfully!"
 msgstr "您的个人信息修改成功！"
 
-#: app/users/views.py:20
+#: app/users/views.py:21
 msgid "Please check the error messages showed in the page!"
 msgstr "请检查页面中显示的错误信息！"
+
+#: app/users/views.py:45
+#, python-format
+msgid "Need %(verbose_name)s Id"
+msgstr "需要 %(verbose_name)s id"
+
+#: app/users/views.py:50
+#, python-format
+msgid "No %(verbose_name)s found matching the query"
+msgstr "没有找到符合条件的 %(verbose_name)s"
