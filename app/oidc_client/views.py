@@ -246,7 +246,7 @@ class AppGroupInviteUserAcceptView(View):
                            message=_("Signature had expired, please contact the app admin to resend invitation."))
         except BadSignature:
             messages.error(request, message=_('url invalid, please check again!'))
-        return redirect(reverse('index'))
+        return redirect(reverse('users:user-profile'))
 
 
 class AppGroupDelUserView(PermissionRequiredMixin, ObjectPermissionRequiredMixin, DeleteView):
