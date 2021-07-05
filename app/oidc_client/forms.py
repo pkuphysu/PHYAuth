@@ -6,7 +6,7 @@ from django.utils.translation import gettext_lazy as _
 from oidc_provider.admin import ClientForm as OIDC_ClientForm
 from oidc_provider.models import Client
 
-from .models import Faq
+from .models import Faq, AppGroup
 
 UserModel = get_user_model()
 
@@ -82,3 +82,31 @@ class FaqForm(forms.ModelForm):
             'show': forms.Select(attrs={'class': 'form-control'}),
             'rank': forms.NumberInput(attrs={'class': 'form-control'}),
         }
+
+
+class AppGroupForm(forms.ModelForm):
+    class Meta:
+        model = AppGroup
+        fields = [
+            'owner',
+            'name',
+        ]
+        widgets = {
+            'name': forms.TextInput(attrs={'class': 'form-control'}),
+            'owner': forms.Select(attrs={'class': 'form-control'}),
+        }
+        help_texts = {
+            'name': _('The name of your group.')
+        }
+
+    def __init__(self, *args, **kwargs):
+        self.user = kwargs.pop('user', None)
+        super().__init__(*args, **kwargs)
+        if self.user:
+            self.fields['owner'].required = False
+            self.fields['owner'].initial = self.user
+            self.fields['owner'].queryset = UserModel.objects.filter(pk=self.user.pk)
+        self.fields['owner'].disabled = True
+
+    def clean_owner(self):
+        return self.user

@@ -387,6 +387,18 @@
                                             </a>
                                         </li>
                                         <li class="nav-item">
+                                            <a href="{% url 'oidc_client:appgroup-list' %}" class="nav-link">
+                                                <i class="far fa-circle nav-icon"></i>
+                                                <p>{% translate 'App Group List' %}</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="{% url 'oidc_client:appgroup-create' %}" class="nav-link">
+                                                <i class="far fa-circle nav-icon"></i>
+                                                <p>{% translate 'Create App Group' %}</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
                                             <a href="{% url 'oidc_client:faq' %}" class="nav-link">
                                                 <i class="far fa-circle nav-icon"></i>
                                                 <p>{% translate 'FAQ' %}</p>

@@ -7,7 +7,7 @@ from django.dispatch import receiver
 from oidc_provider.models import Client
 from oidc_provider.signals import user_accept_consent
 
-from .models import Faq
+from .models import Faq, AppGroup
 from .tasks import consent_accept_email
 
 logger = logging.getLogger(__name__)
@@ -27,6 +27,16 @@ def client_create(sender, **kwargs):
         user = client.owner
         user.add_obj_perm('view_client', client)
         user.add_obj_perm('change_client', client)
+
+
+@receiver(post_save, sender=AppGroup)
+def client_create(sender, **kwargs):
+    if kwargs['created']:
+        group = kwargs['instance']
+        user = group.owner
+        user.add_obj_perm('view_appgroup', group)
+        user.add_obj_perm('change_appgroup', group)
+        user.add_obj_perm('delete_appgroup', group)
 
 
 @receiver(post_delete, sender=Faq)

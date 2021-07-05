@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-09 20:02+0800\n"
+"POT-Creation-Date: 2021-07-05 15:13+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -49,31 +49,35 @@ msgid ""
 msgstr ""
 "应用密钥将随机生成。如果你需要修改密钥，请先修改应用类型保存后再修改回来。"
 
-#: app/oidc_client/models.py:7
+#: app/oidc_client/forms.py:99
+msgid "The name of your group."
+msgstr "你的组的名字。"
+
+#: app/oidc_client/models.py:8
 msgid "question"
 msgstr "问题"
 
-#: app/oidc_client/models.py:12
+#: app/oidc_client/models.py:13
 msgid "answer"
 msgstr "解答"
 
-#: app/oidc_client/models.py:16
+#: app/oidc_client/models.py:17
 msgid "show"
 msgstr "是否显示"
 
-#: app/oidc_client/models.py:18
+#: app/oidc_client/models.py:19
 msgid "Hide"
 msgstr "隐藏"
 
-#: app/oidc_client/models.py:19
+#: app/oidc_client/models.py:20
 msgid "Show"
 msgstr "显示"
 
-#: app/oidc_client/models.py:24
+#: app/oidc_client/models.py:25
 msgid "faq order"
 msgstr "疑问与解答排序"
 
-#: app/oidc_client/models.py:25
+#: app/oidc_client/models.py:26
 msgid ""
 "It is the default order of the faq!\n"
 "The smaller it is, the more front it will be.\n"
@@ -82,36 +86,101 @@ msgstr ""
 "这是默认的疑问与解答的排序，不应该相同！数字越小越靠前，如果某几个相同，则按"
 "照创建先后排序。"
 
-#: app/oidc_client/models.py:31
+#: app/oidc_client/models.py:32
 msgid "oidc faq"
 msgstr "OpenID 疑问与解答"
 
-#: app/oidc_client/models.py:32
+#: app/oidc_client/models.py:33
 msgid "oidc faqs"
 msgstr "OpenID 疑问与解答"
 
-#: app/oidc_client/views.py:30 app/oidc_client/views.py:44
+#: app/oidc_client/models.py:37
+msgid "group name"
+msgstr "组名"
+
+#: app/oidc_client/models.py:40 app/oidc_client/models.py:56
+msgid "app groups"
+msgstr "应用用户组"
+
+#: app/oidc_client/models.py:43
+msgid "The users belong to this group."
+msgstr "属于此用户组的用户。"
+
+#: app/oidc_client/models.py:50
+msgid "owner"
+msgstr "组创建者"
+
+#: app/oidc_client/models.py:55
+msgid "app group"
+msgstr "应用用户组"
+
+#: app/oidc_client/views.py:31 app/oidc_client/views.py:45
 msgid ""
 "You are not a developer and do not have permission to view the application, "
 "please contact the administrator!"
 msgstr "您不是开发者，无权查看应用，请联系管理员！"
 
-#: app/oidc_client/views.py:46
+#: app/oidc_client/views.py:47
 #, python-format
 msgid "Client %(name)s has been created successfully!"
 msgstr "应用 %(name)s 创建成功！"
 
-#: app/oidc_client/views.py:47 app/oidc_client/views.py:68
+#: app/oidc_client/views.py:48 app/oidc_client/views.py:69
+#: app/oidc_client/views.py:97 app/oidc_client/views.py:118
 msgid "Please check the error messages showed in the page!"
 msgstr "请检查页面中显示的错误信息！"
 
-#: app/oidc_client/views.py:65
+#: app/oidc_client/views.py:66
 msgid ""
 "You are not the creator of this application, so you do not have the right to "
 "modify this application!"
 msgstr "您不是此应用的创建者，无权修改此应用！"
 
-#: app/oidc_client/views.py:67
+#: app/oidc_client/views.py:68
 #, python-format
 msgid "Client %(name)s has been updated successfully!"
 msgstr "应用 %(name)s 更新成功！"
+
+#: app/oidc_client/views.py:80
+msgid ""
+"You are not a developer and do not have permission to view the app group, "
+"please contact the administrator!"
+msgstr "您不是开发者，无权查看用户组，请联系管理员！"
+
+#: app/oidc_client/views.py:94
+msgid ""
+"You are not a developer and do not have permission to create app group, "
+"please contact the administrator!"
+msgstr "您不是开发者，无权创建用户组，请联系管理员！"
+
+#: app/oidc_client/views.py:96
+#, python-format
+msgid "App group %(name)s has been created successfully!"
+msgstr "用户组 %(name)s 创建成功！"
+
+#: app/oidc_client/views.py:115
+msgid ""
+"You are not the creator of this app group, so you do not have the right to "
+"modify it!"
+msgstr "您不是此用户组的创建者，无权修改此用户组！"
+
+#: app/oidc_client/views.py:117
+#, python-format
+msgid "App group %(name)s has been updated successfully!"
+msgstr "用户组 %(name)s 更新成功！"
+
+#: app/oidc_client/views.py:128
+msgid ""
+"You are not the creator of this app group, so you do not have the right to "
+"delete it!"
+msgstr "您不是此用户组的创建者，无权删除此用户组！"
+
+#: app/oidc_client/views.py:136
+#, python-format
+msgid "Need %(verbose_name)s Id"
+msgstr "需要 %(verbose_name)s id"
+
+#: app/oidc_client/views.py:141
+#, python-format
+msgid "No %(verbose_name)s found matching the query"
+msgstr "没有找到符合条件的 %(verbose_name)s"
