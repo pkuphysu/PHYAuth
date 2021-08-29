@@ -19,7 +19,8 @@ def userinfo(claims, user: User):
     claims['birthdate'] = user.birthdate
 
     claims['email'] = user.get_preferred_email()
-    claims['email_verified'] = user.email
+    # TODO: email_verified should be true or false, not another email address...
+    # claims['email_verified'] = user.email
 
     claims['phone_number'] = user.phone_number
 
@@ -69,6 +70,7 @@ class CustomScopeClaims(ScopeClaims):
         dic = {
             'is_pku': is_pku,
             'pku_id': self.user.username,
+            'pku_email': self.user.email,
             'is_teacher': self.user.is_teacher,
             'in_school': self.user.in_school,
             'department': self.user.department.department if self.user.department else None,
