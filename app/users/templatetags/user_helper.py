@@ -11,7 +11,7 @@ register = template.Library()
 def avatar_url(context, size=None, user=None):
     user = context['request'].user if user is None else user
     # return "/static/admin-lte/dist/img/user3-128x128.jpg"
-    return 'https://cdn.v2ex.com/gravatar/{hash}?s={size}&d=mm'.format(
+    return 'https://gravatar.helingqi.com/wavatar/{hash}?s={size}&d=mm'.format(
         hash=md5(user.get_preferred_email().encode('utf-8')).hexdigest() if user.is_authenticated else '',
         size=size or '',
     )
