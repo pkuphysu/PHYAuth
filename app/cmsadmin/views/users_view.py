@@ -71,6 +71,7 @@ class UserCreateView(PermissionRequiredMixin, SuccessMessageMixin, ErrorMessageM
                                   'please contact the administrator!')
     error_message = _('Please check the error messages showed in the page!')
     template_name = 'cmsadmin/users/user_create.html'
+    context_object_name = 'the_user'
 
     def get_success_message(self, cleaned_data):
         return _('User #%(id)s has been created successfully!') % {'id': self.object.username}
@@ -87,6 +88,7 @@ class UserUpdateView(PermissionRequiredMixin, SuccessMessageMixin, ErrorMessageM
                                   'please contact the administrator!')
     error_message = _('Please check the error messages showed in the page!')
     template_name = 'cmsadmin/users/user_update.html'
+    context_object_name = 'the_user'
 
     def get_object(self, queryset=None):
         pk = self.request.GET.get('pk')
