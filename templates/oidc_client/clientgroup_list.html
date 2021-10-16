@@ -37,6 +37,7 @@
                                 <tr>
                                     <td>{{ clientgroup.pk }}</td>
                                     <td>{{ clientgroup.name }}</td>
+                                    <td>{{ clientgroup.client.name }}</td>
                                     <td>{{ clientgroup.users.count }}<a href="{% url 'oidc_client:clientgroup-user' clientgroup.pk %}">
                                             <button class="btn btn-info">{% translate 'Manage' %}</button>
                                         </a></td>

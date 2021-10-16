@@ -2,6 +2,7 @@ from random import randint
 
 from django import forms
 from django.contrib.auth import get_user_model
+from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
 from oidc_provider.admin import ClientForm as OIDC_ClientForm
 from oidc_provider.models import Client
@@ -90,10 +91,12 @@ class ClientGroupForm(forms.ModelForm):
         fields = [
             'owner',
             'name',
+            'client'
         ]
         widgets = {
             'name': forms.TextInput(attrs={'class': 'form-control'}),
             'owner': forms.Select(attrs={'class': 'form-control'}),
+            'client': forms.Select(attrs={'class': 'form-control'})
         }
         help_texts = {
             'name': _('The name of your group.')
@@ -106,10 +109,18 @@ class ClientGroupForm(forms.ModelForm):
             self.fields['owner'].required = False
             self.fields['owner'].initial = self.user
             self.fields['owner'].queryset = UserModel.objects.filter(pk=self.user.pk)
+            self.fields['client'].queryset = ClientGroup.objects.filter(owner=self.user)
         self.fields['owner'].disabled = True
 
     def clean_owner(self):
         return self.user
+
+    def clean(self):
+        super().clean()
+        owner = self.cleaned_data['owner']
+        client = self.cleaned_data['client']
+        if client.owner != owner:
+            self.add_error('client', ValidationError(_('You can only choose the client owned by yourself!')))
 
 
 class MemberShipForm(forms.ModelForm):

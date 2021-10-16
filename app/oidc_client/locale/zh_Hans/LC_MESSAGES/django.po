@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-16 23:51+0800\n"
+"POT-Creation-Date: 2021-10-17 00:58+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,36 +38,40 @@ msgstr "会话管理"
 msgid "openid management"
 msgstr "OpenID 管理"
 
-#: app/oidc_client/forms.py:40
+#: app/oidc_client/forms.py:41
 msgid "Client ID will be generated randomly."
 msgstr "应用ID将随机生成。"
 
-#: app/oidc_client/forms.py:41
+#: app/oidc_client/forms.py:42
 msgid ""
 "Client Secret will be generated randomly. If you want to get a new secret, "
 "please switch the client to Public and save, then switch back and save."
 msgstr ""
 "应用密钥将随机生成。如果你需要修改密钥，请先修改应用类型保存后再修改回来。"
 
-#: app/oidc_client/forms.py:99
+#: app/oidc_client/forms.py:102
 msgid "The name of your group."
 msgstr "你的组的名字。"
 
-#: app/oidc_client/forms.py:119
+#: app/oidc_client/forms.py:123
+msgid "You can only choose the client owned by yourself!"
+msgstr "您只能选择自己创建的应用！"
+
+#: app/oidc_client/forms.py:130
 msgid "The pku id of the user which you are inviting."
 msgstr "被邀请人的北京大学职工号/学号。"
 
-#: app/oidc_client/forms.py:121
+#: app/oidc_client/forms.py:132
 msgid "Please enter the user's pku id"
 msgstr "请输入被邀请人的北京大学职工号/学号。"
 
-#: app/oidc_client/forms.py:122
+#: app/oidc_client/forms.py:133
 msgid ""
 "User of this pku id not found, maybe he/she have notsign up with this site, "
 "please check again."
 msgstr "这个职工号/学号未找到，可能是由于该用户未在本站注册，请核查。"
 
-#: app/oidc_client/forms.py:143
+#: app/oidc_client/forms.py:154
 msgid "Some descriptions, e.g. invite reason."
 msgstr "一些描述，例如，邀请原因。"
 

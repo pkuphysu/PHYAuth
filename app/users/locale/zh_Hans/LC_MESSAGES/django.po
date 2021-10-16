@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-16 23:51+0800\n"
+"POT-Creation-Date: 2021-10-17 00:58+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -244,7 +244,7 @@ msgstr ""
 "访问你的北京大学信息。包含学号/工号、身份（教职工或学生）、状态（在校或减"
 "离）、部门、您的个人简介和您的属组信息。"
 
-#: app/users/oidc.py:113
+#: app/users/oidc.py:114
 msgid ""
 "Some of your information is not complete, we recommend that you should "
 "complete your profile first."
