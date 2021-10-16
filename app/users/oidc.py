@@ -75,7 +75,8 @@ class CustomScopeClaims(ScopeClaims):
             'in_school': self.user.in_school,
             'department': self.user.department.department if self.user.department else None,
             'introduce': self.user.introduce,
-            'groups': list(self.user.membership_set.filter(date_joined__isnull=False).values_list('group__name', flat=True))
+            'groups': list(self.user.clientusermembership_set.filter(
+                group__client=self.client, date_joined__isnull=False).values_list('group__name', flat=True))
         }
 
         return dic
