@@ -9,7 +9,7 @@ from guardian.mixins import PermissionRequiredMixin as ObjectPermissionRequiredM
 from oidc_provider.models import UserConsent
 
 from .forms import UserForm, MyAuthenticationForm
-from ..oidc_client.models import MemberShip
+from ..oidc_client.models import ClientUserMemberShip
 from ..utils.views import ErrorMessageMixin
 
 
@@ -34,8 +34,8 @@ class UserProfileView(ObjectPermissionRequiredMixin, SuccessMessageMixin, ErrorM
         return reverse('users:user-profile')
 
 
-class UserDelAppGroupView(DeleteView):
-    model = MemberShip
+class UserDelClientGroupView(DeleteView):
+    model = ClientUserMemberShip
 
     def get_object(self, queryset=None):
         if queryset is None:
@@ -61,7 +61,6 @@ class UserDelAppGroupView(DeleteView):
             return super().dispatch(request, *args, **kwargs)
         except Exception as e:
             return JsonResponse(data={'status': False, 'msg': str(e)})
-
 
 
 class MyLoginView(LoginView):

@@ -7,7 +7,7 @@ from django.urls import reverse
 from oidc_provider.models import Client
 
 from PHYAuth.celery import TransactionAwareTask, my_send_mail
-from .models import MemberShip
+from .models import ClientUserMemberShip
 from ..utils.oidc import get_scopes_information
 
 UserModel = get_user_model()
@@ -36,10 +36,10 @@ def consent_accept_email(user_id, client_id, scope):
 
 
 @shared_task(base=TransactionAwareTask)
-def appgroup_invite_user_email(ms_id):
+def clientgroup_invite_user_email(ms_id):
     domain = settings.DOMAIN + settings.SUBPATH
 
-    ms = MemberShip.objects.get(id=ms_id)
+    ms = ClientUserMemberShip.objects.get(id=ms_id)
     group = ms.group
     user = ms.user
     inviter = ms.inviter
@@ -51,12 +51,12 @@ def appgroup_invite_user_email(ms_id):
 
     value = signing.dumps({'ms_id': ms.id})
 
-    invite_url += reverse('oidc_client:appgroup-user-invite-accept', kwargs={'gid': group.id, 'signstr': value})
+    invite_url += reverse('oidc_client:clientgroup-users-invite-accept', kwargs={'gid': group.id, 'signstr': value})
 
     from_email = settings.EMAIL_FROM
     subject = f'{inviter.name}邀请您加入{group.name}'
     tea_html = loader.render_to_string(
-        'email/oidc_provider/appgroup_invite_user.html',
+        'email/oidc_provider/clientgroup_invite_user.html',
         {
             'domain': domain,
             'name': user.get_full_name(),

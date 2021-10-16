@@ -82,10 +82,10 @@
                         </ul>
                         <strong>{% translate 'app group' %}</strong>
                         <ul class="list-group list-group-unbordered mb-3">
-                            {% for appgroup in user.appgroup_set.all %}
+                            {% for clientgroup in user.clientgroup_set.all %}
                                 <li class="list-group-item">
-                                    <b>{{ appgroup.name }}</b>
-                                    <button class="float-right btn btn-warning delete" data-id="{{ appgroup.id }}">
+                                    <b>{{ clientgroup.name }}</b>
+                                    <button class="float-right btn btn-warning delete" data-id="{{ clientgroup.id }}">
                                         {% translate 'Exit'%}
                                     </button>
                                 </li>
@@ -226,7 +226,7 @@
                     //  发请求到后端删除数据
                     $.ajax({
                         //拼接要访问的url地址
-                        url: '{% url 'users:exit-appgroup' %}',
+                        url: '{% url 'users:exit-clientgroup' %}',
                         type: 'POST',
                         data: {id: $(this).attr('data-id')},
                         beforeSend: function (xhr, settings) {

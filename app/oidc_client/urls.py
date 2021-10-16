@@ -9,14 +9,14 @@ urlpatterns = [
     path('client-list/', views.ClientListView.as_view(), name='client-list'),
     path('client-update/<int:pk>/', views.ClientUpdateView.as_view(), name='client-update'),
 
-    path('appgroup-list/', views.AppGroupListView.as_view(), name='appgroup-list'),
-    path('appgroup-create/', views.AppGroupCreateView.as_view(), name='appgroup-create'),
-    path('appgroup-update/<int:pk>/', views.AppGroupUpdateView.as_view(), name='appgroup-update'),
-    path('appgroup-delete/', views.AppGroupDeleteView.as_view(), name='appgroup-delete'),
+    path('clientgroup-list/', views.ClientGroupListView.as_view(), name='clientgroup-list'),
+    path('clientgroup-create/', views.ClientGroupCreateView.as_view(), name='clientgroup-create'),
+    path('clientgroup-update/<int:pk>/', views.ClientGroupUpdateView.as_view(), name='clientgroup-update'),
+    path('clientgroup-delete/', views.ClientGroupDeleteView.as_view(), name='clientgroup-delete'),
 
-    path('appgroup/<int:gid>/user/', views.AppGroupUserListView.as_view(), name='appgroup-user'),
-    path('appgroup/<int:gid>/invite/<str:signstr>/', views.AppGroupInviteUserAcceptView.as_view(),
-         name='appgroup-user-invite-accept'),
-    path('appgroup/<int:gid>/invite/', views.AppGroupInviteUserView.as_view(), name='appgroup-user-invite'),
-    path('appgroup/<int:gid>/delete/', views.AppGroupDelUserView.as_view(), name='appgroup-user-delete'),
+    path('clientgroup/<int:gid>/user/', views.ClientGroupUsersListView.as_view(), name='clientgroup-user'),
+    path('clientgroup/<int:gid>/invite/<str:signstr>/', views.ClientGroupInviteUserAcceptView.as_view(),
+         name='clientgroup-user-invite-accept'),
+    path('clientgroup/<int:gid>/invite/', views.ClientGroupInviteUserView.as_view(), name='clientgroup-user-invite'),
+    path('clientgroup/<int:gid>/delete/', views.ClientGroupDelUserView.as_view(), name='clientgroup-user-delete'),
 ]

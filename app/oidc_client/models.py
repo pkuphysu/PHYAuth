@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+from oidc_provider.models import Client
 
 
 class Faq(models.Model):
@@ -33,7 +34,7 @@ class Faq(models.Model):
         verbose_name_plural = _('oidc faqs')
 
 
-class AppGroup(models.Model):
+class ClientGroup(models.Model):
     name = models.CharField(_('group name'), max_length=150, unique=True)
     users = models.ManyToManyField(
         settings.AUTH_USER_MODEL,
@@ -41,8 +42,13 @@ class AppGroup(models.Model):
         help_text=_(
             'The users belong to this group.'
         ),
-        through='MemberShip',
+        through='ClientUserMemberShip',
         through_fields=('group', 'user')
+    )
+    client = models.ForeignKey(
+        Client,
+        on_delete=models.CASCADE,
+        verbose_name=_('client')
     )
     owner = models.ForeignKey(
         settings.AUTH_USER_MODEL,
@@ -52,15 +58,15 @@ class AppGroup(models.Model):
     )
 
     class Meta:
-        verbose_name = _('app group')
-        verbose_name_plural = _('app groups')
+        verbose_name = _('client group')
+        verbose_name_plural = _('client groups')
 
     def __str__(self):
         return self.name
 
 
-class MemberShip(models.Model):
-    group = models.ForeignKey(AppGroup, on_delete=models.CASCADE)
+class ClientUserMemberShip(models.Model):
+    group = models.ForeignKey(ClientGroup, on_delete=models.CASCADE)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     inviter = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL,
                                 null=True, blank=True, related_name='membership_invites')

@@ -6,7 +6,7 @@ from django.utils.translation import gettext_lazy as _
 from oidc_provider.admin import ClientForm as OIDC_ClientForm
 from oidc_provider.models import Client
 
-from .models import Faq, AppGroup, MemberShip
+from .models import Faq, ClientGroup, ClientUserMemberShip
 
 UserModel = get_user_model()
 
@@ -84,9 +84,9 @@ class FaqForm(forms.ModelForm):
         }
 
 
-class AppGroupForm(forms.ModelForm):
+class ClientGroupForm(forms.ModelForm):
     class Meta:
-        model = AppGroup
+        model = ClientGroup
         fields = [
             'owner',
             'name',
@@ -126,7 +126,7 @@ class MemberShipForm(forms.ModelForm):
     field_order = ['user', 'remark', 'group', 'inviter']
 
     class Meta:
-        model = MemberShip
+        model = ClientUserMemberShip
         fields = [
             'group',
             'inviter',
@@ -155,7 +155,7 @@ class MemberShipForm(forms.ModelForm):
         if self.group:
             self.fields['group'].required = False
             self.fields['group'].initial = self.group
-            self.fields['group'].queryset = AppGroup.objects.filter(pk=self.group.pk)
+            self.fields['group'].queryset = ClientGroup.objects.filter(pk=self.group.pk)
         self.fields['group'].disabled = True
 
     def clean_inviter(self):

@@ -17,8 +17,8 @@ from django.views.generic import UpdateView, CreateView, ListView, DeleteView
 from guardian.mixins import PermissionRequiredMixin as ObjectPermissionRequiredMixin, PermissionListMixin
 from oidc_provider.models import Client
 
-from .forms import ClientForm, AppGroupForm, MemberShipForm
-from .models import Faq, AppGroup, MemberShip
+from .forms import ClientForm, ClientGroupForm, MemberShipForm
+from .models import Faq, ClientGroup, ClientUserMemberShip
 from ..users.models import User
 from ..utils.views import ErrorMessageMixin
 
@@ -84,27 +84,27 @@ class ClientUpdateView(PermissionRequiredMixin, ObjectPermissionRequiredMixin,
         return reverse('oidc_client:client-list')
 
 
-class AppGroupListView(PermissionRequiredMixin, PermissionListMixin, ListView):
-    model = AppGroup
-    template_name = 'oidc_client/appgroup_list.html'
-    permission_required = 'oidc_client.view_appgroup'
-    permission_denied_message = _('You are not a developer and do not have permission to view the app group, '
+class ClientGroupListView(PermissionRequiredMixin, PermissionListMixin, ListView):
+    model = ClientGroup
+    template_name = 'oidc_client/clientgroup_list.html'
+    permission_required = 'oidc_client.view_clientgroup'
+    permission_denied_message = _('You are not a developer and do not have permission to view the client group, '
                                   'please contact the administrator!')
-    context_object_name = 'appgroup_list'
+    context_object_name = 'clientgroup_list'
     get_objects_for_user_extra_kwargs = {'with_superuser': False}
     ordering = 'pk'
 
 
-class AppGroupCreateView(PermissionRequiredMixin, ObjectPermissionRequiredMixin,
-                         SuccessMessageMixin, ErrorMessageMixin, CreateView):
-    model = AppGroup
-    form_class = AppGroupForm
-    template_name = 'oidc_client/appgroup_create.html'
+class ClientGroupCreateView(PermissionRequiredMixin, ObjectPermissionRequiredMixin,
+                            SuccessMessageMixin, ErrorMessageMixin, CreateView):
+    model = ClientGroup
+    form_class = ClientGroupForm
+    template_name = 'oidc_client/clientgroup_create.html'
     permission_object = None
-    permission_required = 'oidc_client.add_appgroup'
-    permission_denied_message = _('You are not a developer and do not have permission to create app group, '
+    permission_required = 'oidc_client.add_clientgroup'
+    permission_denied_message = _('You are not a developer and do not have permission to create client group, '
                                   'please contact the administrator!')
-    success_message = _('App group %(name)s has been created successfully!')
+    success_message = _('Client group %(name)s has been created successfully!')
     error_message = _('Please check the error messages showed in the page!')
 
     def get_form_kwargs(self):
@@ -114,33 +114,33 @@ class AppGroupCreateView(PermissionRequiredMixin, ObjectPermissionRequiredMixin,
         return kwargs
 
     def get_success_url(self):
-        return reverse('oidc_client:appgroup-list')
+        return reverse('oidc_client:clientgroup-list')
 
 
-class AppGroupUpdateView(PermissionRequiredMixin, ObjectPermissionRequiredMixin,
-                         SuccessMessageMixin, ErrorMessageMixin, UpdateView):
-    model = AppGroup
-    form_class = AppGroupForm
-    template_name = 'oidc_client/appgroup_update.html'
-    permission_required = 'oidc_client.change_appgroup'
-    permission_denied_message = _('You are not the creator of this app group, '
+class ClientGroupUpdateView(PermissionRequiredMixin, ObjectPermissionRequiredMixin,
+                            SuccessMessageMixin, ErrorMessageMixin, UpdateView):
+    model = ClientGroup
+    form_class = ClientGroupForm
+    template_name = 'oidc_client/clientgroup_update.html'
+    permission_required = 'oidc_client.change_clientgroup'
+    permission_denied_message = _('You are not the creator of this client group, '
                                   'so you do not have the right to modify it!')
-    success_message = _('App group %(name)s has been updated successfully!')
+    success_message = _('Client group %(name)s has been updated successfully!')
     error_message = _('Please check the error messages showed in the page!')
     return_403 = True
 
     def get_success_url(self):
-        return reverse('oidc_client:appgroup-list')
+        return reverse('oidc_client:clientgroup-list')
 
 
-class AppGroupDeleteView(PermissionRequiredMixin, ObjectPermissionRequiredMixin, DeleteView):
-    model = AppGroup
-    permission_required = 'oidc_client.delete_appgroup'
-    permission_denied_message = _('You are not the creator of this app group, '
+class ClientGroupDeleteView(PermissionRequiredMixin, ObjectPermissionRequiredMixin, DeleteView):
+    model = ClientGroup
+    permission_required = 'oidc_client.delete_clientgroup'
+    permission_denied_message = _('You are not the creator of this client group, '
                                   'so you do not have the right to delete it!')
 
     def on_permission_check_fail(self, request, response, obj=None):
-        raise PermissionDenied(_('You are not the creator of this app group, '
+        raise PermissionDenied(_('You are not the creator of this client group, '
                                  'so you do not have the right to delete it!'))
 
     def get_object(self, queryset=None):
@@ -169,10 +169,10 @@ class AppGroupDeleteView(PermissionRequiredMixin, ObjectPermissionRequiredMixin,
             return JsonResponse(data={'status': False, 'msg': str(e)})
 
 
-class AppGroupUserListView(PermissionRequiredMixin, ObjectPermissionRequiredMixin, ListView):
-    model = MemberShip
-    template_name = 'oidc_client/appgroup_user_list.html'
-    permission_required = 'oidc_client.view_appgroup'
+class ClientGroupUsersListView(PermissionRequiredMixin, ObjectPermissionRequiredMixin, ListView):
+    model = ClientUserMemberShip
+    template_name = 'oidc_client/clientgroup_users_list.html'
+    permission_required = 'oidc_client.view_clientgroup'
     permission_denied_message = _('You are not a developer and do not have permission to view the user of this group, '
                                   'please contact the administrator!')
     context_object_name = 'membership_list'
@@ -184,18 +184,18 @@ class AppGroupUserListView(PermissionRequiredMixin, ObjectPermissionRequiredMixi
         return ctx
 
     def get_object(self):
-        return AppGroup.objects.get(id=self.kwargs.get('gid'))
+        return ClientGroup.objects.get(id=self.kwargs.get('gid'))
 
     def get_queryset(self):
         return super().get_queryset().filter(group__id=self.kwargs.get('gid'))
 
 
-class AppGroupInviteUserView(PermissionRequiredMixin, ObjectPermissionRequiredMixin,
-                             SuccessMessageMixin, ErrorMessageMixin, CreateView):
-    model = MemberShip
+class ClientGroupInviteUserView(PermissionRequiredMixin, ObjectPermissionRequiredMixin,
+                                SuccessMessageMixin, ErrorMessageMixin, CreateView):
+    model = ClientUserMemberShip
     form_class = MemberShipForm
-    template_name = 'oidc_client/appgroup_user_invite.html'
-    permission_required = 'oidc_client.change_appgroup'
+    template_name = 'oidc_client/clientgroup_user_invite.html'
+    permission_required = 'oidc_client.change_clientgroup'
     permission_denied_message = _('You are not a developer or the owner of this group, '
                                   'so you do not have permission to invite user!')
     success_message = _('Successfully invite %(name)s!')
@@ -214,12 +214,12 @@ class AppGroupInviteUserView(PermissionRequiredMixin, ObjectPermissionRequiredMi
         try:
             return super().form_valid(form)
         except IntegrityError:
-            self.error_message = _('This user has been invited before, Use the reinvite button!')
+            self.error_message = _('This user has been invited before, use the reinvite button!')
             return super().form_invalid(form)
 
     @property
     def permission_object(self):
-        return AppGroup.objects.get(id=self.kwargs.get('gid'))
+        return ClientGroup.objects.get(id=self.kwargs.get('gid'))
 
     def get_form_kwargs(self):
         """Return the keyword arguments for instantiating the form."""
@@ -229,39 +229,39 @@ class AppGroupInviteUserView(PermissionRequiredMixin, ObjectPermissionRequiredMi
         return kwargs
 
     def get_success_url(self):
-        return reverse('oidc_client:appgroup-user', kwargs={'gid': self.kwargs.get('gid')})
+        return reverse('oidc_client:clientgroup-user', kwargs={'gid': self.kwargs.get('gid')})
 
 
-class AppGroupInviteUserAcceptView(View):
+class ClientGroupInviteUserAcceptView(View):
     def get(self, request, gid, signstr):
         try:
             value = signing.loads(signstr, max_age=timedelta(weeks=1))
             ms_id = value['ms_id']
-            ms = MemberShip.objects.get(id=ms_id)
+            ms = ClientUserMemberShip.objects.get(id=ms_id)
             ms.date_joined = timezone.now()
             ms.save()
             messages.success(request, message=_("Success join the %(group_name)s") % {'group_name': ms.group.name})
         except SignatureExpired:
             messages.error(request,
-                           message=_("Signature had expired, please contact the app admin to resend invitation."))
+                           message=_("Signature had expired, please contact the client admin to resend invitation."))
         except BadSignature:
             messages.error(request, message=_('url invalid, please check again!'))
         return redirect(reverse('users:user-profile'))
 
 
-class AppGroupDelUserView(PermissionRequiredMixin, ObjectPermissionRequiredMixin, DeleteView):
-    model = MemberShip
-    permission_required = 'oidc_client.change_appgroup'
-    permission_denied_message = _('You are not the creator of this app group, '
+class ClientGroupDelUserView(PermissionRequiredMixin, ObjectPermissionRequiredMixin, DeleteView):
+    model = ClientUserMemberShip
+    permission_required = 'oidc_client.change_clientgroup'
+    permission_denied_message = _('You are not the creator of this client group, '
                                   'so you do not have the right to delete its user!')
 
     def on_permission_check_fail(self, request, response, obj=None):
-        raise PermissionDenied(_('You are not the creator of this app group, '
+        raise PermissionDenied(_('You are not the creator of this client group, '
                                  'so you do not have the right to delete its user!'))
 
     @property
     def permission_object(self):
-        return AppGroup.objects.get(id=self.kwargs.get('gid'))
+        return ClientGroup.objects.get(id=self.kwargs.get('gid'))
 
     def get_object(self, queryset=None):
         if queryset is None:
