@@ -109,7 +109,7 @@ class ClientGroupForm(forms.ModelForm):
             self.fields['owner'].required = False
             self.fields['owner'].initial = self.user
             self.fields['owner'].queryset = UserModel.objects.filter(pk=self.user.pk)
-            self.fields['client'].queryset = ClientGroup.objects.filter(owner=self.user)
+            self.fields['client'].queryset = Client.objects.filter(owner=self.user)
         self.fields['owner'].disabled = True
 
     def clean_owner(self):

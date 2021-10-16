@@ -27,6 +27,7 @@
                             <thead>
                             <tr>
                                 <th>ID</th>
+                                <th>{% translate 'Client Name' %}</th>
                                 <th>{% translate 'Name' %}</th>
                                 <th>{% translate 'User Count' %}</th>
                                 <th>{% translate 'Operate' %}</th>
@@ -36,8 +37,8 @@
                             {% for clientgroup in clientgroup_list %}
                                 <tr>
                                     <td>{{ clientgroup.pk }}</td>
-                                    <td>{{ clientgroup.name }}</td>
                                     <td>{{ clientgroup.client.name }}</td>
+                                    <td>{{ clientgroup.name }}</td>
                                     <td>{{ clientgroup.users.count }}<a href="{% url 'oidc_client:clientgroup-user' clientgroup.pk %}">
                                             <button class="btn btn-info">{% translate 'Manage' %}</button>
                                         </a></td>
