@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-06 00:41+0800\n"
+"POT-Creation-Date: 2021-10-16 23:51+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -71,31 +71,31 @@ msgstr "这个职工号/学号未找到，可能是由于该用户未在本站�
 msgid "Some descriptions, e.g. invite reason."
 msgstr "一些描述，例如，邀请原因。"
 
-#: app/oidc_client/models.py:8
+#: app/oidc_client/models.py:9
 msgid "question"
 msgstr "问题"
 
-#: app/oidc_client/models.py:13
+#: app/oidc_client/models.py:14
 msgid "answer"
 msgstr "解答"
 
-#: app/oidc_client/models.py:17
+#: app/oidc_client/models.py:18
 msgid "show"
 msgstr "是否显示"
 
-#: app/oidc_client/models.py:19
+#: app/oidc_client/models.py:20
 msgid "Hide"
 msgstr "隐藏"
 
-#: app/oidc_client/models.py:20
+#: app/oidc_client/models.py:21
 msgid "Show"
 msgstr "显示"
 
-#: app/oidc_client/models.py:25
+#: app/oidc_client/models.py:26
 msgid "faq order"
 msgstr "疑问与解答排序"
 
-#: app/oidc_client/models.py:26
+#: app/oidc_client/models.py:27
 msgid ""
 "It is the default order of the faq!\n"
 "The smaller it is, the more front it will be.\n"
@@ -104,43 +104,47 @@ msgstr ""
 "这是默认的疑问与解答的排序，不应该相同！数字越小越靠前，如果某几个相同，则按"
 "照创建先后排序。"
 
-#: app/oidc_client/models.py:32
+#: app/oidc_client/models.py:33
 msgid "oidc faq"
 msgstr "OpenID 疑问与解答"
 
-#: app/oidc_client/models.py:33
+#: app/oidc_client/models.py:34
 msgid "oidc faqs"
 msgstr "OpenID 疑问与解答"
 
-#: app/oidc_client/models.py:37
+#: app/oidc_client/models.py:38
 msgid "group name"
 msgstr "组名"
 
-#: app/oidc_client/models.py:40
+#: app/oidc_client/models.py:41
 msgid "users"
 msgstr "用户"
 
-#: app/oidc_client/models.py:42
+#: app/oidc_client/models.py:43
 msgid "The users belong to this group."
 msgstr "属于此用户组的用户。"
 
-#: app/oidc_client/models.py:50
+#: app/oidc_client/models.py:51
+msgid "client"
+msgstr "应用"
+
+#: app/oidc_client/models.py:56
 msgid "owner"
 msgstr "组创建者"
 
-#: app/oidc_client/models.py:55
-msgid "app group"
+#: app/oidc_client/models.py:61
+msgid "client group"
 msgstr "用户组"
 
-#: app/oidc_client/models.py:56
-msgid "app groups"
+#: app/oidc_client/models.py:62
+msgid "client groups"
 msgstr "用户组"
 
-#: app/oidc_client/models.py:73
+#: app/oidc_client/models.py:79
 msgid "membership"
 msgstr ""
 
-#: app/oidc_client/models.py:74
+#: app/oidc_client/models.py:80
 msgid "memberships"
 msgstr ""
 
@@ -174,36 +178,36 @@ msgstr "应用 %(name)s 更新成功！"
 
 #: app/oidc_client/views.py:91
 msgid ""
-"You are not a developer and do not have permission to view the app group, "
+"You are not a developer and do not have permission to view the client group, "
 "please contact the administrator!"
 msgstr "您不是开发者，无权查看用户组，请联系管理员！"
 
 #: app/oidc_client/views.py:105
 msgid ""
-"You are not a developer and do not have permission to create app group, "
+"You are not a developer and do not have permission to create client group, "
 "please contact the administrator!"
 msgstr "您不是开发者，无权创建用户组，请联系管理员！"
 
 #: app/oidc_client/views.py:107
 #, python-format
-msgid "App group %(name)s has been created successfully!"
+msgid "Client group %(name)s has been created successfully!"
 msgstr "用户组 %(name)s 创建成功！"
 
 #: app/oidc_client/views.py:126
 msgid ""
-"You are not the creator of this app group, so you do not have the right to "
-"modify it!"
+"You are not the creator of this client group, so you do not have the right "
+"to modify it!"
 msgstr "您不是此用户组的创建者，无权修改此用户组！"
 
 #: app/oidc_client/views.py:128
 #, python-format
-msgid "App group %(name)s has been updated successfully!"
+msgid "Client group %(name)s has been updated successfully!"
 msgstr "用户组 %(name)s 更新成功！"
 
 #: app/oidc_client/views.py:139 app/oidc_client/views.py:143
 msgid ""
-"You are not the creator of this app group, so you do not have the right to "
-"delete it!"
+"You are not the creator of this client group, so you do not have the right "
+"to delete it!"
 msgstr "您不是此用户组的创建者，无权删除此用户组！"
 
 #: app/oidc_client/views.py:151 app/oidc_client/views.py:271
@@ -234,7 +238,7 @@ msgid "Successfully invite %(name)s!"
 msgstr "成功邀请 %(name)s！"
 
 #: app/oidc_client/views.py:217
-msgid "This user has been invited before, Use the reinvite button!"
+msgid "This user has been invited before, use the reinvite button!"
 msgstr "这个用户已被邀请过，请使用 再次邀请 按钮。"
 
 #: app/oidc_client/views.py:243
@@ -244,7 +248,7 @@ msgstr "成功加入 %(group_name)s"
 
 #: app/oidc_client/views.py:246
 msgid ""
-"Signature had expired, please contact the app admin to resend invitation."
+"Signature had expired, please contact the client admin to resend invitation."
 msgstr "签名过期，请联系应用管理员重新发送邀请邮件。"
 
 #: app/oidc_client/views.py:248
@@ -253,6 +257,6 @@ msgstr "链接无效，请再次核查，或联系管理员。"
 
 #: app/oidc_client/views.py:255 app/oidc_client/views.py:259
 msgid ""
-"You are not the creator of this app group, so you do not have the right to "
-"delete its user!"
+"You are not the creator of this client group, so you do not have the right "
+"to delete its user!"
 msgstr "您不是此用户组的创建者，无权删除用户！"

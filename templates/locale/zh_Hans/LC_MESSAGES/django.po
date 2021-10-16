@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-06 00:41+0800\n"
+"POT-Creation-Date: 2021-10-16 23:51+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Rainshaw <rxg@live.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -74,7 +74,7 @@ msgstr "物理学院统一身份认证"
 
 #: templates/cmsadmin/oidc_client/faq_create.html:4
 #: templates/cmsadmin/oidc_client/faq_create.html:8
-#: templates/cmsadmin/oidc_client/faq_create.html:11 templates/index.html:345
+#: templates/cmsadmin/oidc_client/faq_create.html:11 templates/index.html:352
 msgid "Create FAQ"
 msgstr "新建疑问与解答"
 
@@ -89,18 +89,18 @@ msgstr "新建疑问与解答"
 #: templates/cmsadmin/users/user_create.html:31
 #: templates/cmsadmin/users/user_group_update.html:30
 #: templates/cmsadmin/users/user_update.html:31
-#: templates/oidc_client/appgroup_create.html:25
-#: templates/oidc_client/appgroup_update.html:25
-#: templates/oidc_client/appgroup_user_invite.html:25
 #: templates/oidc_client/client_create.html:25
 #: templates/oidc_client/client_update.html:25
+#: templates/oidc_client/clientgroup_create.html:25
+#: templates/oidc_client/clientgroup_update.html:25
+#: templates/oidc_client/clientgroup_user_invite.html:25
 #: templates/users/user_detail.html:124
 msgid "Submit"
 msgstr "提交"
 
 #: templates/cmsadmin/oidc_client/faq_list.html:4
 #: templates/cmsadmin/oidc_client/faq_list.html:8
-#: templates/cmsadmin/oidc_client/faq_list.html:11 templates/index.html:338
+#: templates/cmsadmin/oidc_client/faq_list.html:11 templates/index.html:345
 msgid "FAQ List"
 msgstr "疑问与解答列表"
 
@@ -108,8 +108,8 @@ msgstr "疑问与解答列表"
 #: templates/cmsadmin/portal/announcement_list.html:21
 #: templates/cmsadmin/portal/toplink_list.html:21
 #: templates/cmsadmin/users/department_list.html:21
-#: templates/oidc_client/appgroup_list.html:21
 #: templates/oidc_client/client_list.html:21
+#: templates/oidc_client/clientgroup_list.html:21
 msgid "Create"
 msgstr "新建"
 
@@ -130,9 +130,9 @@ msgstr "排序"
 #: templates/cmsadmin/portal/toplink_list.html:33
 #: templates/cmsadmin/users/department_list.html:31
 #: templates/cmsadmin/users/user_list.html:43
-#: templates/oidc_client/appgroup_list.html:32
-#: templates/oidc_client/appgroup_user_list.html:38
 #: templates/oidc_client/client_list.html:35
+#: templates/oidc_client/clientgroup_list.html:32
+#: templates/oidc_client/clientgroup_users_list.html:38
 msgid "Operate"
 msgstr "操作"
 
@@ -141,8 +141,8 @@ msgstr "操作"
 #: templates/cmsadmin/portal/toplink_list.html:45
 #: templates/cmsadmin/users/department_list.html:41
 #: templates/cmsadmin/users/user_list.html:57
-#: templates/oidc_client/appgroup_list.html:45
 #: templates/oidc_client/client_list.html:49
+#: templates/oidc_client/clientgroup_list.html:45
 msgid "Edit"
 msgstr "编辑"
 
@@ -151,9 +151,9 @@ msgstr "编辑"
 #: templates/cmsadmin/portal/toplink_list.html:49
 #: templates/cmsadmin/users/department_list.html:45
 #: templates/cmsadmin/users/user_list.html:64
-#: templates/oidc_client/appgroup_list.html:47
-#: templates/oidc_client/appgroup_user_list.html:60
 #: templates/oidc_client/client_list.html:51
+#: templates/oidc_client/clientgroup_list.html:47
+#: templates/oidc_client/clientgroup_users_list.html:60
 msgid "Delete"
 msgstr "删除"
 
@@ -162,8 +162,8 @@ msgstr "删除"
 #: templates/cmsadmin/portal/toplink_list.html:75
 #: templates/cmsadmin/users/department_list.html:71
 #: templates/cmsadmin/users/user_list.html:126
-#: templates/oidc_client/appgroup_list.html:73
-#: templates/oidc_client/appgroup_user_list.html:86
+#: templates/oidc_client/clientgroup_list.html:73
+#: templates/oidc_client/clientgroup_users_list.html:86
 #: templates/registration/password_change_form.html:103
 #: templates/registration/password_reset_confirm.html:81
 #: templates/registration/password_reset_form.html:72
@@ -176,8 +176,8 @@ msgstr "你确定吗？"
 #: templates/cmsadmin/portal/toplink_list.html:76
 #: templates/cmsadmin/users/department_list.html:72
 #: templates/cmsadmin/users/user_list.html:127
-#: templates/oidc_client/appgroup_list.html:74
-#: templates/oidc_client/appgroup_user_list.html:87
+#: templates/oidc_client/clientgroup_list.html:74
+#: templates/oidc_client/clientgroup_users_list.html:87
 #: templates/users/user_detail.html:216
 msgid "You won't be able to revert this!"
 msgstr "你无法撤销此操作！"
@@ -187,8 +187,8 @@ msgstr "你无法撤销此操作！"
 #: templates/cmsadmin/portal/toplink_list.html:81
 #: templates/cmsadmin/users/department_list.html:77
 #: templates/cmsadmin/users/user_list.html:132
-#: templates/oidc_client/appgroup_list.html:79
-#: templates/oidc_client/appgroup_user_list.html:92
+#: templates/oidc_client/clientgroup_list.html:79
+#: templates/oidc_client/clientgroup_users_list.html:92
 #: templates/registration/password_change_form.html:108
 #: templates/registration/password_reset_confirm.html:86
 #: templates/registration/password_reset_form.html:78
@@ -201,8 +201,8 @@ msgstr "是的"
 #: templates/cmsadmin/portal/toplink_list.html:82
 #: templates/cmsadmin/users/department_list.html:78
 #: templates/cmsadmin/users/user_list.html:133
-#: templates/oidc_client/appgroup_list.html:80
-#: templates/oidc_client/appgroup_user_list.html:93
+#: templates/oidc_client/clientgroup_list.html:80
+#: templates/oidc_client/clientgroup_users_list.html:93
 #: templates/registration/password_change_form.html:109
 #: templates/registration/password_reset_confirm.html:87
 #: templates/registration/password_reset_form.html:79
@@ -215,8 +215,8 @@ msgstr "取消"
 #: templates/cmsadmin/portal/toplink_list.html:98
 #: templates/cmsadmin/users/department_list.html:94
 #: templates/cmsadmin/users/user_list.html:149
-#: templates/oidc_client/appgroup_list.html:96
-#: templates/oidc_client/appgroup_user_list.html:109
+#: templates/oidc_client/clientgroup_list.html:96
+#: templates/oidc_client/clientgroup_users_list.html:109
 #: templates/users/user_detail.html:238
 msgid "Success Delete"
 msgstr "删除成功"
@@ -231,10 +231,10 @@ msgstr "删除成功"
 #: templates/cmsadmin/users/department_list.html:108
 #: templates/cmsadmin/users/user_list.html:155
 #: templates/cmsadmin/users/user_list.html:163
-#: templates/oidc_client/appgroup_list.html:102
-#: templates/oidc_client/appgroup_list.html:110
-#: templates/oidc_client/appgroup_user_list.html:115
-#: templates/oidc_client/appgroup_user_list.html:123
+#: templates/oidc_client/clientgroup_list.html:102
+#: templates/oidc_client/clientgroup_list.html:110
+#: templates/oidc_client/clientgroup_users_list.html:115
+#: templates/oidc_client/clientgroup_users_list.html:123
 #: templates/users/user_detail.html:244 templates/users/user_detail.html:252
 msgid "Fail Delete"
 msgstr "删除失败"
@@ -244,8 +244,8 @@ msgstr "删除失败"
 #: templates/cmsadmin/portal/toplink_list.html:120
 #: templates/cmsadmin/users/department_list.html:116
 #: templates/cmsadmin/users/user_list.html:171
-#: templates/oidc_client/appgroup_list.html:118
-#: templates/oidc_client/appgroup_user_list.html:131
+#: templates/oidc_client/clientgroup_list.html:118
+#: templates/oidc_client/clientgroup_users_list.html:131
 #: templates/users/user_detail.html:260
 msgid "Lucky to see this warning~~"
 msgstr "万幸看到这个警告~~"
@@ -255,15 +255,15 @@ msgstr "万幸看到这个警告~~"
 #: templates/cmsadmin/portal/toplink_list.html:121
 #: templates/cmsadmin/users/department_list.html:117
 #: templates/cmsadmin/users/user_list.html:172
-#: templates/oidc_client/appgroup_list.html:119
-#: templates/oidc_client/appgroup_user_list.html:132
+#: templates/oidc_client/clientgroup_list.html:119
+#: templates/oidc_client/clientgroup_users_list.html:132
 #: templates/users/user_detail.html:261
 msgid "This will close in <b></b> milliseconds."
 msgstr "我将在<b></b>毫秒内自动关闭~"
 
 #: templates/cmsadmin/oidc_client/faq_update.html:4
 #: templates/cmsadmin/oidc_client/faq_update.html:8
-#: templates/cmsadmin/oidc_client/faq_update.html:11 templates/index.html:352
+#: templates/cmsadmin/oidc_client/faq_update.html:11 templates/index.html:359
 msgid "Update FAQ"
 msgstr "更新疑问与解答"
 
@@ -327,13 +327,13 @@ msgstr "更新导航链接"
 
 #: templates/cmsadmin/users/department_create.html:4
 #: templates/cmsadmin/users/department_create.html:8
-#: templates/cmsadmin/users/department_create.html:11 templates/index.html:306
+#: templates/cmsadmin/users/department_create.html:11 templates/index.html:313
 msgid "Create Department"
 msgstr "新建部门"
 
 #: templates/cmsadmin/users/department_list.html:4
 #: templates/cmsadmin/users/department_list.html:8
-#: templates/cmsadmin/users/department_list.html:11 templates/index.html:299
+#: templates/cmsadmin/users/department_list.html:11 templates/index.html:306
 msgid "Department List"
 msgstr "部门列表"
 
@@ -344,7 +344,7 @@ msgstr "部门"
 
 #: templates/cmsadmin/users/department_update.html:4
 #: templates/cmsadmin/users/department_update.html:8
-#: templates/cmsadmin/users/department_update.html:11 templates/index.html:313
+#: templates/cmsadmin/users/department_update.html:11 templates/index.html:320
 msgid "Update Department"
 msgstr "修改部门"
 
@@ -356,16 +356,16 @@ msgstr "新建用户"
 
 #: templates/cmsadmin/users/user_group_update.html:4
 #: templates/cmsadmin/users/user_group_update.html:13
-#: templates/cmsadmin/users/user_group_update.html:16
+#: templates/cmsadmin/users/user_group_update.html:16 templates/index.html:290
 msgid "Update User Group"
 msgstr "修改用户组"
 
 #: templates/cmsadmin/users/user_list.html:4
 #: templates/cmsadmin/users/user_list.html:8
 #: templates/cmsadmin/users/user_list.html:11 templates/index.html:269
-#: templates/oidc_client/appgroup_user_list.html:4
-#: templates/oidc_client/appgroup_user_list.html:8
-#: templates/oidc_client/appgroup_user_list.html:11
+#: templates/oidc_client/clientgroup_users_list.html:4
+#: templates/oidc_client/clientgroup_users_list.html:8
+#: templates/oidc_client/clientgroup_users_list.html:11
 msgid "User List"
 msgstr "用户列表"
 
@@ -374,22 +374,22 @@ msgid "Search PKU ID"
 msgstr "搜索学号、职工号"
 
 #: templates/cmsadmin/users/user_list.html:38
-#: templates/oidc_client/appgroup_user_list.html:30
+#: templates/oidc_client/clientgroup_users_list.html:30
 msgid "username"
 msgstr "职工号、学号"
 
 #: templates/cmsadmin/users/user_list.html:39
-#: templates/oidc_client/appgroup_user_list.html:31
+#: templates/oidc_client/clientgroup_users_list.html:31
 msgid "name"
 msgstr "姓名"
 
 #: templates/cmsadmin/users/user_list.html:41
-#: templates/oidc_client/appgroup_user_list.html:32
+#: templates/oidc_client/clientgroup_users_list.html:32
 msgid "is teacher"
 msgstr "身份"
 
 #: templates/cmsadmin/users/user_list.html:42
-#: templates/oidc_client/appgroup_user_list.html:33
+#: templates/oidc_client/clientgroup_users_list.html:33
 msgid "is in school"
 msgstr "是否在校"
 
@@ -432,7 +432,7 @@ msgid "Choose file"
 msgstr "选择文件"
 
 #: templates/index.html:6 templates/index.html:27 templates/index.html:163
-#: templates/index.html:441 templates/index.html:446
+#: templates/index.html:448 templates/index.html:453
 msgid "Home"
 msgstr "主页"
 
@@ -482,120 +482,72 @@ msgstr "用户管理"
 msgid "Manage User"
 msgstr "管理用户"
 
-#: templates/index.html:291
+#: templates/index.html:298
 msgid "Manage Department"
 msgstr "管理部门"
 
-#: templates/index.html:323
+#: templates/index.html:330
 msgid "Manage Oidc Client"
 msgstr "管理 Oidc 应用"
 
-#: templates/index.html:330
+#: templates/index.html:337
 msgid "Manage FAQ"
 msgstr "管理疑问与解答"
 
-#: templates/index.html:365 templates/users/user_detail.html:6
+#: templates/index.html:372 templates/users/user_detail.html:6
 #: templates/users/user_detail.html:14 templates/users/user_detail.html:18
 msgid "User Profile"
 msgstr "用户资料"
 
-#: templates/index.html:372
+#: templates/index.html:379
 msgid "My Client"
 msgstr "我的应用"
 
-#: templates/index.html:380 templates/oidc_client/client_list.html:4
+#: templates/index.html:387 templates/oidc_client/client_list.html:4
 #: templates/oidc_client/client_list.html:8
 #: templates/oidc_client/client_list.html:11
 msgid "Client List"
 msgstr "应用列表"
 
-#: templates/index.html:386 templates/oidc_client/client_create.html:4
+#: templates/index.html:393 templates/oidc_client/client_create.html:4
 #: templates/oidc_client/client_create.html:8
 #: templates/oidc_client/client_create.html:11
 msgid "Create Client"
 msgstr "创建应用"
 
-#: templates/index.html:392 templates/oidc_client/appgroup_list.html:4
-#: templates/oidc_client/appgroup_list.html:8
-#: templates/oidc_client/appgroup_list.html:11
-msgid "App Group List"
+#: templates/index.html:399 templates/oidc_client/clientgroup_list.html:4
+#: templates/oidc_client/clientgroup_list.html:8
+#: templates/oidc_client/clientgroup_list.html:11
+msgid "Client Group List"
 msgstr "应用用户组列表"
 
-#: templates/index.html:398 templates/oidc_client/appgroup_create.html:4
-#: templates/oidc_client/appgroup_create.html:8
-#: templates/oidc_client/appgroup_create.html:11
-msgid "Create App Group"
-msgstr "新建应用用户组"
+#: templates/index.html:405 templates/oidc_client/clientgroup_create.html:4
+#: templates/oidc_client/clientgroup_create.html:8
+#: templates/oidc_client/clientgroup_create.html:11
+msgid "Create Client Group"
+msgstr "创建应用用户组"
 
-#: templates/index.html:404 templates/oidc_client/faq.html:5
+#: templates/index.html:411 templates/oidc_client/faq.html:5
 #: templates/oidc_client/faq.html:9 templates/oidc_client/faq.html:12
 msgid "FAQ"
 msgstr "疑问与解答"
 
-#: templates/index.html:410
+#: templates/index.html:417
 msgid "OpenID Configuration"
 msgstr "OpenID 配置信息"
 
-#: templates/index.html:418 templates/portal/admins.html:5
+#: templates/index.html:425 templates/portal/admins.html:5
 #: templates/portal/admins.html:7 templates/portal/admins.html:11
 msgid "Admins"
 msgstr "管理员列表"
 
-#: templates/index.html:464
+#: templates/index.html:471
 msgid "Announcement"
 msgstr "公告"
 
-#: templates/index.html:496
+#: templates/index.html:503
 msgid "All rights reserved."
 msgstr "版权所有."
-
-#: templates/oidc_client/appgroup_list.html:30
-msgid "Name"
-msgstr "组名"
-
-#: templates/oidc_client/appgroup_list.html:31
-msgid "User Count"
-msgstr "用户数"
-
-#: templates/oidc_client/appgroup_list.html:41
-msgid "Manage"
-msgstr "管理"
-
-#: templates/oidc_client/appgroup_update.html:4
-#: templates/oidc_client/appgroup_update.html:8
-#: templates/oidc_client/appgroup_update.html:11
-msgid "Update App Group"
-msgstr "修改应用用户组"
-
-#: templates/oidc_client/appgroup_user_invite.html:4
-#: templates/oidc_client/appgroup_user_invite.html:8
-#: templates/oidc_client/appgroup_user_invite.html:11
-msgid "Invite User"
-msgstr "邀请用户"
-
-#: templates/oidc_client/appgroup_user_list.html:21
-msgid "Invite"
-msgstr "邀请"
-
-#: templates/oidc_client/appgroup_user_list.html:34
-msgid "inviter"
-msgstr "邀请人"
-
-#: templates/oidc_client/appgroup_user_list.html:35
-msgid "invite time"
-msgstr "邀请时间"
-
-#: templates/oidc_client/appgroup_user_list.html:36
-msgid "date joined"
-msgstr "加入时间"
-
-#: templates/oidc_client/appgroup_user_list.html:37
-msgid "remark"
-msgstr "备注"
-
-#: templates/oidc_client/appgroup_user_list.html:55
-msgid "Reinvite"
-msgstr "重新邀请"
 
 #: templates/oidc_client/client_list.html:30
 msgid "Client Name"
@@ -626,6 +578,54 @@ msgstr "是,否"
 #: templates/oidc_client/client_update.html:11
 msgid "Update Client"
 msgstr "修改应用"
+
+#: templates/oidc_client/clientgroup_list.html:30
+msgid "Name"
+msgstr "组名"
+
+#: templates/oidc_client/clientgroup_list.html:31
+msgid "User Count"
+msgstr "用户数"
+
+#: templates/oidc_client/clientgroup_list.html:41
+msgid "Manage"
+msgstr "管理"
+
+#: templates/oidc_client/clientgroup_update.html:4
+#: templates/oidc_client/clientgroup_update.html:8
+#: templates/oidc_client/clientgroup_update.html:11
+msgid "Update Client Group"
+msgstr "修改应用用户组"
+
+#: templates/oidc_client/clientgroup_user_invite.html:4
+#: templates/oidc_client/clientgroup_user_invite.html:8
+#: templates/oidc_client/clientgroup_user_invite.html:11
+msgid "Invite User"
+msgstr "邀请用户"
+
+#: templates/oidc_client/clientgroup_users_list.html:21
+msgid "Invite"
+msgstr "邀请"
+
+#: templates/oidc_client/clientgroup_users_list.html:34
+msgid "inviter"
+msgstr "邀请人"
+
+#: templates/oidc_client/clientgroup_users_list.html:35
+msgid "invite time"
+msgstr "邀请时间"
+
+#: templates/oidc_client/clientgroup_users_list.html:36
+msgid "date joined"
+msgstr "加入时间"
+
+#: templates/oidc_client/clientgroup_users_list.html:37
+msgid "remark"
+msgstr "备注"
+
+#: templates/oidc_client/clientgroup_users_list.html:55
+msgid "Reinvite"
+msgstr "重新邀请"
 
 #: templates/oidc_client/faq.html:41
 msgid "Contact us"
