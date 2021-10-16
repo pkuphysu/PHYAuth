@@ -51,7 +51,7 @@ def clientgroup_invite_user_email(ms_id):
 
     value = signing.dumps({'ms_id': ms.id})
 
-    invite_url += reverse('oidc_client:clientgroup-users-invite-accept', kwargs={'gid': group.id, 'signstr': value})
+    invite_url += reverse('oidc_client:clientgroup-user-invite-accept', kwargs={'gid': group.id, 'signstr': value})
 
     from_email = settings.EMAIL_FROM
     subject = f'{inviter.name}邀请您加入{group.name}'
