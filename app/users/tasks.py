@@ -25,7 +25,10 @@ def user_register_email(user_id):
             'name': user.get_full_name(),
         }
     )
-    my_send_mail.delay(subject, tea_html, from_email, [user.get_preferred_email()])
+    if settings.DEBUG:
+        my_send_mail(subject, tea_html, from_email, [user.get_preferred_email()])
+    else:
+        my_send_mail.delay(subject, tea_html, from_email, [user.get_preferred_email()])
 
 
 @shared_task(base=TransactionAwareTask)
@@ -41,7 +44,10 @@ def user_active_update_email(user_id):
             'name': user.get_full_name(),
         }
     )
-    my_send_mail.delay(subject, tea_html, from_email, [user.get_preferred_email()])
+    if settings.DEBUG:
+        my_send_mail(subject, tea_html, from_email, [user.get_preferred_email()])
+    else:
+        my_send_mail.delay(subject, tea_html, from_email, [user.get_preferred_email()])
 
 
 @shared_task

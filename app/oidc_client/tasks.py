@@ -32,7 +32,10 @@ def consent_accept_email(user_id, client_id, scope):
             'scopes': get_scopes_information(scope)
         }
     )
-    my_send_mail.delay(subject, tea_html, from_email, [user.get_preferred_email()])
+    if settings.DEBUG:
+        my_send_mail(subject, tea_html, from_email, [user.get_preferred_email()])
+    else:
+        my_send_mail.delay(subject, tea_html, from_email, [user.get_preferred_email()])
 
 
 @shared_task(base=TransactionAwareTask)
@@ -65,4 +68,7 @@ def clientgroup_invite_user_email(ms_id):
             'invite_url': invite_url,
         }
     )
-    my_send_mail.delay(subject, tea_html, from_email, [user.get_preferred_email()])
+    if settings.DEBUG:
+        my_send_mail(subject, tea_html, from_email, [user.get_preferred_email()])
+    else:
+        my_send_mail.delay(subject, tea_html, from_email, [user.get_preferred_email()])

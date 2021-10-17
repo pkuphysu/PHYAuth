@@ -1,5 +1,6 @@
 import logging
 
+from django.conf import settings
 from django.core.cache import cache
 from django.core.cache.utils import make_template_fragment_key
 from django.db.models.signals import post_save, post_delete, pre_save
@@ -15,9 +16,14 @@ logger = logging.getLogger(__name__)
 
 @receiver(user_accept_consent)
 def user_accept_consent_send_email(sender, **kwargs):
-    consent_accept_email.delay(client_id=kwargs['client'].id,
-                               user_id=kwargs['user'].id,
-                               scope=kwargs['scope'])
+    if settings.DEBUG:
+        consent_accept_email(client_id=kwargs['client'].id,
+                                   user_id=kwargs['user'].id,
+                                   scope=kwargs['scope'])
+    else:
+        consent_accept_email.delay(client_id=kwargs['client'].id,
+                                   user_id=kwargs['user'].id,
+                                   scope=kwargs['scope'])
 
 
 @receiver(post_save, sender=Client)
@@ -60,7 +66,10 @@ def client_group_update(sender, **kwargs):
 def membership_create(sender, **kwargs):
     if kwargs['created']:
         ms = kwargs['instance']
-        clientgroup_invite_user_email.delay(ms.id)
+        if settings.DEBUG:
+            clientgroup_invite_user_email(ms.id)
+        else:
+            clientgroup_invite_user_email.delay(ms.id)
 
 
 @receiver(post_delete, sender=Faq)
