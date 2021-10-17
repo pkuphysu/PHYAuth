@@ -84,7 +84,7 @@
                         <ul class="list-group list-group-unbordered mb-3">
                             {% for clientgroup in user.clientgroup_set.all %}
                                 <li class="list-group-item">
-                                    <b>{{ clientgroup.name }}</b>
+                                    <b>{{ clientgroup.client.name }}-{{ clientgroup.name }}</b>
                                     <button class="float-right btn btn-warning delete" data-id="{{ clientgroup.id }}">
                                         {% translate 'Exit'%}
                                     </button>

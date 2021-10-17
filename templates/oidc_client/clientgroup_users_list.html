@@ -52,7 +52,7 @@
                                         {% if membership.date_joined %}
                                             {{ membership.date_joined }}
                                         {% else %}
-                                            <button class="btn btn-danger reinvite" data-id="{{ membership.pk }}">{% translate 'Reinvite' %}</button>
+                                            <button class="btn btn-warning reinvite" data-id="{{ membership.pk }}">{% translate 'Reinvite' %}</button>
                                         {% endif %}
                                     </td>
                                     <td>{{ membership.remark }}</td>
@@ -153,6 +153,51 @@
             });
 
         });
-
+        $('.reinvite').click(function () {
+            Swal.fire({
+                title: '{% translate 'Are you sure?' %}',
+                icon: 'info',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: '{% translate 'Yes' %}',
+                cancelButtonText: '{% translate 'Cancel' %}',
+                heightAuto: false,
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    //  发请求到后端删除数据
+                    $.ajax({
+                        //拼接要访问的url地址
+                        url: '{% url 'oidc_client:clientgroup-user-reinvite' group.id %}',
+                        type: 'POST',
+                        data: {id: $(this).attr('data-id')},
+                        beforeSend: function (xhr, settings) {
+                            xhr.setRequestHeader("X-CSRFToken", "{{ csrf_token }}");
+                        },
+                        success: (res) => {
+                            if (res.status) {
+                                Swal.fire({
+                                    title: '{% translate 'Success Reinvite' %}',
+                                    icon: 'success',
+                                });
+                            } else {
+                                Swal.fire({
+                                    title: '{% translate "Fail Reinvite" %}',
+                                    text: res.msg,
+                                    icon: 'error',
+                                })
+                            }
+                        },
+                        error: (data) => {
+                            Swal.fire({
+                                title: '{% translate "Fail Reinvite" %}',
+                                text: 'data',
+                                icon: 'error'
+                            })
+                        }
+                    })
+                }
+            });
+        });
     </script>
 {% endblock %}

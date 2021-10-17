@@ -18,5 +18,6 @@ urlpatterns = [
     path('clientgroup/<int:gid>/invite/<str:signstr>/', views.ClientGroupInviteUserAcceptView.as_view(),
          name='clientgroup-user-invite-accept'),
     path('clientgroup/<int:gid>/invite/', views.ClientGroupInviteUserView.as_view(), name='clientgroup-user-invite'),
+    path('clientgroup/<int:gid>/reinvite/', views.ClientGroupReinvteUserView.as_view(), name='clientgroup-user-reinvite'),
     path('clientgroup/<int:gid>/delete/', views.ClientGroupDelUserView.as_view(), name='clientgroup-user-delete'),
 ]

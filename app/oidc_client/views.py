@@ -1,10 +1,11 @@
 from datetime import timedelta
 
+from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
-from django.core.exceptions import PermissionDenied
 from django.core import signing
+from django.core.exceptions import PermissionDenied
 from django.core.signing import SignatureExpired, BadSignature
 from django.db import IntegrityError
 from django.http import Http404, JsonResponse
@@ -19,6 +20,7 @@ from oidc_provider.models import Client
 
 from .forms import ClientForm, ClientGroupForm, MemberShipForm
 from .models import Faq, ClientGroup, ClientUserMemberShip
+from .tasks import clientgroup_invite_user_email
 from ..users.models import User
 from ..utils.views import ErrorMessageMixin
 
@@ -230,6 +232,52 @@ class ClientGroupInviteUserView(PermissionRequiredMixin, ObjectPermissionRequire
 
     def get_success_url(self):
         return reverse('oidc_client:clientgroup-user', kwargs={'gid': self.kwargs.get('gid')})
+
+
+class ClientGroupReinvteUserView(PermissionRequiredMixin, ObjectPermissionRequiredMixin, DeleteView):
+    model = ClientUserMemberShip
+    permission_required = 'oidc_client.change_clientgroup'
+    permission_denied_message = _('You are not the creator of this client group, '
+                                  'so you do not have the right to reinvite its user!')
+
+    def on_permission_check_fail(self, request, response, obj=None):
+        raise PermissionDenied(_('You are not the creator of this client group, '
+                                 'so you do not have the right to reinvite its user!'))
+
+    @property
+    def permission_object(self):
+        return ClientGroup.objects.get(id=self.kwargs.get('gid'))
+
+    def get_object(self, queryset=None):
+        if queryset is None:
+            queryset = self.get_queryset()
+        pk = self.request.POST.get('id')
+        if pk is None:
+            raise Exception(_('Need %(verbose_name)s Id') % {'verbose_name': queryset.model._meta.verbose_name})
+        queryset = queryset.filter(pk=pk)
+        try:
+            obj = queryset.get()
+        except queryset.model.DoesNotExist:
+            raise Http404(_("No %(verbose_name)s found matching the query") %
+                          {'verbose_name': queryset.model._meta.verbose_name})
+        return obj
+
+    def delete(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        if self.object.date_joined is None:
+            if settings.DEBUG:
+                clientgroup_invite_user_email(self.object.id)
+            else:
+                clientgroup_invite_user_email.delay(self.object.id)
+        else:
+            return JsonResponse(data={'status': False, 'msg': _("The user has already joined!")})
+        return JsonResponse(data={'status': True})
+
+    def dispatch(self, request, *args, **kwargs):
+        try:
+            return super().dispatch(request, *args, **kwargs)
+        except Exception as e:
+            return JsonResponse(data={'status': False, 'msg': str(e)})
 
 
 class ClientGroupInviteUserAcceptView(View):
