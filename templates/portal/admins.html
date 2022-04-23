@@ -1,15 +1,9 @@
 {% extends 'index.html' %}
-{% load django_bootstrap_breadcrumbs %}
 {% load user_helper %}
 
 {% block title %}{% translate 'Admins' %}{% endblock %}
 
 {% block content_wrapper_header %}{% translate 'Admins' %}{% endblock %}
-
-{% block content_wrapper_breadcrumb %}
-    {{ block.super }}
-    {% breadcrumb_for 'portal:admins' %}{% translate 'Admins' %}{% endbreadcrumb_for %}
-{% endblock %}
 
 {% block content_wrapper_body %}
     <div class="card card-solid">

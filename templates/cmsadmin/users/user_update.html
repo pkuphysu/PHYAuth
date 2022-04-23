@@ -1,5 +1,4 @@
 {% extends 'cmsadmin/users/user_list.html' %}
-{% load django_bootstrap_breadcrumbs %}
 
 {% block title %}{% translate 'Update User' %}{% endblock %}
 
@@ -7,11 +6,6 @@
     <!-- Tempusdominus Bootstrap 4 -->
     <link rel="stylesheet"
           href="{% static 'adminlte/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css' %}">
-{% endblock %}
-
-{% block content_wrapper_breadcrumb %}
-    {{ block.super }}
-    {% breadcrumb_for 'cmsadmin:users-user-update' %}{% trans "Update User" %}{% endbreadcrumb_for %}
 {% endblock %}
 
 {% block content_wrapper_header %}{% translate 'Update User' %}{% endblock %}

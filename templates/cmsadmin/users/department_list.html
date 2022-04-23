@@ -1,12 +1,6 @@
 {% extends 'index.html' %}
-{% load django_bootstrap_breadcrumbs %}
 
 {% block title %}{% translate 'Department List' %}{% endblock %}
-
-{% block content_wrapper_breadcrumb %}
-    {{ block.super }}
-    {% breadcrumb_for 'cmsadmin:users-department-list' %}{% trans "Department List" %}{% endbreadcrumb_for %}
-{% endblock %}
 
 {% block content_wrapper_header %}{% translate 'Department List' %}{% endblock %}
 

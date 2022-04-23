@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-{% load django_bootstrap_breadcrumbs %}
 {% load user_helper %}
 {% load cache %}
 
@@ -446,14 +445,6 @@
                         <div class="row mb-2">
                             <div class="col-sm-6">
                                 <h1>{% block content_wrapper_header %}{% translate 'Home' %}{% endblock %}</h1>
-                            </div>
-                            <div class="col-sm-6">
-                                <ol class="breadcrumb float-sm-right">
-                                    {% block content_wrapper_breadcrumb %}
-                                        {% breadcrumb_for 'users:index' %}{% translate 'Home' %}{% endbreadcrumb_for %}
-                                    {% endblock %}
-                                    {% render_breadcrumbs %}
-                                </ol>
                             </div>
                         </div>
                     </div><!-- /.container-fluid -->

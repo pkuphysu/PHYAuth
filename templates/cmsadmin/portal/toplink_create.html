@@ -1,12 +1,6 @@
 {% extends 'cmsadmin/portal/toplink_list.html' %}
-{% load django_bootstrap_breadcrumbs %}
 
 {% block title %}{% translate 'Create TopLink' %}{% endblock %}
-
-{% block content_wrapper_breadcrumb %}
-    {{ block.super }}
-    {% breadcrumb_for 'cmsadmin:toplink-create' %}{% trans "Create TopLink" %}{% endbreadcrumb_for %}
-{% endblock %}
 
 {% block content_wrapper_header %}{% translate 'Create TopLink' %}{% endblock %}
 

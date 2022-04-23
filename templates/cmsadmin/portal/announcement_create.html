@@ -1,12 +1,6 @@
 {% extends 'cmsadmin/portal/announcement_list.html' %}
-{% load django_bootstrap_breadcrumbs %}
 
 {% block title %}{% translate 'Create Announcement' %}{% endblock %}
-
-{% block content_wrapper_breadcrumb %}
-    {{ block.super }}
-    {% breadcrumb_for 'cmsadmin:announcement-create' %}{% trans "Create Announcement" %}{% endbreadcrumb_for %}
-{% endblock %}
 
 {% block content_wrapper_header %}{% translate 'Create Announcement' %}{% endblock %}
 

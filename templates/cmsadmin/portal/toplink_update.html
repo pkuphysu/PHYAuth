@@ -1,12 +1,6 @@
 {% extends 'cmsadmin/portal/toplink_list.html' %}
-{% load django_bootstrap_breadcrumbs %}
 
 {% block title %}{% translate 'Update TopLink' %}{% endblock %}
-
-{% block content_wrapper_breadcrumb %}
-    {{ block.super }}
-    {% breadcrumb_for 'cmsadmin:toplink-update' %}{% trans "Update TopLink" %}{% endbreadcrumb_for %}
-{% endblock %}
 
 {% block content_wrapper_header %}{% translate 'Update TopLink' %}{% endblock %}
 

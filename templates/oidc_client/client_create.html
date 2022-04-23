@@ -1,12 +1,6 @@
 {% extends 'oidc_client/client_list.html' %}
-{% load django_bootstrap_breadcrumbs %}
 
 {% block title %}{% translate 'Create Client' %}{% endblock %}
-
-{% block content_wrapper_breadcrumb %}
-    {{ block.super }}
-    {% breadcrumb_for 'oidc_client:client-create' %}{% trans "Create Client" %}{% endbreadcrumb_for %}
-{% endblock %}
 
 {% block content_wrapper_header %}{% translate 'Create Client' %}{% endblock %}
 

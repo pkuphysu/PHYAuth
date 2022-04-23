@@ -1,12 +1,6 @@
 {% extends 'cmsadmin/oidc_client/faq_list.html' %}
-{% load django_bootstrap_breadcrumbs %}
 
 {% block title %}{% translate 'Create FAQ' %}{% endblock %}
-
-{% block content_wrapper_breadcrumb %}
-    {{ block.super }}
-    {% breadcrumb_for 'cmsadmin:oidc-client-faq-create' %}{% trans "Create FAQ" %}{% endbreadcrumb_for %}
-{% endblock %}
 
 {% block content_wrapper_header %}{% translate 'Create FAQ' %}{% endblock %}
 

@@ -1,12 +1,6 @@
 {% extends 'index.html' %}
-{% load django_bootstrap_breadcrumbs %}
 
 {% block title %}{% translate 'Client Group List' %}{% endblock %}
-
-{% block content_wrapper_breadcrumb %}
-    {{ block.super }}
-    {% breadcrumb_for 'oidc_client:clientgroup-list' %}{% trans "Client Group List" %}{% endbreadcrumb_for %}
-{% endblock %}
 
 {% block content_wrapper_header %}{% translate 'Client Group List' %}{% endblock %}
 

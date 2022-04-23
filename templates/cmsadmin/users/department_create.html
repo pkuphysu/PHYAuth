@@ -1,12 +1,6 @@
 {% extends 'cmsadmin/users/department_list.html' %}
-{% load django_bootstrap_breadcrumbs %}
 
 {% block title %}{% translate 'Create Department' %}{% endblock %}
-
-{% block content_wrapper_breadcrumb %}
-    {{ block.super }}
-    {% breadcrumb_for 'cmsadmin:users-department-create' %}{% trans "Create Department" %}{% endbreadcrumb_for %}
-{% endblock %}
 
 {% block content_wrapper_header %}{% translate 'Create Department' %}{% endblock %}
 

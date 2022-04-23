@@ -1,14 +1,8 @@
 {% extends 'index.html' %}
-{% load django_bootstrap_breadcrumbs %}
 
 {% block title %}{% translate '500 Server Error' %}{% endblock %}
 
 {% block content_wrapper_header %}{% translate '500 Server Error' %}{% endblock %}
-
-{% block content_wrapper_breadcrumb %}
-    {{ block.super }}
-    {% breadcrumb_for '' %}{% translate '500 Server Error' %}{% endbreadcrumb_for %}
-{% endblock %}
 
 {% block content_wrapper_body %}
     <div class="error-page">

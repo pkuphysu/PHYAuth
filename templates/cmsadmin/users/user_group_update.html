@@ -1,16 +1,10 @@
 {% extends 'cmsadmin/users/user_list.html' %}
-{% load django_bootstrap_breadcrumbs %}
 
 {% block title %}{% translate 'Update User Group' %}{% endblock %}
 
 {% block extra_style %}
     <!-- Bootstrap4 Duallistbox -->
     <link rel="stylesheet" href="{% static 'adminlte/plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css' %}">
-{% endblock %}
-
-{% block content_wrapper_breadcrumb %}
-    {{ block.super }}
-    {% breadcrumb_for 'cmsadmin:users-user-group-update' %}{% trans "Update User Group" %}{% endbreadcrumb_for %}
 {% endblock %}
 
 {% block content_wrapper_header %}{% translate 'Update User Group' %}{% endblock %}

@@ -1,12 +1,6 @@
 {% extends 'oidc_client/client_list.html' %}
-{% load django_bootstrap_breadcrumbs %}
 
 {% block title %}{% translate 'Update Client' %}{% endblock %}
-
-{% block content_wrapper_breadcrumb %}
-    {{ block.super }}
-    {% breadcrumb_for 'oidc_client:client-update' %}{% trans "Update Client" %}{% endbreadcrumb_for %}
-{% endblock %}
 
 {% block content_wrapper_header %}{% translate 'Update Client' %}{% endblock %}
 

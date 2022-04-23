@@ -1,13 +1,7 @@
 {% extends 'index.html' %}
-{% load django_bootstrap_breadcrumbs %}
 {% load cache %}
 
 {% block title %}{% translate 'FAQ' %}{% endblock %}
-
-{% block content_wrapper_breadcrumb %}
-    {{ block.super }}
-    {% breadcrumb_for 'oidc_client:faq' %}{% trans "FAQ" %}{% endbreadcrumb_for %}
-{% endblock %}
 
 {% block content_wrapper_header %}{% translate 'FAQ' %}{% endblock %}
 
