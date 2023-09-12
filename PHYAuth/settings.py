@@ -339,13 +339,13 @@ LOGGING = {
     },
     'handlers': {
         'console_out': {
-            'level': 'INFO',
+            'level': 'DEBUG',
             'class': 'logging.StreamHandler',
             'stream': sys.stdout,
             'formatter': 'verbose'
         },
         'console_err': {
-            'level': 'INFO',
+            'level': 'DEBUG',
             'class': 'logging.StreamHandler',
             'stream': sys.stderr,
             'formatter': 'verbose'
@@ -360,7 +360,7 @@ LOGGING = {
         },
     },
     'root': {
-        'level': 'INFO',
+        'level': 'DEBUG',
         'handlers': ['console_out'],
     },
     'loggers': {
@@ -375,7 +375,7 @@ LOGGING = {
         },
         'django.server': {
             'handlers': ['console_out'],
-            'level': 'INFO',
+            'level': 'DEBUG',
             'propagate': False,
         },
     }
