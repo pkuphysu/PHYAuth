@@ -304,13 +304,8 @@ GUARDIAN_RAISE_403 = True
 ANONYMOUS_USER_NAME = '0000000000'
 
 # Broker配置，使用Redis作为消息中间件
-CELERY_BROKER_URL = 'amqp://{}:{}@{}:{}/{}'.format(
-    CONFIG.get('RABBIT_MQ', 'USER'),
-    CONFIG.get('RABBIT_MQ', 'PASSWORD'),
-    CONFIG.get('RABBIT_MQ', 'HOST'),
-    CONFIG.get('RABBIT_MQ', 'PORT'),
-    CONFIG.get('RABBIT_MQ', 'NAME'),
-)
+CELERY_BROKER_URL = "redis://{}/{}".format(REDIS_ADDRESS, CONFIG.get('REDIS', 'NUM'))
+
 # Celery 配置
 if USE_TZ:
     CELERY_TIMEZONE = TIME_ZONE
