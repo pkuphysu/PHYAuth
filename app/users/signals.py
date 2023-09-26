@@ -16,10 +16,7 @@ logger = logging.getLogger(__name__)
 
 @receiver(iaaa_user_create)
 def user_create_send_email(sender, user, **kwargs):
-    if settings.DEBUG:
-        user_register_email(user_id=user.id)
-    else:
-        user_register_email.delay(user_id=user.id)
+    user_register_email.delay(user_id=user.id)
 
 
 @receiver(iaaa_user_login_success)
@@ -46,8 +43,5 @@ def user_active_update(sender, **kwargs):
         user = kwargs['instance']
         o_user = get_user_model().objects.get(id=user.id)
         if not o_user.is_active and user.is_active:
-            if settings.DEBUG:
-                user_active_update_email(user.id)
-            else:
-                user_active_update_email.delay(user.id)
+            user_active_update_email.delay(user.id)
             logger.info(f'user {user.username} is marked as active!')

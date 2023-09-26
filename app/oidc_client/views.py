@@ -265,10 +265,7 @@ class ClientGroupReinvteUserView(PermissionRequiredMixin, ObjectPermissionRequir
     def delete(self, request, *args, **kwargs):
         self.object = self.get_object()
         if self.object.date_joined is None:
-            if settings.DEBUG:
-                clientgroup_invite_user_email(self.object.id)
-            else:
-                clientgroup_invite_user_email.delay(self.object.id)
+            clientgroup_invite_user_email.delay(self.object.id)
         else:
             return JsonResponse(data={'status': False, 'msg': _("The user has already joined!")})
         return JsonResponse(data={'status': True})

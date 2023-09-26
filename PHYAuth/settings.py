@@ -9,24 +9,19 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-
+import os
 import sys
-from configparser import RawConfigParser
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-CONFIG_DIR = BASE_DIR / 'config'
-CONFIG = RawConfigParser()
-CONFIG.read(CONFIG_DIR / 'config.ini', encoding='utf-8')
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
-DEBUG = CONFIG.getboolean('DJANGO', 'DEBUG')
+DEBUG = bool(os.getenv('DJANGO_DEBUG'))
 
-SECRET_KEY = CONFIG.get('DJANGO', 'SECRET_KEY')
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'meetplan')
 
 ALLOWED_HOSTS = ['*']
 
@@ -53,32 +48,6 @@ THIRD_PARTY_APPS = [
     'django_celery_beat',
     'guardian',
 ]
-if DEBUG:
-    THIRD_PARTY_APPS.append('debug_toolbar')
-    DEBUG_TOOLBAR_PANELS = [
-        'debug_toolbar.panels.history.HistoryPanel',
-        'debug_toolbar.panels.timer.TimerPanel',
-        'debug_toolbar.panels.settings.SettingsPanel',
-        'debug_toolbar.panels.headers.HeadersPanel',
-        'debug_toolbar.panels.request.RequestPanel',
-        'debug_toolbar.panels.sql.SQLPanel',
-        'debug_toolbar.panels.staticfiles.StaticFilesPanel',
-        'debug_toolbar.panels.templates.TemplatesPanel',
-        'debug_toolbar.panels.cache.CachePanel',
-        'debug_toolbar.panels.signals.SignalsPanel',
-        'debug_toolbar.panels.logging.LoggingPanel',
-        'debug_toolbar.panels.redirects.RedirectsPanel',
-        'debug_toolbar.panels.profiling.ProfilingPanel',
-    ]
-
-
-    def show_toolbar_callback(request):
-        return True
-
-
-    DEBUG_TOOLBAR_CONFIG = {
-        'SHOW_TOOLBAR_CALLBACK': show_toolbar_callback
-    }
 
 LOCAL_APPS = [
     'app.pku_iaaa.apps.PkuIaaaConfig',
@@ -99,8 +68,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-if DEBUG:
-    MIDDLEWARE.insert(0, 'debug_toolbar.middleware.DebugToolbarMiddleware')
 
 ROOT_URLCONF = 'PHYAuth.urls'
 
@@ -160,16 +127,11 @@ USE_L10N = True
 
 USE_TZ = True
 
-DOMAIN = CONFIG.get("DJANGO", "DOMAIN")
-SUBPATH = CONFIG.get("DJANGO", "SUBPATH")
-if SUBPATH != '/' and not SUBPATH.endswith('/'):
-    SUBPATH += '/'
+DOMAIN = os.getenv("DJANGO_DOMAIN")
 
-LOGIN_REDIRECT_URL = SUBPATH
-LOGIN_URL = SUBPATH + 'accounts/login'
-LOGOUT_REDIRECT_URL = SUBPATH
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 
-LANGUAGE_COOKIE_PATH = SUBPATH
 LANGUAGES = [
     ('zh-hans', 'Simplified Chinese'),
     ('en', 'English'),
@@ -185,65 +147,40 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'assets'
-if DEBUG:
-    STATICFILES_DIRS = [
-        BASE_DIR / 'static',
-        './static/'
-    ]
-else:
-    STATICFILES_DIRS = [
-        BASE_DIR / 'static',
-    ]
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+]
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
-ADMIN_URL = CONFIG.get("DJANGO", "ADMIN_URL")
+ADMIN_URL = os.getenv("DJANGO_ADMIN_URL", "superadmin/")
 if not ADMIN_URL.endswith('/'):
     ADMIN_URL += '/'
 
-# Database
-# https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-DATABASE_MAP = {
-    'sqlite': 'django.db.backends.sqlite3',
-    'mysql': 'django.db.backends.mysql',
-    'postgresql': 'django.db.backends.postgresql_psycopg2',
-    'oracle': 'django.db.backends.oracle',
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': os.getenv('DATABASE_NAME'),
+        'USER': os.getenv('DATABASE_USER'),
+        'PASSWORD': os.getenv('DATABASE_PASSWORD'),
+        'HOST': os.getenv('DATABASE_HOST'),
+        'PORT': int(os.getenv('DATABASE_PORT', 3306)),
+    }
 }
 
-if CONFIG['DATABASE']['engine'] == 'sqlite':
-    DATABASES = {
-        'default': {
-            'ENGINE': DATABASE_MAP[CONFIG['DATABASE']['ENGINE']],
-            'NAME': BASE_DIR / 'db.sqlite3',
-            'OPTIONS': {
-                'timeout': 20,
-            }
-        }
-    }
+if os.getenv('REDIS_PWD') != '':
+    REDIS_ADDRESS = ':{}@{}:{}'.format(os.getenv('REDIS_PWD'),
+                                       os.getenv('REDIS_HOST'),
+                                       os.getenv('REDIS_PORT'))
 else:
-    DATABASES = {
-        'default': {
-            'ENGINE': DATABASE_MAP[CONFIG['DATABASE']['ENGINE']],
-            'NAME': CONFIG['DATABASE']['NAME'],
-            'USER': CONFIG['DATABASE']['USER'],
-            'PASSWORD': CONFIG['DATABASE']['PASSWORD'],
-            'HOST': CONFIG['DATABASE']['HOST'],
-            'PORT': CONFIG['DATABASE']['PORT'],
-        }
-    }
-
-if CONFIG.get('REDIS', 'PWD') != '':
-    REDIS_ADDRESS = ':{}@{}:{}'.format(CONFIG.get('REDIS', 'PWD'),
-                                       CONFIG.get('REDIS', 'HOST'),
-                                       CONFIG.get('REDIS', 'PORT'))
-else:
-    REDIS_ADDRESS = '{}:{}'.format(CONFIG.get('REDIS', 'HOST'),
-                                   CONFIG.get('REDIS', 'PORT'))
+    REDIS_ADDRESS = '{}:{}'.format(os.getenv('REDIS_HOST'),
+                                   os.getenv('REDIS_PORT'))
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://{}/{}".format(REDIS_ADDRESS, CONFIG.get('REDIS', 'NUM')),
+        "LOCATION": "redis://{}/{}".format(REDIS_ADDRESS, os.getenv('REDIS_DB')),
         "KEY_PREFIX": "PHYAuth",
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
@@ -259,30 +196,21 @@ NEVER_REDIS_TIMEOUT = 365 * 24 * 60 * 60
 SESSION_COOKIE_AGE = 2592000
 SESSION_ENGINE = "django.contrib.sessions.backends.cached_db"
 SESSION_CACHE_ALIAS = "default"
-SESSION_COOKIE_PATH = SUBPATH
-if not DEBUG:
-    SESSION_COOKIE_SECURE = True
-
-    CSRF_COOKIE_SECURE = True
-CSRF_COOKIE_PATH = SUBPATH
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
 
 OIDC_USERINFO = 'app.users.oidc.userinfo'
 OIDC_EXTRA_SCOPE_CLAIMS = 'app.users.oidc.CustomScopeClaims'
 OIDC_AFTER_USERLOGIN_HOOK = 'app.users.oidc.after_login_hook_func'
 
-ADMINS = CONFIG.get('DJANGO', 'ADMINS')
-ADMINS = [tuple(ADMINS.split())]
-
-EMAIL_SUBJECT_PREFIX = CONFIG.get('EMAIL', 'SUBJECT_PREFIX')
+EMAIL_SUBJECT_PREFIX = os.getenv('EMAIL_SUBJECT_PREFIX')
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_USE_SSL = CONFIG.getboolean('EMAIL', 'USE_SSL')
-EMAIL_HOST = CONFIG.get('EMAIL', 'HOST')
-EMAIL_PORT = CONFIG.getint('EMAIL', 'PORT')
-EMAIL_HOST_USER = CONFIG.get('EMAIL', 'USER')
-EMAIL_HOST_PASSWORD = CONFIG.get('EMAIL', 'PASSWORD')
-SERVER_EMAIL = DEFAULT_FROM_EMAIL = EMAIL_FROM = CONFIG.get('EMAIL', 'FROM')
-if DEBUG:
-    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_USE_SSL = bool(os.getenv('EMAIL_USE_SSL'))
+EMAIL_HOST = os.getenv('EMAIL_HOST')
+EMAIL_PORT = int(os.getenv('EMAIL_PORT', 465))
+EMAIL_HOST_USER = os.getenv('EMAIL_USER')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_PASSWORD')
+DEFAULT_FROM_EMAIL = os.getenv('EMAIL_FROM')
 
 LOCALE_PATHS = [
     BASE_DIR / 'tpa_translation' / 'oidc_provider',
@@ -304,7 +232,7 @@ GUARDIAN_RAISE_403 = True
 ANONYMOUS_USER_NAME = '0000000000'
 
 # Broker配置，使用Redis作为消息中间件
-CELERY_BROKER_URL = "redis://{}/{}".format(REDIS_ADDRESS, CONFIG.get('REDIS', 'NUM'))
+CELERY_BROKER_URL = "redis://{}/{}".format(REDIS_ADDRESS, os.getenv('REDIS_DB'))
 
 # Celery 配置
 if USE_TZ:
@@ -350,11 +278,6 @@ LOGGING = {
             'stream': sys.stderr,
             'formatter': 'verbose'
         },
-        'mail_admins': {
-            'level': 'ERROR',
-            'filters': ['require_debug_false'],
-            'class': 'django.utils.log.AdminEmailHandler',
-        },
         'null': {
             'class': 'logging.NullHandler',
         },
@@ -369,7 +292,7 @@ LOGGING = {
             'propagate': True,
         },
         'django.request': {
-            'handlers': ['mail_admins', 'console_err'],
+            'handlers': ['console_err'],
             'level': 'ERROR',
             'propagate': False,
         },

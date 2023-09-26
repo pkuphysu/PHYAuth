@@ -117,8 +117,6 @@ class MyAuthenticationForm(AuthenticationForm):
             user.username_validator(user.username)
         except ValidationError:
             return
-        if settings.DEBUG:
-            return
         if user.last_iaaa_login is None or timezone.now() - user.last_iaaa_login > timedelta(weeks=12):
             raise ValidationError(
                 self.error_messages['need_iaaa'],

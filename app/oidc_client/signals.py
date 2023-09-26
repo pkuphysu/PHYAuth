@@ -16,12 +16,7 @@ logger = logging.getLogger(__name__)
 
 @receiver(user_accept_consent)
 def user_accept_consent_send_email(sender, **kwargs):
-    if settings.DEBUG:
-        consent_accept_email(client_id=kwargs['client'].id,
-                                   user_id=kwargs['user'].id,
-                                   scope=kwargs['scope'])
-    else:
-        consent_accept_email.delay(client_id=kwargs['client'].id,
+   consent_accept_email.delay(client_id=kwargs['client'].id,
                                    user_id=kwargs['user'].id,
                                    scope=kwargs['scope'])
 
@@ -66,10 +61,7 @@ def client_group_update(sender, **kwargs):
 def membership_create(sender, **kwargs):
     if kwargs['created']:
         ms = kwargs['instance']
-        if settings.DEBUG:
-            clientgroup_invite_user_email(ms.id)
-        else:
-            clientgroup_invite_user_email.delay(ms.id)
+        clientgroup_invite_user_email.delay(ms.id)
 
 
 @receiver(post_delete, sender=Faq)
