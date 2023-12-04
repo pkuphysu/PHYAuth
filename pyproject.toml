@@ -11,7 +11,7 @@ default = true
 
 [tool.poetry.dependencies]
 python = "^3.9"
-Django = "^3.2"
+Django = "^4.2"
 django-oidc-provider = "^0.7.0"
 requests = "^2.27.1"
 celery = "^5.2.6"
